@@ -70,8 +70,9 @@
 //  task: add write in AKS, Support - add new view - add text to array - make persistant
 //  task: sort list by: camera, primes, macros, probes, zooms, aks ect
 //  fix: zoom loaded before camera
-
 //  task: remove labels in user
+//  task: redo info vc
+
 //  task: make UI Awesome
 //  task: how-to images
 

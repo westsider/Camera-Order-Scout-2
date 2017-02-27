@@ -19,7 +19,7 @@ class InfoViewController: UIViewController {
 
     @IBOutlet weak var gotIt: UIButton!
     
-    @IBOutlet weak var progress: UISegmentedControl!
+    @IBOutlet weak var pageScroll: UIPageControl!
     
     var counter = 0
     
@@ -37,8 +37,10 @@ class InfoViewController: UIViewController {
         gotIt.isHidden = true
         
         populatePicture(counter: 0)
-
-        self.progress.layer.borderWidth = 0.2
+        
+        pageScroll.currentPageIndicatorTintColor = UIColor.darkGray
+        
+        pageScroll.pageIndicatorTintColor = UIColor.lightGray
 
     }
 
@@ -74,19 +76,19 @@ class InfoViewController: UIViewController {
         switch counter {
         case 0:
             image.image = UIImage(named: "test 1")
-            progress.selectedSegmentIndex = 0
+             pageScroll.currentPage = 0
         case 1:
             image.image = UIImage(named: "test 2")
-            progress.selectedSegmentIndex = 1
+             pageScroll.currentPage = 1
         case 2:
             image.image = UIImage(named: "test 3")
-            progress.selectedSegmentIndex = 2
+             pageScroll.currentPage = 2
         case 3:
             image.image = UIImage(named: "test 4")
-            progress.selectedSegmentIndex = 3
+             pageScroll.currentPage = 3
         default:
             image.image = UIImage(named: "test 4")
-            progress.selectedSegmentIndex = 0
+             pageScroll.currentPage = 0
         }
         
     }
