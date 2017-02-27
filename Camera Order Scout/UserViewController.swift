@@ -27,8 +27,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var dateTextInput: UITextField!
     
-    @IBOutlet weak var userData: UITextView!
-    
     let errorOne = "Please include a state or country"
     
     let errorTwo = "Please Enter a City and State or Country"
@@ -150,36 +148,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         
         dateTextInput.text = dateFormatter.string(from: sender.date)
         
-    }
-    
-    @IBAction func clearDBAction(_ sender: Any) {
-        
-                try! realm.write {
-                    realm.deleteAll()
-                }
-    }
-    
-    @IBAction func showUserAction(_ sender: Any) {
-
-        //get last id used
-        let id = getLastIdUsed()
-        
-        var message = "Saved id is\n\(id)\n"
-        
-        let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id)
-        
-        for things in currentEvent {
-            
-            message += "\nevent count = \(currentEvent.count)"
-            message += "\neventName: \(things.eventName)"
-            message += "\nuserName: \(things.userName)"
-            message += "\nProduction: \(things.production)"
-            message += "\ncompany: \(things.company)"
-            message += "\ncity: \(things.city)"
-            message += "\ndate: \(things.date)"
-            message += "\nweather: \(things.weather)"
-        }
-        userData.text = message
     }
     
     func saveLastID(ID: String) {
