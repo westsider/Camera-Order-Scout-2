@@ -48,7 +48,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1]
         newRow.detail = returnedString
         newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-        
+        newRow.catagory = pickerEquipment.pickerState[1] // added for sort
         // get realm event and append tableview row objects
         let id = getLastIdUsed()
         

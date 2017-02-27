@@ -69,9 +69,9 @@
 //  test: completed test of tableview switches
 //  task: add write in AKS, Support - add new view - add text to array - make persistant
 //  task: sort list by: camera, primes, macros, probes, zooms, aks ect
+//  fix: zoom loaded before camera
 
-//  zoom loaded before camera
-//  remove labels in user
+//  task: remove labels in user
 //  task: make UI Awesome
 //  task: how-to images
 
@@ -146,6 +146,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             
             tableviewEvent = currentEvent   // populate tableview
             
+            sortRealmEvent()
+            
         }
 
         myTableView.reloadData();
@@ -160,7 +162,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         self.myPicker.delegate = self
         myTableView.reloadData()
         updatePickerSelection() // so we dont get nil on first run
-        //sortRealmEvent()
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
@@ -199,7 +201,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1] + "s";
             newRow.detail = pickerEquipment.pickerSelection[2] + " " +  pickerEquipment.pickerSelection[3];
             newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-            
+            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
             let currentEvent = getLastEvent()
             
             try! realm.write {
@@ -225,7 +227,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             newRow.icon = pickerEquipment.pickerSelection[1];
             newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1];
             newRow.detail = pickerEquipment.pickerSelection[2] + " " +  pickerEquipment.pickerSelection[3];
-            
+            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
             let currentEvent = getLastEvent()
             sortRealmEvent()
             try! realm.write {
@@ -243,7 +245,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1];
             newRow.detail = pickerEquipment.pickerSelection[2] + " " +  "Finder";
             newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-            
+            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
             let currentEvent = getLastEvent()
             sortRealmEvent()
             try! realm.write {
