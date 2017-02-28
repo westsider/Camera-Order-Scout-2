@@ -5,11 +5,6 @@
 //  Created by Warren Hansen on 2/21/17.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
-//  nice to have a swipe left / right gestur to page through tutrial
-//  counter to show progress on tab bar type thing on the bottom
-//  whenswipe right to last document aGot It button returns to main
-
-// just need to make border clear - might be better with buttons
 
 import UIKit
 
@@ -47,17 +42,14 @@ class InfoViewController: UIViewController {
     @IBAction func gotItAction(_ sender: Any) {
         
         _ = navigationController?.popToRootViewController(animated: true)
-        
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
-                print("Swiped right")
                 counter -= 1
             case UISwipeGestureRecognizerDirection.left:
-                print("Swiped left")
                 counter += 1
             default:
                 break
@@ -67,7 +59,6 @@ class InfoViewController: UIViewController {
         if counter < 0 { counter = 0 }
         populatePicture(counter: counter)
         showButton(counter: counter)
-        print(counter)
     }
     
     
@@ -100,5 +91,4 @@ class InfoViewController: UIViewController {
             gotIt.isHidden = true
         }
     }
-
 }

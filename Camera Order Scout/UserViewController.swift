@@ -33,7 +33,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     var datePickerUtility = DatePickerUtility()
     
-    let realm = try! Realm()            // Get the default Realm
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.company.delegate = self
         self.dateTextInput.delegate = self
         title = "J O B  I N F O"
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -57,12 +56,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         company.text        = currentEvent.company
         dateTextInput.text  = currentEvent.date
     }
-    
-    /*---------------------------------------------------------------------------------------
-     |                                                                                       |
-     |                             update this user - segue back                             |
-     |                                                                                       |
-     ---------------------------------------------------------------------------------------*/
     
     @IBAction func updateAction(_ sender: Any) {
 

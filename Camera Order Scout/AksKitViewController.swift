@@ -40,16 +40,13 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func updateAction(_ sender: Any) {
         
         finalizeKitArray()
-        
-        //  create tableview row realm objects and differentiate lenses from aks
+
         let newRow = TableViewRow()
         newRow.icon = pickerEquipment.pickerSelection[1]
-        //     populate AKS ect
         newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1]
         newRow.detail = returnedString
         newRow.catagory = pickerEquipment.pickerState[1] // added for sort
         newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-        // get realm event and append tableview row objects
         let id = getLastIdUsed()
         
         let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
@@ -59,8 +56,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         sortRealmEvent()
-        
-        //print("\nhere is what will be returned to realm as the kit:\n\(returnedString)\n")
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
@@ -79,7 +74,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
                  returnedString += items.detail + ", "
                 }
             }
-            //print("\nhere is the whole list: \(todoList)")
         }
         
         if pickerRow == 7 {  // if FilterItem
@@ -94,7 +88,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     returnedString += items.detail + ", "
                 }
             }
-            
         }
         
         if pickerRow == 8 {  // if SupportItem
@@ -110,27 +103,23 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
-        // remove last comma if list isnt empty
+        // if list isnt empty remove last comma
         if returnedString != "" {
             let endIndex = returnedString.index(returnedString.endIndex, offsetBy: -2)
             let truncated = returnedString.substring(to: endIndex)
             returnedString = truncated
         }
-        
     }
 
     //MARK: - Add new items to kit
     @IBAction func addNewItemsAction(_ sender: Any) {
         
-        let alertController : UIAlertController = UIAlertController(title: "New Todo", message: "What do you plan to do?", preferredStyle: .alert)
+        let alertController : UIAlertController = UIAlertController(title: "New Item", message: "What would you like to add?", preferredStyle: .alert)
         
-        alertController.addTextField { (UITextField) in
-            
-        }
+        alertController.addTextField { (UITextField) in }
         
-        let action_cancel = UIAlertAction.init(title: "Cancel", style: .cancel) { (UIAlertAction) -> Void in
-            
-        }
+        let action_cancel = UIAlertAction.init(title: "Cancel", style: .cancel) { (UIAlertAction) -> Void in }
+        
         alertController.addAction(action_cancel)
         
         let action_add = UIAlertAction.init(title: "Add", style: .default) { (UIAlertAction) -> Void in
@@ -175,9 +164,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let index = sender.tag
         let content = sender.restorationIdentifier!
-        print("Lens Switch Index: \(index) For: \(content) Is On: \(sender.isOn)")
-        
-        //let realm = try! Realm()
         
         if pickerRow == 5 {  // if aks
             
@@ -226,7 +212,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var isSwitchOn = false
         
         if state == 5 { // if aks
-            //let realm = try! Realm()
             
             var todoList: Results<AksItem> {
                 get {
@@ -240,7 +225,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         if state == 7 { // if FilterItem
-            //let realm = try! Realm()
             
             var todoList: Results<FilterItem> {
                 get {
@@ -254,7 +238,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         if state == 8 { // if SupportItem
-            //let realm = try! Realm()
             
             var todoList: Results<SupportItem> {
                 get {
@@ -272,8 +255,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
  
     // modify realm object called by picker state
     func updateRealm(state: Int, item: String, onOff: Bool)  {
-        
-       // let realm = try! Realm()
         
         if state == 5 { // if aks
             let todoItem = AksItem()
@@ -344,7 +325,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return lastIDvalue
     }
     
-    /// the purpose of this func is to get the last event used
     func getLastEvent() -> EventUserRealm {
         
         let allIds = realm.objects(EventTracking.self)
@@ -356,7 +336,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return currentEvent
     }
     
-    /// sort latest realm event by catagory
     func sortRealmEvent() {
         
         let thisEvent = getLastEvent()
@@ -372,9 +351,6 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             for items in sorted {
                 sortedEvent.tableViewArray.append(items)
             }
-            print("\n------------------------------------------------------\n")
-            print("\nthis is the whole tableview replaced-----------\n\(sortedEvent)\n")
-            print("\n------------------------------------------------------\n")
         }
     }
 }

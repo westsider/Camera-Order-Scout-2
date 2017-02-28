@@ -17,7 +17,7 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     let realm = try! Realm()
     
-    var tasks: Results<EventUserRealm>! // for tableview
+    var tasks: Results<EventUserRealm>!
     
     var tableViewTitleArray = [String]()
 
@@ -28,18 +28,8 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         tasks = realm.objects(EventUserRealm.self)  // for tableview
-        // just for testing
-        eventNameInput.text = "second event"
+        eventNameInput.text = "Name Your New Job"
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
-    /*---------------------------------------------------------------------------------------
-     |                                                                                       |
-     |                                    Save New Event                                     |
-     |                                                                                       |
-     ---------------------------------------------------------------------------------------*/
     
     //MARK: - Save Event
     @IBAction func saveEvent(_ sender: Any) {
@@ -82,11 +72,6 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
         eventsTableView.reloadData()
     }
 
-    /*---------------------------------------------------------------------------------------
-     |                                                                                       |
-     |                                  Set up Table View                                    |
-     |                                                                                       |
-     ---------------------------------------------------------------------------------------*/
     //MARK:- Set up Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
@@ -98,12 +83,11 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text =  task //testTableViewArray[indexPath.row]
+        cell.textLabel?.text =  task
         
         return cell
     }
-    
-    //Mark: - delete tableview row
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -126,12 +110,8 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
         eventsTableView.reloadData()
         
     }
-    
-    /*---------------------------------------------------------------------------------------
-     |                                                                                       |
-     |              Tap on Table View ro returns the Event to main tableview                 |
-     |                                                                                       |
-     ---------------------------------------------------------------------------------------*/
+
+    //MARK: - Tap on Table View row returns the Event to main tableview
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let theRow = indexPath.row
@@ -147,7 +127,7 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
-    //Mark: - save sast id and get last id done differenltly than class onject
+    //Mark: - save sast id and get last id done differenltly than class object
     func saveLastID(ID: String) {
         let id = EventTracking()
         try! realm.write {

@@ -5,83 +5,11 @@
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
-/*  feat: a new feature
- fix: a bug fix
- docs: changes to documentation
- style: formatting, missing semi colons, etc; no code change
- refactor: refactoring production code
- test: adding tests, refactoring test; no production code change
- chore: updating build tasks, package manager configs, etc; no production code change    */
+//  task: removed debug view controller
 
-//  task: set up lenses vc
-//  task: populate lense vc - return to main vc tue     mon 2/6
-//  task: set up user vc                                mon 2/6
-//  task: set up + populate past orders vc              mon 2/6 - where i was stuck : )
-//  task: pass user to and from user vc *** thisEvent.user tue 2/7
-//  task: set up + populate aks - feed to lenses?       tue 2/7
-//  task: set up + populate filters                     tue 2/7
-//  task: set up + populate support                     tue 2/7
-//  task: implement core data - nogo
-//  task: finish past orders                            thur 2/10
-//  task: realm persistence of user                     fri 2/11
-//  task: realm persistence of event                    sat 2/11
-//  create and Event that can store Event Name
-//  task: create and Event that can store User          sat 2/11
-//  task: use realm to add tableview rows               sun 2/12
-//  check add user, - working except date bug
-//  bug - getting multiple events, should only be created on first run
-//  task: add items to tableview
-//  task: get rid of optional in tableview
-//  task: first load tableview and subsequent runs load the tableview correctly
-//  task: store EventTableView inside event             sun 2/12
-//  task: populate tableview from event tableview
-//  task: add lens kit to tableview  array event realm
-//  task: fix date
-//  task: implement icon + removed problem with load tableview
-//  task: print statements and unused functions and files                               mon 2/13
-//  task: black or white icons only
-//  fix: add aks arrow down removed from tableview
-
-//  chore: need to update the user model and event model to move foreward
-//      clear realm, change models, fix errors
-//          get model working add camera good, add lens good
-//              get update user working
-//                  get add new event working
-//                      find bug: updating user name sets both tableview names
-//                          take debugging class, use realm as tableview
-//                          bug: adding lens doesnt show up in tableview, construct tableview from RealmEvent
-//                              task: move equipment and tableviewarrays inside this class and push to lenses vc
-//                                  task: delete items in current tableview
-//                                      task: delete items in events
-//                                          task:add tableview icons
-//  feat: finished implementing persistance with realm                                  tue 2/21
-//  cameras now plural
-//  task: turn print into share
-//  fix: back to <
-//  task: first run Tutorial
-//  http://stackoverflow.com/questions/13335540/how-to-make-first-launch-iphone-app-tour-guide-with-xcode
-//  auto size lens tableview for longet lines
-//  zoom & probe not repopulating lens
-//  probe populates lens items
-//  task: finish all extra equipment
-//  fix: lens order title wrong for aks
-//  task: switches off by default for aks, support
-//  test: completed test of tableview switches
-//  task: add write in AKS, Support - add new view - add text to array - make persistant
-//  task: sort list by: camera, primes, macros, probes, zooms, aks ect
-//  fix: zoom loaded before camera
-//  task: remove labels in user
-//  task: redo info vc
-//  task: blue switches and buttons
-//  task: subject in mail
-//  task: add picker anamorphic
-//  task: move picker left
-
-//  fix: camera now falling too low list
 //  style: remove duplicate code
-
-//  task: make UI Awesome
 //  task: how-to images
+//  task: add images to share
 
 import Foundation
 import UIKit
@@ -97,11 +25,9 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     let cellIdentifier = "ListTableViewCell"
     
-    let isFirstLaunch = UserDefaults.isFirstLaunch()
+    var tableViewArrays = TableViewArrays()
     
-    var tableViewArrays = TableViewArrays() // this is only to pass primes kit to next vc
-    
-    var pickerEquipment = Equipment()       // needs to move inside the class and pushed to lenses vc
+    var pickerEquipment = Equipment()
     
     let realm = try! Realm()
     
@@ -110,16 +36,14 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     //MARK: - Lifecycle Functions
     override func viewWillAppear(_ animated: Bool) {
         
-        //Mark: - on first run
+        //MARK: - on first run populate realm and default user event
         let checkEventUser = realm.objects(EventUserRealm.self)
         
         if checkEventUser.count == 0 {
             
-            FirstRun().populateRealmKits() // set up realm kits for user additions
+            FirstRun().populateRealmKits()
             
             let defaultEventUsers = EventUserRealm()
-            
-            // in first run fill in values with defaut
             defaultEventUsers.eventName = "first event"
             defaultEventUsers.userName = "first user"
             defaultEventUsers.city = "Santa Monica, CA"
@@ -127,59 +51,42 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             defaultEventUsers.company  = "new company"
             defaultEventUsers.date  = "no date yet"
             
-            //                  create tableview object
+            //  create tableview object
             let rowOne = TableViewRow()
             rowOne.icon = "man" ; rowOne.title = "\(defaultEventUsers.userName) Director of Photography" ; rowOne.detail = "Camera Order \(defaultEventUsers.production) \(defaultEventUsers.date )"
-            rowOne.catagory = -1 // added for sort
-            
-            defaultEventUsers.tableViewArray.append(rowOne) // = defaultTableview
+            rowOne.catagory = -1
+            defaultEventUsers.tableViewArray.append(rowOne)
   
-            try! realm.write {                   //  persiste default event
+            try! realm.write {
                 realm.add(defaultEventUsers)
             }
             
-            saveLastID(ID: defaultEventUsers.taskID)    // save last used event id
+            saveLastID(ID: defaultEventUsers.taskID)
             
-            tableviewEvent = defaultEventUsers  // populate tableview
+            tableviewEvent = defaultEventUsers
             
-            // on first launch go to info screen
             performSegue(withIdentifier: "mainToInfo", sender: self)
 
         } else {
             
             //Mark: - we have a past user and will get last id used
             let currentEvent = getLastEvent()
-            
             tableviewEvent = currentEvent   // populate tableview
-            
             sortRealmEvent()
-            
         }
-
         myTableView.reloadData();
     }
-    
-
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "C A M E R A  O R D E R"
         self.myPicker.dataSource = self
         self.myPicker.delegate = self
         myTableView.reloadData()
-        updatePickerSelection() // so we dont get nil on first run
-        
+        updatePickerSelection()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
-    
-    //Mark: - Save current Event
-    @IBAction func saveAction(_ sender: Any) { }
-    
-    /*---------------------------------------------------------------------------------------
-     |                                                                                       |
-     |                             add equipment to tableview                                |
-     |                                                                                       |
-     ---------------------------------------------------------------------------------------*/
+
     //MARK: - Add Action
     @IBAction func addAction(_ sender: Any) {
         
@@ -301,43 +208,33 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         self.present(activityVC, animated: true, completion: nil)
     }
     
-    /*---------------------------------------------------------------------------------------
-     |                                                                                       |
-     |                             NEW AWESOME PICKER OBJECT                                 |
-     |                                                                                       |
-     ---------------------------------------------------------------------------------------*/
     //MARK: - Set up Picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
     }
-    
-    //Mark: - The number of rows of data
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return   pickerEquipment.pickerArray[component].count //pickerEquipment[component].count
         
     }
-    
-    //Mark: - The data to return for the row and component (column) that's being passed in
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerEquipment.pickerArray[component][row]
     }
-    
-    //MARK: - when picker wheels move change the pickerArray and reload
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
         dontReloadOnComp0or3(component: component, row: row, lastCatagory: pickerEquipment.prevCatagory)
         reloadComponentsAndText(component: component, row: row)
         zeroThePicker(component: component, row: row)
         
-        // set pickerSelected property with picker array current selection *** I wish this was a function
+        // set pickerSelected property with picker array current selection
         pickerEquipment.pickerState = [ myPicker.selectedRow(inComponent: 0), myPicker.selectedRow(inComponent: 1), myPicker.selectedRow(inComponent: 2), myPicker.selectedRow(inComponent: 3) ]
-        
-        //Mark: - update pickerSelection
-        updatePickerSelection()
 
+        updatePickerSelection()
     }
     
-    //Mark: -  make picker text fill horizontal space allowed
+    //MARK: -  make picker text fill horizontal space allowed
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
         pickerLabel.textColor = UIColor.black
@@ -367,7 +264,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
     }
     
-    //Mark: -  dont reload localPickerIndex when component 0 or 3 move
+    //MARK: -  dont reload localPickerIndex when component 0 or 3 move
     func dontReloadOnComp0or3(component: Int, row: Int, lastCatagory: Int) {
         
         if component == 1 || component == 2 {     //  full update on comp 1 and 2 only
@@ -375,7 +272,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
     }
     
-    //Mark: - zero the picker wheels when Catagory changes
+    //MARK: - zero the picker wheels when Catagory changes
     func zeroThePicker(component: Int, row: Int){
         if component == 1 {  // with new catagory set wheel 2 and 3 safely to index 0
             myPicker.selectRow(0, inComponent: 2, animated: true)
@@ -383,19 +280,13 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             pickerEquipment.prevCatagory = row    // if wheel 1 moves save the componennt to pass to setPickerArray
         }
     }
-    //Mark: - update pickerSelection
+
     func updatePickerSelection() {
         pickerEquipment.pickerSelection[0] = pickerEquipment.pickerArray[0][pickerEquipment.pickerState[0]]
         pickerEquipment.pickerSelection[1] = pickerEquipment.pickerArray[1][pickerEquipment.pickerState[1]]
         pickerEquipment.pickerSelection[2] = pickerEquipment.pickerArray[2][pickerEquipment.pickerState[2]]
         pickerEquipment.pickerSelection[3] = pickerEquipment.pickerArray[3][pickerEquipment.pickerState[3]]
     }
-    
-    /*---------------------------------------------------------------------------------------
-     |                                                                                       |
-     |                             NEW AWESOME TABLEVIEW OBJECT                              |
-     |                                                                                       |
-     ---------------------------------------------------------------------------------------*/
     
     //MARK: - Set up Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -405,7 +296,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // consider refactoring the way I get a tableview icon... from previous core data approach
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ListTableViewCell
         let iconString = tableviewEvent.tableViewArray[indexPath.row].icon
         
@@ -418,7 +308,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         return cell
     }
     
-    //Mark: - delete tableview row
+    //MARK: - delete tableview row
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -443,7 +333,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
     }
     
-    //Mark: - populate the tableview
+    //MARK: - populate the tableview
     func populateTableviewFromEvent(currentEvent: EventUserRealm ) {
         
         tableViewArrays.removeAll();
@@ -454,7 +344,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     }
     
     func saveLastID(ID: String) {
-        // save last used event id
+
         var newID = false
         let id: EventTracking
         if let existingID = realm.objects(EventTracking.self).first {
@@ -472,7 +362,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
     }
     
-    /// the purpose of this func is to get the last event used
     func getLastEvent() -> EventUserRealm {
         
         let allIds = realm.objects(EventTracking.self)
@@ -484,7 +373,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         return currentEvent
     }
     
-    /// sort latest realm event by catagory
+    /// sort latest realm tableview event by catagory
     func sortRealmEvent() {
         
         let thisEvent = getLastEvent()

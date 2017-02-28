@@ -51,24 +51,19 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: - Update the lens kit and return to main VC
     @IBAction func updateAction(_ sender: Any) {
         
-        tableViewSwitches.finalizeLensArray()         // return string of edited lens array
+        tableViewSwitches.finalizeLensArray()
         
         let newLensKit = tableViewSwitches.returnedString
-        
-        //  create tableview row realm objects and differentiate lenses from aks
+    
         let newRow = TableViewRow()
         newRow.icon = pickerEquipment.pickerSelection[1]
-        if pickerEquipment.pickerState[1] < 5 {        //  populate lenses
+        if pickerEquipment.pickerState[1] < 5 {
+            //  populate lenses
             newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1]  + " " + pickerEquipment.pickerSelection[2] + " " +  pickerEquipment.pickerSelection[3]
             newRow.detail = newLensKit
-            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-        } else {                                        //     populate AKS ect
-            newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1] 
-            newRow.detail = newLensKit
-            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
+            newRow.catagory = pickerEquipment.pickerState[1]
         }
         
-        // get realm event and append tableview row objects
         let id = getLastIdUsed()
         
         let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
@@ -89,31 +84,25 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! primeLensTableViewCell
         
         cell.lensLabel?.text =   displayLensArray[indexPath.row]
-        
-        // Send switch state and indexpath ro to this func?
         cell.lensSwitch.tag = indexPath.row
         cell.lensSwitch.restorationIdentifier = displayLensArray[indexPath.row] // lensKitArray[indexPath.row]
         cell.lensSwitch.addTarget(self, action: #selector(switchTriggered(sender:)), for: UIControlEvents.valueChanged)
         cell.lensLabel.adjustsFontSizeToFitWidth = true
-        //cell.lensSwitch.isOn = switchPos[indexPath.row] //   remember swich position durring scroll
         return cell
     }
     
-    /// logic to modify a lens kit from swich positions in the lens kit tableView
+    /// modify a lens kit from swich positions in the tableView
     func switchTriggered(sender: UISwitch) {
 
         let index = sender.tag
         let content = sender.restorationIdentifier!
         print("Lens Switch Index: \(index) For: \(content) Is On: \(sender.isOn)")
-        // change array of lenses with tableview switches
         tableViewSwitches.updateArray(index: index, switchPos: sender.isOn)
         switchPos[sender.tag] = sender.isOn
-        
-        print("switch position: \(switchPos)")
     }
     
     func saveLastID(ID: String) {
-        // save last used event id
+
         let id = EventTracking()
         try! realm.write {
             id.lastID = ID
@@ -122,7 +111,7 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func getLastIdUsed() -> String {
-        //get lst id used
+
         let id = realm.objects(EventTracking.self)
         var lastIDvalue = String()
         if id.count > 0 {
@@ -134,24 +123,23 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return lastIDvalue
     }
     
-    func setUpUI() {    // and fucking set up realm array
+    func setUpUI() {
         
-        // modify page info by picker state
+        // 1 primes
         if pickerEquipment.pickerState[1] == 1 {
             print("sent form primes")
             title = "Select Primes"
-            // chage description , hide button
             titleDescription.text = "Switch off lenses not needed"
             addButton.isHidden = true
         }
+        
         // 5 aks
         if pickerEquipment.pickerState[1] == 5 {
             print("sent form AKS")
             title = "Select AKS"
             titleDescription.text = "Switch On items needed"
             switchOn = false
-            
-            // load ream array to thos tableview... or skip this step and just use realm
+
             let realm = try! Realm()
             
             var todoList: Results<AksItem> {
@@ -159,10 +147,8 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     return realm.objects(AksItem.self)
                 }
             }
-            
-            print("\nDid I get AKS from Realm? \(todoList)\n")
-            
         }
+        
         // 7 filters
         if pickerEquipment.pickerState[1] == 7 {
             print("sent form Filters")
@@ -170,7 +156,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             titleDescription.text = "Switch On filters needed"
             switchOn = false
             
-            // load ream array to thos tableview... or skip this step and just use realm
             let realm = try! Realm()
             
             var todoList: Results<FilterItem> {
@@ -178,9 +163,8 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     return realm.objects(FilterItem.self)
                 }
             }
-            
-            print("\nDid I get Filters from Realm? \(todoList)\n")
         }
+        
         // 8 support
         if pickerEquipment.pickerState[1] == 8 {
             print("sent form Support")
@@ -188,7 +172,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             titleDescription.text = "Switch On items needed"
             switchOn = false
             
-            // load ream array to thos tableview... or skip this step and just use realm
             let realm = try! Realm()
             
             var todoList: Results<SupportItem> {
@@ -196,20 +179,9 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     return realm.objects(SupportItem.self)
                 }
             }
-            
-            print("\nDid I get Support from Realm? \(todoList)\n")
-        }
-        
-        // array to persiste switch positions durring deque of cells
-        let i = displayLensArray.count
-        var c = 0
-        while c < i {
-            switchPos.append(switchOn) // set switch pos from prior vc - off for aks
-            c += 1
         }
     }
     
-    /// the purpose of this func is to get the last event used
     func getLastEvent() -> EventUserRealm {
         
         let allIds = realm.objects(EventTracking.self)
@@ -237,9 +209,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             for items in sorted {
                 sortedEvent.tableViewArray.append(items)
             }
-            print("\n------------------------------------------------------\n")
-            print("\nthis is the whole tableview replaced-----------\n\(sortedEvent)\n")
-            print("\n------------------------------------------------------\n")
         }
     }
 }
