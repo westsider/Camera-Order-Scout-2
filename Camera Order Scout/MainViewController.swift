@@ -73,9 +73,15 @@
 //  task: remove labels in user
 //  task: redo info vc
 //  task: blue switches and buttons
+//  task: subject in mail
 
-//  picker off to left and too big
 //  camera now falling into list
+//  picket anamorphic
+//  too many words on aks
+//  move picker left
+//  remove duplicate code
+//  remove press add and down arrow
+
 //  task: make UI Awesome
 //  task: how-to images
 
@@ -287,28 +293,16 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
         messageArray.append("\nWeather forecast for \(thisEvent.city)\n\(thisEvent.weather)")
         messageArray.append("  ")
-        print(messageArray)
         // write over user to add company
         messageArray[0] = "\(thisEvent.userName.uppercased()) Director of Photography\n"
         messageArray[1] = "Camera Order “\(thisEvent.production)” \(thisEvent.date) \(thisEvent.company)\n"
         messageArray[2] = ""
-        
-        let message = messageArray.joined(separator: "")
-        let subject = messageArray[1] // this is for email subject line
-        print("\nsubject: \(subject)")
-        print("\nmessage: \(message)")
-        
-        // share section
-        // set up activity view controller
-        let textToShare = [ message ]
-        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-        
-        // exclude some activity types from the list (optional)
-        //activityViewController.excludedActivityTypes = [ UIActivityType.postToFacebook ]
-        
-        // present the view controller
-        self.present(activityViewController, animated: true, completion: nil)
+        let title = messageArray[1]
+        let content = messageArray.joined(separator: "")
+        let objectsToShare = [content]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.setValue(title, forKey: "Subject")
+        self.present(activityVC, animated: true, completion: nil)
     }
     
     /*---------------------------------------------------------------------------------------
