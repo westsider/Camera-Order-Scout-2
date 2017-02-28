@@ -55,10 +55,10 @@ class InfoViewController: UIViewController {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
                 print("Swiped right")
-                counter += 1
+                counter -= 1
             case UISwipeGestureRecognizerDirection.left:
                 print("Swiped left")
-                counter -= 1
+                counter += 1
             default:
                 break
             }
