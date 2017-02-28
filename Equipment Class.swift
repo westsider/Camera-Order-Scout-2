@@ -4,17 +4,18 @@
 //
 //  Created by Warren Hansen on 2/4/17.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
-//
-//  Quantity    -   Catagory    -   Maker   -   setCamModel     -   lenses
+/*
+  Quantity    -   Catagory      -   Maker   -   setCamModel     -   lenses
 
-//      1           Camera      -   Arri    -   Alexa                                   0
-//      1       -   Primes      -   Zeiss   -   Master Primes   -   25mm 50mm 75mm      1
-//      1       -   AKS         -   Select Items                                        5
-//                  Finder          Std/Anamorphic                                      6
-//                  Filters         Select Item                                         7
-//                  Support         Select Item                                         8
-
-// finish populating the picker AKS, Finder, Filters, Support
+      1           0 Camera      -   Arri    -   Alexa                                   
+                  1 Primes      -   Zeiss   -   Master Primes   -   25mm 50mm 75mm
+                  2 Macro
+                  3 Probe
+                  4 Zoom
+                  5 AKS
+                  6 Finder          Std/Anamorphic
+                  7 Filters
+                  8 Support                                                         */
 
 import Foundation
 
@@ -26,18 +27,7 @@ class Equipment {
     var pickerState = [0,0,0,0]
     var pickerSelection = ["nil","nil","nil","nil"]
     
-    
     func setPickerArray(component: Int, row: Int, lastCatagory: Int )   {
-/*
- 0   camera
- 1   prime
- 2   macro
- 3   probe
- 4   zoom
- 5   aks
- 6   finder
- 7   filters
- 8   support*/
  
         if component < 3 {
             switch component {
@@ -171,6 +161,4 @@ class Equipment {
             }
         }
     }
-    
-
 }

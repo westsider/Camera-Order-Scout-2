@@ -65,7 +65,6 @@ func setIcon(input:String)-> UIImage {
 extension ForecastDate {
     
     /// Initialize ForecastDate model from JSON data.
-    /// - parameter json: JSON data
     init?(json: [String: Any]) {
         
         // extract dictionary from json data
@@ -86,9 +85,6 @@ extension ForecastDate {
         self.dayte = dayte
     }
     
-    /// An array of ForecastDate structs from JSON data.
-    /// - parameter json: JSON data
-    
     static func forecastDateArray(json: [String: Any]) -> [ForecastDate]? {
         guard let forecast = json["forecast"] as? [String: Any] else { return nil }
         guard let simpleforecast = forecast["simpleforecast"] as? [String: Any] else { return nil }
@@ -101,8 +97,6 @@ extension ForecastDate {
 extension ForecastDetail {
     
     /// Initialize ForecastDetail model from JSON data.
-    /// - parameter json: JSON data
-    
     init?(json: [String: Any]) {
         
         // extract dictionaries from json data
@@ -126,8 +120,6 @@ extension ForecastDetail {
         self.humidity = hu
     }
     
-    /// An array of ForecastDetail structs from JSON data.
-    /// - parameter json: JSON data
     static func forecastDetialArray(json: [String: Any]) -> [ForecastDetail]? {
         guard let forecast = json["forecast"] as? [String: Any] else { return nil }
         guard let simpleforecast = forecast["simpleforecast"] as? [String: Any] else { return nil }
@@ -194,4 +186,3 @@ class GetWeather {
         task.resume()
     }
 }
-

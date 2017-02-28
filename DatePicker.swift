@@ -9,14 +9,13 @@
 import Foundation
 import UIKit
 
-/** Functions to convert picker date to a Day in the future for forecast */
+/// Functions to convert picker date to a Day in the future for forecast
 class DatePickerUtility {
     
     // MARK: - calculate number of days bettween 2 Dates
     func daysBetweenDates(startDate: Date, endDate: Date) -> Int
     {
         let calendar = Calendar.current
-        
         let components = calendar.dateComponents([.day], from: startDate, to: endDate)
         return components.day!
     }
@@ -38,10 +37,7 @@ class DatePickerUtility {
     
     // MARK: - Convert Number of tadys from today to a short date string
     func numOfDaysToShortDate(numOfDays: Int) -> String {
-        
         let firstFutureDate = self.addDays(days: numOfDays)
-        
         return self.convertShortDate(date: firstFutureDate)
     }
-    
 }

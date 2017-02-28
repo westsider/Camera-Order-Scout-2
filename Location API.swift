@@ -74,7 +74,5 @@ class CurrentLocation {
             //  forcastURL = NSURL(string: "https://api.wunderground.com/api/f6373e95fa296c84/forecast10day/q/" + first + ".json")
             return "Please include a state or country"
         }
-        
     }
-    
 }

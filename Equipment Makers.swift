@@ -9,16 +9,7 @@
 import Foundation
 import UIKit
 
-//  Quantity    -   Catagory    -   Maker   -   setCamModel     -   lenses
-
-//      1           Camera      -   Arri    -   Alexa                                   0
-//      1       -   Primes      -   Zeiss   -   Master Primes   -   25mm 50mm 75mm      1
-//      1       -   AKS         -   Select Items                                        5
-//                  Finder          Std/Anamorphic                                      6
-//                  Filters         Select Item                                         7
-//                  Support         Select Item                                         8
-
-let Quantity = ["1","2","3","4","5","6","7","8","9"]
+let Quantity = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"]
 
 enum Catagory {
     case camera, primes, macros, probeLens, zoomLens, aks, finder, filters, support
@@ -99,8 +90,6 @@ func setCamModel(maker: MakerCamera) -> [String] {
         return ["Genesis", "XL2", "Platinum", "Gold-G2", "Millennium"]
     case .sony:
         return ["F-55", "F-65", "F-5","F-S5","F-S7"]
-//    default:
-//        return  ["set cam model", "failed", "break"]
     }
 }
 
@@ -194,18 +183,3 @@ func setFinderModel(maker: MakerFinder) -> [String] {
 
     }
 }
-
-
-/// print statement to examime objects
-func youShoudSeeThis(say: String, see: AnyObject ) {
-    
-    print("\n\(say) \(see)")
-    
-}
-
-
-
-
-
-
-

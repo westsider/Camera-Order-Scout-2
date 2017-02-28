@@ -4,18 +4,7 @@
 //
 //  Created by Warren Hansen on 2/5/17.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
-//      0               1              2            3
-//  Quantity    -   Catagory    -   Maker   -   setCamModel     -   lenses
-
-//      0           Camera      -   Arri    -   Alexa                                   0
-//      1       -   Primes      -   Zeiss   -   Master Primes   -   25mm 50mm 75mm      1
-//      2           Macros          Zeiss       Mastet
-//      3           Probe Lens
-//      4           Zoom Lens
-//      5       -   AKS         -   Select Items                                        5
-//      6           Finder          Std/Anamorphic                                      6
-//      7           Filters         Select Item                                         7
-//      8           Support         Select Item                                         8
+//
 
 import Foundation
 import UIKit
@@ -87,7 +76,6 @@ class TableViewArrays {
         tableViewArray.append(newRow)
     }
     
-    
     func removeAll() {
         tableViewArray.removeAll()
     }
@@ -103,21 +91,18 @@ class TableViewArrays {
     
     /// send edited lens array back to main tableview array
     func editedLensKitReturendToMainTableView(sendString: String) {
-        // convery array to srting
-        let lastElement = tableViewArray.count - 1              // find last element,
-        tableViewArray[lastElement][1] = sendString  // send
+        let lastElement = tableViewArray.count - 1
+        tableViewArray[lastElement][1] = sendString
     }
     
     func updateUser(title: String, detail: String) {
-        
         tableViewArray[0][0] = title
         tableViewArray[0][1] = detail
         
     }
     
     
-    // picker sends 2 arrays to lens selection, lens selection edits both arrays, array in converted to string for tableview and share
-    /// sets the array to pas in to the edit lenses vc
+    // picker sends 2 arrays to lens selection, lens selection edits both arrays, array is converted to string for tableview and share
     func setPrimesKit(compState: [Int]) {
         // Zeiss Prime Section
         thePrimes = ["I dont know what this is"]
@@ -448,7 +433,7 @@ class TableViewArrays {
         
         /// Primes + "Anamorphic", 11  selected
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 0 {
-
+            
             thePrimes   = [ "25mm","32mm","40mm","50mm","75mm","100mm"]
             
             displayLensArray  = [ "25mm     T 2.3     ^36in",
@@ -460,7 +445,7 @@ class TableViewArrays {
         }
         /// Primes + "Anamorphic Cooke
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 1 {
-
+            
             thePrimes   = [ "25mm","32mm","40mm","50mm","75mm","100mm"]
             
             displayLensArray  = [ "25mm     T 2.3     ^36in",
@@ -472,7 +457,7 @@ class TableViewArrays {
         }
         /// Primes + "Anamorphic Master Primes
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 2 {
-
+            
             thePrimes   = [ "35mm","40mm","50mm","60mm","75mm","100mm", "135mm"]
             
             displayLensArray   = [ "35mm     T 1.9     ^2ft 6in",
@@ -485,7 +470,7 @@ class TableViewArrays {
         }
         /// Primes + "Anamorphic Arriscope
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 3 {
-
+            
             thePrimes   = [ "40mm","50mm","75mm","100mm", "135mm"]
             
             displayLensArray   = [ "40mm     T 2.3     ^3ft 3in",
@@ -496,7 +481,7 @@ class TableViewArrays {
         }
         /// Primes + "Anamorphic Kowa
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 4 {
-
+            
             thePrimes   = [ "32mm","40mm","50mm","75mm","100mm" ]
             
             displayLensArray = [ "32mm     T 2.3     ^3ft",
@@ -507,7 +492,7 @@ class TableViewArrays {
         }
         /// Primes + "Anamorphic Hawk VL
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 5 {
-
+            
             thePrimes   = [ "25mm","28mm","35mm","45mm","55mm", "65mm", "80mm", "110mm", "140mm", "180mm" ]
             
             displayLensArray   = [ "25mm     T 2.2     ^3ft 6in",
@@ -523,7 +508,7 @@ class TableViewArrays {
         }
         /// Primes + "Anamorphic Hawk V
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 6 {
-
+            
             thePrimes   = [ "25mm","35mm","40mm","50mm","75mm", "100mm", "135mm", "180mm" ]
             
             displayLensArray   = [ "25mm     T 2.2     ^3ft 6in",
@@ -538,7 +523,7 @@ class TableViewArrays {
         
         /// Primes + "Anamorphic Hawk C
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 7 {
-
+            
             thePrimes   = [ "25mm","35mm","50mm","75mm", "100mm", "135mm"]
             
             displayLensArray   = [ "25mm     T 2.2     ^3ft 6in",
@@ -551,7 +536,7 @@ class TableViewArrays {
         
         /// Primes + "Anamorphic  Cineovision
         if compState[1] == 1 && compState[2] == 11 && compState[3] == 8 {
-
+            
             thePrimes   = [ "24mm","35mm","40mm","50mm", "85mm", "100mm"]
             
             displayLensArray  = [ "24mm     T 1.6     ^3ft",
@@ -592,7 +577,7 @@ class TableViewArrays {
         }
         // probe lens  trex probe
         if compState[1] == 3 && compState[2] == 1 && compState[3] == 0 {
- 
+            
             thePrimes   = ["5.5-20mm", "8-18mm", "17-35mm", "32-70mm", "55-112mm Macro"]
             displayLensArray = ["5.5-20mm   T 7.1", "8-18mm   T 7.1", "17-35mm   T 7.1", "32-70mm   T 7.1", "55-112mm   T 7.1 Macro"]
         }
@@ -624,7 +609,7 @@ class TableViewArrays {
             thePrimes  = ["10mm", "14mm", "20mm", "28mm"]
             displayLensArray = ["10mm   T 5.6", "14mm   T 5.6", "20mm   T 5.6", "28mm   T 5.6"]
         }
- 
+        
         // AKS
         if compState[1] == 5 {
             thePrimes =  ["5 inch Assistant Monitor",
@@ -752,7 +737,7 @@ class TableViewArrays {
             
             displayLensArray = thePrimes
             
-            /*
+            /*  saving these filters for possible future editions
              "Antique Suede 1
              "Antique Suede 2
              "Antique Suede 3
@@ -906,7 +891,6 @@ class TableViewArrays {
             
             displayLensArray =  thePrimes
         }
-        
     }
     
     //MARK: - format message
@@ -925,66 +909,5 @@ class TableViewArrays {
             counter = counter + 1
         }
         return message
-    }
-}
-
-//MARK:- tableview switches
-/// fuctions to use tableview switches to update the lens array
-class TableViewSwitches {
-    
-    var original = [String]()   //["i", "am", "original"]
-    var edited =  [String]()    //["i", "am", "edited"]
-    var returnedString = String()
-    
-    func populateArrays(array: [String], reversed: Bool) {
-        // if this is a lens kit
-        original = array
-        edited = original
-        // else if switchon = false this is aks, filters, support
-        if reversed == false {
-            var editedReverse = [String]()
-            let i = edited.count
-            var counter = 0
-            
-            while counter < i {
-                counter += 1
-                editedReverse.append("#")
-            }
-            print("edited    \(edited.count)")
-            print("editedRev \(editedReverse.count)")
-            edited = editedReverse
-        }
-        
-    }
-    
-    /// edit lens list using tableview switches
-    func updateArray(index: Int, switchPos: Bool ) {
-        
-        if index < edited.count {
-            
-            if switchPos == false {
-                edited[index] = "#"
-            } else {
-                edited[index] = original[index]
-            }
-            
-        } else {
-            print("⚡️the index \(index) does not exist you big 🤓")
-        }
-    }
-    
-    /// return edited lens string back to pass into main tableview array
-    func finalizeLensArray() {   // in segue back to main VC
-        var hasHash = true
-        while hasHash {
-            if let index = edited.index(of: "#") {
-                hasHash = true
-                edited.remove(at: index)
-            } else {
-                hasHash = false
-            }
-        }
-        // convert to string
-        returnedString = edited.joined(separator: ", ")
     }
 }

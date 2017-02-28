@@ -5,11 +5,13 @@
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
-//  task: removed debug view controller
+//  style: remove un needed comments
 
+//  style: rename model aks
 //  style: remove duplicate code
 //  task: how-to images
 //  task: add images to share
+//  task: write read me - add from xcode
 
 import Foundation
 import UIKit

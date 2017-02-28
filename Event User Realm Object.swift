@@ -13,7 +13,7 @@ import RealmSwift
 class EventUserRealm: Object {
     
     dynamic var eventName = "Default"
-    dynamic var taskID = NSUUID().uuidString    //   primaryKey
+    dynamic var taskID = NSUUID().uuidString    
     dynamic var userName = "Default"
     dynamic var production = ""
     dynamic var company = ""
@@ -23,5 +23,3 @@ class EventUserRealm: Object {
     
     var tableViewArray = List<TableViewRow>()
 }
-
-
