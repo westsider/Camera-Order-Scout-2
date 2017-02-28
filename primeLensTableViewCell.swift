@@ -14,9 +14,12 @@ class primeLensTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lensLabel: UILabel!
     
+    let swiftColor = UIColor(red: 83/255, green: 107/255, blue: 237/255, alpha: 1.0)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lensSwitch.onTintColor = swiftColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

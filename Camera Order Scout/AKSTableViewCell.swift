@@ -14,9 +14,12 @@ class AKSTableViewCell: UITableViewCell {
     
     @IBOutlet weak var aksSwitch: UISwitch!
     
+    let swiftColor = UIColor(red: 83/255, green: 107/255, blue: 237/255, alpha: 1.0)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        aksSwitch.onTintColor = swiftColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,21 +34,3 @@ class AKSTableViewCell: UITableViewCell {
 
 }
 
-
-//@IBOutlet weak var lensSwitch: UISwitch!
-//
-//@IBOutlet weak var lensLabel: UILabel!
-//
-//override func awakeFromNib() {
-//    super.awakeFromNib()
-//    // Initialization code
-//}
-//
-//override func setSelected(_ selected: Bool, animated: Bool) {
-//    super.setSelected(selected, animated: animated)
-//    
-//    // Configure the view for the selected state
-//}
-//
-//@IBAction func switchValueChanged(_ sender: Any) {
-//}

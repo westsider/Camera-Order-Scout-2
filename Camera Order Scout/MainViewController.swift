@@ -72,7 +72,10 @@
 //  fix: zoom loaded before camera
 //  task: remove labels in user
 //  task: redo info vc
+//  task: blue switches and buttons
 
+//  picker off to left and too big
+//  camera now falling into list
 //  task: make UI Awesome
 //  task: how-to images
 
