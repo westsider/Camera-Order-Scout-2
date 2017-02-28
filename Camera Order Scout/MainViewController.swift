@@ -6,9 +6,11 @@
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
 //  style: remove un needed comments
-
 //  style: rename model aks
+//  task: userdefaults used for rubrik
+
 //  style: remove duplicate code
+//  task: network fail
 //  task: how-to images
 //  task: add images to share
 //  task: write read me - add from xcode
@@ -37,46 +39,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     //MARK: - Lifecycle Functions
     override func viewWillAppear(_ animated: Bool) {
-        
-        //MARK: - on first run populate realm and default user event
-        let checkEventUser = realm.objects(EventUserRealm.self)
-        
-        if checkEventUser.count == 0 {
-            
-            FirstRun().populateRealmKits()
-            
-            let defaultEventUsers = EventUserRealm()
-            defaultEventUsers.eventName = "first event"
-            defaultEventUsers.userName = "first user"
-            defaultEventUsers.city = "Santa Monica, CA"
-            defaultEventUsers.production  = "new production"
-            defaultEventUsers.company  = "new company"
-            defaultEventUsers.date  = "no date yet"
-            
-            //  create tableview object
-            let rowOne = TableViewRow()
-            rowOne.icon = "man" ; rowOne.title = "\(defaultEventUsers.userName) Director of Photography" ; rowOne.detail = "Camera Order \(defaultEventUsers.production) \(defaultEventUsers.date )"
-            rowOne.catagory = -1
-            defaultEventUsers.tableViewArray.append(rowOne)
-  
-            try! realm.write {
-                realm.add(defaultEventUsers)
-            }
-            
-            saveLastID(ID: defaultEventUsers.taskID)
-            
-            tableviewEvent = defaultEventUsers
-            
-            performSegue(withIdentifier: "mainToInfo", sender: self)
-
-        } else {
-            
-            //Mark: - we have a past user and will get last id used
-            let currentEvent = getLastEvent()
-            tableviewEvent = currentEvent   // populate tableview
-            sortRealmEvent()
-        }
-        myTableView.reloadData();
+        fillDefaultTableView()
+        myTableView.reloadData()
     }
  
     override func viewDidLoad() {
@@ -343,6 +307,47 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
                 tableViewArrays.appendTableViewArray(title: eachRow.title, detail: eachRow.detail, compState: pickerEquipment.pickerState)
             }
         myTableView.reloadData()
+    }
+    
+    func fillDefaultTableView() {
+        
+        //MARK: - on first run populate realm and default user event
+        if  UserDefaults.standard.object(forKey: "FirstRun") == nil {
+            // check UserDefaults for first run to meet rubrik
+            UserDefaults.standard.set(false, forKey: "FirstRun")
+            FirstRun().populateRealmKits()
+            
+            let defaultEventUsers = EventUserRealm()
+            defaultEventUsers.eventName = "first event"
+            defaultEventUsers.userName = "first user"
+            defaultEventUsers.city = "Santa Monica, CA"
+            defaultEventUsers.production  = "new production"
+            defaultEventUsers.company  = "new company"
+            defaultEventUsers.date  = "no date yet"
+            
+            //  create tableview object
+            let rowOne = TableViewRow()
+            rowOne.icon = "man" ; rowOne.title = "\(defaultEventUsers.userName) Director of Photography" ; rowOne.detail = "Camera Order \(defaultEventUsers.production) \(defaultEventUsers.date )"
+            rowOne.catagory = -1
+            defaultEventUsers.tableViewArray.append(rowOne)
+            
+            try! realm.write {
+                realm.add(defaultEventUsers)
+            }
+            
+            saveLastID(ID: defaultEventUsers.taskID)
+            
+            tableviewEvent = defaultEventUsers
+            
+            performSegue(withIdentifier: "mainToInfo", sender: self)
+            
+        } else {
+          
+            //Mark: - we have a past user and will get last id used
+            let currentEvent = getLastEvent()
+            tableviewEvent = currentEvent   // populate tableview
+            sortRealmEvent()
+        }
     }
     
     func saveLastID(ID: String) {
