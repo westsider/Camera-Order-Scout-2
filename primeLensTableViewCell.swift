@@ -1,5 +1,5 @@
 //
-//  primeLensTableViewCell.swift
+//  PrimeLensTableViewCell.swift
 //  Camera Order Scout
 //
 //  Created by Warren Hansen on 2/5/17.
