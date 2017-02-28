@@ -75,10 +75,10 @@
 //  task: blue switches and buttons
 //  task: subject in mail
 //  task: add picker anamorphic
+//  task: move picker left
 
-//  camera now falling too low list
-//  move picker left
-//  remove duplicate code
+//  fix: camera now falling too low list
+//  style: remove duplicate code
 
 //  task: make UI Awesome
 //  task: how-to images
