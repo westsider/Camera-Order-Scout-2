@@ -74,18 +74,14 @@
 //  task: redo info vc
 //  task: blue switches and buttons
 //  task: subject in mail
+//  task: add picker anamorphic
 
-//  camera now falling into list
-//  picket anamorphic
-//  too many words on aks
+//  camera now falling too low list
 //  move picker left
 //  remove duplicate code
-//  remove press add and down arrow
 
 //  task: make UI Awesome
 //  task: how-to images
-
-
 
 import Foundation
 import UIKit
@@ -435,14 +431,10 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
                 let row = currentEvent.tableViewArray[indexPath.row]
                 row.realm!.delete(row)
             }
-            
             tableviewEvent = currentEvent   // re - populate tableview
             tableView.reloadData()
         }
     }
-
-
-
     
     //MARK: - Segue to User VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -451,7 +443,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
     }
     
-
     //Mark: - populate the tableview
     func populateTableviewFromEvent(currentEvent: EventUserRealm ) {
         
@@ -509,10 +500,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             for items in sorted {
                 sortedEvent.tableViewArray.append(items)
             }
-            print("\n------------------------------------------------------\n")
-            print("\nthis is the whole tableview replaced-----------\n\(sortedEvent)\n")
-            print("\n------------------------------------------------------\n")
         }
     }
 }
-

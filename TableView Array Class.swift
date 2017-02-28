@@ -17,15 +17,6 @@
 //      7           Filters         Select Item                                         7
 //      8           Support         Select Item                                         8
 
-
-//  this function needs to change to have 2 arrays... 1 for lens selection and 1 for tableview / share
-//  ... or I could strip extra text out when its added to tableview
-
-//  best is for picker to set 2 string arrays and
-
-//  send them to lens vc for editing then
-//  return a string to tableview
-
 import Foundation
 import UIKit
 
@@ -350,6 +341,227 @@ class TableViewArrays {
                                  "152mm Macro  T 3.2   ^3in"]
         }
         
+        /// Primes + Vantage One
+        if compState[1] == 1 && compState[2] == 4 && compState[3] == 0 {
+            
+            thePrimes   = ["17.5mm", "21mm", "25mm", "32mm","40mm","50mm", "65mm", "90mm", "102mm"]
+            
+            displayLensArray   = ["17.5mm   T 1.0   ^10in",
+                                  "21mm     T 1.0   ^10in",
+                                  "25mm     T 1.0   ^10in",
+                                  "32mm     T 1.0   ^10in",
+                                  "40mm     T 1.0   ^1ft 2in",
+                                  "50mm     T 1.0   ^1ft 2in",
+                                  "65mm     T 1.0   ^1ft 2in",
+                                  "90mm     T 1.0   ^1ft 8in",
+                                  "102mm    T 1.0   ^2ft 6in"]
+        }
+        
+        /// Primes + B+L Super Baltar
+        if compState[1] == 1 && compState[2] == 5 && compState[3] == 0 {
+            
+            thePrimes   = ["20mm", "25mm", "35mm","50mm", "75mm", "100mm"]
+            
+            displayLensArray = ["20mm     T 2.3   ^18in",
+                                "25mm     T 2.3   ^18in",
+                                "35mm     T 2.3   ^18in",
+                                "50mm     T 2.3   ^18in",
+                                "75mm     T 2.3   ^22in",
+                                "100mm    T 2.3   ^4ft"]
+        }
+        
+        /// Primes + Kowa Cine Prominar
+        if compState[1] == 1 && compState[2] == 6 && compState[3] == 0 {
+            
+            thePrimes   = ["15mm", "20mm", "25mm", "32mm","40mm","50mm", "75mm", "100mm", "200mm"]
+            
+            displayLensArray = ["15mm     T 4     ^12in",
+                                "20mm     T 2.3   ^12in",
+                                "25mm     T 2.3   ^12in",
+                                "32mm     T 2.3   ^1ft 6in",
+                                "40mm     T 2.3   ^2ft 6in",
+                                "50mm     T 2.3   ^2ft 6in",
+                                "75mm     T 2.3   ^3ft",
+                                "100mm    T 2.6   ^5ft",
+                                "200mm    T 2.6   ^8ft"]
+        }
+        
+        /// Primes + Kineoptic Apochromat
+        if compState[1] == 1 && compState[2] == 7 && compState[3] == 0 {
+            
+            thePrimes   = ["9.8mm", "18mm", "25mm","28mm", "32mm","35mm", "40mm","50mm", "75mm", "100mm"]
+            
+            displayLensArray = ["9.8mm    T 2.2   ^9in",
+                                "18mm     T 2.8   ^8in",
+                                "25mm     T 2.8   ^14in",
+                                "28mm     T 2.8   ^16in",
+                                "32mm     T 3.2   ^17in",
+                                "35mm     T 2.4   ^22in",
+                                "40mm     T 2.4   ^2ft 3in",
+                                "50mm     T 2.5   ^18in",
+                                "75mm     T 2.4   ^3ft",
+                                "100mm    T 2.4   ^4ft"]
+        }
+        
+        /// Primes + Nikkor
+        if compState[1] == 1 && compState[2] == 8 && compState[3] == 0 {
+            
+            thePrimes    = ["200mm","300mm T2", "300mm T2.8","400mm"]
+            
+            displayLensArray = ["200mm     T 2     ^9ft",
+                                "300mm     T 2     ^9ft",
+                                "300mm     T 2.8   ^7ft",
+                                "400mm     T 2.8   ^8ft 6in"]
+        }
+        
+        /// Primes + Red Pro
+        if compState[1] == 1 && compState[2] == 9 && compState[3] == 0 {
+            
+            thePrimes    = [ "18mm","25mm","35mm","50mm","85mm","100mm"]
+            
+            displayLensArray   = [ "18mm     T 1.8     ^13in",
+                                   "25mm     T 1.8     ^4in",
+                                   "35mm     T 1.8     ^4in",
+                                   "50mm     T 1.8     ^6in",
+                                   "85mm     T 1.8     ^18in",
+                                   "100mm    T 1.8     ^2ft"]
+        }
+        
+        /// Primes + "CamTec Vintage", 10
+        if compState[1] == 1 && compState[2] == 10 && compState[3] == 0 {
+            
+            thePrimes   = [ "16mm","20mm","24mm","28mm","32mm",
+                            "40mm","50mm","65mm","85mm","100mm","135mm"]
+            
+            displayLensArray  = [ "16mm     T 1.9     ^12in",
+                                  "20mm     T 1.9     ^12in",
+                                  "24mm     T 1.9     ^12in",
+                                  "28mm     T 1.9     ^12in",
+                                  "32mm     T 1.9     ^15in",
+                                  "40mm     T 1.9     ^15in",
+                                  "50mm     T 1.9     ^2ft",
+                                  "65mm     T 1.9     ^2ft3in",
+                                  "85mm     T 1.9     ^3ft",
+                                  "100mm    T 1.9     ^3ft 3in",
+                                  "135mm    T 1.9     ^5ft"]
+        }
+        
+        /// Primes + "Anamorphic", 11  selected
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 0 {
+
+            thePrimes   = [ "25mm","32mm","40mm","50mm","75mm","100mm"]
+            
+            displayLensArray  = [ "25mm     T 2.3     ^36in",
+                                  "32mm     T 2.3     ^22in",
+                                  "40mm     T 2.3     ^22in",
+                                  "50mm     T 2.3     ^22in",
+                                  "75mm     T 2.3     ^31in",
+                                  "100mm    T 2.3     ^35in"]
+        }
+        /// Primes + "Anamorphic Cooke
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 1 {
+
+            thePrimes   = [ "25mm","32mm","40mm","50mm","75mm","100mm"]
+            
+            displayLensArray  = [ "25mm     T 2.3     ^36in",
+                                  "32mm     T 2.3     ^22in",
+                                  "40mm     T 2.3     ^22in",
+                                  "50mm     T 2.3     ^22in",
+                                  "75mm     T 2.3     ^31in",
+                                  "100mm    T 2.3     ^35in"]
+        }
+        /// Primes + "Anamorphic Master Primes
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 2 {
+
+            thePrimes   = [ "35mm","40mm","50mm","60mm","75mm","100mm", "135mm"]
+            
+            displayLensArray   = [ "35mm     T 1.9     ^2ft 6in",
+                                   "40mm     T 1.9     ^2ft 4in",
+                                   "50mm     T 1.9     ^2ft 6in",
+                                   "60mm     T 1.9     ^3ft",
+                                   "75mm     T 1.9     ^3ft",
+                                   "100mm    T 1.9     ^3ft 1in",
+                                   "135mm    T 1.9     ^3ft 11in"]
+        }
+        /// Primes + "Anamorphic Arriscope
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 3 {
+
+            thePrimes   = [ "40mm","50mm","75mm","100mm", "135mm"]
+            
+            displayLensArray   = [ "40mm     T 2.3     ^3ft 3in",
+                                   "50mm     T 2.3     ^3ft 3in",
+                                   "75mm     T 2.3     ^4ft",
+                                   "100mm    T 3       ^",
+                                   "135mm    T 3       ^"]
+        }
+        /// Primes + "Anamorphic Kowa
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 4 {
+
+            thePrimes   = [ "32mm","40mm","50mm","75mm","100mm" ]
+            
+            displayLensArray = [ "32mm     T 2.3     ^3ft",
+                                 "40mm     T 2.3     ^3ft",
+                                 "50mm     T 2.3     ^3ft",
+                                 "75mm     T 2.8     ^3ft",
+                                 "100mm    T 3.4     ^5ft"]
+        }
+        /// Primes + "Anamorphic Hawk VL
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 5 {
+
+            thePrimes   = [ "25mm","28mm","35mm","45mm","55mm", "65mm", "80mm", "110mm", "140mm", "180mm" ]
+            
+            displayLensArray   = [ "25mm     T 2.2     ^3ft 6in",
+                                   "28mm     T 2.2     ^2ft 7in",
+                                   "35mm     T 2.2     ^3ft 3in",
+                                   "45mm     T 2.2     ^3ft 3in",
+                                   "55mm     T 2.2     ^3ft 3in",
+                                   "65mm     T 2.2     ^3ft 3in",
+                                   "80mm     T 2.2     ^3ft 3in",
+                                   "110mm    T 3       ^3ft 3in",
+                                   "140mm    T 3.5     ^3ft 3in",
+                                   "180mm    T 3       ^6ft 6in" ]
+        }
+        /// Primes + "Anamorphic Hawk V
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 6 {
+
+            thePrimes   = [ "25mm","35mm","40mm","50mm","75mm", "100mm", "135mm", "180mm" ]
+            
+            displayLensArray   = [ "25mm     T 2.2     ^3ft 6in",
+                                   "35mm     T 2.2     ^2ft 6in",
+                                   "40mm     T 2.2     ^2ft 6in",
+                                   "50mm     T 2.2     ^2ft",
+                                   "75mm     T 2.2     ^2ft",
+                                   "100mm    T 2.2     ^3ft 6in",
+                                   "135mm    T 3       ^3ft 6in",
+                                   "180mm    T 3       ^6ft 6in"]
+        }
+        
+        /// Primes + "Anamorphic Hawk C
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 7 {
+
+            thePrimes   = [ "25mm","35mm","50mm","75mm", "100mm", "135mm"]
+            
+            displayLensArray   = [ "25mm     T 2.2     ^3ft 6in",
+                                   "35mm     T 2.2     ^3ft 6in",
+                                   "50mm     T 2.2     ^3ft 6in",
+                                   "75mm     T 2.2     ^3ft 6in",
+                                   "100mm    T 3       ^3ft 6in",
+                                   "135mm    T 3       ^3ft 6in"]
+        }
+        
+        /// Primes + "Anamorphic  Cineovision
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 8 {
+
+            thePrimes   = [ "24mm","35mm","40mm","50mm", "85mm", "100mm"]
+            
+            displayLensArray  = [ "24mm     T 1.6     ^3ft",
+                                  "35mm     T 1.6     ^",
+                                  "40mm     T 2.4     ^",
+                                  "50mm     T 1.4     ^3ft",
+                                  "85mm     T 1.4     ^3ft",
+                                  "100mm    T 2.8     ^3ft"]
+        }
+        
         /// arri macro
         if compState[1] == 2 && compState[2] == 0 && compState[3] == 0 {
             thePrimes = ["17.5mm", "21mm", "25mm", "32mm","40mm","50mm", "65mm", "90mm", "102mm"]
@@ -412,78 +624,35 @@ class TableViewArrays {
             thePrimes  = ["10mm", "14mm", "20mm", "28mm"]
             displayLensArray = ["10mm   T 5.6", "14mm   T 5.6", "20mm   T 5.6", "28mm   T 5.6"]
         }
-        /*
- if ( savedCompZero == 3  && savedCompOne == 0){
- equipmentArray[1]   = ["Innovision","T-Rex", "Revolution", "Skater", "Century", "Optex"]
- equipmentArray[2]    = ["Probe II+"]
- lensArray   = ["9mm", "12mm", "16mm", "20mm", "28mm", "32mm", "40mm" , "55mm"]
- 
- displayLensArray = ["9mm    T 6.3", "12mm    T 6.3", "16mm    T 6.3", "20mm    T 6.3", "28mm    T 6.3", "32mm    T 6.3", "40mm    T 6.3" , "55mm    T 6.3"]
- }
- // t rex probe
- if ( savedCompZero == 3  && savedCompOne == 1){
- equipmentArray[2]    = ["Probe"]
- lensArray   = ["5.5-20mm", "8-18mm", "17-35mm", "32-70mm", "55-112mm Macro"]
- displayLensArray = ["5.5-20mm   T 7.1", "8-18mm   T 7.1", "17-35mm   T 7.1", "32-70mm   T 7.1", "55-112mm   T 7.1 Macro"]
- }
- // revolution probe
- if ( savedCompZero == 3  && savedCompOne == 2){
- equipmentArray[2]    = ["Probe"]
- lensArray   = ["9.8mm", "12mm", "16mm", "20mm", "24mm", "32mm", "40mm" , "65mm"]
- displayLensArray  = ["9.8mm T 7.5", "12mm T 7.5", "16mm T 7.5", "20mm T 7.5", "24mm T 7.5", "32mm T 7.5", "40mm T 7.5" , "65mm T 7.5"]
- }
- // skater Scope
- if ( savedCompZero == 3  && savedCompOne == 3){
- equipmentArray[2]    = ["Scope"]
- lensArray   = ["PL Mount"]
- displayLensArray = ["PL Mount"]
- }
- // century Periscope
- if ( savedCompZero == 3  && savedCompOne == 4){
- equipmentArray[2]    = ["Periscope"]
- lensArray   = ["PL Mount"]
- displayLensArray = ["PL Mount"]
- }
- // Optex probe
- if ( savedCompZero == 3  && savedCompOne == 5){
- equipmentArray[2]    = ["Excellence"]
- lensArray   = ["10mm", "14mm", "20mm", "28mm"]
- displayLensArray = ["10mm   T 5.6", "14mm   T 5.6", "20mm   T 5.6", "28mm   T 5.6"]
- }
- */
  
         // AKS
         if compState[1] == 5 {
-            thePrimes =  ["7in On Board Monitor",
-                          "Remote Focus",
+            thePrimes =  ["5 inch Assistant Monitor",
+                          "7 inch Assistant Monitor",
                           "Hand Held Rig",
-                          "Easy Rig 500",
-                          "Easy Rig 600",
-                          "Easy Rig 700",
-                          "Easy Rig 850",
-                          "Arri Follow Focus 4 / Hand Held FF4 (Complete)",
-                          "5 inch Assistant Color Monitor(w/Swing Bracket + 2 Cables)",
-                          "Arri 24Volt Remote Switch (w/Extension Cable)",
-                          "Base Plate Top, Base Plate Bottom (w/Quick Release Plate)",
+                          "Spider Hand Held Rig",
+                          "Element Technica Mantis Hand Held Rig",
+                          "Arri Follow Focus 4",
+                          "Hand Held FF4",
+                          "Arri 24V Rem Switch w/Ext",
+                          "Base Plate Top, Bottom w/Quick Release",
                           "Follow Focus Whips (Short + Long)",
                           "Speed Crank",
                           "24Volt Splitter Box",
                           "Assistant Lens Light",
                           "Arri Eyepiece Heater Cup (w/2 Cables)",
                           "Iris Rods",
-                          "MB14 Mattebox (4 Stage - 2 geared, 2 standard)",
+                          "MB14 Mattebox 4 Stage 2 geared, 2 std)",
                           "MB14 2-Stage Attachment",
-                          "MB18 Mattebox (3 Stage - 1 geared, 2 standard)",
-                          "MB20 Mattebox (4 Stage - 2 geared, 2 standard)",
+                          "MB18 Mattebox 3 Stage 1 geared, 2 std",
+                          "MB20 Mattebox 4 Stage 2 geared, 2 std)",
                           "6x6 Sunshade",
                           "4x5 Sunshade",
-                          "6x6 Arri Clip-on / Hand Held Mattebox (Regular & Angenieux 12-1)",
-                          "4x5 Arri Clip-on / Hand Held Mattebox",
+                          "6x6 Arri Clip-on Hand Held Mattebox",
+                          "4x5 Arri Clip-on Hand Held Mattebox",
                           "4.5” Round Clip-on Sun Shade",
                           "138mm Round Clip-on Sun Shade",
                           "Series 9 Clip-on Sun Shade",
-                          "Spider Hand Held Rig",
-                          "Element Technica Mantis Hand Held Rig",
                           "C-Motion Lens Control System",
                           "Preston FI&Z II System",
                           "Preston FI&Z III System",
@@ -493,9 +662,13 @@ class TableViewArrays {
                           "Cinetape (Digital Range Finder)",
                           "Cinetape Link 1 (Transmitter & Receiver)",
                           "Film Video Sync Box",
-                          "Element Technica “V” Dock (RED) & Base Plate (RED)",
-                          "Element Technica Cheese Stick Handle & Cheese Plate (RED)",
-                          "Element Technica Iso Plate (Shock Mount) RED)"]
+                          "Element Technica “V” Dock & Base Plate",
+                          "Element Technica Cheese Stk Handle & Plate",
+                          "Element Technica Iso Plate Shock Mount",
+                          "Easy Rig 500",
+                          "Easy Rig 600",
+                          "Easy Rig 700",
+                          "Easy Rig 850"]
             
             displayLensArray = thePrimes
         }
@@ -753,8 +926,6 @@ class TableViewArrays {
         }
         return message
     }
-    
-    //MARK: - TODO sort list by: camera, primes, macros, probes, zooms, aks ect
 }
 
 //MARK:- tableview switches

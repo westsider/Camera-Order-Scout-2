@@ -18,11 +18,6 @@ import UIKit
 //                  Filters         Select Item                                         7
 //                  Support         Select Item                                         8
 
-// finish populating the picker AKS, Finder, Filters, Support
-// what happens when a lens is selected? -- how do i populate the lens tableview array?
-
-// helper  enums + functions for the Equipment class
-
 let Quantity = ["1","2","3","4","5","6","7","8","9"]
 
 enum Catagory {
@@ -64,7 +59,7 @@ enum MakerZoom {
 enum MakerAKSFiltersSupport {
     case selectItems
     
-    static let allValues = ["Press"]
+    static let allValues = [""]
 }
 
 enum MakerFinder {
@@ -185,8 +180,9 @@ func setZoomModel(maker: MakerZoom)-> [String] {
                 "Angenieux 48-580","Cooke 40-120", "Cooke 36-200", "Cooke 40-200","Cooke 50-500"]
     }
 }
+
 func setModelEmpty() -> [String] {
-    return ["Add ⬇︎"]
+    return [""]
 }
 
 func setFinderModel(maker: MakerFinder) -> [String] {

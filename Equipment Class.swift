@@ -92,6 +92,22 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .canon)]
                     case 3: //  prevCatagory = Primes and Maker = cooke
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .cooke)]
+                    case 4:
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .vantage)]
+                    case 5: //  prevCatagory = Primes and Maker = leics
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .bauschlomb)]
+                    case 6: //  prevCatagory = Primes and Maker = cannon
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .kowa)]
+                    case 7: //  prevCatagory = Primes and Maker = cooke
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .kineoptic)]
+                    case 8:
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .nikkor)]
+                    case 9: //  prevCatagory = Primes and Maker = leics
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .red)]
+                    case 10: //  prevCatagory = Primes and Maker = cannon
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .camtec)]
+                    case 11: //  prevCatagory = Primes and Maker = cooke
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .anamorphic)]
                     default:
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, ["Array ","out ", "of ", "index"]]
                     }
