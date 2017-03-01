@@ -136,8 +136,8 @@ class GetWeather {
         var theWeather: String = ""
         
         let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 8 // seconds
-        configuration.timeoutIntervalForResource = 8
+        configuration.timeoutIntervalForRequest = 15 // seconds
+        configuration.timeoutIntervalForResource = 15
         let session = URLSession(configuration: configuration)
         
         
@@ -185,7 +185,7 @@ class GetWeather {
                         thisDate = String(forecastDate![i].month) + "/" + String(forecastDate![i].dayte)
                     }
                     // setting one line fore each day
-                    let newLine = thisDate + "  " + element.low + "°-" + element.high + "°  " + element.conditions + "\r\n"
+                    let newLine = thisDate + "\t" + element.low + "°-" + element.high + "°\t" + element.conditions + "\n"
                     dateDetailArray.append(newLine)
                     
                     i = i + 1

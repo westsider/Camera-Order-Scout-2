@@ -43,6 +43,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.company.delegate = self
         self.dateTextInput.delegate = self
         title = "J O B  I N F O"
+        weatherDisplay.text = "\n\n\tEnter a City and State or Country below \n\tto get a 10 day weather forecast."
     }
 
     override func viewWillAppear(_ animated: Bool) {

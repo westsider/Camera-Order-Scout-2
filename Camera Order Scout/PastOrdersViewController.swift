@@ -39,10 +39,9 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
             
             if let textInput = eventNameInput.text {
                 let newEvntUser = EventUserRealm()
-                let id = getLastIdUsed()
                 
                 // get the current event to poplate new event tableview
-                let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
+                let currentEvent = RealmHelp().getLastEvent()
                 
                 // populate tableview equipment from current order
                 for oldRow in currentEvent.tableViewArray {
@@ -64,7 +63,7 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
                 try! realm.write {
                     realm.add(newEvntUser)
                 }
-                saveLastID(ID: newEvntUser.taskID)
+                RealmHelp().saveLastID(ID: newEvntUser.taskID)
             }
         } else {
             eventNameInput.text = "Please enter a name for this order"
@@ -107,9 +106,8 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
         var index = numItems - 1
         if index < 0 {  index = 0   } // catch -1 index if events edited to 1 event
         let thisID = tasks[index].taskID
-        saveLastID(ID: thisID)
+        RealmHelp().saveLastID(ID: thisID)
         eventsTableView.reloadData()
-        
     }
 
     //MARK: - Tap on Table View row returns the Event to main tableview
@@ -122,31 +120,8 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
             id.lastID = tasks[theRow].taskID
             realm.add(id)
         }
-        saveLastID(ID: id.lastID)
-        
+        RealmHelp().saveLastID(ID: id.lastID)
         _ = navigationController?.popToRootViewController(animated: true)
         
-    }
-    
-    //Mark: - save sast id and get last id done differenltly than class object
-    func saveLastID(ID: String) {
-        let id = EventTracking()
-        try! realm.write {
-            id.lastID = ID
-            realm.add(id)
-        }
-    }
-    
-    func getLastIdUsed() -> String {
-
-        let id = realm.objects(EventTracking.self)
-        var lastIDvalue = String()
-        if id.count > 0 {
-            let thelastID = id.last
-            lastIDvalue = (thelastID?.lastID)!
-        } else {
-            lastIDvalue = "\(id)"
-        }
-        return lastIDvalue
     }
 }

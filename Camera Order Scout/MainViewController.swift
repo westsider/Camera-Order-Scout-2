@@ -17,7 +17,7 @@
 //  task: userdefaults used for rubrik
 //  task: network fail
 
-//  refactor: remove duplicate code in Lenses
+//  refactor: remove duplicate code in aks
 //  task: how-to images
 //  task: add images to app walk through
 //  task: write read me - add from xcode
@@ -28,6 +28,7 @@
 //  task: Helvetica for ui
 //  task: blue grad and tabs for weather
 //  task: remove delete from row 0
+// task: new event save = return to main with that event loaded to save confusion
 
 import Foundation
 import UIKit
