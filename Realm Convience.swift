@@ -62,7 +62,20 @@ class RealmHelp {
             print("\nSorted Event:\n\(sortedEvent)\n")
         }
         print("\nOriginal Event:\n\(thisEvent)\n")
+    }
+    
+    func getLastIdUsed() -> String {
+
+        let id = realm.objects(EventTracking.self)
         
+        var lastIDvalue = String()
+        if id.count > 0 {
+            let thelastID = id.last
+            lastIDvalue = (thelastID?.lastID)!
+        } else {
+            lastIDvalue = "\(id)"
+        }
+        return lastIDvalue
     }
 }
 

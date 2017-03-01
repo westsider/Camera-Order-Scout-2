@@ -47,9 +47,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
 
-        let id = getLastIdUsed()
-        let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
-        // Populate vc with saved event / user
+        let currentEvent = RealmHelp().getLastEvent()
         citySearch.text     = currentEvent.city
         userName.text       = currentEvent.userName
         production.text     = currentEvent.production
@@ -58,10 +56,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func updateAction(_ sender: Any) {
-
-        let id = getLastIdUsed()
         
-        let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
+        let currentEvent = RealmHelp().getLastEvent()
         
             try! realm.write {
                 
@@ -94,10 +90,9 @@ class UserViewController: UIViewController, UITextFieldDelegate {
    
     //MARK: - Search Weather
     @IBAction func searchWeather(_ sender: Any) {
+        
         weatherDisplay.text = "Launching Search..."
-        
         activityDial.startAnimating()
-        
         let searchResult  =  CurrentLocation.sharedInstance.parseCurrentLocation(input: citySearch.text!)
         weatherDisplay.text = searchResult
         
@@ -110,10 +105,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             }
             
         }  else {
-            
             self.weatherDisplay.text = searchResult
             self.activityDial.stopAnimating()
-            
         }
     }
     
@@ -141,28 +134,5 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         
         dateTextInput.text = dateFormatter.string(from: sender.date)
         
-    }
-    
-    func saveLastID(ID: String) {
-        // save last used event id
-        let id = EventTracking()
-        try! realm.write {
-            id.lastID = ID
-            realm.add(id)
-        }
-    }
-    
-    func getLastIdUsed() -> String {
-        //get lst id used
-        let id = realm.objects(EventTracking.self)
-
-        var lastIDvalue = String()
-        if id.count > 0 {
-            let thelastID = id.last
-            lastIDvalue = (thelastID?.lastID)!
-        } else {
-            lastIDvalue = "\(id)"
-        }
-        return lastIDvalue
     }
 }

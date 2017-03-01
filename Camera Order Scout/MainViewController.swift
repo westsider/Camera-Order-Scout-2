@@ -4,13 +4,20 @@
 //
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
-//
+/*  feat: a new feature
+ fix: a bug fix
+ docs: changes to documentation
+ style: formatting, missing semi colons, etc; no code change
+ refactor: refactoring production code
+ test: adding tests, refactoring test; no production code change
+ chore: updating build tasks, package manager configs, etc; no production code change   */
+
 //  style: remove un needed comments
 //  style: rename model aks
 //  task: userdefaults used for rubrik
 //  task: network fail
 
-//  style: remove duplicate code in Main
+//  refactor: remove duplicate code in Users
 //  task: how-to images
 //  task: add images to app walk through
 //  task: write read me - add from xcode
