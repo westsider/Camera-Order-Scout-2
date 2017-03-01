@@ -16,19 +16,22 @@
 //  style: rename model aks
 //  task: userdefaults used for rubrik
 //  task: network fail
+//  task: Helvetica for ui
 
-//  refactor: remove duplicate code in aks
+//  task: remove delete from row 0
+//  task: new event save = return to main with that event loaded to save confusion
+//  task: push up user when keyboard apperas
+
+//  task: write read me - add from xcode
 //  task: how-to images
 //  task: add images to app walk through
-//  task: write read me - add from xcode
-//  task: push up user when keyboard apperas
+
+//  later
 //  task: add swipe effect to how-to
 //  task: add panavision lenses, check ASC magazine for others
-//  task: improve weather UI
-//  task: Helvetica for ui
-//  task: blue grad and tabs for weather
-//  task: remove delete from row 0
-// task: new event save = return to main with that event loaded to save confusion
+
+
+
 
 import Foundation
 import UIKit
@@ -166,7 +169,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         let pickerLabel = UILabel()
         pickerLabel.textColor = UIColor.black
         pickerLabel.text = pickerEquipment.pickerArray[component][row]
-        pickerLabel.font = UIFont(name: "Helvetica", size: 18)
+        pickerLabel.font = UIFont(name: "Helvetica Neue", size: 18)
         pickerLabel.textAlignment = NSTextAlignment.center
         pickerLabel.adjustsFontSizeToFitWidth = true
         return pickerLabel

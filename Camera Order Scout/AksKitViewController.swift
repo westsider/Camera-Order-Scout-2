@@ -197,7 +197,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         // 8 support
         if pickerEquipment.pickerState[1] == 8 {
-            titleDescription.text = "Switch on support items needed"
+            titleDescription.text = "Switch on support needed"
         }
     }
     
