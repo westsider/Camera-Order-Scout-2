@@ -104,7 +104,7 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // 1 primes
         if pickerEquipment.pickerState[1] <= 3 {
             print("sent form primes")
-            title = "Select Primes"
+            title = "Select Lenses"
             titleDescription.text = "Switch off lenses not needed"
             addButton.isHidden = true
         }

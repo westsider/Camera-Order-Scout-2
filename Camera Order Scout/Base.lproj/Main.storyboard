@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="width" constant="116" id="qtn-Z7-awl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Save / Load">
+                                <state key="normal" title="Projects">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -132,7 +132,7 @@
                                     <constraint firstAttribute="width" constant="28" id="lpT-1G-oJF"/>
                                     <constraint firstAttribute="height" constant="29" id="rk0-C8-Nm5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="i">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -215,7 +215,7 @@
                                 <color key="textColor" red="0.3242165744304657" green="0.41891440749168396" blue="0.92950725555419922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prior Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8q-uG-e2H">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8q-uG-e2H">
                                 <rect key="frame" x="16" y="68" width="227" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1TS-r1-SKz"/>
@@ -230,7 +230,7 @@
                                     <constraint firstAttribute="width" constant="100" id="UIu-9o-cvf"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter a new order name and press save. Tap on an older order to load it." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="619-oD-7qm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter a new project name and press save. Tap on an older project to load it." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="619-oD-7qm">
                                 <rect key="frame" x="16" y="92" width="227" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

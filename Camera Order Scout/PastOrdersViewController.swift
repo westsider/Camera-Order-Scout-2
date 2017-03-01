@@ -24,11 +24,11 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
     //MARK: - Lifecycle Events
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "S A V E / L O A D"
+        title = "Projects"
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         tasks = realm.objects(EventUserRealm.self)  // for tableview
-        eventNameInput.text = "Name Your New Job"
+        eventNameInput.text = "Name Your New Project"
     }
     
     //MARK: - Save Event
@@ -69,7 +69,8 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
             eventNameInput.text = "Please enter a name for this order"
         }
         
-        eventsTableView.reloadData()
+        _ = navigationController?.popToRootViewController(animated: true)
+        //eventsTableView.reloadData()
     }
 
     //MARK:- Set up Table View
@@ -79,7 +80,7 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let task =  "\(tasks[indexPath.row].eventName) for \(tasks[indexPath.row].userName)"
+        let task =  "\(tasks[indexPath.row].eventName)"
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
         

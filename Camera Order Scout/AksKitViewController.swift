@@ -190,14 +190,17 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // 5 aks
         if pickerEquipment.pickerState[1] == 5 {
             titleDescription.text = "Switch on AKS items needed"
+            title = "Accessories"
         }
         // 7 filters
         if pickerEquipment.pickerState[1] == 7 {
             titleDescription.text = "Switch on filters needed"
+            title = "Filters"
         }
         // 8 support
         if pickerEquipment.pickerState[1] == 8 {
             titleDescription.text = "Switch on support needed"
+            title = "Support"
         }
     }
     
