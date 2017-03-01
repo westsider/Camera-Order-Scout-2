@@ -17,8 +17,8 @@
 //  task: userdefaults used for rubrik
 //  task: network fail
 //  task: Helvetica for ui
-
 //  task: remove delete from row 0
+
 //  task: new event save = return to main with that event loaded to save confusion
 //  task: push up user when keyboard apperas
 
@@ -240,7 +240,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete && indexPath.row != 0 {
             let currentEvent = RealmHelp().getLastEvent()
             
             try! currentEvent.realm!.write {
