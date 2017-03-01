@@ -59,9 +59,9 @@ class RealmHelp {
             for items in sorted {
                 sortedEvent.tableViewArray.append(items)
             }
-            print("\nSorted Event:\n\(sortedEvent)\n")
+            //  print("\nSorted Event:\n\(sortedEvent)\n")
         }
-        print("\nOriginal Event:\n\(thisEvent)\n")
+        //  print("\nOriginal Event:\n\(thisEvent)\n")
     }
     
     func getLastIdUsed() -> String {

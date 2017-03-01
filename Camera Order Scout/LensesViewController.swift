@@ -64,9 +64,7 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             newRow.catagory = pickerEquipment.pickerState[1]
         }
         
-        //let id = getLastIdUsed()
-        
-        let currentEvent = RealmHelp().getLastEvent() //realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
+        let currentEvent = RealmHelp().getLastEvent()
         
         try! realm.write {
             currentEvent.tableViewArray.append(newRow)
@@ -85,9 +83,10 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.lensLabel?.text =   displayLensArray[indexPath.row]
         cell.lensSwitch.tag = indexPath.row
-        cell.lensSwitch.restorationIdentifier = displayLensArray[indexPath.row] // lensKitArray[indexPath.row]
+        cell.lensSwitch.restorationIdentifier = displayLensArray[indexPath.row]
         cell.lensSwitch.addTarget(self, action: #selector(switchTriggered(sender:)), for: UIControlEvents.valueChanged)
         cell.lensLabel.adjustsFontSizeToFitWidth = true
+        cell.lensSwitch.isOn = switchPos[indexPath.row] //   remember swich position durring scroll
         return cell
     }
     
@@ -102,7 +101,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func setUpUI() {
-        
         // 1 primes
         if pickerEquipment.pickerState[1] == 1 {
             print("sent form primes")
@@ -111,52 +109,12 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             addButton.isHidden = true
         }
         
-        // 5 aks
-        if pickerEquipment.pickerState[1] == 5 {
-            print("sent form AKS")
-            title = "Select AKS"
-            titleDescription.text = "Switch On items needed"
-            switchOn = false
-
-            let realm = try! Realm()
-            
-            var todoList: Results<AksItem> {
-                get {
-                    return realm.objects(AksItem.self)
-                }
-            }
-        }
-        
-        // 7 filters
-        if pickerEquipment.pickerState[1] == 7 {
-            print("sent form Filters")
-            title = "Select Filters"
-            titleDescription.text = "Switch On filters needed"
-            switchOn = false
-            
-            let realm = try! Realm()
-            
-            var todoList: Results<FilterItem> {
-                get {
-                    return realm.objects(FilterItem.self)
-                }
-            }
-        }
-        
-        // 8 support
-        if pickerEquipment.pickerState[1] == 8 {
-            print("sent form Support")
-            title = "Select Support"
-            titleDescription.text = "Switch On items needed"
-            switchOn = false
-            
-            let realm = try! Realm()
-            
-            var todoList: Results<SupportItem> {
-                get {
-                    return realm.objects(SupportItem.self)
-                }
-            }
+        // array to persiste switch positions durring deque of cells
+        let i = displayLensArray.count
+        var c = 0
+        while c < i {
+            switchPos.append(switchOn) // set switch pos from prior vc - off for aks
+            c += 1
         }
     }
 }
