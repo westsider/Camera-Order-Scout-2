@@ -33,6 +33,7 @@
 		0DE208DB1E47E13A00619AEF /* TableView Array Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE208DA1E47E13A00619AEF /* TableView Array Class.swift */; };
 		0DE208DF1E48097900619AEF /* LensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE208DE1E48097900619AEF /* LensesViewController.swift */; };
 		0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */; };
+		0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF026A81E672FDB00C06196 /* Realm Convience.swift */; };
 		0DFC00D51E65F5C800A08D2B /* TableView Switches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		0DE208DA1E47E13A00619AEF /* TableView Array Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView Array Class.swift"; sourceTree = "<group>"; };
 		0DE208DE1E48097900619AEF /* LensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensesViewController.swift; sourceTree = "<group>"; };
 		0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewArrayRealm.swift; sourceTree = "<group>"; };
+		0DF026A81E672FDB00C06196 /* Realm Convience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm Convience.swift"; sourceTree = "<group>"; };
 		0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView Switches.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */,
 				0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */,
 				0D1AABB31E6283100097B64A /* Unique Kits.swift */,
+				0DF026A81E672FDB00C06196 /* Realm Convience.swift */,
 				0D285B6D1E5794FD004149CF /* Equipment */,
 				0D5AC2BF1E56804D008CBC63 /* Weather Objects */,
 				0DBCF75C1E496BEB00205017 /* DatePicker.swift */,
@@ -287,6 +290,7 @@
 				0DE208DF1E48097900619AEF /* LensesViewController.swift in Sources */,
 				0DBCF7571E496B8A00205017 /* Weather API.swift in Sources */,
 				0D5AC2BE1E568008008CBC63 /* Event User Realm Object.swift in Sources */,
+				0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */,
 				0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */,
 				0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */,
 				0D63936F1E46D8FC003055DB /* Equipment Class.swift in Sources */,

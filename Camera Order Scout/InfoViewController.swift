@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class InfoViewController: UIViewController {
 
@@ -37,6 +38,12 @@ class InfoViewController: UIViewController {
         
         pageScroll.pageIndicatorTintColor = UIColor.lightGray
 
+        let firstImageView = UIImageView(image: UIImage(named: "test 1"))
+        firstImageView.frame = view.frame
+        view.addSubview(firstImageView)
+        
+        imageFadeIn(imageView: firstImageView)
+        
     }
 
     @IBAction func gotItAction(_ sender: Any) {
@@ -81,6 +88,24 @@ class InfoViewController: UIViewController {
             image.image = UIImage(named: "test 4")
              pageScroll.currentPage = 0
         }
+       
+        
+    }
+    
+    func imageFadeIn(imageView: UIImageView) {
+        
+        let secondImageView = UIImageView(image: UIImage(named: "test 2"))
+        secondImageView.frame = view.frame
+        secondImageView.alpha = 0.0
+        
+        view.insertSubview(secondImageView, aboveSubview: imageView)
+        
+        UIView.animate(withDuration: 2.0, delay: 2.0, options: .curveEaseOut, animations: {
+            secondImageView.alpha = 1.0
+        }, completion: {_ in
+            imageView.image = secondImageView.image
+            secondImageView.removeFromSuperview()
+        })
         
     }
     
@@ -92,3 +117,5 @@ class InfoViewController: UIViewController {
         }
     }
 }
+
+

@@ -10,10 +10,20 @@
 //  task: userdefaults used for rubrik
 //  task: network fail
 
-//  style: remove duplicate code
+//  style: remove duplicate code in Main
 //  task: how-to images
-//  task: add images to share
+//  task: add images to app walk through
 //  task: write read me - add from xcode
+//  task: push up user when keyboard apperas
+//  task: add swipe effect to how-to
+//  task: add panavision lenses, check ASC magazine for others
+//  task: improve weather UI
+//  task: Helvetica for ui
+//  task: blue grad and tabs for weather
+//  task: remove delete from row 0
+
+
+
 
 import Foundation
 import UIKit
@@ -41,6 +51,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     override func viewWillAppear(_ animated: Bool) {
         fillDefaultTableView()
         myTableView.reloadData()
+        ///let presntingViewSnap = MainTableViewController.view.snapshot(afterscreenupdates: false)
     }
  
     override func viewDidLoad() {
@@ -56,8 +67,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     //MARK: - Add Action
     @IBAction func addAction(_ sender: Any) {
         
-        // if 1 new camera or zoom 4
-        if pickerEquipment.pickerState[1] == 0  && pickerEquipment.pickerState[0] == 0 {
+        //  camera, zoom or finder just add
+        if pickerEquipment.pickerState[1] == 0 ||  pickerEquipment.pickerState[1] == 4 ||  pickerEquipment.pickerState[1] == 6  {
             //  create tableview row realm objects
             let newRow = TableViewRow()
             newRow.icon = pickerEquipment.pickerSelection[1];
@@ -65,82 +76,30 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             newRow.detail = pickerEquipment.pickerSelection[2] + " " +  pickerEquipment.pickerSelection[3];
             newRow.catagory = pickerEquipment.pickerState[1] // added for sort
             
-            let currentEvent = getLastEvent()
+            let currentEvent = RealmHelp().getLastEvent()   //
             
             try! realm.write {
                 currentEvent.tableViewArray.append(newRow)
             }
-            sortRealmEvent()
-            myTableView.reloadData()
-        } else         // if 2+ new cameras
-        if pickerEquipment.pickerState[1] == 0  && pickerEquipment.pickerState[0] > 0 {
-            //  create tableview row realm objects
-            let newRow = TableViewRow()
-            newRow.icon = pickerEquipment.pickerSelection[1];
-            newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1] + "s";
-            newRow.detail = pickerEquipment.pickerSelection[2] + " " +  pickerEquipment.pickerSelection[3];
-            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-            let currentEvent = getLastEvent()
-            
-            try! realm.write {
-                currentEvent.tableViewArray.append(newRow)
-            }
-            sortRealmEvent()
+            RealmHelp().sortRealmEvent()
             myTableView.reloadData()
         }
-        // if a lens segue to lenses
+
+        // if a prime segue to primes using picker equipment objects
         if pickerEquipment.pickerState[1] > 0 && pickerEquipment.pickerState[1] <= 3  {
             tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState) // populate var for the next controller
             let myVc = storyboard?.instantiateViewController(withIdentifier: "lensViewController") as! LensesViewController
-            myVc.thePrimes = tableViewArrays.thePrimes   //TableViewArrays().setPrimesKit(compState: pickerEquipment.pickerState)
+            myVc.thePrimes = tableViewArrays.thePrimes
             myVc.displayLensArray = tableViewArrays.displayLensArray
-            myVc.pickerEquipment = pickerEquipment  // push picker login to next vc
+            myVc.pickerEquipment = pickerEquipment
             navigationController?.pushViewController(myVc, animated: true)
         }
         
-        // if a zoom lens, just add
-        if pickerEquipment.pickerState[1] == 4 {
-            //  create tableview row realm objects
-            let newRow = TableViewRow()
-            newRow.icon = pickerEquipment.pickerSelection[1];
-            newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1];
-            newRow.detail = pickerEquipment.pickerSelection[2] + " " +  pickerEquipment.pickerSelection[3];
-            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-            let currentEvent = getLastEvent()
-            sortRealmEvent()
-            try! realm.write {
-                currentEvent.tableViewArray.append(newRow)
-            }
-            
-            myTableView.reloadData()
-        }
-        
-        // if a finder, just add
-        if pickerEquipment.pickerState[1] == 6 {
-            //  create tableview row realm objects
-            let newRow = TableViewRow()
-            newRow.icon = pickerEquipment.pickerSelection[1];
-            newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1];
-            newRow.detail = pickerEquipment.pickerSelection[2] + " " +  "Finder";
-            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-            let currentEvent = getLastEvent()
-            sortRealmEvent()
-            try! realm.write {
-                currentEvent.tableViewArray.append(newRow)
-            }
-            myTableView.reloadData()
-        }
-        
-        // segue to aks[5] filters[7] support[8]
+        // segue to aks, filters or support using realm objects
         if pickerEquipment.pickerState[1] == 5 || pickerEquipment.pickerState[1] > 6 {
             tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState) // populate the next controller?
-            tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState)
             let myVc = storyboard?.instantiateViewController(withIdentifier: "aksViewController") as! AksKitViewController
-            //myVc.thePrimes = tableViewArrays.thePrimes
-            //myVc.displayLensArray = tableViewArrays.displayLensArray
-            myVc.pickerEquipment = pickerEquipment  // push picker login to next vc
+            myVc.pickerEquipment = pickerEquipment
             navigationController?.pushViewController(myVc, animated: true)
         }
     }
@@ -148,7 +107,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     //MARK: - Share Camera Order
     @IBAction func shareAction(_ sender: Any) {
         
-        let thisEvent = getLastEvent()
+        let thisEvent = RealmHelp().getLastEvent()
         
         var messageArray = [String]()
         
@@ -180,8 +139,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return   pickerEquipment.pickerArray[component].count //pickerEquipment[component].count
-        
+        return   pickerEquipment.pickerArray[component].count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -193,10 +151,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         dontReloadOnComp0or3(component: component, row: row, lastCatagory: pickerEquipment.prevCatagory)
         reloadComponentsAndText(component: component, row: row)
         zeroThePicker(component: component, row: row)
-        
         // set pickerSelected property with picker array current selection
         pickerEquipment.pickerState = [ myPicker.selectedRow(inComponent: 0), myPicker.selectedRow(inComponent: 1), myPicker.selectedRow(inComponent: 2), myPicker.selectedRow(inComponent: 3) ]
-
         updatePickerSelection()
     }
     
@@ -205,7 +161,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         let pickerLabel = UILabel()
         pickerLabel.textColor = UIColor.black
         pickerLabel.text = pickerEquipment.pickerArray[component][row]
-        pickerLabel.font = UIFont(name: "Helvetica", size: 18) // In this use your custom font
+        pickerLabel.font = UIFont(name: "Helvetica", size: 18)
         pickerLabel.textAlignment = NSTextAlignment.center
         pickerLabel.adjustsFontSizeToFitWidth = true
         return pickerLabel
@@ -264,13 +220,9 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ListTableViewCell
         let iconString = tableviewEvent.tableViewArray[indexPath.row].icon
-        
         cell.imageTableViewCell.image = tableViewArrays.setTableViewIcon(title: iconString)
-        
         cell.titleTableView?.text = tableviewEvent.tableViewArray[indexPath.row].title
-
         cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
-        
         return cell
     }
     
@@ -281,7 +233,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let currentEvent = getLastEvent()
+            let currentEvent = RealmHelp().getLastEvent()
             
             try! currentEvent.realm!.write {
                 let row = currentEvent.tableViewArray[indexPath.row]
@@ -335,7 +287,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
                 realm.add(defaultEventUsers)
             }
             
-            saveLastID(ID: defaultEventUsers.taskID)
+            //saveLastID(ID: defaultEventUsers.taskID)
+            RealmHelp().saveLastID(ID: defaultEventUsers.taskID)
             
             tableviewEvent = defaultEventUsers
             
@@ -344,58 +297,9 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         } else {
           
             //Mark: - we have a past user and will get last id used
-            let currentEvent = getLastEvent()
+            let currentEvent = RealmHelp().getLastEvent()
             tableviewEvent = currentEvent   // populate tableview
-            sortRealmEvent()
-        }
-    }
-    
-    func saveLastID(ID: String) {
-
-        var newID = false
-        let id: EventTracking
-        if let existingID = realm.objects(EventTracking.self).first {
-            id = existingID
-        } else {
-            newID = true
-            id = EventTracking()
-        }
-
-        try! realm.write {
-            if newID {
-                realm.add(id)
-            }
-            id.lastID = ID
-        }
-    }
-    
-    func getLastEvent() -> EventUserRealm {
-        
-        let allIds = realm.objects(EventTracking.self)
-        let allIdCount = allIds.count
-        var index = allIdCount - 1
-        if index < 0 { index = 0 }  // catch edited events causing index -1
-        let id = realm.objects(EventTracking.self)[index].lastID
-        let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
-        return currentEvent
-    }
-    
-    /// sort latest realm tableview event by catagory
-    func sortRealmEvent() {
-        
-        let thisEvent = getLastEvent()
-        
-        let storageArea = thisEvent.tableViewArray
-        
-        let sorted = Array(storageArea.sorted(byKeyPath: "catagory"))
-        
-        try? realm.write {
-            let sortedEvent = getLastEvent()
-            sortedEvent.tableViewArray.removeAll()
-            
-            for items in sorted {
-                sortedEvent.tableViewArray.append(items)
-            }
+            RealmHelp().sortRealmEvent() //sortRealmEvent()
         }
     }
 }

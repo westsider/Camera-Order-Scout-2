@@ -23,3 +23,4 @@ class EventUserRealm: Object {
     
     var tableViewArray = List<TableViewRow>()
 }
+

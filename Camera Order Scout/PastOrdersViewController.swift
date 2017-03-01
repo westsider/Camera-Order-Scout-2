@@ -50,6 +50,7 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
                     newRow.detail = oldRow.detail
                     newRow.title = oldRow.title
                     newRow.icon = oldRow.icon
+                    newRow.catagory = oldRow.catagory
                     newEvntUser.tableViewArray.append(newRow)
                 }
                 // update all details
