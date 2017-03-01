@@ -17,7 +17,7 @@
 //  task: userdefaults used for rubrik
 //  task: network fail
 
-//  refactor: remove duplicate code in Users
+//  refactor: remove duplicate code in Lenses
 //  task: how-to images
 //  task: add images to app walk through
 //  task: write read me - add from xcode
@@ -28,9 +28,6 @@
 //  task: Helvetica for ui
 //  task: blue grad and tabs for weather
 //  task: remove delete from row 0
-
-
-
 
 import Foundation
 import UIKit

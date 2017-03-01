@@ -64,14 +64,14 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             newRow.catagory = pickerEquipment.pickerState[1]
         }
         
-        let id = getLastIdUsed()
+        //let id = getLastIdUsed()
         
-        let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
+        let currentEvent = RealmHelp().getLastEvent() //realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
         
         try! realm.write {
             currentEvent.tableViewArray.append(newRow)
         }
-        sortRealmEvent()
+        RealmHelp().sortRealmEvent()    //sortRealmEvent()
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
@@ -99,28 +99,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("Lens Switch Index: \(index) For: \(content) Is On: \(sender.isOn)")
         tableViewSwitches.updateArray(index: index, switchPos: sender.isOn)
         switchPos[sender.tag] = sender.isOn
-    }
-    
-    func saveLastID(ID: String) {
-
-        let id = EventTracking()
-        try! realm.write {
-            id.lastID = ID
-            realm.add(id)
-        }
-    }
-    
-    func getLastIdUsed() -> String {
-
-        let id = realm.objects(EventTracking.self)
-        var lastIDvalue = String()
-        if id.count > 0 {
-            let thelastID = id.last
-            lastIDvalue = (thelastID?.lastID)!
-        } else {
-            lastIDvalue = "\(id)"
-        }
-        return lastIDvalue
     }
     
     func setUpUI() {
@@ -178,36 +156,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 get {
                     return realm.objects(SupportItem.self)
                 }
-            }
-        }
-    }
-    
-    func getLastEvent() -> EventUserRealm {
-        
-        let allIds = realm.objects(EventTracking.self)
-        let allIdCount = allIds.count
-        var index = allIdCount - 1
-        if index < 0 { index = 0 }  // catch edited events causing index -1
-        let id = realm.objects(EventTracking.self)[index].lastID
-        let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
-        return currentEvent
-    }
-    
-    /// sort latest realm event by catagory
-    func sortRealmEvent() {
-        
-        let thisEvent = getLastEvent()
-        
-        let storageArea = thisEvent.tableViewArray
-        
-        let sorted = Array(storageArea.sorted(byKeyPath: "catagory"))
-        
-        try? realm.write {
-            let sortedEvent = getLastEvent()
-            sortedEvent.tableViewArray.removeAll()
-            
-            for items in sorted {
-                sortedEvent.tableViewArray.append(items)
             }
         }
     }
