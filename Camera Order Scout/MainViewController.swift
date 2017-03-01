@@ -8,9 +8,9 @@
 //  style: remove un needed comments
 //  style: rename model aks
 //  task: userdefaults used for rubrik
+//  task: network fail
 
 //  style: remove duplicate code
-//  task: network fail
 //  task: how-to images
 //  task: add images to share
 //  task: write read me - add from xcode

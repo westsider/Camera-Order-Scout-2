@@ -135,7 +135,26 @@ class GetWeather {
         
         var theWeather: String = ""
         
-        let task = URLSession.shared.dataTask(with: CurrentLocation.sharedInstance.forcastURL! as URL) {(data, response, error) in
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 8 // seconds
+        configuration.timeoutIntervalForResource = 8
+        let session = URLSession(configuration: configuration)
+        
+        
+        let task = session.dataTask(with: CurrentLocation.sharedInstance.forcastURL! as URL) {(data, response, error) in
+            
+            // Parse the data error
+            guard error == nil else {
+                //print("error contacting wunderground: \n\(error!.localizedDescription)")
+                
+                DispatchQueue.main.async(execute: {
+                    // create text block for error
+                    let errorString = "\n⚠️\n\nWe had a problem contacting\n weather at wunderground. \n\n" + "\(error!.localizedDescription) "
+                    
+                    completion(errorString)
+                })
+                return
+            }
             
             let json: [String: Any]?
             
@@ -144,6 +163,7 @@ class GetWeather {
                 
             } catch {
                 json = nil
+                print("json = nil")
             }
             // weather detail object
             if  let forecastDetail = ForecastDetail.forecastDetialArray(json: json!) {
@@ -180,6 +200,14 @@ class GetWeather {
                     
                     completion("\(theWeather)")
                     
+                })
+            } else {
+                //print("\n⚠️\n\nYour city was not found on \nWunderground Weather")
+                DispatchQueue.main.async(execute: {
+                    // create text block for error
+                    let errorString = "\n⚠️\n\nYour city was not found on \nWunderground Weather"
+                    
+                    completion(errorString)
                 })
             }
         }
