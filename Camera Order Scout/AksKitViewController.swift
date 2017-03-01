@@ -39,77 +39,22 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: - Update main tableview
     @IBAction func updateAction(_ sender: Any) {
         
-        finalizeKitArray()
-
+        returnedString = UniqueKits().finalizeKitArray(pickerRow: pickerRow) //finalizeKitArray()
         let newRow = TableViewRow()
         newRow.icon = pickerEquipment.pickerSelection[1]
         newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1]
         newRow.detail = returnedString
         newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-        newRow.catagory = pickerEquipment.pickerState[1] // added for sort
-        let id = getLastIdUsed()
-        
-        let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
+        let currentEvent = RealmHelp().getLastEvent()
         
         try! realm.write {
             currentEvent.tableViewArray.append(newRow)
         }
         
-        sortRealmEvent()
+        RealmHelp().sortRealmEvent()
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
-    func finalizeKitArray() {   // in segue back to main VC
-        
-        if pickerRow == 5 {  // if aks
-            
-            var todoList: Results<AksItem> {
-                get {
-                    return realm.objects(AksItem.self)
-                }
-            }
-            for items in todoList {
-                
-                if items.status == true {
-                 returnedString += items.detail + ", "
-                }
-            }
-        }
-        
-        if pickerRow == 7 {  // if FilterItem
-            
-            var todoList: Results<FilterItem> {
-                get {
-                    return realm.objects(FilterItem.self)
-                }
-            }
-            for items in todoList {
-                if items.status == true {
-                    returnedString += items.detail + ", "
-                }
-            }
-        }
-        
-        if pickerRow == 8 {  // if SupportItem
-            
-            var todoList: Results<SupportItem> {
-                get {
-                    return realm.objects(SupportItem.self)
-                }
-            }
-            for items in todoList {
-                if items.status == true {
-                    returnedString += items.detail + ", "
-                }
-            }
-        }
-        // if list isnt empty remove last comma
-        if returnedString != "" {
-            let endIndex = returnedString.index(returnedString.endIndex, offsetBy: -2)
-            let truncated = returnedString.substring(to: endIndex)
-            returnedString = truncated
-        }
-    }
 
     //MARK: - Add new items to kit
     @IBAction func addNewItemsAction(_ sender: Any) {
@@ -141,19 +86,17 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     // MARK: - Set up tableview  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return getAksLabelText(state: pickerRow, row: 0).count
+        return UniqueKits().getAksLabelText(state: pickerRow, row: 0).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AKSTableViewCell
-        
-        cell.aksLabel?.text = getAksLabelText(state: pickerRow, row: indexPath.row).detail
-        
-        cell.aksSwitch.isOn = getAksLabelText(state: pickerRow, row: indexPath.row).onOff
-        
+        cell.aksLabel?.text = UniqueKits().getAksLabelText(state: pickerRow, row: indexPath.row).detail
+        cell.aksSwitch.isOn = UniqueKits().getAksLabelText(state: pickerRow, row: indexPath.row).onOff
         // Send switch state and indexpath ro to this func?
         cell.aksSwitch.tag = indexPath.row
-        cell.aksSwitch.restorationIdentifier = getAksLabelText(state: pickerRow, row: indexPath.row).detail
+        cell.aksSwitch.restorationIdentifier = UniqueKits().getAksLabelText(state: pickerRow, row: indexPath.row).detail
         cell.aksSwitch.addTarget(self, action: #selector(switchTriggered(sender:)), for: UIControlEvents.valueChanged)
         cell.aksLabel.adjustsFontSizeToFitWidth = true
         return cell
@@ -204,56 +147,8 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-    
-    // modify realm object called by picker state
-    func getAksLabelText(state: Int, row: Int) -> (detail: String, onOff: Bool, count: Int) {
-        var labelString = ""
-        var size = 1
-        var isSwitchOn = false
-        
-        if state == 5 { // if aks
-            
-            var todoList: Results<AksItem> {
-                get {
-                    return realm.objects(AksItem.self)
-                }
-            }
-            
-            size = todoList.count
-            labelString =  todoList[row].detail
-            isSwitchOn = todoList[row].status
-        }
-        
-        if state == 7 { // if FilterItem
-            
-            var todoList: Results<FilterItem> {
-                get {
-                    return realm.objects(FilterItem.self)
-                }
-            }
-            
-            size = todoList.count
-            labelString =  todoList[row].detail
-            isSwitchOn = todoList[row].status
-        }
-        
-        if state == 8 { // if SupportItem
-            
-            var todoList: Results<SupportItem> {
-                get {
-                    return realm.objects(SupportItem.self)
-                }
-            }
-            
-            size = todoList.count
-            labelString =  todoList[row].detail
-            isSwitchOn = todoList[row].status
-        }
-       
-        return (labelString, isSwitchOn, size)
-    }
  
-    // modify realm object called by picker state
+    // modify realm object called @objc @objc by picker state
     func updateRealm(state: Int, item: String, onOff: Bool)  {
         
         if state == 5 { // if aks
@@ -263,7 +158,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             try! realm.write({
                 realm.add(todoItem)
-                self.tableView.insertRows(at: [IndexPath.init(row: self.getAksLabelText(state: self.pickerRow, row: 0).count-1, section: 0)], with: .automatic)
+                self.tableView.insertRows(at: [IndexPath.init(row: UniqueKits().getAksLabelText(state: self.pickerRow, row: 0).count-1, section: 0)], with: .automatic)
             })
         }
         
@@ -274,7 +169,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             try! realm.write({
                 realm.add(todoItem)
-                self.tableView.insertRows(at: [IndexPath.init(row: self.getAksLabelText(state: self.pickerRow, row: 0).count-1, section: 0)], with: .automatic)
+                self.tableView.insertRows(at: [IndexPath.init(row: UniqueKits().getAksLabelText(state: self.pickerRow, row: 0).count-1, section: 0)], with: .automatic)
             })
         }
         
@@ -285,7 +180,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             try! realm.write({
                 realm.add(todoItem)
-                self.tableView.insertRows(at: [IndexPath.init(row: self.getAksLabelText(state: self.pickerRow, row: 0).count-1, section: 0)], with: .automatic)
+                self.tableView.insertRows(at: [IndexPath.init(row: UniqueKits().getAksLabelText(state: self.pickerRow, row: 0).count-1, section: 0)], with: .automatic)
             })
         }
     }
@@ -294,63 +189,16 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func setUpUI() {
         // 5 aks
         if pickerEquipment.pickerState[1] == 5 {
-            print("sent form AKS")
-            title = "Select AKS"
             titleDescription.text = "Switch on AKS items needed"
         }
         // 7 filters
         if pickerEquipment.pickerState[1] == 7 {
-            print("sent form Filters")
-            title = "Select Filters"
             titleDescription.text = "Switch on filters needed"
         }
         // 8 support
         if pickerEquipment.pickerState[1] == 8 {
-            print("sent form Support")
-            title = "Select Support"
             titleDescription.text = "Switch on support items needed"
         }
     }
     
-    func getLastIdUsed() -> String {
-        //get lst id used
-        let id = realm.objects(EventTracking.self)
-        var lastIDvalue = String()
-        if id.count > 0 {
-            let thelastID = id.last
-            lastIDvalue = (thelastID?.lastID)!
-        } else {
-            lastIDvalue = "\(id)"
-        }
-        return lastIDvalue
-    }
-    
-    func getLastEvent() -> EventUserRealm {
-        
-        let allIds = realm.objects(EventTracking.self)
-        let allIdCount = allIds.count
-        var index = allIdCount - 1
-        if index < 0 { index = 0 }  // catch edited events causing index -1
-        let id = realm.objects(EventTracking.self)[index].lastID
-        let currentEvent = realm.objects(EventUserRealm.self).filter("taskID == %@", id).first!
-        return currentEvent
-    }
-    
-    func sortRealmEvent() {
-        
-        let thisEvent = getLastEvent()
-        
-        let storageArea = thisEvent.tableViewArray
-        
-        let sorted = Array(storageArea.sorted(byKeyPath: "catagory"))
-        
-        try? realm.write {
-            let sortedEvent = getLastEvent()
-            sortedEvent.tableViewArray.removeAll()
-            
-            for items in sorted {
-                sortedEvent.tableViewArray.append(items)
-            }
-        }
-    }
 }
