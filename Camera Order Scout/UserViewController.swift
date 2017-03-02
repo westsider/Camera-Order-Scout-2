@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class UserViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var userName: UITextField!
     
     @IBOutlet weak var production: UITextField!
@@ -46,47 +46,36 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.dateTextInput.delegate = self
         title = "J O B  I N F O"
         weatherDisplay.text = "\n\nEnter a City and State or Country below to get a 10 day weather forecast."
-        keyboardDismissTapGesture = UITapGestureRecognizer(target: self,action: #selector(self.textFieldShouldReturn))
+        setupViewResizerOnKeyboardShown()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
-
+        
         let currentEvent = RealmHelp().getLastEvent()
         citySearch.text     = currentEvent.city
         userName.text       = currentEvent.userName
         production.text     = currentEvent.production
         company.text        = currentEvent.company
         dateTextInput.text  = currentEvent.date
-        //subscribeToKeyboardNotifications()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        //unSubscribeToKeyboardNotofications()
-    }
     @IBAction func updateAction(_ sender: Any) {
         
         let currentEvent = RealmHelp().getLastEvent()
         
-            try! realm.write {
-                
-                currentEvent.userName = userName.text!
-                currentEvent.production = production.text!
-                currentEvent.company = company.text!
-                currentEvent.city = citySearch.text!
-                currentEvent.date = dateTextInput.text!
-                currentEvent.weather = weatherDisplay.text
-                currentEvent.tableViewArray[0].title = "\(userName.text!) Director of Photography"
-                currentEvent.tableViewArray[0].detail = "Camera Order \(production.text!) \(dateTextInput.text!)"
-            }
+        try! realm.write {
+            
+            currentEvent.userName = userName.text!
+            currentEvent.production = production.text!
+            currentEvent.company = company.text!
+            currentEvent.city = citySearch.text!
+            currentEvent.date = dateTextInput.text!
+            currentEvent.weather = weatherDisplay.text
+            currentEvent.tableViewArray[0].title = "\(userName.text!) Director of Photography"
+            currentEvent.tableViewArray[0].detail = "Camera Order \(production.text!) \(dateTextInput.text!)"
+        }
         
-         _ = navigationController?.popToRootViewController(animated: true)
+        _ = navigationController?.popToRootViewController(animated: true)
         
     }
     
@@ -102,23 +91,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         dateTextInput.resignFirstResponder()
         return true
     }
-   
-//    func keyboardWillShow(notification:NSNotification){
-//        
-//        var userInfo = notification.userInfo!
-//        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-//        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-//        
-//        var contentInset:UIEdgeInsets = bottom //self.view.contentInset
-//        contentInset.bottom = keyboardFrame.size.height
-//        self.scrollView.contentInset = contentInset
-//    }
-//    
-//    func keyboardWillHide(notification:NSNotification){
-//        
-//        let contentInset:UIEdgeInsets = UIEdgeInsetsZero
-//        self.scrollView.contentInset = contentInset
-//    }
     
     //MARK: - Search Weather
     @IBAction func searchWeather(_ sender: Any) {
@@ -165,42 +137,45 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         dateFormatter.timeStyle = DateFormatter.Style.none
         
         dateTextInput.text = dateFormatter.string(from: sender.date)
-        
+    }
+}
+
+extension UIViewController {
+    
+    func setupViewResizerOnKeyboardShown() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(UserViewController.keyboardWillShowForResizing),
+                                               name: Notification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(UserViewController.keyboardWillHideForResizing),
+                                               name: Notification.Name.UIKeyboardWillHide,
+                                               object: nil)
     }
     
-//    // MARK:  Setup view shift up behavior for keyboard text entry
-//    //  NSNotification subscriptions and selectors
-//    func subscribeToKeyboardNotifications() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(UserViewController.subscribeToKeyboardNotifications), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(UserViewController.subscribeToKeyboardNotifications), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//    }
-//    
-//    func unSubscribeToKeyboardNotofications() {
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//    }
-//    
-//    // MARK: shift the view's frame up only on bottom text field
-//    func keyboardWillShow(notification: NSNotification) {
-//        if userName.isFirstResponder && view.frame.origin.y == 0.0{
-//            view.frame.origin.y -= getKeyboardHeight(notification: notification)
-//        }
-//    }
-//    
-//    func keyboardWillHide(notification: NSNotification) {
-//        if userName.isFirstResponder {
-//            view.frame.origin.y = 0
-//        }
-//    }
-//    
-//    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
-//        let userInfo = notification.userInfo
-//        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-//        return keyboardSize.cgRectValue.height
-//    }
-//    
-//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//        view.endEditing(true)
-//        return false
-//    }
+    func keyboardWillHideForResizing(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let viewHeight = self.view.frame.height
+            self.view.frame = CGRect(x: self.view.frame.origin.x,
+                                     y: self.view.frame.origin.y,
+                                     width: self.view.frame.width,
+                                     height: viewHeight + keyboardSize.height)
+        } else {
+            debugPrint("We're about to hide the keyboard and the keyboard size is nil. Now is the rapture.")
+        }
+    }
+    
+    func keyboardWillShowForResizing(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+            let window = self.view.window?.frame {
+            // We're not just minusing the kb height from the view height because
+            // the view could already have been resized for the keyboard before
+            self.view.frame = CGRect(x: self.view.frame.origin.x,
+                                     y: self.view.frame.origin.y,
+                                     width: self.view.frame.width,
+                                     height: window.origin.y + window.height - keyboardSize.height)
+        } else {
+            debugPrint("We're showing the keyboard and either the keyboard size or window is nil: panic widely.")
+        }
+    }
 }
