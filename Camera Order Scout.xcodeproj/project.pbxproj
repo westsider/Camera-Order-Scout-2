@@ -10,6 +10,7 @@
 		0D1AABB41E6283100097B64A /* Unique Kits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB31E6283100097B64A /* Unique Kits.swift */; };
 		0D1AABB61E6293D10097B64A /* AksKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB51E6293D10097B64A /* AksKitViewController.swift */; };
 		0D1AABB81E637E1F0097B64A /* AKSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */; };
+		0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36CDE11E67F31400D3015B /* StopPasteAction.swift */; };
 		0D5AC2BE1E568008008CBC63 /* Event User Realm Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */; };
 		0D63935D1E46D84A003055DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63935C1E46D84A003055DB /* AppDelegate.swift */; };
 		0D63935F1E46D84A003055DB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63935E1E46D84A003055DB /* MainViewController.swift */; };
@@ -56,6 +57,7 @@
 		0D1AABB31E6283100097B64A /* Unique Kits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Unique Kits.swift"; sourceTree = "<group>"; };
 		0D1AABB51E6293D10097B64A /* AksKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AksKitViewController.swift; sourceTree = "<group>"; };
 		0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKSTableViewCell.swift; sourceTree = "<group>"; };
+		0D36CDE11E67F31400D3015B /* StopPasteAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPasteAction.swift; sourceTree = "<group>"; };
 		0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event User Realm Object.swift"; sourceTree = "<group>"; };
 		0D6393591E46D84A003055DB /* Camera Order Scout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camera Order Scout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D63935C1E46D84A003055DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				0DE208D61E4797A400619AEF /* ListTableViewCell.swift */,
+				0D36CDE11E67F31400D3015B /* StopPasteAction.swift */,
 				0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */,
 				0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */,
 			);
@@ -293,6 +296,7 @@
 				0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */,
 				0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */,
 				0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */,
+				0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */,
 				0D63936F1E46D8FC003055DB /* Equipment Class.swift in Sources */,
 				0DBCF7531E495DAA00205017 /* PastOrdersViewController.swift in Sources */,
 				0DE208DB1E47E13A00619AEF /* TableView Array Class.swift in Sources */,

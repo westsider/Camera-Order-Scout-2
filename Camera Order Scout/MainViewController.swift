@@ -19,10 +19,9 @@
 //  task: Helvetica for ui
 //  task: remove delete from row 0
 //  task: new event save = return to main with that event loaded to save confusion
-
 //  task: push up user when keyboard apperas
+//  fix: date picker not showing becuse of keyboard
 
-//  try iphone 4
 //  default load 3 projects Studio Project, Location Project, Commercial Project
 //  task: write read me - add from xcode
 //  task: how-to images

@@ -43,10 +43,11 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.userName.delegate = self
         self.production.delegate = self
         self.company.delegate = self
-        self.dateTextInput.delegate = self
+        //self.dateTextInput.delegate = self
         title = "J O B  I N F O"
         weatherDisplay.text = "\n\nEnter a City and State or Country below to get a 10 day weather forecast."
         setupViewResizerOnKeyboardShown()
+        setUpDatePicker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,29 +116,39 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - Activate date picker view
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+            textField.text = ""
+            return false
+        }
+        return true
+    }
     
-    @IBAction func textFieldEditing(_ sender: UITextField) {
-        
-        let datePickerView:UIDatePicker = UIDatePicker()
-        
-        datePickerView.datePickerMode = UIDatePickerMode.date
-        
-        sender.inputView = datePickerView
-        
-        datePickerView.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 1 {
+            textField.text = ""
+            return false
+        }
+        return true
+    }
+    
+    func setUpDatePicker() {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.date
+        dateTextInput.tag = 1
+        dateTextInput.inputView = datePicker
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
     }
     
     //MARK: - format the selected Date and update vars used in weather forcast
     func datePickerValueChanged(sender:UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        
         dateFormatter.dateStyle = DateFormatter.Style.medium
-        
         dateFormatter.timeStyle = DateFormatter.Style.none
-        
         dateTextInput.text = dateFormatter.string(from: sender.date)
     }
+    
 }
 
 extension UIViewController {

@@ -642,14 +642,11 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d29-eA-thh">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d29-eA-thh" customClass="StopPasteAction" customModule="Camera_Order_Scout" customModuleProvider="target">
                                                         <rect key="frame" x="181" y="0.0" width="176" height="25"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="textFieldEditing:" destination="FrI-I6-0QT" eventType="editingDidEnd" id="e8P-bG-qXh"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
