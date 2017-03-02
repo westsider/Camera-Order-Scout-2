@@ -20,6 +20,7 @@
 		0D63936F1E46D8FC003055DB /* Equipment Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63936E1E46D8FC003055DB /* Equipment Class.swift */; };
 		0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6393701E46D932003055DB /* Equipment Makers.swift */; };
 		0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */; };
+		0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */; };
 		0D8F3DB41E5D099B00E036B8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8F3DB31E5D099B00E036B8 /* InfoViewController.swift */; };
 		0DBCF7531E495DAA00205017 /* PastOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7521E495DAA00205017 /* PastOrdersViewController.swift */; };
 		0DBCF7551E49660D00205017 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7541E49660D00205017 /* UserViewController.swift */; };
@@ -69,6 +70,7 @@
 		0D63936E1E46D8FC003055DB /* Equipment Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Equipment Class.swift"; sourceTree = "<group>"; };
 		0D6393701E46D932003055DB /* Equipment Makers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Equipment Makers.swift"; sourceTree = "<group>"; };
 		0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimeLensTableViewCell.swift; path = ../PrimeLensTableViewCell.swift; sourceTree = "<group>"; };
+		0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = firstRunProjects.swift; path = "Camera Order Scout/firstRunProjects.swift"; sourceTree = "<group>"; };
 		0D8F3DB31E5D099B00E036B8 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		0DBCF7521E495DAA00205017 /* PastOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastOrdersViewController.swift; sourceTree = "<group>"; };
 		0DBCF7541E49660D00205017 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				0D6393701E46D932003055DB /* Equipment Makers.swift */,
 				0DE208DA1E47E13A00619AEF /* TableView Array Class.swift */,
 				0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */,
+				0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */,
 			);
 			name = Equipment;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */,
 				0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */,
 				0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */,
+				0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */,
 				0D63936F1E46D8FC003055DB /* Equipment Class.swift in Sources */,
 				0DBCF7531E495DAA00205017 /* PastOrdersViewController.swift in Sources */,
 				0DE208DB1E47E13A00619AEF /* TableView Array Class.swift in Sources */,

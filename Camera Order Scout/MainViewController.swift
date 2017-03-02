@@ -22,18 +22,17 @@
 //  task: push up user when keyboard apperas
 //  fix: date picker not showing becuse of keyboard
 //  style: set up layout for main aks lenses and aks for multiple devices
+//  style: set up layout for projects
+//  task: 3 demo projects pre loaded
 
-//  default load 3 projects Studio Project, Location Project, Commercial Project
 //  task: write read me - add from xcode
 //  task: how-to images
 //  task: add images to app walk through
+//  let presntingViewSnap = MainTableViewController.view.snapshot(afterscreenupdates: false)
 
 //  later
 //  task: add swipe effect to how-to
 //  task: add panavision lenses, check ASC magazine for others
-
-
-
 
 import Foundation
 import UIKit
@@ -61,7 +60,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     override func viewWillAppear(_ animated: Bool) {
         fillDefaultTableView()
         myTableView.reloadData()
-        ///let presntingViewSnap = MainTableViewController.view.snapshot(afterscreenupdates: false)
     }
  
     override func viewDidLoad() {
@@ -72,6 +70,15 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         myTableView.reloadData()
         updatePickerSelection()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        loadDefaultEvents()
+    }
+    
+    func loadDefaultEvents() {
+        
+        let allEvents = realm.objects(EventUserRealm.self)
+        for event in allEvents {
+            print("\n Event: \(event)\n")
+        }
     }
 
     //MARK: - Add Action
@@ -288,8 +295,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             FirstRun().populateRealmKits()
             
             let defaultEventUsers = EventUserRealm()
-            defaultEventUsers.eventName = "first event"
-            defaultEventUsers.userName = "first user"
+            defaultEventUsers.eventName = "Empty Project"
+            defaultEventUsers.userName = "no user"
             defaultEventUsers.city = "Santa Monica, CA"
             defaultEventUsers.production  = "new production"
             defaultEventUsers.company  = "new company"
@@ -307,7 +314,10 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             
             //saveLastID(ID: defaultEventUsers.taskID)
             RealmHelp().saveLastID(ID: defaultEventUsers.taskID)
-            
+            RealmStart().DemoEventsOne()
+            RealmStart().DemoEventsTwo()
+            RealmStart().DemoEventsThree()
+
             tableviewEvent = defaultEventUsers
             
             performSegue(withIdentifier: "mainToInfo", sender: self)
