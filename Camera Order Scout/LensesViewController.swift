@@ -15,8 +15,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var titleDescription: UILabel!
     
-    @IBOutlet weak var addButton: UIButton!
-    
     var switchOn = true
     
     var tableViewSwitches = TableViewSwitches()
@@ -106,7 +104,7 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             print("sent form primes")
             title = "Select Lenses"
             titleDescription.text = "Switch off lenses not needed"
-            addButton.isHidden = true
+
         }
         
         // array to persiste switch positions durring deque of cells
