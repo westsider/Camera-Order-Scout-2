@@ -33,6 +33,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     var datePickerUtility = DatePickerUtility()
     
+    var keyboardDismissTapGesture: UIGestureRecognizer?
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -43,7 +45,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.company.delegate = self
         self.dateTextInput.delegate = self
         title = "J O B  I N F O"
-        weatherDisplay.text = "\n\n\tEnter a City and State or Country below \n\tto get a 10 day weather forecast."
+        weatherDisplay.text = "\n\nEnter a City and State or Country below to get a 10 day weather forecast."
+        keyboardDismissTapGesture = UITapGestureRecognizer(target: self,action: #selector(self.textFieldShouldReturn))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,8 +57,19 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         production.text     = currentEvent.production
         company.text        = currentEvent.company
         dateTextInput.text  = currentEvent.date
+        //subscribeToKeyboardNotifications()
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //unSubscribeToKeyboardNotofications()
+    }
     @IBAction func updateAction(_ sender: Any) {
         
         let currentEvent = RealmHelp().getLastEvent()
@@ -89,6 +103,23 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         return true
     }
    
+//    func keyboardWillShow(notification:NSNotification){
+//        
+//        var userInfo = notification.userInfo!
+//        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+//        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+//        
+//        var contentInset:UIEdgeInsets = bottom //self.view.contentInset
+//        contentInset.bottom = keyboardFrame.size.height
+//        self.scrollView.contentInset = contentInset
+//    }
+//    
+//    func keyboardWillHide(notification:NSNotification){
+//        
+//        let contentInset:UIEdgeInsets = UIEdgeInsetsZero
+//        self.scrollView.contentInset = contentInset
+//    }
+    
     //MARK: - Search Weather
     @IBAction func searchWeather(_ sender: Any) {
         
@@ -136,4 +167,40 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         dateTextInput.text = dateFormatter.string(from: sender.date)
         
     }
+    
+//    // MARK:  Setup view shift up behavior for keyboard text entry
+//    //  NSNotification subscriptions and selectors
+//    func subscribeToKeyboardNotifications() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(UserViewController.subscribeToKeyboardNotifications), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(UserViewController.subscribeToKeyboardNotifications), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//    }
+//    
+//    func unSubscribeToKeyboardNotofications() {
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//    }
+//    
+//    // MARK: shift the view's frame up only on bottom text field
+//    func keyboardWillShow(notification: NSNotification) {
+//        if userName.isFirstResponder && view.frame.origin.y == 0.0{
+//            view.frame.origin.y -= getKeyboardHeight(notification: notification)
+//        }
+//    }
+//    
+//    func keyboardWillHide(notification: NSNotification) {
+//        if userName.isFirstResponder {
+//            view.frame.origin.y = 0
+//        }
+//    }
+//    
+//    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+//        let userInfo = notification.userInfo
+//        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+//        return keyboardSize.cgRectValue.height
+//    }
+//    
+//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//        view.endEditing(true)
+//        return false
+//    }
 }
