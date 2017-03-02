@@ -21,6 +21,7 @@
 //  task: new event save = return to main with that event loaded to save confusion
 //  task: push up user when keyboard apperas
 //  fix: date picker not showing becuse of keyboard
+//  style: set up layout for main aks lenses and aks for multiple devices
 
 //  default load 3 projects Studio Project, Location Project, Commercial Project
 //  task: write read me - add from xcode
@@ -146,7 +147,15 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
     }
-
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        if component == 0 {
+            return CGFloat(20.0)
+        } else {
+            return CGFloat(80.0)
+        }
+        
+    }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return   pickerEquipment.pickerArray[component].count
     }
