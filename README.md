@@ -1,6 +1,6 @@
 ![alexamini_180](https://cloud.githubusercontent.com/assets/19356639/23538446/13e6dc40-ff88-11e6-86b5-7d56fb77575d.png)
 #Camera Order 
-is an iOS application for for cinematographers to create and maintaining equipment lists used in motion picture productions. This application was created as my Udacity iOS Nanodegree Program capstone project submission.
+is an iOS application for for cinematographers to create and maintain equipment lists used in motion picture productions. This application was created as my Udacity iOS Nanodegree Program capstone project submission.
 #Intended Experience
 Upon opening the app, a sample order is displayed for viewing, editing and eventually sharing. The list displayed is what is currently on the order. A swipe left deletes item. To add equipment use the picker above the list to select a new item and then add it to the order with the add button. Share your list by pressing… you guessed it - Share. Your opinions include email and sms as well as twitter, Facebook, iCloud etc.
 Your project particulars can be edited by tapping the top item where you see the user and director of photography. That will open up another view so you can change the project name, add pertinent information and even get a weather forecast.
