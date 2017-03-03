@@ -4,33 +4,6 @@
 //
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
-/*  feat: a new feature
- fix: a bug fix
- docs: changes to documentation
- style: formatting, missing semi colons, etc; no code change
- refactor: refactoring production code
- test: adding tests, refactoring test; no production code change
- chore: updating build tasks, package manager configs, etc; no production code change   */
-
-//  style: remove un needed comments
-//  style: rename model aks
-//  task: userdefaults used for rubrik
-//  task: network fail
-//  task: Helvetica for ui
-//  task: remove delete from row 0
-//  task: new event save = return to main with that event loaded to save confusion
-//  task: push up user when keyboard apperas
-//  fix: date picker not showing becuse of keyboard
-//  style: set up layout for main aks lenses and aks for multiple devices
-//  style: set up layout for projects
-//  task: 3 demo projects pre loaded
-//  task: write read me - add from xcode
-//  task: how-to images
-//  task: add images to demo vc
-
-//  later
-//  task: maio gets images let presntingViewSnap = MainTableViewController.view.snapshot(afterscreenupdates: false)
-//  task: add panavision lenses, check ASC magazine for others
 
 import Foundation
 import UIKit
