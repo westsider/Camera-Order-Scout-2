@@ -1,3 +1,4 @@
+![alexamini_180](https://cloud.githubusercontent.com/assets/19356639/23538446/13e6dc40-ff88-11e6-86b5-7d56fb77575d.png)
 #Camera Order 
 is an iOS application for for cinematographers to create and maintaining equipment lists used in motion picture productions. This application was created as my Udacity iOS Nanodegree Program capstone project submission.
 #Intended Experience
@@ -9,3 +10,4 @@ Your current project is always saved for the next time you launch Camera Order. 
 After cloning the repository, ensure you're on the master branch and open the application in Xcode. You should then be able to run the app in simulator or on a compatible device. Note that Camera Order is written to compile in Xcode 8.2 and Swift 3.0.2.
 #External APIs and Data
 Weather data available in the app was gleaned from Wunderground. Camera Order loads this external data via Wunderground Weather API. This app persists date using Realm and NSUserDefaults.
+[I'm an inline-style link](https://www.google.com)
