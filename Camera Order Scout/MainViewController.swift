@@ -26,12 +26,10 @@
 //  task: 3 demo projects pre loaded
 //  task: write read me - add from xcode
 //  task: how-to images
-
-//  task: add images to app walk through
-//  let presntingViewSnap = MainTableViewController.view.snapshot(afterscreenupdates: false)
+//  task: add images to demo vc
 
 //  later
-//  task: add swipe effect to how-to
+//  task: maio gets images let presntingViewSnap = MainTableViewController.view.snapshot(afterscreenupdates: false)
 //  task: add panavision lenses, check ASC magazine for others
 
 import Foundation
@@ -70,17 +68,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         myTableView.reloadData()
         updatePickerSelection()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-       // loadDefaultEvents()
     }
     
-//    func loadDefaultEvents() {
-//        
-//        let allEvents = realm.objects(EventUserRealm.self)
-//        for event in allEvents {
-//            print("\n Event: \(event)\n")
-//        }
-//    }
-
     //MARK: - Add Action
     @IBAction func addAction(_ sender: Any) {
         
@@ -161,8 +150,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         } else {
             return CGFloat(80.0)
         }
-        
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return   pickerEquipment.pickerArray[component].count
     }
