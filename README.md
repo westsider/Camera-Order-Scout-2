@@ -9,5 +9,5 @@ Your current project is always saved for the next time you launch Camera Order. 
 #Running the app
 After cloning the repository, ensure you're on the master branch and open the application in Xcode. You should then be able to run the app in simulator or on a compatible device. Note that Camera Order is written to compile in Xcode 8.2 and Swift 3.0.2.
 #External APIs and Data
-Weather data available in the app was gleaned from Wunderground. Camera Order loads this external data via Wunderground Weather API. This app persists date using Realm and NSUserDefaults.
-[I'm an inline-style link](https://www.google.com)
+Weather data available in the app was gleaned from Wunderground. Camera Order loads this external data via [Wunderground Weather API](https://www.wunderground.com/weather/api/). This app persists date using [Realm](https://realm.io/) and [NSUserDefaults](https://developer.apple.com/reference/foundation/userdefaults).
+
