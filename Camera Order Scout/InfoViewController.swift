@@ -58,11 +58,11 @@ class InfoViewController: UIViewController {
                 break
             }
         }
-        if counter >= 3 { counter = 3 }
+        if counter >= 6 { counter = 6 }
         if counter < 0 { counter = 0 }
         populatePicture(counter: counter)
         showButton(counter: counter)
-        print(counter)
+        //print(counter)
     }
     
     
@@ -81,6 +81,16 @@ class InfoViewController: UIViewController {
         case 3:
             image.image = UIImage(named: "test 4")
             pageScroll.currentPage = 3
+        case 4:
+            image.image = UIImage(named: "test 5")
+            pageScroll.currentPage = 4
+        case 5:
+            image.image = UIImage(named: "test 6")
+            pageScroll.currentPage = 5
+        case 6:
+            image.image = UIImage(named: "test 7")
+            pageScroll.currentPage = 6
+
         default:
             image.image = UIImage(named: "test 4")
             pageScroll.currentPage = 0
@@ -107,7 +117,7 @@ class InfoViewController: UIViewController {
 //    }
     
     func showButton(counter: Int ) {
-        if counter == 3 {
+        if counter == 6 {
             gotIt.isHidden = false
         } else {
             gotIt.isHidden = true

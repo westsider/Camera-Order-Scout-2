@@ -70,16 +70,16 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         myTableView.reloadData()
         updatePickerSelection()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        loadDefaultEvents()
+       // loadDefaultEvents()
     }
     
-    func loadDefaultEvents() {
-        
-        let allEvents = realm.objects(EventUserRealm.self)
-        for event in allEvents {
-            print("\n Event: \(event)\n")
-        }
-    }
+//    func loadDefaultEvents() {
+//        
+//        let allEvents = realm.objects(EventUserRealm.self)
+//        for event in allEvents {
+//            print("\n Event: \(event)\n")
+//        }
+//    }
 
     //MARK: - Add Action
     @IBAction func addAction(_ sender: Any) {
