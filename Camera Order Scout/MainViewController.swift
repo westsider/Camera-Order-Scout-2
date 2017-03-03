@@ -24,9 +24,9 @@
 //  style: set up layout for main aks lenses and aks for multiple devices
 //  style: set up layout for projects
 //  task: 3 demo projects pre loaded
-
 //  task: write read me - add from xcode
 //  task: how-to images
+
 //  task: add images to app walk through
 //  let presntingViewSnap = MainTableViewController.view.snapshot(afterscreenupdates: false)
 

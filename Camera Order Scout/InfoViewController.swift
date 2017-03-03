@@ -37,12 +37,6 @@ class InfoViewController: UIViewController {
         pageScroll.currentPageIndicatorTintColor = UIColor.darkGray
         
         pageScroll.pageIndicatorTintColor = UIColor.lightGray
-
-        let firstImageView = UIImageView(image: UIImage(named: "test 1"))
-        firstImageView.frame = view.frame
-        view.addSubview(firstImageView)
-        
-        imageFadeIn(imageView: firstImageView)
         
     }
 
@@ -55,9 +49,11 @@ class InfoViewController: UIViewController {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
-                counter -= 1
-            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped right")
                 counter += 1
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+                counter -= 1
             default:
                 break
             }
@@ -66,6 +62,7 @@ class InfoViewController: UIViewController {
         if counter < 0 { counter = 0 }
         populatePicture(counter: counter)
         showButton(counter: counter)
+        print(counter)
     }
     
     
@@ -74,40 +71,40 @@ class InfoViewController: UIViewController {
         switch counter {
         case 0:
             image.image = UIImage(named: "test 1")
-             pageScroll.currentPage = 0
+            pageScroll.currentPage = 0
         case 1:
             image.image = UIImage(named: "test 2")
-             pageScroll.currentPage = 1
+            pageScroll.currentPage = 1
         case 2:
             image.image = UIImage(named: "test 3")
-             pageScroll.currentPage = 2
+            pageScroll.currentPage = 2
         case 3:
             image.image = UIImage(named: "test 4")
-             pageScroll.currentPage = 3
+            pageScroll.currentPage = 3
         default:
             image.image = UIImage(named: "test 4")
-             pageScroll.currentPage = 0
+            pageScroll.currentPage = 0
         }
        
         
     }
     
-    func imageFadeIn(imageView: UIImageView) {
-        
-        let secondImageView = UIImageView(image: UIImage(named: "test 2"))
-        secondImageView.frame = view.frame
-        secondImageView.alpha = 0.0
-        
-        view.insertSubview(secondImageView, aboveSubview: imageView)
-        
-        UIView.animate(withDuration: 2.0, delay: 2.0, options: .curveEaseOut, animations: {
-            secondImageView.alpha = 1.0
-        }, completion: {_ in
-            imageView.image = secondImageView.image
-            secondImageView.removeFromSuperview()
-        })
-        
-    }
+//    func imageFadeIn(imageView: UIImageView) {
+//        
+//        let secondImageView = UIImageView(image: UIImage(named: "test 2"))
+//        secondImageView.frame = view.frame
+//        secondImageView.alpha = 0.0
+//        
+//        view.insertSubview(secondImageView, aboveSubview: imageView)
+//        
+//        UIView.animate(withDuration: 2.0, delay: 2.0, options: .curveEaseOut, animations: {
+//            secondImageView.alpha = 1.0
+//        }, completion: {_ in
+//            imageView.image = secondImageView.image
+//            secondImageView.removeFromSuperview()
+//        })
+//        
+//    }
     
     func showButton(counter: Int ) {
         if counter == 3 {
