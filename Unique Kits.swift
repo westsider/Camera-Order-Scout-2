@@ -37,8 +37,6 @@ class FirstRun { // aks filters support
         
         tableviewArrays.setPrimesKit(compState: [0,5,0,0])
         
-        print("\nYou loaded AKS: \(tableviewArrays.thePrimes)\n")
-        
         for  item in tableviewArrays.thePrimes {
             
             let aksItem = AksItem()
@@ -53,8 +51,6 @@ class FirstRun { // aks filters support
         // load stock filters
         tableviewArrays.setPrimesKit(compState: [0,7,0,0])
         
-        print("\nYou loaded Filters: \(tableviewArrays.thePrimes)\n")
-        
         for  item in tableviewArrays.thePrimes {
             
             let filterItem = FilterItem()
@@ -68,8 +64,6 @@ class FirstRun { // aks filters support
         
         // load stock support
         tableviewArrays.setPrimesKit(compState: [0,8,0,0])
-        
-        print("\nYou loaded Support: \(tableviewArrays.thePrimes)\n")
         
         for  item in tableviewArrays.thePrimes {
             

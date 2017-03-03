@@ -203,5 +203,4 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             title = "Support"
         }
     }
-    
 }

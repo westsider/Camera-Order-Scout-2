@@ -72,8 +72,6 @@ class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableVi
         _ = navigationController?.popToRootViewController(animated: true)
         //eventsTableView.reloadData()
     }
-    
-
 
     //MARK:- Set up Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

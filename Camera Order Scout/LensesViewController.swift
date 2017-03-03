@@ -92,8 +92,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func switchTriggered(sender: UISwitch) {
 
         let index = sender.tag
-        let content = sender.restorationIdentifier!
-        print("Lens Switch Index: \(index) For: \(content) Is On: \(sender.isOn)")
         tableViewSwitches.updateArray(index: index, switchPos: sender.isOn)
         switchPos[sender.tag] = sender.isOn
     }

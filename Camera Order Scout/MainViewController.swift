@@ -5,6 +5,10 @@
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 
+//  fix slide down
+//  new color?
+//  missing pic
+
 import Foundation
 import UIKit
 import RealmSwift
