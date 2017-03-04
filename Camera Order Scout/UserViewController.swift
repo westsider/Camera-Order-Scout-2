@@ -107,11 +107,13 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             GetWeather().getForecast { (result: String) in
                 self.weatherDisplay.text = result
                 self.activityDial.stopAnimating()
+                self.returnMessage(message: result)
             }
             
         }  else {
             self.weatherDisplay.text = searchResult
             self.activityDial.stopAnimating()
+            self.returnMessage(message: searchResult)
         }
     }
     
@@ -147,6 +149,16 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeStyle = DateFormatter.Style.none
         dateTextInput.text = dateFormatter.string(from: sender.date)
+    }
+    
+    func returnMessage(message: String) {
+        let alertController : UIAlertController = UIAlertController(title: "Weather", message: message, preferredStyle: .alert)
+        
+        let action_cancel = UIAlertAction.init(title: "OK", style: .default) { (UIAlertAction) -> Void in }
+        
+        alertController.addAction(action_cancel)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
 }
