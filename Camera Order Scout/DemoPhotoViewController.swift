@@ -58,7 +58,6 @@ class DemoPhotoViewController: UIViewController, UIScrollViewDelegate {
                 featureView.frame.size.width = self.view.bounds.size.width
                 featureView.frame.origin.x = CGFloat(index) * self.view.bounds.size.width
                 
-                
             }
     
         }
