@@ -22,6 +22,8 @@ class DemoPhotoViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "I N F O"
 
         featureArray = [feature1,feature2,feature3]
         
