@@ -14,9 +14,12 @@ class DemoPhotoViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var pageControl: UIPageControl!
     
-    let feature1 = ["title":"Apple Watch","price":"$0.99","image":"1"]
-    let feature2 = ["title":"More Designs","price":"$1.99","image":"2"]
-    let feature3 = ["title":"Notifications","price":"$0.99","image":"3"]
+    let feature1 = ["title":"Add Equipment","price":"move the selector","image":"1"]
+    let feature2 = ["title":"Swipe Left","price":"to delete an item","image":"2"]
+    let feature3 = ["title":"Edit Job Info","price":"tap this row","image":"3"]
+    let feature4 = ["title":"Load","price":"a prior project","image":"1"]
+    let feature5 = ["title":"In Projects","price":"tap ap row","image":"2"]
+    let feature6 = ["title":"Write In","price":"your custom equipmet","image":"3"]
     
     var featureArray = [Dictionary<String,String>]()
     
@@ -25,7 +28,7 @@ class DemoPhotoViewController: UIViewController, UIScrollViewDelegate {
         
         title = "I N F O"
 
-        featureArray = [feature1,feature2,feature3]
+        featureArray = [feature1,feature2,feature3,feature4,feature5,feature6]
         
         scrollView.isPagingEnabled = true
         scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(featureArray.count), height: 250)
