@@ -43,7 +43,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10AFEA72-EC39-4A9E-9C4A-B0CEDCA767CB" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-q8-jzw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AD7AD3EF-0C23-4449-9DC7-03A577AC89ED" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-q8-jzw">
                                                     <rect key="frame" x="8" y="7" width="31" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="31" id="Am7-Ph-x7D"/>
@@ -52,7 +52,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6Y-Jg-bFP">
-                                                    <rect key="frame" x="47" y="7" width="288" height="15"/>
+                                                    <rect key="frame" x="47" y="4" width="288" height="18"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                                 <constraint firstItem="TAL-q8-jzw" firstAttribute="top" secondItem="6B2-1J-Wgx" secondAttribute="top" constant="7" id="Rva-mw-yIF"/>
                                                 <constraint firstItem="i6Y-Jg-bFP" firstAttribute="leading" secondItem="TAL-q8-jzw" secondAttribute="trailing" constant="8" id="Tpe-uF-QgL"/>
                                                 <constraint firstAttribute="trailing" secondItem="5PS-R3-CBW" secondAttribute="trailing" constant="8" id="eHX-JU-jKh"/>
-                                                <constraint firstItem="i6Y-Jg-bFP" firstAttribute="top" secondItem="6B2-1J-Wgx" secondAttribute="top" constant="7" id="iii-cy-zN9"/>
+                                                <constraint firstItem="i6Y-Jg-bFP" firstAttribute="top" secondItem="6B2-1J-Wgx" secondAttribute="top" constant="4" id="iii-cy-zN9"/>
                                                 <constraint firstItem="5PS-R3-CBW" firstAttribute="leading" secondItem="TAL-q8-jzw" secondAttribute="trailing" constant="8" id="pA7-le-MGx"/>
                                                 <constraint firstAttribute="trailing" secondItem="i6Y-Jg-bFP" secondAttribute="trailing" constant="8" id="qVW-Kh-rcp"/>
                                                 <constraint firstItem="TAL-q8-jzw" firstAttribute="leading" secondItem="6B2-1J-Wgx" secondAttribute="leading" constant="8" id="qcY-gj-fOe"/>
@@ -672,59 +672,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-XI-f2l">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </scrollView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xnh-wf-hNN">
-                                <rect key="frame" x="67" y="569" width="243" height="30"/>
-                                <color key="backgroundColor" red="0.32421657440000001" green="0.41891440749999997" blue="0.92950725560000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Let's Do This">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="7" translatesAutoresizingMaskIntoConstraints="NO" id="H0c-gP-D1E">
-                                <rect key="frame" x="140" y="447" width="96" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="Y4T-G9-DZ0"/>
-                                </constraints>
+                                <rect key="frame" x="103" y="372" width="169" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8SV-ir-8mh">
-                                <rect key="frame" x="67" y="246" width="243" height="76"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="2Pk-Uh-Tz5"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-XI-f2l">
+                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8SV-ir-8mh" firstAttribute="top" secondItem="9XU-Lq-WVr" secondAttribute="bottom" constant="226" id="4J1-po-ZDj"/>
-                            <constraint firstItem="8SV-ir-8mh" firstAttribute="leading" secondItem="Xnh-wf-hNN" secondAttribute="leading" id="51O-th-Pfw"/>
-                            <constraint firstItem="Xqi-y8-GA6" firstAttribute="top" secondItem="Xnh-wf-hNN" secondAttribute="bottom" constant="68" id="8PR-0m-naM"/>
-                            <constraint firstItem="8SV-ir-8mh" firstAttribute="leading" secondItem="cWk-9m-jeA" secondAttribute="leadingMargin" constant="51" id="GOk-3c-9Zu"/>
-                            <constraint firstItem="Xnh-wf-hNN" firstAttribute="top" secondItem="H0c-gP-D1E" secondAttribute="bottom" constant="85" id="J4r-9Y-J68"/>
-                            <constraint firstItem="doJ-XI-f2l" firstAttribute="top" secondItem="cWk-9m-jeA" secondAttribute="top" id="Se7-Gz-pBr"/>
-                            <constraint firstItem="doJ-XI-f2l" firstAttribute="bottom" secondItem="Xqi-y8-GA6" secondAttribute="top" id="Srz-KT-0dF"/>
-                            <constraint firstItem="8SV-ir-8mh" firstAttribute="trailing" secondItem="Xnh-wf-hNN" secondAttribute="trailing" id="UE7-0V-Etq"/>
-                            <constraint firstAttribute="trailing" secondItem="doJ-XI-f2l" secondAttribute="trailing" id="YIZ-kc-tQI"/>
-                            <constraint firstItem="H0c-gP-D1E" firstAttribute="centerX" secondItem="Xnh-wf-hNN" secondAttribute="centerX" id="g0f-0Y-Exz"/>
-                            <constraint firstItem="doJ-XI-f2l" firstAttribute="leading" secondItem="cWk-9m-jeA" secondAttribute="leading" id="udU-vE-Fau"/>
-                            <constraint firstItem="doJ-XI-f2l" firstAttribute="centerX" secondItem="H0c-gP-D1E" secondAttribute="centerX" id="zgv-vR-rbD"/>
+                            <constraint firstItem="doJ-XI-f2l" firstAttribute="leading" secondItem="cWk-9m-jeA" secondAttribute="leading" id="0KR-Ou-aTj"/>
+                            <constraint firstAttribute="trailing" secondItem="doJ-XI-f2l" secondAttribute="trailing" id="DgU-Yn-D8S"/>
+                            <constraint firstItem="H0c-gP-D1E" firstAttribute="leading" secondItem="cWk-9m-jeA" secondAttribute="leadingMargin" constant="87" id="FmM-0i-Fz8"/>
+                            <constraint firstItem="Xqi-y8-GA6" firstAttribute="top" secondItem="doJ-XI-f2l" secondAttribute="bottom" id="Gvy-jp-cDF"/>
+                            <constraint firstItem="doJ-XI-f2l" firstAttribute="top" secondItem="H0c-gP-D1E" secondAttribute="bottom" constant="8" id="JkS-ej-fi7"/>
+                            <constraint firstItem="H0c-gP-D1E" firstAttribute="top" secondItem="9XU-Lq-WVr" secondAttribute="bottom" constant="352" id="g47-yQ-vfG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H0c-gP-D1E" secondAttribute="trailing" constant="87" id="gCY-N8-vI2"/>
+                            <constraint firstItem="doJ-XI-f2l" firstAttribute="top" secondItem="H0c-gP-D1E" secondAttribute="bottom" constant="8" id="tZW-RD-0fH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pageControl" destination="H0c-gP-D1E" id="vFc-8C-Urs"/>
                         <outlet property="scrollView" destination="doJ-XI-f2l" id="kGb-4b-NQL"/>
-                        <outlet property="startButton" destination="Xnh-wf-hNN" id="NA2-1v-1gQ"/>
-                        <outlet property="textView" destination="8SV-ir-8mh" id="JOm-81-G3z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daQ-en-jxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-295" y="1451"/>
+            <point key="canvasLocation" x="-295.19999999999999" y="1450.5247376311845"/>
         </scene>
         <!--aksViewController-->
         <scene sceneID="qYU-Pk-aKq">
@@ -877,7 +853,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="10AFEA72-EC39-4A9E-9C4A-B0CEDCA767CB" width="16" height="16">
+        <image name="AD7AD3EF-0C23-4449-9DC7-03A577AC89ED" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

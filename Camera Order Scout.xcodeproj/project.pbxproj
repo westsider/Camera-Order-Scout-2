@@ -11,6 +11,8 @@
 		0D1AABB61E6293D10097B64A /* AksKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB51E6293D10097B64A /* AksKitViewController.swift */; };
 		0D1AABB81E637E1F0097B64A /* AKSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */; };
 		0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36CDE11E67F31400D3015B /* StopPasteAction.swift */; };
+		0D4CD3F61E6B30E7002AAFE2 /* Feature.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4CD3F51E6B30E7002AAFE2 /* Feature.xib */; };
+		0D4CD3F81E6B37CE002AAFE2 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4CD3F71E6B37CE002AAFE2 /* FeatureView.swift */; };
 		0D5AC2BE1E568008008CBC63 /* Event User Realm Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */; };
 		0D63935D1E46D84A003055DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63935C1E46D84A003055DB /* AppDelegate.swift */; };
 		0D63935F1E46D84A003055DB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63935E1E46D84A003055DB /* MainViewController.swift */; };
@@ -59,6 +61,8 @@
 		0D1AABB51E6293D10097B64A /* AksKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AksKitViewController.swift; sourceTree = "<group>"; };
 		0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKSTableViewCell.swift; sourceTree = "<group>"; };
 		0D36CDE11E67F31400D3015B /* StopPasteAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPasteAction.swift; sourceTree = "<group>"; };
+		0D4CD3F51E6B30E7002AAFE2 /* Feature.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Feature.xib; sourceTree = "<group>"; };
+		0D4CD3F71E6B37CE002AAFE2 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event User Realm Object.swift"; sourceTree = "<group>"; };
 		0D6393591E46D84A003055DB /* Camera Order Scout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camera Order Scout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D63935C1E46D84A003055DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0D6393601E46D84A003055DB /* Main.storyboard */,
+				0D4CD3F51E6B30E7002AAFE2 /* Feature.xib */,
 				0DE208D91E4799DF00619AEF /* Controller */,
 				0DB53A391E46FD6D0049F0D2 /* Model */,
 				0DE208D81E4797D900619AEF /* View */,
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				0DE208D61E4797A400619AEF /* ListTableViewCell.swift */,
+				0D4CD3F71E6B37CE002AAFE2 /* FeatureView.swift */,
 				0D36CDE11E67F31400D3015B /* StopPasteAction.swift */,
 				0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */,
 				0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */,
@@ -255,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4CD3F61E6B30E7002AAFE2 /* Feature.xib in Resources */,
 				0D6393671E46D84A003055DB /* LaunchScreen.storyboard in Resources */,
 				0D6393641E46D84A003055DB /* Assets.xcassets in Resources */,
 				0D6393621E46D84A003055DB /* Main.storyboard in Resources */,
@@ -287,6 +294,7 @@
 				0DFC00D51E65F5C800A08D2B /* TableView Switches.swift in Sources */,
 				0DBCF75D1E496BEB00205017 /* DatePicker.swift in Sources */,
 				0D1AABB81E637E1F0097B64A /* AKSTableViewCell.swift in Sources */,
+				0D4CD3F81E6B37CE002AAFE2 /* FeatureView.swift in Sources */,
 				0DE208D71E4797A400619AEF /* ListTableViewCell.swift in Sources */,
 				0D1AABB41E6283100097B64A /* Unique Kits.swift in Sources */,
 				0DBCF7551E49660D00205017 /* UserViewController.swift in Sources */,

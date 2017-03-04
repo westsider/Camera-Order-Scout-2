@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeatureView" customModule="Camera_Order_Scout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="463" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A great feature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzS-Dy-yxe">
+                    <rect key="frame" x="38" y="65" width="177" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZc-sh-PdB">
+                    <rect key="frame" x="38" y="134" width="46" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase feature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB5-Z7-xoW">
+                    <rect key="frame" x="38" y="162" width="117" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Ys1-pD-wpj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5YV-wh-7H2">
+                    <rect key="frame" x="311" y="65" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="egU-I3-CRu"/>
+                        <constraint firstAttribute="height" constant="120" id="zN9-Ga-gEw"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.24337662756443024" green="0.24264897406101227" blue="0.28246003389358521" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="ZzS-Dy-yxe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="SFH-Lz-WPf"/>
+                <constraint firstItem="EB5-Z7-xoW" firstAttribute="top" secondItem="PZc-sh-PdB" secondAttribute="bottom" constant="7" id="beJ-t4-oaA"/>
+                <constraint firstItem="ZzS-Dy-yxe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="cBT-Gp-vkM"/>
+                <constraint firstItem="EB5-Z7-xoW" firstAttribute="leading" secondItem="PZc-sh-PdB" secondAttribute="leading" id="hKs-Wz-Cxw"/>
+                <constraint firstItem="PZc-sh-PdB" firstAttribute="top" secondItem="ZzS-Dy-yxe" secondAttribute="bottom" constant="36" id="rP8-hG-lBf"/>
+                <constraint firstAttribute="trailing" secondItem="5YV-wh-7H2" secondAttribute="trailing" constant="32" id="rvK-dm-0Zb"/>
+                <constraint firstItem="5YV-wh-7H2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="yVm-Xb-59G"/>
+                <constraint firstItem="PZc-sh-PdB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="zvD-qM-3o8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="featureImageView" destination="5YV-wh-7H2" id="oNK-qk-Zdh"/>
+                <outlet property="priceLabel" destination="PZc-sh-PdB" id="sKb-py-KTS"/>
+                <outlet property="purchaseButton" destination="EB5-Z7-xoW" id="xTg-nz-bJi"/>
+                <outlet property="titleLabel" destination="ZzS-Dy-yxe" id="b8m-F6-xYU"/>
+            </connections>
+            <point key="canvasLocation" x="-50.5" y="35"/>
+        </view>
+    </objects>
+</document>
