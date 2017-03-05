@@ -28,14 +28,13 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         tasks = realm.objects(EventUserRealm.self)  // for tableview
-        eventNameInput.text = "Name Your New Project"
     }
     
     //MARK: - Save Event
     @IBAction func saveEvent(_ sender: Any) {
 
         // make sure textInput contains a new name
-        if eventNameInput.text != "" {
+        if eventNameInput.text != "" && eventNameInput.text !=  "Please enter a name for this order" {
             
             if let textInput = eventNameInput.text {
                 let newEvntUser = EventUserRealm()
@@ -64,13 +63,15 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
                     realm.add(newEvntUser)
                 }
                 RealmHelp().saveLastID(ID: newEvntUser.taskID)
+                
+                _ = navigationController?.popToRootViewController(animated: true)
             }
         } else {
             eventNameInput.text = "Please enter a name for this order"
         }
         
-        _ = navigationController?.popToRootViewController(animated: true)
-        //eventsTableView.reloadData()
+       
+      
     }
 
     //MARK:- Set up Table View
