@@ -16,12 +16,12 @@ class DemoPhotoViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var topImage: UIImageView!
     
-    let feature1 = ["title":"Add Equipment","price":"move the selector","image":"1"]
-    let feature2 = ["title":"Swipe Left","price":"to delete an item","image":"2"]
-    let feature3 = ["title":"Edit Job Info","price":"tap this row","image":"3"]
-    let feature4 = ["title":"Load","price":"a prior project","image":"1"]
-    let feature5 = ["title":"In Projects","price":"tap a row","image":"2"]
-    let feature6 = ["title":"Write In","price":"your custom equipment","image":"3"]
+    let feature1 = ["title":"Add Equipment","price":"move the selector","button":"press add","image":"1"]
+    let feature2 = ["title":"Swipe Left","price":"to delete an item","button":"     ","image":"2"]
+    let feature3 = ["title":"Edit Job Info","price":"tap this row","button":"     ","image":"3"]
+    let feature4 = ["title":"Load","price":"a prior project","button":"press project","image":"4"]
+    let feature5 = ["title":"In Projects","price":"tap a row","button":"to load a prior project","image":"5"]
+    let feature6 = ["title":"Write In","price":"your custom equipment","button":"press add items","image":"6"]
     
     var featureArray = [Dictionary<String,String>]()
     
@@ -50,6 +50,7 @@ class DemoPhotoViewController: UIViewController, UIScrollViewDelegate {
                 featureView.featureImageView.image = UIImage(named: feature["image"]!)
                 featureView.titleLabel.text = feature["title"]
                 featureView.priceLabel.text = feature["price"]
+                featureView.purchaseButton.text = feature["button"]
                 
                 featureView.purchaseButton.tag = index
                 //featureView.purchaseButton.addTarget(self, action: #selector(ViewController.buyFeature(sender:)), for: .touchUpInside)
@@ -75,7 +76,7 @@ class DemoPhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func pictureLoad(page: Int) {
-        print("\nPage num:\(page)\n")
+       // print("\nPage num:\(page)\n")
         
         switch page {
         case 0:
