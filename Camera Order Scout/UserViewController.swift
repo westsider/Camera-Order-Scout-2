@@ -27,6 +27,12 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var dateTextInput: UITextField!
     
+    @IBOutlet weak var weatherIcon: UIImageView!
+
+    @IBOutlet weak var weatherTemp: UILabel!
+    
+    @IBOutlet weak var weatherCond: UILabel!
+    
     let errorOne = "Please include a state or country"
     
     let errorTwo = "Please Enter a City and State or Country"
@@ -108,6 +114,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 self.weatherDisplay.text = result
                 self.activityDial.stopAnimating()
                 self.returnMessage(message: result)
+                self.parseWeatherIcon(result: result)
             }
             
         }  else {
@@ -115,8 +122,10 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             self.activityDial.stopAnimating()
             self.returnMessage(message: searchResult)
         }
+        
+        
     }
-    
+
     //MARK: - Activate date picker view
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField.tag == 1 {
@@ -161,6 +170,35 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
+    func parseWeatherIcon(result: String) {
+        
+        let fullArray = result.components(separatedBy: CharacterSet.newlines)
+        
+        let firstDay = fullArray[0]
+        
+        let eachItem = firstDay.components(separatedBy: CharacterSet.whitespaces)
+        
+        //print("\nfirst line of weather \(firstDay) = \( eachItem.count)")
+        
+        if eachItem.count >= 2 {
+            //let thisDate = eachItem[0]
+            let thisTemp = eachItem[1]
+            var thisCond = eachItem[2]
+            
+            //print("\nDate: \(thisDate) Temp: \(thisTemp) Cond: \(thisCond)")
+            
+            if eachItem.count > 3 {
+                thisCond += " " + eachItem[3]
+            }
+            if eachItem.count > 4 {
+                thisCond += " " + eachItem[4]
+            }
+            
+            self.weatherIcon.image = setIcon(input: thisCond)
+            self.weatherTemp.text = thisTemp
+            self.weatherCond.text = thisCond
+        }
+    }
 }
 
 extension UIViewController {

@@ -20,7 +20,7 @@ class RealmStart {
  
         defaultEventUsers.eventName = "Blue Bin Commercial"
         defaultEventUsers.userName = "Jin Yang"
-        defaultEventUsers.city = "Palo Alta, CA"
+        defaultEventUsers.city = "Palo Alto, CA"
         defaultEventUsers.production  = "Silicon Valley"
         defaultEventUsers.company  = "HBO"
         defaultEventUsers.date = "3/30/2017"

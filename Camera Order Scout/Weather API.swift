@@ -31,32 +31,36 @@ func setIcon(input:String)-> UIImage {
     var thisImage:UIImage
     
     switch input {
-    case "chancerain":
+    case "Chance of Rain":
         thisImage = UIImage(named: "chancerain")!
-    case "chancetstorms":
+        //print("\nSwitch: \(input)")
+    case "Chance of Storms":
         thisImage =  UIImage(named: "chancetstorms")!
-    case "clear":
+        //print("\nSwitch: \(input)")
+    case "Clear":
         thisImage = UIImage(named: "clear")!
+        //print("\nSwitch: \(input)")
     case "nt_clear":
         thisImage = UIImage(named: "nt_clear")!
-    case "partlycloudy":
+    case "Partly Cloudy":
         thisImage = UIImage(named: "partlycloudy")!
-    case "overcast":
+    case "Overcast":
         thisImage = UIImage(named: "overcast")!
-    case "cloudy":
+    case "Cloudy":
         thisImage = UIImage(named: "overcast")!
-    case "mostlycloudy":
+    case "Mostly Cloudy":
         thisImage = UIImage(named: "overcast")!
-    case "rain":
+    case "Rain":
         thisImage = UIImage(named: "chancerain")!
+        //print("\nSwitch: \(input)")
     case "nt_partlycloudy":
         thisImage = UIImage(named: "partlycloudy")!
-    case "snow":
+    case "Snow":
         thisImage = UIImage(named: "snow")!
-    case "fog":
+    case "Fog":
         thisImage = UIImage(named: "snow")!
     default:
-        thisImage = UIImage(named: "none")!
+        thisImage = UIImage(named: "clear")!
     }
     
     return thisImage
@@ -145,7 +149,6 @@ class GetWeather {
             
             // Parse the data error
             guard error == nil else {
-                //print("error contacting wunderground: \n\(error!.localizedDescription)")
                 
                 DispatchQueue.main.async(execute: {
                     // create text block for error
@@ -164,6 +167,7 @@ class GetWeather {
             } catch {
                 json = nil
                 print("json = nil")
+                return
             }
             // weather detail object
             if  let forecastDetail = ForecastDetail.forecastDetialArray(json: json!) {
