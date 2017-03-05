@@ -20,7 +20,7 @@ class DemoPhotoViewController: UIViewController, UIScrollViewDelegate {
     let feature2 = ["title":"Swipe Left","price":"to delete an item","image":"2"]
     let feature3 = ["title":"Edit Job Info","price":"tap this row","image":"3"]
     let feature4 = ["title":"Load","price":"a prior project","image":"1"]
-    let feature5 = ["title":"In Projects","price":"tap ap row","image":"2"]
+    let feature5 = ["title":"In Projects","price":"tap a row","image":"2"]
     let feature6 = ["title":"Write In","price":"your custom equipment","image":"3"]
     
     var featureArray = [Dictionary<String,String>]()
