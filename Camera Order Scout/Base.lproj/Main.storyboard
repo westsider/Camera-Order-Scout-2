@@ -43,7 +43,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2B5DA5BE-E651-4172-9E9D-1D53FA105A71" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-q8-jzw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C971AC76-030D-4DEB-AC04-B23450FC1420" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-q8-jzw">
                                                     <rect key="frame" x="8" y="7" width="31" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="31" id="Am7-Ph-x7D"/>
@@ -176,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="692" y="690.40479760119945"/>
         </scene>
-        <!--Past Orders View Controller-->
+        <!--Projects View Controller-->
         <scene sceneID="OTA-BF-suw">
             <objects>
-                <viewController id="lAd-JY-kQi" customClass="PastOrdersViewController" customModule="Camera_Order_Scout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lAd-JY-kQi" customClass="ProjectsViewController" customModule="Camera_Order_Scout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bGX-dC-ynZ"/>
                         <viewControllerLayoutGuide type="bottom" id="n98-eD-age"/>
@@ -862,7 +862,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2B5DA5BE-E651-4172-9E9D-1D53FA105A71" width="16" height="16">
+        <image name="C971AC76-030D-4DEB-AC04-B23450FC1420" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

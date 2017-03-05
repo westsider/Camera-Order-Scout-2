@@ -23,7 +23,7 @@
 		0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6393701E46D932003055DB /* Equipment Makers.swift */; };
 		0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */; };
 		0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */; };
-		0DBCF7531E495DAA00205017 /* PastOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7521E495DAA00205017 /* PastOrdersViewController.swift */; };
+		0DBCF7531E495DAA00205017 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7521E495DAA00205017 /* ProjectsViewController.swift */; };
 		0DBCF7551E49660D00205017 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7541E49660D00205017 /* UserViewController.swift */; };
 		0DBCF7571E496B8A00205017 /* Weather API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7561E496B8A00205017 /* Weather API.swift */; };
 		0DBCF7591E496BAE00205017 /* Location API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7581E496BAE00205017 /* Location API.swift */; };
@@ -75,7 +75,7 @@
 		0D6393701E46D932003055DB /* Equipment Makers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Equipment Makers.swift"; sourceTree = "<group>"; };
 		0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimeLensTableViewCell.swift; path = ../PrimeLensTableViewCell.swift; sourceTree = "<group>"; };
 		0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = firstRunProjects.swift; path = "Camera Order Scout/firstRunProjects.swift"; sourceTree = "<group>"; };
-		0DBCF7521E495DAA00205017 /* PastOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastOrdersViewController.swift; sourceTree = "<group>"; };
+		0DBCF7521E495DAA00205017 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		0DBCF7541E49660D00205017 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		0DBCF7561E496B8A00205017 /* Weather API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Weather API.swift"; path = "Camera Order Scout/Weather API.swift"; sourceTree = "<group>"; };
 		0DBCF7581E496BAE00205017 /* Location API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location API.swift"; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 				0DBCF7541E49660D00205017 /* UserViewController.swift */,
 				0DE208DE1E48097900619AEF /* LensesViewController.swift */,
 				0D1AABB51E6293D10097B64A /* AksKitViewController.swift */,
-				0DBCF7521E495DAA00205017 /* PastOrdersViewController.swift */,
+				0DBCF7521E495DAA00205017 /* ProjectsViewController.swift */,
 				0DDBE5E01E6A1FC800F6F0D0 /* DemoPhotoViewController.swift */,
 			);
 			name = Controller;
@@ -311,7 +311,7 @@
 				0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */,
 				0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */,
 				0D63936F1E46D8FC003055DB /* Equipment Class.swift in Sources */,
-				0DBCF7531E495DAA00205017 /* PastOrdersViewController.swift in Sources */,
+				0DBCF7531E495DAA00205017 /* ProjectsViewController.swift in Sources */,
 				0DE208DB1E47E13A00619AEF /* TableView Array Class.swift in Sources */,
 				0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */,
 				0D63935D1E46D84A003055DB /* AppDelegate.swift in Sources */,

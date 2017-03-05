@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class PastOrdersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ProjectsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var eventsTableView: UITableView!
     
