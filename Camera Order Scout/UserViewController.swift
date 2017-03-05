@@ -146,6 +146,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     func setUpDatePicker() {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.minimumDate = Date()
         dateTextInput.tag = 1
         dateTextInput.inputView = datePicker
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
@@ -178,14 +179,10 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         
         let eachItem = firstDay.components(separatedBy: CharacterSet.whitespaces)
         
-        //print("\nfirst line of weather \(firstDay) = \( eachItem.count)")
-        
         if eachItem.count >= 2 {
-            //let thisDate = eachItem[0]
+            
             let thisTemp = eachItem[1]
             var thisCond = eachItem[2]
-            
-            //print("\nDate: \(thisDate) Temp: \(thisTemp) Cond: \(thisCond)")
             
             if eachItem.count > 3 {
                 thisCond += " " + eachItem[3]
