@@ -97,10 +97,21 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            try! tasks.realm!.write {
-                let task = self.tasks[indexPath.row]
-                self.tasks.realm!.delete(task)
+            // only delete projects if we have more that 1
+            if tasks.count > 1 {
+                try! tasks.realm!.write {
+                    let task = self.tasks[indexPath.row]
+                    self.tasks.realm!.delete(task)
+                    
+                    // if after deleting current project
+                    if RealmHelp().getLastIdUsed() == "" {
+                        // load first id in list
+                        let tasktwo = self.tasks[0]
+                        RealmHelp().saveLastID(ID: tasktwo.taskID)
+                    }
+                }
             }
+            
         }
         let allEvents = realm.objects(EventUserRealm.self)
         // get last id in events to save new last id
