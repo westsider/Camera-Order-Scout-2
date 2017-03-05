@@ -43,7 +43,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D2D5C165-34D3-44E9-9563-B129446B4F08" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-q8-jzw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0806E501-0A29-4239-ACAC-A6E9B86E2C8A" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-q8-jzw">
                                                     <rect key="frame" x="8" y="7" width="31" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="31" id="Am7-Ph-x7D"/>
@@ -681,7 +681,7 @@
         <!--Demo Photo View Controller-->
         <scene sceneID="A1M-cz-laW">
             <objects>
-                <viewController id="DSv-Hn-znq" customClass="DemoPhotoViewController" customModule="Camera_Order_Scout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DSv-Hn-znq" customClass="DemoPhotoViewController" customModule="Camera_Order_Scout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9XU-Lq-WVr"/>
                         <viewControllerLayoutGuide type="bottom" id="Xqi-y8-GA6"/>
@@ -880,7 +880,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="D2D5C165-34D3-44E9-9563-B129446B4F08" width="16" height="16">
+        <image name="0806E501-0A29-4239-ACAC-A6E9B86E2C8A" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
