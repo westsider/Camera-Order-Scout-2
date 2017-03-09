@@ -120,7 +120,7 @@ func setPrimesModel(maker: MakerPrimes) -> [String] {
     case .camtec:
         return ["Ultra Primes"]
     case .anamorphic:
-        return ["Cooke Vintage", "Cooke", "Master Primes", "Arriscope", "Kowa", "Hawk VL", "Hawk V", "Hawk C", "Cineovision"]
+        return ["Cooke Vintage", "Cooke", "Master Primes", "Arriscope", "Kowa", "Hawk VL", "Hawk V", "Hawk C", "Cineovision", "Pana T", "Pana G", "Primo", "Pana E", "Pana C", "Pana HS", "Pana Macro", "Pana Tele", "Pana Flare"]
     }
 }
 

@@ -523,7 +523,7 @@ class TableViewArrays {
                                   "135mm    T 1.9     ^5ft"]
         }
         
-        /// Primes + "Anamorphic", 11  selected
+        //MARK: -  Primes + "Anamorphic", 11  selected
         if compState[1] == 1 && compState[2] == 12 && compState[3] == 0 {
             
             thePrimes   = [ "25mm","32mm","40mm","50mm","75mm","100mm"]
@@ -639,6 +639,133 @@ class TableViewArrays {
                                   "100mm    T 2.8     ^3ft"]
         }
         
+        //MARK: - Primes + "Anamorphic  Panavision T Series
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 9 {
+            
+            thePrimes   = ["28mm","35mm","40mm","50mm","60mm","75mm","100mm","135mm","150mm","180mm","37-85mm"]
+            
+            displayLensArray  = [ "28mm     T 2.3     ^2ft",
+                                  "35mm     T 2.3     ^2ft",
+                                  "40mm     T 2.3     ^1ft 6in",
+                                  "50mm     T 2.3     ^2ft",
+                                  "60mm     T 2.3     ^1ft 6in",
+                                  "75mm     T 2.3     ^2ft",
+                                  "100mm    T 2.3     ^2ft",
+                                  "135mm    T 2.3     ^2ft 6in",
+                                  "150mm    T 3.1     ^3ft 6in",
+                                  "180mm    T 2.8     ^3ft 6in",
+                                  "37-85mm  T 2.8     ^2ft 9in"]
+        }
+        
+        //MARK: - Primes + "Anamorphic  Panavision G Series
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 10 {
+            
+            thePrimes   = ["25mm","30mm","35mm","40mm","50mm","60mm","75mm","100mm"]
+            
+            displayLensArray  = [ "25mm     T 2.6     ^2ft 6in",
+                                  "30mm     T 2.6     ^2ft 6in",
+                                  "35mm     T 2.6     ^3ft",
+                                  "40mm     T 2.6     ^3ft",
+                                  "50mm     T 2.6     ^3ft",
+                                  "60mm     T 2.6     ^3ft",
+                                  "75mm     T 2.6     ^3ft",
+                                  "100mm    T 3       ^3ft"]
+        }
+
+        //MARK: - Primes + "Anamorphic  Panavision Primo
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 11 {
+    
+            thePrimes   = ["35mm","40mm","50mm","75mm","100mm"]
+            
+            displayLensArray  = [ "35mm     T 2     ^3ft 6in",
+                                  "40mm     T 2     ^3ft 6in",
+                                  "50mm     T 2     ^3ft 6in",
+                                  "75mm     T 2     ^4ft 6in",
+                                  "100mm    T 2     ^4ft 6in"]
+        }
+        
+        //MARK: - Primes + "Anamorphic  Panavision E Series
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 12 {
+            
+            thePrimes   = ["28mm", "35mm", "40mm", "50mm", "75mm", "85mm", "100mm", "135mm", "180mm"]
+            
+            displayLensArray  = [ "28mm     T 2.3   ^4ft",
+                                  "35mm     T 2     ^3ft 6in",
+                                  "40mm     T 2     ^4ft",
+                                  "50mm     T 2     ^4ft",
+                                  "75mm     T 2     ^4ft",
+                                  "85mm     T 2     ^5ft",
+                                  "100mm    T 2.3   ^5ft",
+                                  "135mm    T 2.8   ^3ft 9in",
+                                  "180mm    T 2.8   ^4ft 6in" ]
+        }
+        
+        //MARK: - Primes + "Anamorphic  Panavision C Series
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 13 {
+            
+            thePrimes   = ["35mm", "40mm", "50mm", "60mm","75mm", "100mm", "150mm","180mm"]
+            
+            displayLensArray  = [ "35mm     T 3     ^4ft",
+                                  "35mm     T 2.3   ^2ft 9in",
+                                  "40mm     T 2.8   ^2ft 6in",
+                                  "50mm     T 2.3   ^2ft 6in",
+                                  
+                                  "60mm     T 2.8   ^1ft 6in",
+                                  "75mm     T 2.5   ^4ft 6in",
+                                  "100mm    T 2.8   ^4ft 6in",
+                                  "150mm    T 3.5   ^5ft",
+                                  "180mm    T 2.8   ^7ft" ]
+        }
+        
+        //MARK: - Primes + "Anamorphic  Panavision High Speed
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 14 {
+          
+            thePrimes   = ["35mm","50mm", "55mm","75mm", "100mm"]
+            
+            displayLensArray  = [ "35mm     T 1.4   ^4ft 6in",
+                                  "50mm     T 1.1   ^4ft",
+                                  "55mm     T 1.4   ^4ft",
+                                  "75mm     T 1.8   ^4ft 6in",
+                                  "100mm    T 1.8   ^4ft 6in" ]
+        }
+        
+        //MARK: - Primes + "Anamorphic  Panavision Macro Pantar
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 15 {
+            
+            thePrimes   = ["90mm","55mm", "150mm","200mm", "250mm"]
+            
+            displayLensArray  = [ "90mm     T 4.3   ^1ft 5in",
+                                  "55mm     T 2.5   ^10in",
+                                  "150mm    T 3.2   ^1ft 5in",
+                                  "200mm    T 3.2   ^1ft 6in",
+                                  "250mm    T 3.2   ^2ft 3in" ]
+        }
+        
+        //MARK: - Primes + "Anamorphic  Panavision Telephoto
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 16 {
+            
+            thePrimes   = ["300mm","400mm", "400mm","600mm", "600mm","800mm"]
+            
+            displayLensArray  = [ "300mm    T 3.8   ^6ft 6in",
+                                  "400mm    T 3.5   ^9ft",
+                                  "400mm    T 3.0   ^8ft",
+                                  "600mm    T 4.0   ^13ft",
+                                  "600mm    T 4.5   ^27ft",
+                                  "800mm    T 5.0   ^15ft" ]
+        }
+        
+        //MARK: - Primes + "Anamorphic  Panavision Flare
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 17 {
+            
+            thePrimes   = ["40mm","50mm", "75mm","100mm"]
+            
+            displayLensArray  = [ "40mm    T 2.8   ^2ft 6in",
+                                  "50mm    T 2.3   ^2ft 6in",
+                                  "75mm    T 2.8   ^3ft 6in",
+                                  "100mm   T 3.5   ^4ft"]
+        }
+        
+
         /// arri macro
         if compState[1] == 2 && compState[2] == 0 && compState[3] == 0 {
             thePrimes = ["17.5mm", "21mm", "25mm", "32mm","40mm","50mm", "65mm", "90mm", "102mm"]
@@ -653,6 +780,8 @@ class TableViewArrays {
                                   "90mm     T 1.0   ^1ft 8in",
                                   "102mm    T 1.0   ^2ft 6in"]
         }
+        
+        
         
         // master prime macro
         if compState[1] == 2 && compState[2] == 1 && compState[3] == 0 {

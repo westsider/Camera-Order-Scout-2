@@ -107,8 +107,8 @@
 		0D285B6D1E5794FD004149CF /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
-				0D63936E1E46D8FC003055DB /* Equipment Class.swift */,
 				0D6393701E46D932003055DB /* Equipment Makers.swift */,
+				0D63936E1E46D8FC003055DB /* Equipment Class.swift */,
 				0DE208DA1E47E13A00619AEF /* TableView Array Class.swift */,
 				0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */,
 				0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */,

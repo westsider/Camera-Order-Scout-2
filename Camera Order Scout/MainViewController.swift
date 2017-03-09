@@ -6,8 +6,9 @@
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 
 //  task: add panaviaion primos
-//  add pana zooms
-//  add special lens section: 6mm fish eye T2.8, low angle prism, ext 1.4x 2x, RZM Revolving Zoom Mesmerizer, Kish Front Anamorphic Mesmerizer - MES,
+//  task: add panaviaion anamporphic
+
+//  task: add special lens section: 6mm fish eye T2.8, low angle prism, ext 1.4x 2x, RZM Revolving Zoom Mesmerizer, Kish Front Anamorphic Mesmerizer - MES,
 //  Low Distortion Wide Angle Adapter – SLWA, Century Fisheye Adapter – CFA, Century Swing Shift System, 	75	90	105	135	150, slant focus 	24	34	45	63
 //  check asc magazne
 
