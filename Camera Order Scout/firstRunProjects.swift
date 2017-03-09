@@ -55,7 +55,7 @@ class RealmStart {
     func DemoEventsTwo() {
         
         defaultEventUsers.eventName = "Studio Package"
-        defaultEventUsers.userName = "Erich Bachman"
+        defaultEventUsers.userName = "Erlich Bachman"
         defaultEventUsers.city = "Santa Clara, CA"
         defaultEventUsers.production  = "Silicon Valley"
         defaultEventUsers.company  = "HBO"
