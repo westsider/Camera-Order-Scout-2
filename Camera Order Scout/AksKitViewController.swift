@@ -107,7 +107,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let index = sender.tag
         let content = sender.restorationIdentifier!
         
-        if pickerRow == 5 {  // if aks
+        if pickerRow == 6 {  // if aks
             
             var todoList: Results<AksItem> {
                 get {
@@ -120,7 +120,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        if pickerRow == 7 {  // if FilterItem
+        if pickerRow == 8 {  // if FilterItem
             
             var todoList: Results<FilterItem> {
                 get {
@@ -133,7 +133,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        if pickerRow == 8 {  // if SupportItem
+        if pickerRow == 9 {  // if SupportItem
             
             var todoList: Results<SupportItem> {
                 get {
@@ -150,7 +150,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // modify realm object called @objc @objc by picker state
     func updateRealm(state: Int, item: String, onOff: Bool)  {
         
-        if state == 5 { // if aks
+        if state == 6 { // if aks
             let todoItem = AksItem()
             todoItem.detail = item
             todoItem.status = onOff
@@ -161,7 +161,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
         
-        if state == 7 { // if FilterItem
+        if state == 8 { // if FilterItem
             let todoItem = FilterItem()
             todoItem.detail = item
             todoItem.status = onOff
@@ -172,7 +172,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
         
-        if state == 8 { // if SupportItem
+        if state == 9 { // if SupportItem
             let todoItem = SupportItem()
             todoItem.detail = item
             todoItem.status = onOff
@@ -187,17 +187,17 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // modify view info by picker state
     func setUpUI() {
         // 5 aks
-        if pickerEquipment.pickerState[1] == 5 {
+        if pickerEquipment.pickerState[1] == 6 {
             titleDescription.text = "Switch on AKS items needed"
             title = "Accessories"
         }
         // 7 filters
-        if pickerEquipment.pickerState[1] == 7 {
+        if pickerEquipment.pickerState[1] == 8 {
             titleDescription.text = "Switch on filters needed"
             title = "Filters"
         }
         // 8 support
-        if pickerEquipment.pickerState[1] == 8 {
+        if pickerEquipment.pickerState[1] == 9 {
             titleDescription.text = "Switch on support needed"
             title = "Support"
         }

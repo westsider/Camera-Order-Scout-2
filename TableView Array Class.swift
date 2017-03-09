@@ -48,6 +48,10 @@ class TableViewArrays {
             return UIImage(named: "lensIcon")!
         }
         
+        if catagory.range(of:"Specialty") != nil {
+            return UIImage(named: "lensIcon")!
+        }
+        
         if catagory.range(of:"AKS") != nil {
             return UIImage(named: "gearIcon")!
         }
@@ -849,7 +853,7 @@ class TableViewArrays {
             displayLensArray =  ["17mm    T 7.1", "20mm    T 7.1", "24mm    T 7.1", "28mm    T 7.1", "35mm    T 7.1", "45mm    T 7.1", "50mm    T 7.1"]          }
         
         // AKS
-        if compState[1] == 5 {
+        if compState[1] == 6 {
             thePrimes =  ["5 inch Assistant Monitor",
                           "7 inch Assistant Monitor",
                           "Hand Held Rig",
@@ -897,14 +901,14 @@ class TableViewArrays {
         }
         
         // Finder
-        if compState[1] == 6 {
+        if compState[1] == 7 {
             thePrimes =  ["Standard Finder", "Anamorphic Finder"]
             
             displayLensArray = thePrimes
         }
         
         // Filters
-        if compState[1] == 7 {
+        if compState[1] == 8 {
             thePrimes =  ["Diopter +1/2 +1 +2 +3",
                           "Achromatic Diopter +1/2 +1 +2 +3",
                           "Split Diopter +1/2 +1 +2 +3",
@@ -1095,7 +1099,7 @@ class TableViewArrays {
         }
         
         // Support
-        if compState[1] == 8 {
+        if compState[1] == 9 {
             thePrimes =  ["Sachtler Cine 30 HD",
                           "Sachtler Studio 9+9 Head",
                           

@@ -12,9 +12,9 @@ import UIKit
 let Quantity = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"]
 
 enum Catagory {
-    case camera, primes, macros, probeLens, zoomLens, aks, finder, filters, support
+    case camera, primes, macros, probeLens, zoomLens, specialty, aks, finder, filters, support
     
-    static let allValues = ["Camera", "Primes", "Macros", "Probe Lens", "Zoom Lens", "AKS", "Finder", "Filters", "Support"]
+    static let allValues = ["Camera", "Primes", "Macros", "Probe Lens", "Zoom Lens", "Specialty", "AKS", "Finder", "Filters", "Support"]
 }
 
 enum MakerCamera {
@@ -47,6 +47,11 @@ enum MakerZoom {
     static let allValues = ["Angenieux","Fujinon", "Cooke","Zeiss VP", "Hawk", "Century", "Canon","Anamorphic", "Panavision"]
 }
 
+enum MakerSpecialty {
+    case fisheye, prism, extender, mesmerizer, portrait, flare, slant, swing
+    static let allValues = ["Fisheye", "Prism", "Extender", "Mesmerizer", "Portrait", "Flare", "Slant", "Swing"]
+}
+
 enum MakerAKSFiltersSupport {
     case selectItems
     
@@ -64,15 +69,17 @@ class Maker {
     var makerMacros: MakerMacros
     var makerProbes: MakerProbe
     var makerZoom:   MakerZoom
+    var makerSpecialty: MakerSpecialty
     var makerAKSFiltersSupport: MakerAKSFiltersSupport
     var makerFinder: MakerFinder
     
-    init(makerCamera: MakerCamera, makerPrimes: MakerPrimes, makerMacros: MakerMacros, makerProbes: MakerProbe, makerZoom: MakerZoom, makerAKSFiltersSupport: MakerAKSFiltersSupport, makerFinder: MakerFinder ) {
+    init(makerCamera: MakerCamera, makerPrimes: MakerPrimes, makerMacros: MakerMacros, makerProbes: MakerProbe, makerZoom: MakerZoom, makerSpecialty: MakerSpecialty,makerAKSFiltersSupport: MakerAKSFiltersSupport, makerFinder: MakerFinder ) {
         self.makerCamera = makerCamera
         self.makerPrimes = makerPrimes
         self.makerMacros = makerMacros
         self.makerProbes = makerProbes
         self.makerZoom = makerZoom
+        self.makerSpecialty = makerSpecialty
         self.makerAKSFiltersSupport = makerAKSFiltersSupport
         self.makerFinder = makerFinder
     }
@@ -175,6 +182,28 @@ func setZoomModel(maker: MakerZoom)-> [String] {
                 "Angenieux 48-580","Cooke 40-120", "Cooke 36-200", "Cooke 40-200","Cooke 50-500"]
     case .panavision:
         return ["Low Ratio 15-40", "Low Ratio 27-75","Low Ratio 60-125","Primo 17.5-75","Primo 19-90","Primo 24-275","Primo 135-420","STZ 70-200mm", "LWZ 27-68", "LWZ 17.5 - 34", "LWZ 85-200", "Z10S 20-250", "Z6S 20-120","Canon 150-600"]
+    }
+}
+
+func setSpecialty(maker: MakerSpecialty)-> [String] {
+
+    switch maker {
+    case .fisheye:
+        return ["6mm T2.8", "6mm T3.5"]
+    case .prism:
+        return ["Low Angle"]
+    case .extender:
+        return ["1.4x", "2x"]
+    case .mesmerizer:
+        return ["Rev Zoom", "Kish"]
+    case .portrait:
+        return ["Pana", "Clairmont"]
+    case .flare:
+        return ["Pana", "Clairmont"]
+    case .slant:
+        return ["Pana", "Canon"]
+    case .swing:
+        return ["Century"]
     }
 }
 

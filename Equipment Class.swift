@@ -44,14 +44,17 @@ class Equipment {
                     pickerArray = [Quantity, Catagory.allValues, MakerProbe.allValues, setProbeModel(maker: .innovision)] // probe
                 case 4:
                     pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues,setZoomModel(maker: .angenieux)] // zoom
-                case 5:    
-                    pickerArray = [Quantity, Catagory.allValues, MakerAKSFiltersSupport.allValues, setModelEmpty() ] // aks
+                case 5:
+                    pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .fisheye) ] // support
                 case 6:
-                    pickerArray = [Quantity, Catagory.allValues, MakerFinder.allValues, setFinderModel(maker: .standard)] // finder
+                    pickerArray = [Quantity, Catagory.allValues, MakerAKSFiltersSupport.allValues, setModelEmpty() ] // aks
                 case 7:
-                    pickerArray = [Quantity, Catagory.allValues, MakerAKSFiltersSupport.allValues, setModelEmpty()] // filters
+                    pickerArray = [Quantity, Catagory.allValues, MakerFinder.allValues, setFinderModel(maker: .standard)] // finder
                 case 8:
+                    pickerArray = [Quantity, Catagory.allValues, MakerAKSFiltersSupport.allValues, setModelEmpty()] // filters
+                case 9:
                     pickerArray = [Quantity, Catagory.allValues, MakerAKSFiltersSupport.allValues, setModelEmpty() ] // support
+                
                 default:
                     pickerArray = [Quantity, Catagory.allValues, MakerCamera.allValues,["Array ","out ", "of ", "index"]]
                 }
@@ -154,6 +157,27 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, setZoomModel(maker: .canon)]
                     case 7:
                         pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, setZoomModel(maker: .anamorphic)]
+                    default:
+                        pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, ["Array ","out ", "of ", "index"]]
+                    }
+                case 5: // Specialty
+                    switch row {
+                    case 0:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .fisheye)]
+                    case 1:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .prism)]
+                    case 2:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .extender)]
+                    case 3:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .mesmerizer)]
+                    case 4:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .portrait)]
+                    case 5:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .flare)]
+                    case 6:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .slant)]
+                    case 7:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .swing)]
                     default:
                         pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, ["Array ","out ", "of ", "index"]]
                     }

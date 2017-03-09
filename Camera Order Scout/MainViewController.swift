@@ -7,10 +7,10 @@
 
 //  task: add panaviaion primos
 //  task: add panaviaion anamporphic
+//  task: add special lens section
 
-//  task: add special lens section: 6mm fish eye T2.8, low angle prism, ext 1.4x 2x, RZM Revolving Zoom Mesmerizer, Kish Front Anamorphic Mesmerizer - MES,
-//  Low Distortion Wide Angle Adapter – SLWA, Century Fisheye Adapter – CFA, Century Swing Shift System, 	75	90	105	135	150, slant focus 	24	34	45	63
 //  check asc magazne
+// Erlich
 
 import Foundation
 import UIKit
@@ -50,11 +50,11 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
-    //MARK: - Add Action
+    //MARK: - Add Action  5 is now specialty
     @IBAction func addAction(_ sender: Any) {
         
         //  camera, zoom or finder just add
-        if pickerEquipment.pickerState[1] == 0 ||  pickerEquipment.pickerState[1] == 4 ||  pickerEquipment.pickerState[1] == 6  {
+        if pickerEquipment.pickerState[1] == 0 ||  pickerEquipment.pickerState[1] == 4 ||  pickerEquipment.pickerState[1] == 5 ||  pickerEquipment.pickerState[1] == 7  {
             //  create tableview row realm objects
             let newRow = TableViewRow()
             newRow.icon = pickerEquipment.pickerSelection[1];
@@ -81,8 +81,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             navigationController?.pushViewController(myVc, animated: true)
         }
         
-        // segue to aks, filters or support using realm objects
-        if pickerEquipment.pickerState[1] == 5 || pickerEquipment.pickerState[1] > 6 {
+        // segue to aks 6, filters 8 or support 9 using realm objects
+        if pickerEquipment.pickerState[1] == 6 || pickerEquipment.pickerState[1] > 7 {
             tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState) // populate the next controller?
             let myVc = storyboard?.instantiateViewController(withIdentifier: "aksViewController") as! AksKitViewController
             myVc.pickerEquipment = pickerEquipment

@@ -35,7 +35,7 @@ class FirstRun { // aks filters support
         // load stock aks items
         let tableviewArrays = TableViewArrays()
         
-        tableviewArrays.setPrimesKit(compState: [0,5,0,0])
+        tableviewArrays.setPrimesKit(compState: [0,6,0,0])
         
         for  item in tableviewArrays.thePrimes {
             
@@ -49,7 +49,7 @@ class FirstRun { // aks filters support
         }
         
         // load stock filters
-        tableviewArrays.setPrimesKit(compState: [0,7,0,0])
+        tableviewArrays.setPrimesKit(compState: [0,8,0,0])
         
         for  item in tableviewArrays.thePrimes {
             
@@ -63,7 +63,7 @@ class FirstRun { // aks filters support
         }
         
         // load stock support
-        tableviewArrays.setPrimesKit(compState: [0,8,0,0])
+        tableviewArrays.setPrimesKit(compState: [0,9,0,0])
         
         for  item in tableviewArrays.thePrimes {
             
@@ -87,7 +87,7 @@ class UniqueKits {
         
         var returnedString = String()
         
-        if pickerRow == 5 {  // if aks
+        if pickerRow == 6 {  // if aks
             
             var todoList: Results<AksItem> {
                 get {
@@ -102,7 +102,7 @@ class UniqueKits {
             }
         }
         
-        if pickerRow == 7 {  // if FilterItem
+        if pickerRow == 8 {  // if FilterItem
             
             var todoList: Results<FilterItem> {
                 get {
@@ -116,7 +116,7 @@ class UniqueKits {
             }
         }
         
-        if pickerRow == 8 {  // if SupportItem
+        if pickerRow == 9 {  // if SupportItem
             
             var todoList: Results<SupportItem> {
                 get {
@@ -145,7 +145,7 @@ class UniqueKits {
         var size = 1
         var isSwitchOn = false
         
-        if state == 5 { // if aks
+        if state == 6 { // if aks
             
             var todoList: Results<AksItem> {
                 get {
@@ -158,7 +158,7 @@ class UniqueKits {
             isSwitchOn = todoList[row].status
         }
         
-        if state == 7 { // if FilterItem
+        if state == 8 { // if FilterItem
             
             var todoList: Results<FilterItem> {
                 get {
@@ -171,7 +171,7 @@ class UniqueKits {
             isSwitchOn = todoList[row].status
         }
         
-        if state == 8 { // if SupportItem
+        if state == 9 { // if SupportItem
             
             var todoList: Results<SupportItem> {
                 get {
@@ -193,7 +193,7 @@ class UniqueKits {
         let index = sender.tag
         let content = sender.restorationIdentifier!
         
-        if pickerRow == 5 {  // if aks
+        if pickerRow == 6 {  // if aks
             
             var todoList: Results<AksItem> {
                 get {
@@ -206,7 +206,7 @@ class UniqueKits {
             }
         }
         
-        if pickerRow == 7 {  // if FilterItem
+        if pickerRow == 8 {  // if FilterItem
             
             var todoList: Results<FilterItem> {
                 get {
@@ -219,7 +219,7 @@ class UniqueKits {
             }
         }
         
-        if pickerRow == 8 {  // if SupportItem
+        if pickerRow == 9 {  // if SupportItem
             
             var todoList: Results<SupportItem> {
                 get {
