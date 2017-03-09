@@ -952,7 +952,11 @@ class TableViewArrays {
                           "Easy Rig 500",
                           "Easy Rig 600",
                           "Easy Rig 700",
-                          "Easy Rig 850"]
+                          "Easy Rig 850",
+                          "Wireless Video",
+                          "Teradek Wireless Video",
+                          "Paralinx Wireless Video"
+            ]
             
             displayLensArray = thePrimes
         }

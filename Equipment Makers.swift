@@ -18,9 +18,9 @@ enum Catagory {
 }
 
 enum MakerCamera {
-    case arri, red, phantom, panavision, sony, codex
+    case arri, red, phantom, panavision, sony, codex, panasonic, canon
     
-    static let allValues = ["Arri", "Red", "Phantom", "Panavision", "Sony","Codex"]
+    static let allValues = ["Arri", "Red", "Phantom", "Panavision", "Sony","Codex", "Panasonic", "Canon"]
 }
 
 enum MakerPrimes {
@@ -44,7 +44,7 @@ enum MakerProbe {
 
 enum MakerZoom {
     case angenieux, fujinon, cooke, zeissVP, hawk, century, canon, anamorphic, panavision
-    static let allValues = ["Angenieux","Fujinon", "Cooke","Zeiss VP", "Hawk", "Century", "Canon","Anamorphic", "Panavision"]
+    static let allValues = ["Angenieux","Fujinon", "Cooke","Zeiss", "Hawk", "Century", "Canon","Anamorphic", "Panavision"]
 }
 
 enum MakerSpecialty {
@@ -90,7 +90,7 @@ func setCamModel(maker: MakerCamera) -> [String] {
     case .arri:
         return ["Mini", "Amira", "Alexa XT+","Alexa 4:3 +XR","Alexa ST XR","Alexa M","Alexa", "235", "535B", "435", "Arricam LT", "Arricam ST", "SR3","SR3 HS", "416", "416 HS"]
     case .red:
-        return ["Helium 8K", "Weapon", "Epic","Epic Dragon", "One"]
+        return ["Helium 8K", "Weapon 8K", "Weapon", "Epic","Epic Dragon", "One"]
     case .phantom:
         return ["Flex 4k", "Flex", "HD Gold"]
     case .panavision:
@@ -99,6 +99,10 @@ func setCamModel(maker: MakerCamera) -> [String] {
         return ["F-35", "F-55", "F-65", "Cine Alta F-55", "Cine Alta 4k","F-5","F-S5","F-S7"]
     case .codex:
         return ["Action Cam"]
+    case .panasonic:
+        return ["Varicam 35", "Varicam LT"]
+    case .canon:
+        return ["1D C","C100","C300","C500", "C700"]
     }
 }
 
@@ -172,7 +176,7 @@ func setZoomModel(maker: MakerZoom)-> [String] {
     case .cooke:
         return ["25-250 Mk2", "20-60", "15-40 CXX", "18-100"]
     case .zeissVP:
-        return ["16-30", "29-60", "55-105"]
+        return ["16-30 VP", "29-60 VP", "55-105 VP", "21-100 LW"]
     case .hawk:
         return ["17-35", "100-300", "150-450"]
     case .century:

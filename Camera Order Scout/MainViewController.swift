@@ -10,9 +10,9 @@
 //  task: add special lens section
 //  fix: Erlich Backman Fix
 //  task: added sony, actioCam
+//  task: updated items from camtec
+//  task: updated asc magazne
 
-//  task: updated items from camtec 
-//  check asc magazne
 //  pana large format
 
 
