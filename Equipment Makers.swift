@@ -105,7 +105,7 @@ func setCamModel(maker: MakerCamera) -> [String] {
 func setPrimesModel(maker: MakerPrimes) -> [String] {
     switch maker {
     case .zeiss:
-        return ["Master Primes", "Ultra Primes", "Super Speeds", "Standard Speeds", "Compact S2"]
+        return ["Master Primes", "Ultra Primes", "Super Speeds","SS Uncoated", "Standard Speeds", "Compact S2", "B Speeds"]
     case .leica:
         return ["Summilux-C", "Summicron-C", "Telephoto"]
     case .canon:
@@ -129,7 +129,7 @@ func setPrimesModel(maker: MakerPrimes) -> [String] {
     case .camtec:
         return ["Ultra Primes"]
     case .anamorphic:
-        return ["Cooke Vintage", "Cooke", "Master Primes", "Arriscope", "Kowa", "Hawk VL", "Hawk V", "Hawk C", "Cineovision", "Pana T", "Pana G", "Primo", "Pana E", "Pana C", "Pana HS", "Pana Macro", "Pana Tele", "Pana Flare"]
+        return ["Cooke Vintage", "Cooke", "Master Primes", "Arriscope", "Kowa", "Hawk VL", "Hawk V", "Hawk C","Hawk V74", "Todd AO","Cineovision", "Pana T", "Pana G", "Primo", "Pana E", "Pana C", "Pana HS", "Pana Macro", "Pana Tele", "Pana Flare"]
     }
 }
 
@@ -178,7 +178,7 @@ func setZoomModel(maker: MakerZoom)-> [String] {
     case .century:
         return ["28-70", "17-35", "150-600"]
     case .canon:
-        return ["50-1000"]
+        return ["50-1000", "25-120"]
     case .anamorphic:
         return ["Angenieux 30-72", "Angenieux 56-152","Angenieux 34-204", "Angenieux 50-500",
                 "Angenieux 48-580","Cooke 40-120", "Cooke 36-200", "Cooke 40-200","Cooke 50-500"]

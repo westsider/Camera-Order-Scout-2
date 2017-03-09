@@ -11,9 +11,10 @@
 //  fix: Erlich Backman Fix
 //  task: added sony, actioCam
 
+//  task: updated items from camtec 
 //  check asc magazne
 //  pana large format
-//  check camtech
+
 
 
 import Foundation
