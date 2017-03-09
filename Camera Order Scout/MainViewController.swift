@@ -5,8 +5,9 @@
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 
-//  fix constraints for info vc
-
+//  fix: layout of aks and lenses
+//  add pana lenses and cameras
+//  check asc magazne
 
 import Foundation
 import UIKit

@@ -16,19 +16,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A great feature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzS-Dy-yxe">
-                    <rect key="frame" x="35" y="65" width="158" height="29"/>
+                    <rect key="frame" x="35" y="45" width="158" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZc-sh-PdB">
-                    <rect key="frame" x="35" y="130" width="46" height="21"/>
+                    <rect key="frame" x="35" y="94" width="46" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase feature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB5-Z7-xoW">
-                    <rect key="frame" x="35" y="158" width="117" height="22"/>
+                    <rect key="frame" x="35" y="122" width="117" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="Ys1-pD-wpj"/>
                     </constraints>
@@ -37,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5YV-wh-7H2">
-                    <rect key="frame" x="221" y="65" width="110" height="110"/>
+                    <rect key="frame" x="221" y="45" width="110" height="110"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="110" id="egU-I3-CRu"/>
                         <constraint firstAttribute="height" constant="110" id="zN9-Ga-gEw"/>
@@ -48,11 +48,11 @@
             <constraints>
                 <constraint firstItem="ZzS-Dy-yxe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="SFH-Lz-WPf"/>
                 <constraint firstItem="EB5-Z7-xoW" firstAttribute="top" secondItem="PZc-sh-PdB" secondAttribute="bottom" constant="7" id="beJ-t4-oaA"/>
-                <constraint firstItem="ZzS-Dy-yxe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="cBT-Gp-vkM"/>
+                <constraint firstItem="ZzS-Dy-yxe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="cBT-Gp-vkM"/>
                 <constraint firstItem="EB5-Z7-xoW" firstAttribute="leading" secondItem="PZc-sh-PdB" secondAttribute="leading" id="hKs-Wz-Cxw"/>
-                <constraint firstItem="PZc-sh-PdB" firstAttribute="top" secondItem="ZzS-Dy-yxe" secondAttribute="bottom" constant="36" id="rP8-hG-lBf"/>
+                <constraint firstItem="PZc-sh-PdB" firstAttribute="top" secondItem="ZzS-Dy-yxe" secondAttribute="bottom" constant="20" id="rP8-hG-lBf"/>
                 <constraint firstAttribute="trailing" secondItem="5YV-wh-7H2" secondAttribute="trailing" constant="44" id="rvK-dm-0Zb"/>
-                <constraint firstItem="5YV-wh-7H2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="yVm-Xb-59G"/>
+                <constraint firstItem="5YV-wh-7H2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="yVm-Xb-59G"/>
                 <constraint firstItem="PZc-sh-PdB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="zvD-qM-3o8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -6,7 +6,6 @@
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
 
-
 import UIKit
 import RealmSwift
 

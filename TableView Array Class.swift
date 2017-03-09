@@ -625,7 +625,7 @@ class TableViewArrays {
                           "Speed Crank",
                           "24Volt Splitter Box",
                           "Assistant Lens Light",
-                          "Arri Eyepiece Heater Cup (w/2 Cables)",
+                          "Arri Eyepiece Heater Cup",
                           "Iris Rods",
                           "MB14 Mattebox 4 Stage 2 geared, 2 std)",
                           "MB14 2-Stage Attachment",
