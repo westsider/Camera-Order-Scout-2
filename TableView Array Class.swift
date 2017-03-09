@@ -128,7 +128,6 @@ class TableViewArrays {
                                   "100mm   T 1.3   ^3ft 6in",
                                   "135mm   T 1.3   ^3ft 3in",
                                   "150mm   T 1.3   ^4ft 11in"]
-            
         }
         
         // primes "Zeiss" "ultra Primes"
@@ -326,8 +325,101 @@ class TableViewArrays {
                                  "152mm Macro  T 3.2   ^3in"]
         }
         
-        /// Primes + Vantage One
+        //MARK: -  add primos
         if compState[1] == 1 && compState[2] == 4 && compState[3] == 0 {
+            
+            thePrimes   = ["14mm","24mm","27mm","35mm","40mm","50mm", "65mm","80mm","100mm","125mm","150mm","200mm","250mm"]
+            
+            displayLensArray   = ["14mm     T 2.0   ^8in",
+                                  "24mm     T 2.0   ^12in",
+                                  "27mm     T 2.0   ^14in",
+                                  "35mm     T 2.0   ^14in",
+                                  "40mm     T 2.0   ^14in",
+                                  "50mm     T 2.0   ^16in",
+                                  "65mm     T 2.0   ^20in",
+                                  "80mm     T 2.0   ^24in",
+                                  "100mm    T 2.0   ^30in",
+                                  "125mm    T 2.0   ^36in",
+                                  "150mm    T 2.0   ^48in",
+                                  "200mm    T 2.8   ^48in",
+                                  "250mm    T 2.8   ^48in"]
+        }
+        
+        /// Primes "Panavision"  "Primo V"  14.5	17.5	21	27	35	40 	50	75	100
+        if compState[1] == 1 && compState[2] == 4 && compState[3] == 1 {
+            
+            thePrimes   = ["14.5mm", "17.5mm", "21mm", "27mm","35mm","40mm", "50mm", "75mm", "100mm"]
+            
+            displayLensArray   = ["14.5mm   T 1.9   ^2ft",
+                                  "17.5mm   T 1.9   ^2ft",
+                                  "21mm     T 1.9   ^2ft",
+                                  "27mm     T 1.9   ^2ft",
+                                  "35mm     T 1.9   ^2ft",
+                                  "40mm     T 1.9   ^2ft",
+                                  "50mm     T 1.9   ^2ft",
+                                  "75mm     T 1.9   ^2ft",
+                                  "100mm    T 1.9   ^2ft"]
+        }
+        
+        /// Primes "Panavision"   "P Vintage" 14	17	24	29	35 40	50	75	100
+        if compState[1] == 1 && compState[2] == 4 && compState[3] == 2 {
+            
+            thePrimes   = ["14mm", "17mm", "24mm", "29mm","35mm","40mm", "50mm", "75mm", "100mm"]
+            
+            displayLensArray   = ["14mm     T 1.9   ^2ft",
+                                  "17mm     T 1.9   ^2ft",
+                                  "24mm     T 1.2   ^2ft",
+                                  "29mm     T 1.2   ^2ft 4in",
+                                  "35mm     T 1.6   ^2ft",
+                                  "40mm     T 1.3   ^2ft",
+                                  "50mm     T 1.0   ^2ft",
+                                  "75mm     T 1.6   ^2ft",
+                                  "100mm    T 1.6   ^4ft"]
+        }
+        
+        /// Primes "Panavision"  "Primo" 10	14.5	17.5	21	27	35 40	50	65	75	85	100 125	150
+        if compState[1] == 1 && compState[2] == 4 && compState[3] == 3 {
+            
+            thePrimes   = ["10mm","14.5mm","17.5mm","21mm","27mm","35mm","40mm","50mm","65mm","75mm","85mm","100mm","125mm","150mm"]
+            
+            displayLensArray   = ["10mm     T 1.9   ^2ft",
+                                  "14.5mm   T 1.9   ^2ft",
+                                  "17.5mm   T 1.9   ^2ft",
+                                  "21mm     T 1.9   ^2ft",
+                                  "27mm     T 1.9   ^2ft",
+                                  "35mm     T 1.9   ^2ft",
+                                  "40mm     T 1.9   ^2ft",
+                                  "50mm     T 1.9   ^2ft",
+                                  "65mm     T 1.9   ^2ft",
+                                  "75mm     T 1.9   ^3ft",
+                                  "85mm     T 1.9   ^2ft",
+                                  "100mm    T 1.9   ^3ft",
+                                  "125mm    T 1.9   ^2ft 2in",
+                                  "150mm    T 1.9   ^5ft"
+            ]
+        }
+        
+        /// Primes "Panavision"  "Legacy" Series MkII -- Can Add - Ultra speed - Super Speed - Normal Speed
+        if compState[1] == 1 && compState[2] == 4 && compState[3] == 4 {
+            
+            thePrimes   = ["14mm", "24mm", "29mm", "35mm","50mm","85mm", "100mm", "135mm", "180mm"]
+            
+            displayLensArray   = ["14mm     T 1.9   ^2ft",
+                                  "24mm     T 1.3   ^2ft",
+                                  "29mm     T 1.3   ^2ft",
+                                  "35mm     T 1.4   ^2ft",
+                                  "50mm     T 1.4   ^2ft",
+                                  "85mm     T 1.4   ^2ft",
+                                  "100mm    T 2.0   ^3ft",
+                                  "135mm    T 2.0   ^5ft",
+                                  "180mm    T 2.8   ^5ft"]
+        }
+
+//-------------------------------------------------------------------------------------------------------
+        
+        
+        /// Primes + Vantage One
+        if compState[1] == 1 && compState[2] == 5 && compState[3] == 0 {
             
             thePrimes   = ["17.5mm", "21mm", "25mm", "32mm","40mm","50mm", "65mm", "90mm", "102mm"]
             
@@ -343,7 +435,7 @@ class TableViewArrays {
         }
         
         /// Primes + B+L Super Baltar
-        if compState[1] == 1 && compState[2] == 5 && compState[3] == 0 {
+        if compState[1] == 1 && compState[2] == 6 && compState[3] == 0 {
             
             thePrimes   = ["20mm", "25mm", "35mm","50mm", "75mm", "100mm"]
             
@@ -356,7 +448,7 @@ class TableViewArrays {
         }
         
         /// Primes + Kowa Cine Prominar
-        if compState[1] == 1 && compState[2] == 6 && compState[3] == 0 {
+        if compState[1] == 1 && compState[2] == 7 && compState[3] == 0 {
             
             thePrimes   = ["15mm", "20mm", "25mm", "32mm","40mm","50mm", "75mm", "100mm", "200mm"]
             
@@ -372,7 +464,7 @@ class TableViewArrays {
         }
         
         /// Primes + Kineoptic Apochromat
-        if compState[1] == 1 && compState[2] == 7 && compState[3] == 0 {
+        if compState[1] == 1 && compState[2] == 8 && compState[3] == 0 {
             
             thePrimes   = ["9.8mm", "18mm", "25mm","28mm", "32mm","35mm", "40mm","50mm", "75mm", "100mm"]
             
@@ -389,7 +481,7 @@ class TableViewArrays {
         }
         
         /// Primes + Nikkor
-        if compState[1] == 1 && compState[2] == 8 && compState[3] == 0 {
+        if compState[1] == 1 && compState[2] == 9 && compState[3] == 0 {
             
             thePrimes    = ["200mm","300mm T2", "300mm T2.8","400mm"]
             
@@ -400,7 +492,7 @@ class TableViewArrays {
         }
         
         /// Primes + Red Pro
-        if compState[1] == 1 && compState[2] == 9 && compState[3] == 0 {
+        if compState[1] == 1 && compState[2] == 10 && compState[3] == 0 {
             
             thePrimes    = [ "18mm","25mm","35mm","50mm","85mm","100mm"]
             
@@ -413,7 +505,7 @@ class TableViewArrays {
         }
         
         /// Primes + "CamTec Vintage", 10
-        if compState[1] == 1 && compState[2] == 10 && compState[3] == 0 {
+        if compState[1] == 1 && compState[2] == 11 && compState[3] == 0 {
             
             thePrimes   = [ "16mm","20mm","24mm","28mm","32mm",
                             "40mm","50mm","65mm","85mm","100mm","135mm"]
@@ -432,7 +524,7 @@ class TableViewArrays {
         }
         
         /// Primes + "Anamorphic", 11  selected
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 0 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 0 {
             
             thePrimes   = [ "25mm","32mm","40mm","50mm","75mm","100mm"]
             
@@ -444,7 +536,7 @@ class TableViewArrays {
                                   "100mm    T 2.3     ^35in"]
         }
         /// Primes + "Anamorphic Cooke
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 1 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 1 {
             
             thePrimes   = [ "25mm","32mm","40mm","50mm","75mm","100mm"]
             
@@ -456,7 +548,7 @@ class TableViewArrays {
                                   "100mm    T 2.3     ^35in"]
         }
         /// Primes + "Anamorphic Master Primes
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 2 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 2 {
             
             thePrimes   = [ "35mm","40mm","50mm","60mm","75mm","100mm", "135mm"]
             
@@ -469,7 +561,7 @@ class TableViewArrays {
                                    "135mm    T 1.9     ^3ft 11in"]
         }
         /// Primes + "Anamorphic Arriscope
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 3 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 3 {
             
             thePrimes   = [ "40mm","50mm","75mm","100mm", "135mm"]
             
@@ -480,7 +572,7 @@ class TableViewArrays {
                                    "135mm    T 3       ^"]
         }
         /// Primes + "Anamorphic Kowa
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 4 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 4 {
             
             thePrimes   = [ "32mm","40mm","50mm","75mm","100mm" ]
             
@@ -491,7 +583,7 @@ class TableViewArrays {
                                  "100mm    T 3.4     ^5ft"]
         }
         /// Primes + "Anamorphic Hawk VL
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 5 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 5 {
             
             thePrimes   = [ "25mm","28mm","35mm","45mm","55mm", "65mm", "80mm", "110mm", "140mm", "180mm" ]
             
@@ -507,7 +599,7 @@ class TableViewArrays {
                                    "180mm    T 3       ^6ft 6in" ]
         }
         /// Primes + "Anamorphic Hawk V
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 6 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 6 {
             
             thePrimes   = [ "25mm","35mm","40mm","50mm","75mm", "100mm", "135mm", "180mm" ]
             
@@ -522,7 +614,7 @@ class TableViewArrays {
         }
         
         /// Primes + "Anamorphic Hawk C
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 7 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 7 {
             
             thePrimes   = [ "25mm","35mm","50mm","75mm", "100mm", "135mm"]
             
@@ -535,7 +627,7 @@ class TableViewArrays {
         }
         
         /// Primes + "Anamorphic  Cineovision
-        if compState[1] == 1 && compState[2] == 11 && compState[3] == 8 {
+        if compState[1] == 1 && compState[2] == 12 && compState[3] == 8 {
             
             thePrimes   = [ "24mm","35mm","40mm","50mm", "85mm", "100mm"]
             
@@ -567,6 +659,16 @@ class TableViewArrays {
             thePrimes = [ "100mm"]
             
             displayLensArray = [ "100mm      T 2   ^13.75in"]
+        }
+        
+         //MARK: -  add pana macro
+        /// panavision macro
+        if compState[1] == 2 && compState[2] == 2 && compState[3] == 0 {
+            thePrimes = ["50mm", "90mm", "200mm"]
+            
+            displayLensArray   = ["50mm     T 1.4",
+                                  "90mm     T 2   ^1:1",
+                                  "200mm    T 4   "]
         }
         
         // probe lens  innovosion probe II+
@@ -609,6 +711,13 @@ class TableViewArrays {
             thePrimes  = ["10mm", "14mm", "20mm", "28mm"]
             displayLensArray = ["10mm   T 5.6", "14mm   T 5.6", "20mm   T 5.6", "28mm   T 5.6"]
         }
+        
+         //MARK: -  add frasier
+        // probe lens  frazier
+        if compState[1] == 3 && compState[2] == 6 && compState[3] == 0 {
+            
+            thePrimes  = ["17mm", "20mm", "24mm", "28mm", "35mm", "45mm", "50mm"]
+            displayLensArray =  ["17mm    T 7.1", "20mm    T 7.1", "24mm    T 7.1", "28mm    T 7.1", "35mm    T 7.1", "45mm    T 7.1", "50mm    T 7.1"]          }
         
         // AKS
         if compState[1] == 5 {

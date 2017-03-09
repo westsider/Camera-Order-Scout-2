@@ -24,27 +24,27 @@ enum MakerCamera {
 }
 
 enum MakerPrimes {
-    case zeiss, leica, canon, cooke, vantage, bauschlomb, kowa, kineoptic, nikkor, red, camtec, anamorphic
+    case zeiss, leica, canon, cooke, panavision, vantage, bauschlomb, kowa, kineoptic, nikkor, red, camtec, anamorphic
     
-    static let allValues = ["Zeiss","Leica","Canon","Cooke", "Vantage", "Bausch + Lomb", "Kowa",
+    static let allValues = ["Zeiss","Leica","Canon","Cooke", "Panavision", "Vantage", "Bausch + Lomb", "Kowa",
                             "Kineoptic", "Nikkor", "Red", "CamTec", "Anamorphic"]
 }
 
 enum MakerMacros {
-    case arri, zeiss
+    case arri, zeiss, panavision
     
-    static let allValues = ["Arri", "Zeiss"]
+    static let allValues = ["Arri", "Zeiss", "Panavision"]
 }
 
 enum MakerProbe {
-    case innovision, tRex, revolution, skater, century, optex
+    case innovision, tRex, revolution, skater, century, optex, frazier
     
-    static let allValues = ["Innovision", "T-Rex", "Revolution", "Skater", "Century", "Optex"]
+    static let allValues = ["Innovision", "T-Rex", "Revolution", "Skater", "Century", "Optex", "Frazier"]
 }
 
 enum MakerZoom {
-    case angenieux, fujinon, cooke, zeissVP, hawk, century, canon, anamorphic
-    static let allValues = ["Angenieux","Fujinon", "Cooke","Zeiss VP", "Hawk", "Century", "Canon","Anamorphic"]
+    case angenieux, fujinon, cooke, zeissVP, hawk, century, canon, anamorphic, panavision
+    static let allValues = ["Angenieux","Fujinon", "Cooke","Zeiss VP", "Hawk", "Century", "Canon","Anamorphic", "Panavision"]
 }
 
 enum MakerAKSFiltersSupport {
@@ -87,9 +87,9 @@ func setCamModel(maker: MakerCamera) -> [String] {
     case .phantom:
         return ["Flex 4k", "Flex", "HD Gold"]
     case .panavision:
-        return ["Genesis", "XL2", "Platinum", "Gold-G2", "Millennium"]
+        return ["Genesis", "Millennium DX-L", "XL2", "Platinum", "Millennium", "Gold-G2", "Panaflex LW-2", "65mm"]
     case .sony:
-        return ["F-55", "F-65", "F-5","F-S5","F-S7"]
+        return ["F-35", "F-55", "F-65", "Cine Alta F-55", "Cine Alta 4k","F-5","F-S5","F-S7"]
     }
 }
 
@@ -103,6 +103,8 @@ func setPrimesModel(maker: MakerPrimes) -> [String] {
         return ["K-35", "Telephoto"]
     case .cooke:
         return ["i5", "S4", "Speed Panchro"]
+    case .panavision:
+        return ["Primo 70", "Primo V", "P Vintage", "Primo",  "Legacy", "Primo Digital"]
     case .vantage:
         return  ["One"]
     case .bauschlomb:
@@ -128,6 +130,8 @@ func setMacrosModel(maker: MakerMacros) -> [String] {
         return ["Macro"]
     case .zeiss:
         return ["Master Primes"]
+    case .panavision:
+        return ["Panavision"]
     }
 }
 
@@ -145,6 +149,8 @@ func setProbeModel(maker: MakerProbe) -> [String] {
         return ["Periscope"]
     case .optex:
         return ["Excellence"]
+    case .frazier:
+        return ["Frazier"]
     }
 }
 
@@ -167,6 +173,8 @@ func setZoomModel(maker: MakerZoom)-> [String] {
     case .anamorphic:
         return ["Angenieux 30-72", "Angenieux 56-152","Angenieux 34-204", "Angenieux 50-500",
                 "Angenieux 48-580","Cooke 40-120", "Cooke 36-200", "Cooke 40-200","Cooke 50-500"]
+    case .panavision:
+        return ["Low Ratio 15-40", "Low Ratio 27-75","Low Ratio 60-125","Primo 17.5-75","Primo 19-90","Primo 24-275","Primo 135-420","STZ 70-200mm", "LWZ 27-68", "LWZ 17.5 - 34", "LWZ 85-200", "Z10S 20-250", "Z6S 20-120","Canon 150-600"]
     }
 }
 
