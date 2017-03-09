@@ -18,9 +18,9 @@ enum Catagory {
 }
 
 enum MakerCamera {
-    case arri, red, phantom, panavision, sony
+    case arri, red, phantom, panavision, sony, codex
     
-    static let allValues = ["Arri", "Red", "Phantom", "Panavision", "Sony"]
+    static let allValues = ["Arri", "Red", "Phantom", "Panavision", "Sony","Codex"]
 }
 
 enum MakerPrimes {
@@ -88,15 +88,17 @@ class Maker {
 func setCamModel(maker: MakerCamera) -> [String] {
     switch maker {
     case .arri:
-        return ["Mini", "Amira", "Alexa", "Alexa STX", "Alexa XT+","Alexa +XR","Alexa ST XR","Alexa M", "235", "535B", "435", "Arricam LT", "Arricam ST", "SR3", "416"]
+        return ["Mini", "Amira", "Alexa XT+","Alexa 4:3 +XR","Alexa ST XR","Alexa M","Alexa", "235", "535B", "435", "Arricam LT", "Arricam ST", "SR3","SR3 HS", "416", "416 HS"]
     case .red:
-        return ["Weapon", "Epic","Epic Dragon","One"]
+        return ["Helium 8K", "Weapon", "Epic","Epic Dragon", "One"]
     case .phantom:
         return ["Flex 4k", "Flex", "HD Gold"]
     case .panavision:
         return ["Genesis", "Millennium DX-L", "XL2", "Platinum", "Millennium", "Gold-G2", "Panaflex LW-2", "65mm"]
     case .sony:
         return ["F-35", "F-55", "F-65", "Cine Alta F-55", "Cine Alta 4k","F-5","F-S5","F-S7"]
+    case .codex:
+        return ["Action Cam"]
     }
 }
 

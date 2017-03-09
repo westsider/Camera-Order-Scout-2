@@ -8,9 +8,13 @@
 //  task: add panaviaion primos
 //  task: add panaviaion anamporphic
 //  task: add special lens section
+//  fix: Erlich Backman Fix
+//  task: added sony, actioCam
 
 //  check asc magazne
-// Erlich
+//  pana large format
+//  check camtech
+
 
 import Foundation
 import UIKit

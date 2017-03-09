@@ -71,6 +71,10 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerCamera.allValues, setCamModel(maker: .phantom)]
                     case 3: //  prevCatagory = Camera and Maker = Panavision
                         pickerArray = [Quantity, Catagory.allValues, MakerCamera.allValues, setCamModel(maker: .panavision)]
+                    case 4:
+                        pickerArray = [Quantity, Catagory.allValues, MakerCamera.allValues, setCamModel(maker: .sony)]
+                    case 5:
+                        pickerArray = [Quantity, Catagory.allValues, MakerCamera.allValues, setCamModel(maker: .codex)]
                     default:
                         pickerArray = [Quantity, Catagory.allValues, MakerCamera.allValues, ["Array ","out ", "of ", "index"]]
                     }
