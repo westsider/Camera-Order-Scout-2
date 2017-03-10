@@ -93,10 +93,8 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .canon)]
                     case 3: //  prevCatagory = Primes and Maker = cooke
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .cooke)]
-                        
                     case 4:
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .panavision)]
-                        
                     case 5:
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .vantage)]
                     case 6: //  prevCatagory = Primes and Maker = leics
@@ -111,8 +109,10 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .red)]
                     case 11: //  prevCatagory = Primes and Maker = cannon
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .camtec)]
-                    case 12: //  prevCatagory = Primes and Maker = cooke
+                    case 12:
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .anamorphic)]
+                    case 13: //
+                        pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, setPrimesModel(maker: .perspective)]
                     default:
                         pickerArray = [Quantity, Catagory.allValues, MakerPrimes.allValues, ["Array ","out ", "of ", "index"]]
                     }
@@ -178,14 +178,6 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .extender)]
                     case 3:
                         pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .mesmerizer)]
-                    case 4:
-                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .portrait)]
-                    case 5:
-                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .flare)]
-                    case 6:
-                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .slant)]
-                    case 7:
-                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .swing)]
                     default:
                         pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, ["Array ","out ", "of ", "index"]]
                     }

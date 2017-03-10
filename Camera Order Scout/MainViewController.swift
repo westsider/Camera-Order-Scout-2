@@ -12,10 +12,16 @@
 //  task: added sony, actioCam
 //  task: updated items from camtec
 //  task: updated asc magazne
+//  fix: perspective catagory
+
+//  fix: move portrait and flare to reg pana
+//  task: media cards + Drives
+//  task: monitors
+//  task: lens baby
+//  task: lamda
+//  task: I think being able to generate an email and a PDF would be useful
 
 //  pana large format
-
-
 
 import Foundation
 import UIKit
@@ -286,7 +292,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
                 realm.add(defaultEventUsers)
             }
             
-            //saveLastID(ID: defaultEventUsers.taskID)
             RealmHelp().saveLastID(ID: defaultEventUsers.taskID)
             RealmStart().DemoEventsOne()
             RealmStart().DemoEventsTwo()

@@ -24,10 +24,9 @@ enum MakerCamera {
 }
 
 enum MakerPrimes {
-    case zeiss, leica, canon, cooke, panavision, vantage, bauschlomb, kowa, kineoptic, nikkor, red, camtec, anamorphic
+    case zeiss, leica, canon, cooke, panavision, vantage, bauschlomb, kowa, kineoptic, nikkor, red, camtec, anamorphic, perspective
     
-    static let allValues = ["Zeiss","Leica","Canon","Cooke", "Panavision", "Vantage", "Bausch + Lomb", "Kowa",
-                            "Kineoptic", "Nikkor", "Red", "CamTec", "Anamorphic"]
+    static let allValues = ["Zeiss","Leica","Canon","Cooke", "Panavision", "Vantage", "Bausch + Lomb", "Kowa","Kineoptic", "Nikkor", "Red", "CamTec", "Anamorphic", "Perspective"]
 }
 
 enum MakerMacros {
@@ -48,8 +47,8 @@ enum MakerZoom {
 }
 
 enum MakerSpecialty {
-    case fisheye, prism, extender, mesmerizer, portrait, flare, slant, swing
-    static let allValues = ["Fisheye", "Prism", "Extender", "Mesmerizer", "Portrait", "Flare", "Slant", "Swing"]
+    case fisheye, prism, extender, mesmerizer
+    static let allValues = ["Fisheye", "Prism", "Extender", "Mesmerizer"]
 }
 
 enum MakerAKSFiltersSupport {
@@ -117,7 +116,8 @@ func setPrimesModel(maker: MakerPrimes) -> [String] {
     case .cooke:
         return ["i5", "S4", "Speed Panchro"]
     case .panavision:
-        return ["Primo 70", "Primo V", "P Vintage", "Primo",  "Legacy", "Primo Digital"]
+        return ["Primo 70", "Primo V", "P Vintage", "Primo",  "Legacy", "Primo Digital", "Portrait", "Flare","Slant", "Swing Shift"]
+        
     case .vantage:
         return  ["One"]
     case .bauschlomb:
@@ -134,6 +134,8 @@ func setPrimesModel(maker: MakerPrimes) -> [String] {
         return ["Ultra Primes"]
     case .anamorphic:
         return ["Cooke Vintage", "Cooke", "Master Primes", "Arriscope", "Kowa", "Hawk VL", "Hawk V", "Hawk C","Hawk V74", "Todd AO","Cineovision", "Pana T", "Pana G", "Primo", "Pana E", "Pana C", "Pana HS", "Pana Macro", "Pana Tele", "Pana Flare"]
+    case .perspective:
+        return ["Slant","Swing"]
     }
 }
 
@@ -202,14 +204,7 @@ func setSpecialty(maker: MakerSpecialty)-> [String] {
         return ["1.4x", "2x"]
     case .mesmerizer:
         return ["Rev Zoom", "Kish"]
-    case .portrait:
-        return ["Pana", "Clairmont"]
-    case .flare:
-        return ["Pana", "Clairmont"]
-    case .slant:
-        return ["Pana", "Canon"]
-    case .swing:
-        return ["Century"]
+
     }
 }
 
