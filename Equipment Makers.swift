@@ -189,7 +189,7 @@ func setZoomModel(maker: MakerZoom)-> [String] {
         return ["Angenieux 30-72", "Angenieux 56-152","Angenieux 34-204", "Angenieux 50-500",
                 "Angenieux 48-580","Cooke 40-120", "Cooke 36-200", "Cooke 40-200","Cooke 50-500"]
     case .panavision:
-        return ["Low Ratio 15-40", "Low Ratio 27-75","Low Ratio 60-125","Primo 17.5-75","Primo 19-90","Primo 24-275","Primo 135-420","STZ 70-200mm", "LWZ 27-68", "LWZ 17.5 - 34", "LWZ 85-200", "Z10S 20-250", "Z6S 20-120","Canon 150-600"]
+        return ["LR 15-40", "LR 27-75","LR 60-125","Primo 17.5-75","Primo 19-90","Primo 24-275","Primo 135-420","STZ 70-200mm", "LWZ 27-68", "LWZ 17.5 - 34", "LWZ 85-200", "Z10S 20-250", "Z6S 20-120","C 150-600"]
     }
 }
 

@@ -17,8 +17,10 @@
 //  task: monitors
 //  task: lamda
 //  task: lens baby
+//  task: added media cards + drives
+//  task:  added pana macros pana zooms
+//  fix: no city on weather share
 
-//  task: Catagory AKS  Media cards + Drives
 //  task: I think being able to generate an email and a PDF would be useful
 
 //  beta testers

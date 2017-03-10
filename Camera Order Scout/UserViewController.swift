@@ -101,7 +101,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Search Weather
     @IBAction func searchWeather(_ sender: Any) {
-        
+        let thisCity = citySearch.text
         weatherDisplay.text = "Launching Search..."
         activityDial.startAnimating()
         let searchResult  =  CurrentLocation.sharedInstance.parseCurrentLocation(input: citySearch.text!)
@@ -123,6 +123,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             self.returnMessage(message: searchResult)
         }
         
+        citySearch.isSelected = false
+        citySearch.text = thisCity
         
     }
 

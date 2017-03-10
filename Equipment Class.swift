@@ -122,6 +122,8 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerMacros.allValues, setMacrosModel(maker: .arri)]
                     case 1: //  prevCatagory = Macros and Maker = Zeiss
                         pickerArray = [Quantity, Catagory.allValues, MakerMacros.allValues, setMacrosModel(maker: .zeiss)]
+                    case 2: //  prevCatagory = Macros and Maker = Zeiss
+                        pickerArray = [Quantity, Catagory.allValues, MakerMacros.allValues, setMacrosModel(maker: .panavision)]
                     default:
                         pickerArray = [Quantity, Catagory.allValues, MakerMacros.allValues, ["Array ","out ", "of ", "index"]]
                     }
@@ -164,6 +166,8 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, setZoomModel(maker: .canon)]
                     case 7:
                         pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, setZoomModel(maker: .anamorphic)]
+                    case 8:
+                        pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, setZoomModel(maker: .panavision)]
                     default:
                         pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, ["Array ","out ", "of ", "index"]]
                     }
