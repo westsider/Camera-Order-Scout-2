@@ -117,7 +117,6 @@ func setPrimesModel(maker: MakerPrimes) -> [String] {
         return ["i5", "S4", "Speed Panchro"]
     case .panavision:
         return ["Primo 70", "Primo V", "P Vintage", "Primo",  "Legacy", "Primo Digital", "Portrait", "Flare","Slant", "Swing Shift"]
-        
     case .vantage:
         return  ["One"]
     case .bauschlomb:
@@ -165,7 +164,7 @@ func setProbeModel(maker: MakerProbe) -> [String] {
     case .optex:
         return ["Excellence"]
     case .frazier:
-        return ["Frazier"]
+        return ["Probe"]
     }
 }
 

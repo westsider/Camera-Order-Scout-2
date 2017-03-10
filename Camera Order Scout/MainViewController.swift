@@ -20,6 +20,8 @@
 //  task: added media cards + drives
 //  task:  added pana macros pana zooms
 //  fix: no city on weather share
+//  fix: Frazie Frazier
+//  fix: remove specilty from title
 
 //  task: I think being able to generate an email and a PDF would be useful
 
@@ -64,15 +66,33 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
-    //MARK: - Add Action  5 is now specialty
+    //MARK: - Add Action  5 is now special optics
     @IBAction func addAction(_ sender: Any) {
         
         //  camera, zoom or finder just add
-        if pickerEquipment.pickerState[1] == 0 ||  pickerEquipment.pickerState[1] == 4 ||  pickerEquipment.pickerState[1] == 5 ||  pickerEquipment.pickerState[1] == 7  {
+        if pickerEquipment.pickerState[1] == 0 ||  pickerEquipment.pickerState[1] == 4 || pickerEquipment.pickerState[1] == 7  {
             //  create tableview row realm objects
             let newRow = TableViewRow()
             newRow.icon = pickerEquipment.pickerSelection[1];
             newRow.title = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1];
+            newRow.detail = pickerEquipment.pickerSelection[2] + " " +  pickerEquipment.pickerSelection[3];
+            newRow.catagory = pickerEquipment.pickerState[1] // added for sort
+            
+            let currentEvent = RealmHelp().getLastEvent()   //
+            
+            try! realm.write {
+                currentEvent.tableViewArray.append(newRow)
+            }
+            RealmHelp().sortRealmEvent()
+            myTableView.reloadData()
+        }
+        
+        // if specialty
+        if pickerEquipment.pickerState[1] == 5 {
+            //  create tableview row realm objects
+            let newRow = TableViewRow()
+            newRow.icon = pickerEquipment.pickerSelection[1];
+            newRow.title = pickerEquipment.pickerSelection[0] + " Special Optics";
             newRow.detail = pickerEquipment.pickerSelection[2] + " " +  pickerEquipment.pickerSelection[3];
             newRow.catagory = pickerEquipment.pickerState[1] // added for sort
             
