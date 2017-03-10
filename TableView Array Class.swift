@@ -488,7 +488,36 @@ class TableViewArrays {
                                   "100mm    T 1.6   ^2ft" ]
         }
         
-
+        ///MARK: -  Primes "Perspective"  "Slant"
+        if compState[1] == 1 && compState[2] == 4 && compState[3] == 8 {
+            
+            thePrimes   = ["24mm", "34mm", "45mm","63mm"]
+            
+            displayLensArray   = ["24mm     T 3.5   ^1ft",
+                                  "34mm     T 4.9   ^1ft 1in",
+                                  "45mm     T 2.8   ^1ft 4in",
+                                  "63mm     T 4     ^1ft 5in"]
+        }
+        
+        /// Primes "Perspective"  "Swing Shift"
+        if compState[1] == 1 && compState[2] == 4 && compState[3] == 9 {
+            
+            thePrimes   = ["14mm", "18mm", "24mm", "28mm","35mm","45mm", "55mm", "75mm", "90mm", "105mm", "135mm", "150mm"]
+            
+            displayLensArray   = ["14mm     T 2.8",
+                                  "18mm     T 2.8",
+                                  "24mm     T 4",
+                                  "28mm     T 3.5",
+                                  "35mm     T 2.8",
+                                  "45mm     T 2.8",
+                                  "55mm     T 2.8",
+                                  "75mm     T 2.8",
+                                  "90mm     T 2.8",
+                                  "105mm    T 2.4",
+                                  "135mm    T 4.5",
+                                  "150mm    T 3.5" ]
+        }
+        
         
         /// Primes + Vantage One
         if compState[1] == 1 && compState[2] == 5 && compState[3] == 0 {
@@ -859,33 +888,6 @@ class TableViewArrays {
                                   "800mm    T 5.0   ^15ft" ]
         }
         
-        //MARK: - Primes + "Anamorphic  Panavision Flare
-        if compState[1] == 1 && compState[2] == 12 && compState[3] == 19 {
-            
-            thePrimes   = ["40mm","50mm", "75mm","100mm"]
-            
-            displayLensArray  = [ "40mm    T 2.8   ^2ft 6in",
-                                  "50mm    T 2.3   ^2ft 6in",
-                                  "75mm    T 2.8   ^3ft 6in",
-                                  "100mm   T 3.5   ^4ft"]
-        }
-        
-
-        /// arri macro
-        if compState[1] == 2 && compState[2] == 0 && compState[3] == 0 {
-            thePrimes = ["17.5mm", "21mm", "25mm", "32mm","40mm","50mm", "65mm", "90mm", "102mm"]
-            
-            displayLensArray   = ["17.5mm   T 1.0   ^10in",
-                                  "21mm     T 1.0   ^10in",
-                                  "25mm     T 1.0   ^10in",
-                                  "32mm     T 1.0   ^10in",
-                                  "40mm     T 1.0   ^1ft 2in",
-                                  "50mm     T 1.0   ^1ft 2in",
-                                  "65mm     T 1.0   ^1ft 2in",
-                                  "90mm     T 1.0   ^1ft 8in",
-                                  "102mm    T 1.0   ^2ft 6in"]
-        }
-        
         ///MARK: -  Primes "Perspective"  "Slant"
         if compState[1] == 1 && compState[2] == 13 && compState[3] == 0 {
             
@@ -916,7 +918,20 @@ class TableViewArrays {
                                   "150mm    T 3.5" ]
         }
         
-        
+        /// arri macro
+        if compState[1] == 2 && compState[2] == 0 && compState[3] == 0 {
+            thePrimes = ["17.5mm", "21mm", "25mm", "32mm","40mm","50mm", "65mm", "90mm", "102mm"]
+            
+            displayLensArray   = ["17.5mm   T 1.0   ^10in",
+                                  "21mm     T 1.0   ^10in",
+                                  "25mm     T 1.0   ^10in",
+                                  "32mm     T 1.0   ^10in",
+                                  "40mm     T 1.0   ^1ft 2in",
+                                  "50mm     T 1.0   ^1ft 2in",
+                                  "65mm     T 1.0   ^1ft 2in",
+                                  "90mm     T 1.0   ^1ft 8in",
+                                  "102mm    T 1.0   ^2ft 6in"]
+        }
         
         // master prime macro
         if compState[1] == 2 && compState[2] == 1 && compState[3] == 0 {
@@ -925,8 +940,7 @@ class TableViewArrays {
             displayLensArray = [ "100mm      T 2   ^13.75in"]
         }
         
-         //MARK: -  add pana macro
-        /// panavision macro
+         //MARK: - panavision macro
         if compState[1] == 2 && compState[2] == 2 && compState[3] == 0 {
             thePrimes = ["50mm", "90mm", "200mm"]
             
