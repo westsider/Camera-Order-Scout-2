@@ -15,11 +15,13 @@
 //  fix: perspective catagory
 //  fix: move portrait and flare to reg pana + Perspective
 //  task: monitors
-
-//  task: lens baby
 //  task: lamda
-//  task: Catagory Media cards + Drives
+//  task: lens baby
+
+//  task: Catagory AKS  Media cards + Drives
 //  task: I think being able to generate an email and a PDF would be useful
+
+//  beta testers
 //  task: pana large format
 
 import Foundation

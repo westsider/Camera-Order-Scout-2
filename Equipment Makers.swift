@@ -47,8 +47,8 @@ enum MakerZoom {
 }
 
 enum MakerSpecialty {
-    case fisheye, prism, extender, mesmerizer
-    static let allValues = ["Fisheye", "Prism", "Extender", "Mesmerizer"]
+    case fisheye, prism, extender, mesmerizer, lensBaby
+    static let allValues = ["Fisheye", "Prism", "Extender", "Mesmerizer", "Lens Baby"]
 }
 
 enum MakerAKSFiltersSupport {
@@ -204,7 +204,8 @@ func setSpecialty(maker: MakerSpecialty)-> [String] {
         return ["1.4x", "2x"]
     case .mesmerizer:
         return ["Rev Zoom", "Kish"]
-
+    case .lensBaby:
+        return ["Velvet 56","Twist 60", "Circular Fisheye", "CP2 Sw35", "CP2 Sw50", "CP2 E50", "CP2 E80", "Trio 28", "Spark"]
     }
 }
 

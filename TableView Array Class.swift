@@ -1322,6 +1322,8 @@ class TableViewArrays {
                           "Weaver Steadman Head",
                           "Weaver Steadman 3 axis Head",
                           "Ronford F-7 Head",
+                          "Lambda Head",
+                          "Lambda Third Axis Kit",
                           
                           "Tango Swing Plate",
                           

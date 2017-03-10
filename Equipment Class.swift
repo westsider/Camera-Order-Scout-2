@@ -54,7 +54,6 @@ class Equipment {
                     pickerArray = [Quantity, Catagory.allValues, MakerAKSFiltersSupport.allValues, setModelEmpty()] // filters
                 case 9:
                     pickerArray = [Quantity, Catagory.allValues, MakerAKSFiltersSupport.allValues, setModelEmpty() ] // support
-                
                 default:
                     pickerArray = [Quantity, Catagory.allValues, MakerCamera.allValues,["Array ","out ", "of ", "index"]]
                 }
@@ -178,6 +177,8 @@ class Equipment {
                         pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .extender)]
                     case 3:
                         pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .mesmerizer)]
+                    case 4:
+                        pickerArray = [Quantity, Catagory.allValues, MakerSpecialty.allValues, setSpecialty(maker: .lensBaby)]
                     default:
                         pickerArray = [Quantity, Catagory.allValues, MakerZoom.allValues, ["Array ","out ", "of ", "index"]]
                     }
