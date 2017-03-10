@@ -405,7 +405,7 @@ class TableViewArrays {
                                   "100mm    T 1.6   ^4ft"]
         }
         
-        /// Primes "Panavision"  "Primo" 
+        /// Primes "Panavision"  "Primo"
         if compState[1] == 1 && compState[2] == 4 && compState[3] == 3 {
             
             thePrimes   = ["10mm","14.5mm","17.5mm","21mm","27mm","35mm","40mm","50mm","65mm","75mm","85mm","100mm","125mm","150mm"]
@@ -458,7 +458,7 @@ class TableViewArrays {
         
         /// Primes "Panavision"  "Portrait"
         if compState[1] == 1 && compState[2] == 4 && compState[3] == 6 {
-
+            
             thePrimes   = ["14mm", "16mm", "20mm", "24mm","35mm","35mm"]
             
             displayLensArray   = ["14mm     T 1.9   ^2ft",
@@ -471,7 +471,7 @@ class TableViewArrays {
         
         /// Primes "Panavision"  "Flare"
         if compState[1] == 1 && compState[2] == 4 && compState[3] == 7 {
-
+            
             thePrimes   = ["14mm", "17mm", "20mm", "24mm","28mm","28mm", "32mm",	"35mm",	"40mm",	"50mm",	"75mm",	"100mm"]
             
             displayLensArray   = ["14mm     T 1.9   ^2ft",
@@ -805,10 +805,10 @@ class TableViewArrays {
                                   "75mm     T 2.6     ^3ft",
                                   "100mm    T 3       ^3ft"]
         }
-
+        
         //MARK: - Primes + "Anamorphic  Panavision Primo
         if compState[1] == 1 && compState[2] == 12 && compState[3] == 13 {
-    
+            
             thePrimes   = ["35mm","40mm","50mm","75mm","100mm"]
             
             displayLensArray  = [ "35mm     T 2     ^3ft 6in",
@@ -853,7 +853,7 @@ class TableViewArrays {
         
         //MARK: - Primes + "Anamorphic  Panavision High Speed
         if compState[1] == 1 && compState[2] == 12 && compState[3] == 16 {
-          
+            
             thePrimes   = ["35mm","50mm", "55mm","75mm", "100mm"]
             
             displayLensArray  = [ "35mm     T 1.4   ^4ft 6in",
@@ -940,7 +940,7 @@ class TableViewArrays {
             displayLensArray = [ "100mm      T 2   ^13.75in"]
         }
         
-         //MARK: - panavision macro
+        //MARK: - panavision macro
         if compState[1] == 2 && compState[2] == 2 && compState[3] == 0 {
             thePrimes = ["50mm", "90mm", "200mm"]
             
@@ -990,7 +990,7 @@ class TableViewArrays {
             displayLensArray = ["10mm   T 5.6", "14mm   T 5.6", "20mm   T 5.6", "28mm   T 5.6"]
         }
         
-         //MARK: -  add frasier
+        //MARK: -  add frasier
         // probe lens  frazier
         if compState[1] == 3 && compState[2] == 6 && compState[3] == 0 {
             
@@ -1004,7 +1004,7 @@ class TableViewArrays {
          17" Sony PVM-1741 Professional OLED Monitor
          25" Sony PVM-2541 Professional OLED Monitor
          25" Sony BVM-E250 Trimaster EL OLED Monitor
-                 
+         
          Monitors LCD ------------------
          4.8" RUIGE TL-480HD Small On-Camera HD LCD
          5" Transvideo Starlite HD5-Arri Monitor
@@ -1047,57 +1047,104 @@ class TableViewArrays {
                             "24” Cinemage 2000 LCD Monitor",
                             "26” Panasonic 2600WP LCD Monitor",
                             "Hand Held Aks ------------------",
-                          "Hand Held Rig",
-                          "Spider Hand Held Rig",
-                          "Element Technica Mantis Hand Held Rig",
-                          "Easy Rig 500",
-                          "Easy Rig 600",
-                          "Easy Rig 700",
-                          "Easy Rig 850",
-                          
-                          "Focus Aks ------------------",
-                          "Arri Follow Focus 4",
-                          "Hand Held FF4",
-                          "Speed Crank",
-                          "Follow Focus Whips (Short + Long)",
-                          "Iris Rods",
-                          "C-Motion Lens Control System",
-                          "Preston FI&Z II System",
-                          "Preston FI&Z III System",
-                          
-                          "Matte Box Aks ---------------",
-                          "MB14 Mattebox 4 Stage 2 geared, 2 std)",
-                          "MB14 2-Stage Attachment",
-                          "MB18 Mattebox 3 Stage 1 geared, 2 std",
-                          "MB20 Mattebox 4 Stage 2 geared, 2 std)",
-                          "6x6 Sunshade",
-                          "4x5 Sunshade",
-                          "6x6 Arri Clip-on Hand Held Mattebox",
-                          "4x5 Arri Clip-on Hand Held Mattebox",
-                          "4.5” Round Clip-on Sun Shade",
-                          "138mm Round Clip-on Sun Shade",
-                          "Series 9 Clip-on Sun Shade",
-                          
-                          "Wireless Aks ---------------------",
-                          "Wireless Video",
-                          "Teradek Wireless Video",
-                          "Paralinx Wireless Video",
-                
-                          "Misc Aks ---------------------",
-                          "Arri 24V Rem Switch w/Ext",
-                          "Base Plate Top, Bottom w/Quick Release",
-                          "24Volt Splitter Box",
-                          "Assistant Lens Light",
-                          "Arri Eyepiece Heater Cup",
-                          "Hand Held & StudioRain Deflectors",
-                          "Weather Protectors & Heater Barnies",
-                          "Digi-Clamshell",
-                          "Cinetape (Digital Range Finder)",
-                          "Cinetape Link 1 (Transmitter & Receiver)",
-                          "Film Video Sync Box",
-                          "Element Technica “V” Dock & Base Plate",
-                          "Element Technica Cheese Stk Handle & Plate",
-                          "Element Technica Iso Plate Shock Mount"
+                            "Hand Held Rig",
+                            "Spider Hand Held Rig",
+                            "Element Technica Mantis Hand Held Rig",
+                            "Easy Rig 500",
+                            "Easy Rig 600",
+                            "Easy Rig 700",
+                            "Easy Rig 850",
+                            
+                            "Focus Aks ------------------",
+                            "Arri Follow Focus 4",
+                            "Hand Held FF4",
+                            "Speed Crank",
+                            "Follow Focus Whips (Short + Long)",
+                            "Iris Rods",
+                            "C-Motion Lens Control System",
+                            "Preston FI&Z II System",
+                            "Preston FI&Z III System",
+                            
+                            "Matte Box Aks ---------------",
+                            "MB14 Mattebox 4 Stage 2 geared, 2 std)",
+                            "MB14 2-Stage Attachment",
+                            "MB18 Mattebox 3 Stage 1 geared, 2 std",
+                            "MB20 Mattebox 4 Stage 2 geared, 2 std)",
+                            "6x6 Sunshade",
+                            "4x5 Sunshade",
+                            "6x6 Arri Clip-on Hand Held Mattebox",
+                            "4x5 Arri Clip-on Hand Held Mattebox",
+                            "4.5” Round Clip-on Sun Shade",
+                            "138mm Round Clip-on Sun Shade",
+                            "Series 9 Clip-on Sun Shade",
+                            
+                            "Wireless Aks ---------------------",
+                            "Wireless Video",
+                            "Teradek Wireless Video",
+                            "Paralinx Wireless Video",
+                            
+                            "Misc Aks ---------------------",
+                            "Arri 24V Rem Switch w/Ext",
+                            "Base Plate Top, Bottom w/Quick Release",
+                            "24Volt Splitter Box",
+                            "Assistant Lens Light",
+                            "Arri Eyepiece Heater Cup",
+                            "Hand Held & StudioRain Deflectors",
+                            "Weather Protectors & Heater Barnies",
+                            "Digi-Clamshell",
+                            "Cinetape (Digital Range Finder)",
+                            "Cinetape Link 1 (Transmitter & Receiver)",
+                            "Film Video Sync Box",
+                            "Element Technica “V” Dock & Base Plate",
+                            "Element Technica Cheese Stk Handle & Plate",
+                            "Element Technica Iso Plate Shock Mount",
+                            
+                            "Media Cards ----------------",
+                            "60 GB CFast 2.0 Cards",
+                            "120 GB CFast 2.0 Cards",
+                            "128 GB CFast 2.0 Cards",
+                            "CFast Card Reader",
+                            "32g SxS Pro Card",
+                            "64g SxS Pro Card",
+                            "128g SxS Pro Card",
+                            "RedMag SSD: 128GB",
+                            "RedMag SSD: 256GB",
+                            "RedMag SSD: 64GB",
+                            
+                            "Media Drives ----------------",
+                            "XR Capture Drive 512gig",
+                            "Codex Capture Drive (512 MB)",
+                            "Codex Capture Drive (USB-3)",
+                            "Codex On-Board Recorder S (CDX-3600)",
+                            "Codex Portable Pack",
+                            "Batteries Aks ---------------",
+                            "Dionic HCX High Capacity Batteries",
+                            "Quad Charger",
+                            "Anton Bauer Dionic 4c 14.4V 91WH Li-Ion",
+                            "IDX E-HL9 14.4V 88WH Li-Ion",
+                            "IDX D-150 14.4V 144 WH Li-Ion",
+                            "Sony BPFL-75 12.8V 76 WH Li-Ion",
+                            "Arri 235/416 24V 2.74 NiMH",
+                            "Arri 16SR3 24V 2.74 NiMh",
+                            
+                            "Anton Bauer Cine VCLX 14.4/28V 560W NiMH",
+                            "Cine Power HS 30 14.4/28V 30A NiMH",
+                            "CCI 14.4V 30A NiMH",
+                            "CCI 14.4V 40A NiMH",
+                            "CCI 14.4V 25A BC",
+                            "CCI 24V 20A NiMH",
+                            "CCI 12V 12A Super Dual Lead-Acid",
+                            "CCI 24V 12A Lead-Acid",
+                            "CCI 30V 12A Lead-Acid",
+                            "CCI 12V/24V 4.7A NiMH Belt",
+                            "CCI 13.2V 18A NiMH Backpack",
+                            "CCI 14.4V 30A NiMH Backpack",
+                            "CCI 24V 10A NiMH Backpack",
+                            "Teleprompter ---------------",
+                            "QPro Teleprompter",
+                            "Proline Teleprompter",
+                            "Flex Teleprompter",
+                            "Teleprompter Free Stand"
             ]
             
             displayLensArray = thePrimes
