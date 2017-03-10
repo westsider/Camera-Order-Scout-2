@@ -997,23 +997,75 @@ class TableViewArrays {
             thePrimes  = ["17mm", "20mm", "24mm", "28mm", "35mm", "45mm", "50mm"]
             displayLensArray =  ["17mm    T 7.1", "20mm    T 7.1", "24mm    T 7.1", "28mm    T 7.1", "35mm    T 7.1", "45mm    T 7.1", "50mm    T 7.1"]          }
         
+        /*
+         Monitors OLED ----------------
+         15" TVLogic Professional OLED Monitor
+         17" Sony PVMA170 Professional Trimaster EL OLED Monitor
+         17" Sony PVM-1741 Professional OLED Monitor
+         25" Sony PVM-2541 Professional OLED Monitor
+         25" Sony BVM-E250 Trimaster EL OLED Monitor
+                 
+         Monitors LCD ------------------
+         4.8" RUIGE TL-480HD Small On-Camera HD LCD
+         5" Transvideo Starlite HD5-Arri Monitor
+         5.6" Small HD DP6-SDI Monitor
+         5.6" TVLogic Monitor
+         6" Astro 3005 Monitor
+         6" Astro 3004 & 3014 Monitor with Waveform/Vectorscope
+         6" Transvideo HD6-SBL Evolution Monitor
+         7" Marshall V-R07P HD/SDI LCD Monitor
+         7" TVLogic HD/SD LCD Monitor LVM-07W
+         7.7" Small HD Monitor AC7-SDI Monitor
+         7.7" Small HD DP7 Pro Monitor
+         8" Panasonic LCD Monitor
+         12" Transvideo Cine Monitor
+         17" TVLogic HD/SD LCD Monitor LVM-173W
+         17" Panasonic 1700WP LCD Monitor
+         23" Cinetal LCD Full Feature Monitor
+         23" eCinema LCD Monitor
+         23" Sony BVM-L230 HD LCD Monitor
+         24" Cinemage 2000 LCD Monitor
+         26" Panasonic 2600WP LCD Monitor
+         */
+        
         // AKS
         if compState[1] == 6 {
-            thePrimes =  ["5 inch Assistant Monitor",
-                          "7 inch Assistant Monitor",
+            thePrimes =  [  "Monitors OLED ----------------",
+                            "15” TVLogic Professional OLED Monitor",
+                            "17” Sony PVMA170 Professional Trimaster",
+                            "25” Sony PVM-2541 Professional OLED Monitor",
+                            "Monitors LCD ------------------",
+                            "4.8” RUIGE TL-480HD Small On-Camera HD LCD",
+                            "5” Transvideo Starlite HD5-Arri Monitor",
+                            "5.6” TVLogic Monitor",
+                            "6” Astro 3005 Monitor",
+                            "7” TVLogic HD/SD LCD Monitor LVM-07W",
+                            "7.7” Small HD DP7 Pro Monitor",
+                            "8” Panasonic LCD Monitor",
+                            "17” TVLogic HD/SD LCD Monitor LVM-173W",
+                            "23” Cinetal LCD Full Feature Monitor",
+                            "24” Cinemage 2000 LCD Monitor",
+                            "26” Panasonic 2600WP LCD Monitor",
+                            "Hand Held Aks ------------------",
                           "Hand Held Rig",
                           "Spider Hand Held Rig",
                           "Element Technica Mantis Hand Held Rig",
+                          "Easy Rig 500",
+                          "Easy Rig 600",
+                          "Easy Rig 700",
+                          "Easy Rig 850",
+                          
+                          "Focus Aks ------------------",
                           "Arri Follow Focus 4",
                           "Hand Held FF4",
-                          "Arri 24V Rem Switch w/Ext",
-                          "Base Plate Top, Bottom w/Quick Release",
-                          "Follow Focus Whips (Short + Long)",
                           "Speed Crank",
-                          "24Volt Splitter Box",
-                          "Assistant Lens Light",
-                          "Arri Eyepiece Heater Cup",
+                          "Follow Focus Whips (Short + Long)",
                           "Iris Rods",
+                          "C-Motion Lens Control System",
+                          "Preston FI&Z II System",
+                          "Preston FI&Z III System",
+                          
+                          "Matte Box Aks ---------------",
                           "MB14 Mattebox 4 Stage 2 geared, 2 std)",
                           "MB14 2-Stage Attachment",
                           "MB18 Mattebox 3 Stage 1 geared, 2 std",
@@ -1025,9 +1077,18 @@ class TableViewArrays {
                           "4.5” Round Clip-on Sun Shade",
                           "138mm Round Clip-on Sun Shade",
                           "Series 9 Clip-on Sun Shade",
-                          "C-Motion Lens Control System",
-                          "Preston FI&Z II System",
-                          "Preston FI&Z III System",
+                          
+                          "Wireless Aks ---------------------",
+                          "Wireless Video",
+                          "Teradek Wireless Video",
+                          "Paralinx Wireless Video",
+                
+                          "Misc Aks ---------------------",
+                          "Arri 24V Rem Switch w/Ext",
+                          "Base Plate Top, Bottom w/Quick Release",
+                          "24Volt Splitter Box",
+                          "Assistant Lens Light",
+                          "Arri Eyepiece Heater Cup",
                           "Hand Held & StudioRain Deflectors",
                           "Weather Protectors & Heater Barnies",
                           "Digi-Clamshell",
@@ -1036,14 +1097,7 @@ class TableViewArrays {
                           "Film Video Sync Box",
                           "Element Technica “V” Dock & Base Plate",
                           "Element Technica Cheese Stk Handle & Plate",
-                          "Element Technica Iso Plate Shock Mount",
-                          "Easy Rig 500",
-                          "Easy Rig 600",
-                          "Easy Rig 700",
-                          "Easy Rig 850",
-                          "Wireless Video",
-                          "Teradek Wireless Video",
-                          "Paralinx Wireless Video"
+                          "Element Technica Iso Plate Shock Mount"
             ]
             
             displayLensArray = thePrimes

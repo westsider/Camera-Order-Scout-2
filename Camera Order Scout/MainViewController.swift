@@ -13,15 +13,14 @@
 //  task: updated items from camtec
 //  task: updated asc magazne
 //  fix: perspective catagory
-
-//  fix: move portrait and flare to reg pana
-//  task: media cards + Drives
+//  fix: move portrait and flare to reg pana + Perspective
 //  task: monitors
+
 //  task: lens baby
 //  task: lamda
+//  task: Catagory Media cards + Drives
 //  task: I think being able to generate an email and a PDF would be useful
-
-//  pana large format
+//  task: pana large format
 
 import Foundation
 import UIKit
