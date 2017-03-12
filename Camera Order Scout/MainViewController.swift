@@ -23,9 +23,8 @@
 //  fix: Frazie Frazier
 //  fix: remove specilty from title
 
+//  task: beta testers
 //  task: I think being able to generate an email and a PDF would be useful
-
-//  beta testers
 //  task: pana large format
 
 import Foundation
@@ -148,9 +147,16 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         let title = messageArray[1]
         let content = messageArray.joined(separator: "")
         let objectsToShare = [content]
-        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        activityVC.setValue(title, forKey: "Subject")
-        self.present(activityVC, animated: true, completion: nil)
+        
+        
+        
+        let myVc = storyboard?.instantiateViewController(withIdentifier: "previewViewController") as! PreviewViewController
+        navigationController?.pushViewController(myVc, animated: true)
+        
+//        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+//        activityVC.setValue(title, forKey: "Subject")
+//        self.present(activityVC, animated: true, completion: nil)
+        
     }
     
     //MARK: - Set up Picker

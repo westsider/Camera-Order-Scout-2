@@ -23,6 +23,11 @@
 		0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6393701E46D932003055DB /* Equipment Makers.swift */; };
 		0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */; };
 		0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */; };
+		0DB0B11B1E745D7100582452 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */; };
+		0DB0B11D1E745D7D00582452 /* InvoiceComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B11C1E745D7D00582452 /* InvoiceComposer.swift */; };
+		0DB0B1271E7475A300582452 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B1261E7475A300582452 /* PreviewViewController.swift */; };
+		0DB0B14D1E74CA3D00582452 /* EmailContent.html in Resources */ = {isa = PBXBuildFile; fileRef = 0DB0B14C1E74CA3D00582452 /* EmailContent.html */; };
+		0DB0B14F1E74CAAF00582452 /* Images64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B14E1E74CAAF00582452 /* Images64.swift */; };
 		0DBCF7531E495DAA00205017 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7521E495DAA00205017 /* ProjectsViewController.swift */; };
 		0DBCF7551E49660D00205017 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7541E49660D00205017 /* UserViewController.swift */; };
 		0DBCF7571E496B8A00205017 /* Weather API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCF7561E496B8A00205017 /* Weather API.swift */; };
@@ -32,6 +37,7 @@
 		0DC895761E4E34EA00FA7588 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC895731E4E34EA00FA7588 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DC895771E4E34EA00FA7588 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC895741E4E34EA00FA7588 /* RealmSwift.framework */; };
 		0DC895781E4E34EA00FA7588 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC895741E4E34EA00FA7588 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DC9EAC21E74CE750050BDC9 /* SingleItem.html in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9EAC11E74CE750050BDC9 /* SingleItem.html */; };
 		0DDBE5E11E6A1FC800F6F0D0 /* DemoPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDBE5E01E6A1FC800F6F0D0 /* DemoPhotoViewController.swift */; };
 		0DE208D71E4797A400619AEF /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE208D61E4797A400619AEF /* ListTableViewCell.swift */; };
 		0DE208DB1E47E13A00619AEF /* TableView Array Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE208DA1E47E13A00619AEF /* TableView Array Class.swift */; };
@@ -75,6 +81,11 @@
 		0D6393701E46D932003055DB /* Equipment Makers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Equipment Makers.swift"; sourceTree = "<group>"; };
 		0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimeLensTableViewCell.swift; path = ../PrimeLensTableViewCell.swift; sourceTree = "<group>"; };
 		0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = firstRunProjects.swift; path = "Camera Order Scout/firstRunProjects.swift"; sourceTree = "<group>"; };
+		0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
+		0DB0B11C1E745D7D00582452 /* InvoiceComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceComposer.swift; sourceTree = "<group>"; };
+		0DB0B1261E7475A300582452 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		0DB0B14C1E74CA3D00582452 /* EmailContent.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = EmailContent.html; path = ../EmailContent.html; sourceTree = "<group>"; };
+		0DB0B14E1E74CAAF00582452 /* Images64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images64.swift; path = ../Images64.swift; sourceTree = "<group>"; };
 		0DBCF7521E495DAA00205017 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		0DBCF7541E49660D00205017 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		0DBCF7561E496B8A00205017 /* Weather API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Weather API.swift"; path = "Camera Order Scout/Weather API.swift"; sourceTree = "<group>"; };
@@ -82,6 +93,7 @@
 		0DBCF75C1E496BEB00205017 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		0DC895731E4E34EA00FA7588 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		0DC895741E4E34EA00FA7588 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		0DC9EAC11E74CE750050BDC9 /* SingleItem.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SingleItem.html; sourceTree = "<group>"; };
 		0DDBE5E01E6A1FC800F6F0D0 /* DemoPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPhotoViewController.swift; sourceTree = "<group>"; };
 		0DE208D61E4797A400619AEF /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewCell.swift; path = ../ListTableViewCell.swift; sourceTree = "<group>"; };
 		0DE208DA1E47E13A00619AEF /* TableView Array Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView Array Class.swift"; sourceTree = "<group>"; };
@@ -148,6 +160,8 @@
 			children = (
 				0D6393601E46D84A003055DB /* Main.storyboard */,
 				0D4CD3F51E6B30E7002AAFE2 /* Feature.xib */,
+				0DB0B1251E745E5600582452 /* PDF Files */,
+				0DB0B1241E745E1E00582452 /* HTML Templates */,
 				0DE208D91E4799DF00619AEF /* Controller */,
 				0DB53A391E46FD6D0049F0D2 /* Model */,
 				0DE208D81E4797D900619AEF /* View */,
@@ -157,6 +171,25 @@
 				0D63935C1E46D84A003055DB /* AppDelegate.swift */,
 			);
 			path = "Camera Order Scout";
+			sourceTree = "<group>";
+		};
+		0DB0B1241E745E1E00582452 /* HTML Templates */ = {
+			isa = PBXGroup;
+			children = (
+				0DB0B14C1E74CA3D00582452 /* EmailContent.html */,
+				0DB0B14E1E74CAAF00582452 /* Images64.swift */,
+				0DC9EAC11E74CE750050BDC9 /* SingleItem.html */,
+			);
+			name = "HTML Templates";
+			sourceTree = "<group>";
+		};
+		0DB0B1251E745E5600582452 /* PDF Files */ = {
+			isa = PBXGroup;
+			children = (
+				0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */,
+				0DB0B11C1E745D7D00582452 /* InvoiceComposer.swift */,
+			);
+			name = "PDF Files";
 			sourceTree = "<group>";
 		};
 		0DB53A391E46FD6D0049F0D2 /* Model */ = {
@@ -195,6 +228,7 @@
 				0D1AABB51E6293D10097B64A /* AksKitViewController.swift */,
 				0DBCF7521E495DAA00205017 /* ProjectsViewController.swift */,
 				0DDBE5E01E6A1FC800F6F0D0 /* DemoPhotoViewController.swift */,
+				0DB0B1261E7475A300582452 /* PreviewViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -262,9 +296,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D4CD3F61E6B30E7002AAFE2 /* Feature.xib in Resources */,
+				0DB0B14D1E74CA3D00582452 /* EmailContent.html in Resources */,
 				0D6393671E46D84A003055DB /* LaunchScreen.storyboard in Resources */,
 				0D6393641E46D84A003055DB /* Assets.xcassets in Resources */,
 				0D6393621E46D84A003055DB /* Main.storyboard in Resources */,
+				0DC9EAC21E74CE750050BDC9 /* SingleItem.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,12 +336,15 @@
 				0DBCF7551E49660D00205017 /* UserViewController.swift in Sources */,
 				0DBCF7591E496BAE00205017 /* Location API.swift in Sources */,
 				0D1AABB61E6293D10097B64A /* AksKitViewController.swift in Sources */,
+				0DB0B11D1E745D7D00582452 /* InvoiceComposer.swift in Sources */,
 				0D63935F1E46D84A003055DB /* MainViewController.swift in Sources */,
 				0DE208DF1E48097900619AEF /* LensesViewController.swift in Sources */,
 				0DBCF7571E496B8A00205017 /* Weather API.swift in Sources */,
 				0D5AC2BE1E568008008CBC63 /* Event User Realm Object.swift in Sources */,
+				0DB0B11B1E745D7100582452 /* CustomPrintPageRenderer.swift in Sources */,
 				0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */,
 				0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */,
+				0DB0B14F1E74CAAF00582452 /* Images64.swift in Sources */,
 				0DDBE5E11E6A1FC800F6F0D0 /* DemoPhotoViewController.swift in Sources */,
 				0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */,
 				0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */,
@@ -315,6 +354,7 @@
 				0DE208DB1E47E13A00619AEF /* TableView Array Class.swift in Sources */,
 				0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */,
 				0D63935D1E46D84A003055DB /* AppDelegate.swift in Sources */,
+				0DB0B1271E7475A300582452 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
