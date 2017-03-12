@@ -54,7 +54,7 @@ class PreviewViewController: UIViewController {
             
             itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_TITLE#", with: rows.title)
           
-            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_ROW#", with: rows.detail)
+            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_ROW#", with: rows.detail + " " + thisEvent.company)
         
             allItems += itemHTMLContent
             

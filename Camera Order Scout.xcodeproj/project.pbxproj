@@ -176,9 +176,9 @@
 		0DB0B1241E745E1E00582452 /* HTML Templates */ = {
 			isa = PBXGroup;
 			children = (
+				0DC9EAC11E74CE750050BDC9 /* SingleItem.html */,
 				0DB0B14C1E74CA3D00582452 /* EmailContent.html */,
 				0DB0B14E1E74CAAF00582452 /* Images64.swift */,
-				0DC9EAC11E74CE750050BDC9 /* SingleItem.html */,
 			);
 			name = "HTML Templates";
 			sourceTree = "<group>";

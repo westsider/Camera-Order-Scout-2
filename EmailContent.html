@@ -3,29 +3,89 @@
     
     <head>
         
-        <title>Title of PDF</title>
-        <style type="text/css">
+        <title>C A M E R A  O R D E R</title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
             
-            .bold {
-                /* font-family: 'Cabin', sans-serif; */
-                font-weight: bold;
+            <style type="text/css">
+                
+            p1 {
+                font-family: "Titillium Web", sans-serif;
+                font-style: light;
+                color: black;
+                font-size: 90%;
+                padding-left: 5px;
             }
-        
-        
+            
+            #grey {
+                /* font-family: "Titillium Web", sans-serif;
+                font-style: extra-light; */
+                color: dimgrey;
+                 font-size: 70%;
+                /* padding: 0px 0px 0px 5px; */
+            }
+            
+            #iconSq {
+                float:left;
+                width:38px;
+                height:38px;
+                padding-right: 5px;
+                padding-left: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            
+            #iconBkg {
+                background-color: aqua;
+                width: 50px;
+                height: 50px;
+            }
+            
+            #imgTop {
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                width: inherit;
+            }
+            
+            th {
+                float:left;
+                width:38px;
+                height:38px;
+                padding-right: 5px;
+                padding-left: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            
+            td, tr {
+                font-family: "Titillium Web", sans-serif;
+                font-style: light;
+                color: black;
+                /* padding: 5px; */
+                text-align: left;
+                /* border-style: solid; */
+                border-bottom: .5px solid #808080;
+                padding-top: .5em;
+                padding-bottom: .5em;
+            }
+            
             </style>
-        <br>
         
     </head>
     
     <body>
         
         <p>
-            <img src= #LOGO_IMAGE# >  <br>  <br>
+            <img src= #LOGO_IMAGE# id="imgTop">  <br>
         </p>
                 
-            <p>
-                #ITEMS#
-            </p>
+            <div>
+                <table>
+                    #ITEMS#
+                </table>
+            </div>
     </body>
     
 </html>
