@@ -143,35 +143,9 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     //MARK: - Share Camera Order
     @IBAction func shareAction(_ sender: Any) {
-        
-        let thisEvent = RealmHelp().getLastEvent()
-        
-        var messageArray = [String]()
-        
-        for rows in thisEvent.tableViewArray {
-
-            let mixedCase = rows.title.uppercased()
-            messageArray.append(mixedCase)
-            messageArray.append("\n")
-            messageArray.append(rows.detail)
-            messageArray.append("\n\n")
-        }
-        messageArray.append("\nWeather forecast for \(thisEvent.city)\n\(thisEvent.weather)")
-        messageArray.append("  ")
-        // write over user to add company
-        messageArray[0] = "\(thisEvent.userName.uppercased()) Director of Photography\n"
-        messageArray[1] = "Camera Order “\(thisEvent.production)” \(thisEvent.date) \(thisEvent.company)\n"
-        messageArray[2] = ""
-        let title = messageArray[1]
-        let content = messageArray.joined(separator: "")
-        let objectsToShare = [content]
-        
-        
-        
+    
         let myVc = storyboard?.instantiateViewController(withIdentifier: "previewViewController") as! PreviewViewController
         navigationController?.pushViewController(myVc, animated: true)
-
-        
     }
     
     //MARK: - Set up Picker

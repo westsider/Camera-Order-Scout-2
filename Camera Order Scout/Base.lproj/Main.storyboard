@@ -38,7 +38,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9534653D-CDAB-4FC9-BAE5-05E9A46007F2" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-q8-jzw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="E296C2D4-D24A-4D3F-BCDB-9C8D2DFF4506" translatesAutoresizingMaskIntoConstraints="NO" id="TAL-q8-jzw">
                                                     <rect key="frame" x="12" y="7" width="31" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="31" id="Am7-Ph-x7D"/>
@@ -243,7 +243,7 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx7-QL-HyP">
                                                 <rect key="frame" x="259.5" y="0.0" width="83.5" height="32"/>
-                                                <color key="backgroundColor" red="0.52377876377388488" green="0.5212484315817405" blue="0.52630909596602926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.52549019607843139" green="0.52156862745098043" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="    Save    ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -298,17 +298,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYH-nY-7vf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rky-et-RkM">
+                                <rect key="frame" x="16" y="622" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtH-dq-cic">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                        <color key="backgroundColor" red="0.52550113200000004" green="0.52157324549999995" blue="0.52555584909999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Share text only">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareText:" destination="eEz-Bf-6E4" eventType="touchUpInside" id="sCM-ur-yIF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdL-Xy-FoA">
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                        <color key="backgroundColor" red="0.52550113201141357" green="0.52157324552536011" blue="0.52555584907531738" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Share with Images">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareImages:" destination="eEz-Bf-6E4" eventType="touchUpInside" id="V2y-pF-7Lf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jYH-nY-7vf" firstAttribute="leading" secondItem="7iV-Zp-FjW" secondAttribute="leading" id="VS0-p0-OEe"/>
-                            <constraint firstItem="IBX-Vf-ZPc" firstAttribute="top" secondItem="jYH-nY-7vf" secondAttribute="bottom" id="jcz-7R-SMY"/>
-                            <constraint firstItem="jYH-nY-7vf" firstAttribute="top" secondItem="7iV-Zp-FjW" secondAttribute="top" id="rbG-xH-w6Y"/>
-                            <constraint firstAttribute="trailing" secondItem="jYH-nY-7vf" secondAttribute="trailing" id="xHM-N6-6rx"/>
+                            <constraint firstItem="rky-et-RkM" firstAttribute="top" secondItem="jYH-nY-7vf" secondAttribute="bottom" constant="14" id="7Gl-WU-kX5"/>
+                            <constraint firstAttribute="trailing" secondItem="jYH-nY-7vf" secondAttribute="trailing" id="Opl-jy-jNM"/>
+                            <constraint firstItem="rky-et-RkM" firstAttribute="leading" secondItem="7iV-Zp-FjW" secondAttribute="leadingMargin" id="VAl-4f-NZA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rky-et-RkM" secondAttribute="trailing" id="VRq-DJ-z9a"/>
+                            <constraint firstItem="jYH-nY-7vf" firstAttribute="top" secondItem="DYY-5T-d6y" secondAttribute="bottom" id="b9y-GC-1IG"/>
+                            <constraint firstItem="jYH-nY-7vf" firstAttribute="leading" secondItem="7iV-Zp-FjW" secondAttribute="leading" id="dCQ-vh-gbc"/>
+                            <constraint firstItem="IBX-Vf-ZPc" firstAttribute="top" secondItem="rky-et-RkM" secondAttribute="bottom" constant="15" id="o4Q-cL-th3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -317,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXr-2C-weo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="690"/>
+            <point key="canvasLocation" x="1784.8" y="689.5052473763119"/>
         </scene>
         <!--lensViewControllers-->
         <scene sceneID="EFX-CT-Hoq">
@@ -901,7 +931,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="9534653D-CDAB-4FC9-BAE5-05E9A46007F2" width="16" height="16">
+        <image name="CamIcon" width="90" height="90"/>
+        <image name="E296C2D4-D24A-4D3F-BCDB-9C8D2DFF4506" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -969,7 +1000,6 @@ ALsAvQDCANkA2wDdDX8NhA2PDZgNqw2vDboNww3IDdAN0w3YDecN6w3yDfoOBw4MDg4OEA4VDh0OIA4l
 Di0OMA5CDkUOSgAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAA5MA
 </mutableData>
         </image>
-        <image name="CamIcon" width="90" height="90"/>
         <image name="clear" width="26" height="26"/>
         <image name="demo_1" width="472" height="386"/>
         <image name="weatherGrad" width="183" height="71"/>

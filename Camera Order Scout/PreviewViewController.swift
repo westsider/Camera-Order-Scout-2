@@ -18,13 +18,13 @@ class PreviewViewController: UIViewController {
     let pathToInvoiceHTMLTemplate = Bundle.main.path(forResource: "EmailContent", ofType: "html")
     
     let pathToSingleItemHTMLTemplate = Bundle.main.path(forResource: "SingleItem", ofType: "html")
+    
+    var HTMLContent = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Preview"
-
-        var HTMLContent = ""
         
         let thisEvent = RealmHelp().getLastEvent()
         
@@ -32,8 +32,6 @@ class PreviewViewController: UIViewController {
             HTMLContent = try String(contentsOfFile: pathToInvoiceHTMLTemplate!)
             
             HTMLContent = HTMLContent.replacingOccurrences(of: "#LOGO_IMAGE#", with: imageFiles.headerImage)
-            
-            //HTMLContent = HTMLContent.replacingOccurrences(of: "#MAN_IMAGE#", with: imageFiles.manIcon)
             
         } catch {
             print("Error Parsing HTML")
@@ -66,4 +64,48 @@ class PreviewViewController: UIViewController {
         
         webPreview.loadHTMLString(HTMLContent, baseURL: nil)
     }
+    
+    //MARK: - Share Camera Order
+    @IBAction func shareText(_ sender: Any) {
+        
+        let thisEvent = RealmHelp().getLastEvent()
+        
+        var messageArray = [String]()
+        
+        for rows in thisEvent.tableViewArray {
+            
+            let mixedCase = rows.title.uppercased()
+            messageArray.append(mixedCase)
+            messageArray.append("\n")
+            messageArray.append(rows.detail)
+            messageArray.append("\n\n")
+        }
+        messageArray.append("\nWeather forecast for \(thisEvent.city)\n\(thisEvent.weather)")
+        messageArray.append("  ")
+        // write over user to add company
+        messageArray[0] = "\(thisEvent.userName.uppercased()) Director of Photography\n"
+        messageArray[1] = "Camera Order “\(thisEvent.production)” \(thisEvent.date) \(thisEvent.company)\n"
+        messageArray[2] = ""
+        let title = messageArray[1]
+        let content = messageArray.joined(separator: "")
+        let objectsToShare = [content]
+        
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.setValue(title, forKey: "Subject")
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    //MARK: - Share Camera Order with Images
+    @IBAction func shareImages(_ sender: Any) {
+        
+        let activityVC = UIActivityViewController(activityItems: [HTMLContent], applicationActivities: nil)
+        activityVC.setValue("Camera Order", forKey: "Subject")
+        self.present(activityVC, animated: true, completion: nil)
+    }
+ 
+    
+    
+    
+    
+    
 }
