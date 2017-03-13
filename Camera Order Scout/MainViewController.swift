@@ -170,10 +170,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         
         let myVc = storyboard?.instantiateViewController(withIdentifier: "previewViewController") as! PreviewViewController
         navigationController?.pushViewController(myVc, animated: true)
-        
-//        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-//        activityVC.setValue(title, forKey: "Subject")
-//        self.present(activityVC, animated: true, completion: nil)
+
         
     }
     
@@ -191,7 +188,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         let bigRow = remainingWidth / 3
         
         if component == 0 {
-             print("\nFrame width:\(view.frame.width)")
             return CGFloat(20.0)
         } else {
             return CGFloat(bigRow)
