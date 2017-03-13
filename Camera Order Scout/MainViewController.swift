@@ -80,6 +80,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         self.navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = coolGray
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ltGray]
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     //MARK: - Add Action  5 is now special optics

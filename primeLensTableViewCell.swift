@@ -16,9 +16,12 @@ class primeLensTableViewCell: UITableViewCell {
     
     let swiftColor = UIColor(red: 83/255, green: 107/255, blue: 237/255, alpha: 1.0)
     
+    let coolGray = UIColor(red: 97/255, green: 108/255, blue: 122/255, alpha: 1.0)
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        lensSwitch.onTintColor = swiftColor
+        lensSwitch.onTintColor = coolGray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
