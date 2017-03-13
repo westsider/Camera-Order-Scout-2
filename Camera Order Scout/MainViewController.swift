@@ -23,9 +23,10 @@
 //  fix: Frazie Frazier
 //  fix: remove specilty from title
 //  task: center logo
-
 //  task: change color scheme
+
 //  send html tp mail
+//  fix: prod co
 //  task: beta testers
 //  task: I think being able to generate an email and a PDF would be useful
 //  task: pana large format
