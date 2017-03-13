@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "CAM Icon60_2X.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "CAM Icon60_3X.png",
+      "filename" : "CAM Icon180.png",
       "scale" : "2x"
     },
     {

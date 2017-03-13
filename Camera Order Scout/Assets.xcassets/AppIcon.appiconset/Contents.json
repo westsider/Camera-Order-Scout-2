@@ -3,49 +3,49 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "CAM Icon20_2X.png",
+      "filename" : "CAM Icon40.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "CAM Icon20_3X.png",
+      "filename" : "CAM Icon60.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "CAM Icon29_2X.png",
+      "filename" : "CAM Icon58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "CAM Icon29_3X.png",
+      "filename" : "CAM Icon87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "CAM Icon40_2X.png",
+      "filename" : "CAM Icon80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "CAM Icon40_3X.png",
+      "filename" : "CAM Icon120-1.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "CAM Icon60_2X.png",
+      "filename" : "CAM Icon120.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "CAM Icon60_3X.png",
+      "filename" : "CAM Icon180.png",
       "scale" : "3x"
     }
   ],

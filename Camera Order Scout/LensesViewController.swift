@@ -99,7 +99,6 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func setUpUI() {
         // 1 primes
         if pickerEquipment.pickerState[1] <= 3 {
-            print("sent form primes")
             title = "Select Lenses"
             titleDescription.text = "Switch off lenses not needed"
 

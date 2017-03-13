@@ -22,7 +22,10 @@
 //  fix: no city on weather share
 //  fix: Frazie Frazier
 //  fix: remove specilty from title
+//  task: center logo
 
+//  task: change color scheme
+//  send html tp mail
 //  task: beta testers
 //  task: I think being able to generate an email and a PDF would be useful
 //  task: pana large format
