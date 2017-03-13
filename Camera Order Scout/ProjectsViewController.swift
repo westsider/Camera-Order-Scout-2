@@ -87,6 +87,8 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.textLabel?.text =  task
         
+        cell.textLabel?.textColor = UIColor.darkGray
+        
         return cell
     }
 
