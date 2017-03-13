@@ -53,10 +53,19 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     var tableviewEvent = EventUserRealm()
     
+    let coolGray = UIColor(red: 97/255, green: 108/255, blue: 122/255, alpha: 1.0)
+    
+    let ltGray = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1.0)
+    
+
+    
+    
+    
     //MARK: - Lifecycle Functions
     override func viewWillAppear(_ animated: Bool) {
         fillDefaultTableView()
         myTableView.reloadData()
+       
     }
  
     override func viewDidLoad() {
@@ -67,6 +76,10 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         myTableView.reloadData()
         updatePickerSelection()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = coolGray
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ltGray]
     }
     
     //MARK: - Add Action  5 is now special optics
@@ -167,15 +180,24 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
     }
+
+
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        
+        let remainingWidth = view.frame.width - 60  // - row one
+        
+        let bigRow = remainingWidth / 3
+        
         if component == 0 {
+             print("\nFrame width:\(view.frame.width)")
             return CGFloat(20.0)
         } else {
-            return CGFloat(80.0)
+            return CGFloat(bigRow)
         }
+        
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return   pickerEquipment.pickerArray[component].count
     }
@@ -197,7 +219,8 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     //MARK: -  make picker text fill horizontal space allowed
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.textColor = UIColor.black
+        //pickerView.backgroundColor = UIColor.darkGray
+        pickerLabel.textColor = UIColor.white
         pickerLabel.text = pickerEquipment.pickerArray[component][row]
         pickerLabel.font = UIFont(name: "Helvetica Neue", size: 18)
         pickerLabel.textAlignment = NSTextAlignment.center
