@@ -68,22 +68,9 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func updateAction(_ sender: Any) {
         
-        let currentEvent = RealmHelp().getLastEvent()
-        
-        try! realm.write {
-            
-            currentEvent.userName = userName.text!
-            currentEvent.production = production.text!
-            currentEvent.company = company.text!
-            currentEvent.city = citySearch.text!
-            currentEvent.date = dateTextInput.text!
-            currentEvent.weather = weatherDisplay.text
-            currentEvent.tableViewArray[0].title = "\(userName.text!) Director of Photography"
-            currentEvent.tableViewArray[0].detail = "Camera Order \(production.text!) \(dateTextInput.text!)"
-        }
+        updateRealm()
         
         _ = navigationController?.popToRootViewController(animated: true)
-        
     }
     
     // MARK: - Keyboard behavior functions
@@ -115,6 +102,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 self.activityDial.stopAnimating()
                 self.returnMessage(message: result)
                 self.parseWeatherIcon(result: result)
+                self.updateRealm()
             }
             
         }  else {
@@ -125,7 +113,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         
         citySearch.isSelected = false
         citySearch.text = thisCity
-        
     }
 
     //MARK: - Activate date picker view
@@ -196,6 +183,22 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             self.weatherIcon.image = setIcon(input: thisCond)
             self.weatherTemp.text = thisTemp
             self.weatherCond.text = thisCond
+        }
+    }
+    
+    func updateRealm() {
+        let currentEvent = RealmHelp().getLastEvent()
+        
+        try! realm.write {
+            
+            currentEvent.userName = userName.text!
+            currentEvent.production = production.text!
+            currentEvent.company = company.text!
+            currentEvent.city = citySearch.text!
+            currentEvent.date = dateTextInput.text!
+            currentEvent.weather = weatherDisplay.text
+            currentEvent.tableViewArray[0].title = "\(userName.text!) Director of Photography"
+            currentEvent.tableViewArray[0].detail = "Camera Order \(production.text!) \(dateTextInput.text!)"
         }
     }
 }

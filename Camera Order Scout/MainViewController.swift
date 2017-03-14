@@ -25,7 +25,6 @@
 //  task: center logo
 //  task: change color scheme
 //  task: send html to mail
-
 //  fix: get weather auto saves
 
 //  task: beta testers
