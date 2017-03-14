@@ -20,6 +20,8 @@ class PreviewViewController: UIViewController {
     let pathToSingleItemHTMLTemplate = Bundle.main.path(forResource: "SingleItem", ofType: "html")
     
     var HTMLContent = ""
+    
+    var subjectLine = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,8 @@ class PreviewViewController: UIViewController {
         
         var allItems = ""
         
-        for rows in thisEvent.tableViewArray {
+        for ( index, rows) in thisEvent.tableViewArray.enumerated() {
+            
             
             var itemHTMLContent: String!
             
@@ -49,18 +52,31 @@ class PreviewViewController: UIViewController {
                 print("Error parsing rows")
             }
             
-            
             itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_IMAGE#", with: ImageFiles().setHTMLIcon(title: rows.icon))
             
             itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_TITLE#", with: rows.title)
           
-            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_ROW#", with: rows.detail + " " + thisEvent.company)
+            if index == 0 {  // grab title for email
+                subjectLine = rows.detail + " " + thisEvent.company
+                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_ROW#", with: rows.detail + " " + thisEvent.company)
+            } else {
+                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_ROW#", with: rows.detail)
+            }
+            
         
             allItems += itemHTMLContent
             
         }
         
         HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEMS#", with: allItems)
+        
+        HTMLContent = HTMLContent.replacingOccurrences(of: "#CITY#", with: thisEvent.city)
+        
+        let display_txt = thisEvent.weather //(/\n/g, "<br />")
+        
+        let newString = display_txt.replacingOccurrences(of: "\n", with: "<br>")
+        
+        HTMLContent = HTMLContent.replacingOccurrences(of: "#Weather#", with: newString)
         
         webPreview.loadHTMLString(HTMLContent, baseURL: nil)
     }
@@ -99,13 +115,7 @@ class PreviewViewController: UIViewController {
     @IBAction func shareImages(_ sender: Any) {
         
         let activityVC = UIActivityViewController(activityItems: [HTMLContent], applicationActivities: nil)
-        activityVC.setValue("Camera Order", forKey: "Subject")
+        activityVC.setValue(subjectLine, forKey: "Subject")
         self.present(activityVC, animated: true, completion: nil)
-    }
- 
-    
-    
-    
-    
-    
+    } 
 }

@@ -24,9 +24,10 @@
 //  fix: remove specilty from title
 //  task: center logo
 //  task: change color scheme
+//  task: send html to mail
 
-//  send html tp mail
-//  fix: prod co
+//  fix: get weather auto saves
+
 //  task: beta testers
 //  task: I think being able to generate an email and a PDF would be useful
 //  task: pana large format
@@ -56,10 +57,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     let coolGray = UIColor(red: 97/255, green: 108/255, blue: 122/255, alpha: 1.0)
     
     let ltGray = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1.0)
-    
-
-    
-    
     
     //MARK: - Lifecycle Functions
     override func viewWillAppear(_ animated: Bool) {
