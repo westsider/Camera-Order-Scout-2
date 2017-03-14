@@ -26,6 +26,10 @@
 //  task: change color scheme
 //  task: send html to mail
 //  fix: get weather auto saves
+//  fix: invalid re declaration of primeLensTableViewCell
+
+//  fix: Could not load the "" image referenced from a nib in the bundle with identifier "TradeStrat.Camera-Order-Scout"
+//  task: update how to
 
 //  task: beta testers
 //  task: I think being able to generate an email and a PDF would be useful
