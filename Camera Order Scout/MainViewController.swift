@@ -27,8 +27,8 @@
 //  task: send html to mail
 //  fix: get weather auto saves
 //  fix: invalid re declaration of primeLensTableViewCell
+//  fix: Could not load the "" image referenced
 
-//  fix: Could not load the "" image referenced from a nib in the bundle with identifier "TradeStrat.Camera-Order-Scout"
 //  task: update how to
 
 //  task: beta testers

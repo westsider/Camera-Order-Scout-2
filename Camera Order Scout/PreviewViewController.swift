@@ -108,6 +108,9 @@ class PreviewViewController: UIViewController {
         
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         activityVC.setValue(title, forKey: "Subject")
+        
+        
+        
         self.present(activityVC, animated: true, completion: nil)
     }
     
@@ -116,6 +119,8 @@ class PreviewViewController: UIViewController {
         
         let activityVC = UIActivityViewController(activityItems: [HTMLContent], applicationActivities: nil)
         activityVC.setValue(subjectLine, forKey: "Subject")
+        // exclude sms from sharing with images
+        activityVC.excludedActivityTypes = [ UIActivityType.message ]
         self.present(activityVC, animated: true, completion: nil)
     } 
 }
