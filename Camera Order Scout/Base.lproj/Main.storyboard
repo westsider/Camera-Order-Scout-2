@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hPG-0D-azu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hPG-0D-azu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -746,42 +746,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-XI-f2l">
-                                <rect key="frame" x="0.0" y="397" width="375" height="270"/>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="H0c-gP-D1E">
-                                <rect key="frame" x="0.0" y="330" width="375" height="37"/>
-                                <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo_1" translatesAutoresizingMaskIntoConstraints="NO" id="JG6-GI-wi3">
-                                <rect key="frame" x="41" y="44" width="293" height="246"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="o37-cs-RmL">
+                                <rect key="frame" x="16" y="10" width="343" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo_1" translatesAutoresizingMaskIntoConstraints="NO" id="JG6-GI-wi3">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="405.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Qdq-hr-hc8" userLabel="Center Stack View">
+                                        <rect key="frame" x="0.0" y="414.5" width="343" height="196"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-fM-ODp" userLabel="Type Stack View">
+                                                <rect key="frame" x="0.0" y="54" width="167" height="88.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Label Tops" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpW-3Z-S7l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="23.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="second Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umC-ZY-nW2">
+                                                        <rect key="frame" x="0.0" y="32.5" width="167" height="23.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="third Label " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKF-oE-Wvo">
+                                                        <rect key="frame" x="0.0" y="65" width="167" height="23.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="jkB-co-6gr" userLabel="circle image">
+                                                <rect key="frame" x="176" y="0.0" width="167" height="196"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="H0c-gP-D1E">
+                                        <rect key="frame" x="0.0" y="619.5" width="343" height="27.5"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </pageControl>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="246" id="LH8-20-0jW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qdq-hr-hc8" secondAttribute="trailing" id="3gI-N7-FLh"/>
+                                    <constraint firstItem="Qdq-hr-hc8" firstAttribute="leading" secondItem="o37-cs-RmL" secondAttribute="leading" id="VYd-3i-QcB"/>
+                                    <constraint firstAttribute="trailing" secondItem="H0c-gP-D1E" secondAttribute="trailing" id="teb-Oe-F8Y"/>
                                 </constraints>
-                            </imageView>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="H0c-gP-D1E" firstAttribute="leading" secondItem="doJ-XI-f2l" secondAttribute="leading" id="2AT-6Z-VvL"/>
-                            <constraint firstItem="H0c-gP-D1E" firstAttribute="trailing" secondItem="doJ-XI-f2l" secondAttribute="trailing" id="3zQ-WE-Y9Q"/>
-                            <constraint firstItem="JG6-GI-wi3" firstAttribute="top" secondItem="9XU-Lq-WVr" secondAttribute="bottom" constant="44" id="P5J-SP-Ttf"/>
-                            <constraint firstAttribute="trailing" secondItem="H0c-gP-D1E" secondAttribute="trailing" id="Pce-tU-tK4"/>
-                            <constraint firstItem="doJ-XI-f2l" firstAttribute="bottom" secondItem="Xqi-y8-GA6" secondAttribute="top" id="Ufm-ZT-hMg"/>
-                            <constraint firstItem="H0c-gP-D1E" firstAttribute="leading" secondItem="cWk-9m-jeA" secondAttribute="leading" id="YDZ-Fg-cqJ"/>
-                            <constraint firstItem="doJ-XI-f2l" firstAttribute="top" secondItem="H0c-gP-D1E" secondAttribute="bottom" constant="30" id="gAb-RX-sWM"/>
-                            <constraint firstItem="JG6-GI-wi3" firstAttribute="centerX" secondItem="H0c-gP-D1E" secondAttribute="centerX" id="iNa-im-G9L"/>
-                            <constraint firstItem="H0c-gP-D1E" firstAttribute="top" secondItem="JG6-GI-wi3" secondAttribute="bottom" constant="40" id="iS6-Ag-Igh"/>
-                            <constraint firstItem="JG6-GI-wi3" firstAttribute="leading" secondItem="cWk-9m-jeA" secondAttribute="leadingMargin" constant="25" id="isQ-2q-Q2B"/>
+                            <constraint firstItem="o37-cs-RmL" firstAttribute="top" secondItem="9XU-Lq-WVr" secondAttribute="bottom" constant="10" id="83k-wq-YZD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o37-cs-RmL" secondAttribute="trailing" id="ExW-BA-nVI"/>
+                            <constraint firstItem="o37-cs-RmL" firstAttribute="leading" secondItem="cWk-9m-jeA" secondAttribute="leadingMargin" id="b6s-kF-Tex"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="o37-cs-RmL" secondAttribute="bottom" constant="10" id="vjh-VS-PYK"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hMf-Gw-Y54" appends="YES" id="WlA-9H-x9c"/>
+                            <outletCollection property="gestureRecognizers" destination="Kw5-Y5-gi8" appends="YES" id="YMf-oC-mYW"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="bottomImage" destination="jkB-co-6gr" id="h2i-ed-O7G"/>
+                        <outlet property="bottomText" destination="hKF-oE-Wvo" id="mHi-u9-uAM"/>
+                        <outlet property="middleText" destination="umC-ZY-nW2" id="PAM-Fw-FhY"/>
                         <outlet property="pageControl" destination="H0c-gP-D1E" id="vFc-8C-Urs"/>
-                        <outlet property="scrollView" destination="doJ-XI-f2l" id="kGb-4b-NQL"/>
                         <outlet property="topImage" destination="JG6-GI-wi3" id="r65-Ov-gS1"/>
+                        <outlet property="topText" destination="cpW-3Z-S7l" id="3TL-nH-YJ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daQ-en-jxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="left" id="hMf-Gw-Y54">
+                    <connections>
+                        <action selector="leftSwipe:" destination="DSv-Hn-znq" id="T0e-nI-AWv"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="Kw5-Y5-gi8">
+                    <connections>
+                        <action selector="rightSwipe:" destination="DSv-Hn-znq" id="pih-vb-Udv"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-295.19999999999999" y="1450.5247376311845"/>
         </scene>
@@ -931,9 +978,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="238" height="238"/>
         <image name="CamIcon" width="90" height="90"/>
         <image name="clear" width="26" height="26"/>
-        <image name="demo_1" width="472" height="386"/>
+        <image name="demo_1" width="697" height="492"/>
         <image name="manIcon" width="16" height="16"/>
         <image name="weatherGrad" width="183" height="71"/>
     </resources>

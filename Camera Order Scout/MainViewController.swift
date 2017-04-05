@@ -5,32 +5,6 @@
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 
-//  task: add panaviaion primos
-//  task: add panaviaion anamporphic
-//  task: add special lens section
-//  fix: Erlich Backman Fix
-//  task: added sony, actioCam
-//  task: updated items from camtec
-//  task: updated asc magazne
-//  fix: perspective catagory
-//  fix: move portrait and flare to reg pana + Perspective
-//  task: monitors
-//  task: lamda
-//  task: lens baby
-//  task: added media cards + drives
-//  task:  added pana macros pana zooms
-//  fix: no city on weather share
-//  fix: Frazie Frazier
-//  fix: remove specilty from title
-//  task: center logo
-//  task: change color scheme
-//  task: send html to mail
-//  fix: get weather auto saves
-//  fix: invalid re declaration of primeLensTableViewCell
-//  fix: Could not load the "" image referenced
-//  task: beta testers
-//  task: Updated realm
-
 //  task: update how to
 //  task: I think being able to generate an email and a PDF would be useful
 //  task: pana large format
