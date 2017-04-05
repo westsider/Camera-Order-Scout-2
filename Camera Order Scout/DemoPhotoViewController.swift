@@ -36,27 +36,31 @@ class DemoPhotoViewController: UIViewController {
     
     let feature6 = ["title":"Write In","price":"your custom equipment","button":"press add items","image":"6"]
     
+    let coolGray = UIColor(red: 97/255, green: 108/255, blue: 122/255, alpha: 1.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "I N F O"
         
         pageLoad(page: counter)
+        
+        //view.backgroundColor = coolGray
     }
     
 
     @IBAction func leftSwipe(_ sender: UISwipeGestureRecognizer) {
-        counter -= 1
+        counter += 1
         if counter < 0 { counter = 0 }
-        if counter > 5 {counter = 5}
-        pageControl.currentPage -= 1
+        if counter > 6 {counter = 6}
+        pageControl.currentPage += 1
         pageLoad(page: counter)
     }
     
     @IBAction func rightSwipe(_ sender: UISwipeGestureRecognizer) {
-        counter += 1
-        if counter > 5 {counter = 5}
-        pageControl.currentPage += 1
+        counter -= 1
+        if counter > 6 {counter = 6}
+        pageControl.currentPage -= 1
         pageLoad(page: counter)
     }
     
@@ -100,6 +104,12 @@ class DemoPhotoViewController: UIViewController {
             topText.text = feature6["title"]
             middleText.text = feature6["price"]
             bottomText.text = feature6["button"]
+        case 6:
+            topImage.image = UIImage(named: "done")
+            bottomImage.image = UIImage(named: "thumbsUp")
+            topText.text = ""
+            middleText.text = "  Have a great shoot"
+            bottomText.text = ""
 
         default:
             topImage.image = UIImage(named: "demo_1")
