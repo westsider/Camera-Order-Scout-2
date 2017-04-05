@@ -68,7 +68,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let action_add = UIAlertAction.init(title: "Add", style: .default) { (UIAlertAction) -> Void in
             let textField_todo = (alertController.textFields?.first)! as UITextField
-            print("You entered \(textField_todo.text)")
+            //print("You entered \(String(describing: textField_todo.text))")
             
             var textInput = ""
             if  textField_todo.text! != "" {

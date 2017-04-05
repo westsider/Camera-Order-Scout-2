@@ -28,10 +28,10 @@
 //  fix: get weather auto saves
 //  fix: invalid re declaration of primeLensTableViewCell
 //  fix: Could not load the "" image referenced
+//  task: beta testers
+//  task: Updated realm
 
 //  task: update how to
-
-//  task: beta testers
 //  task: I think being able to generate an email and a PDF would be useful
 //  task: pana large format
 
