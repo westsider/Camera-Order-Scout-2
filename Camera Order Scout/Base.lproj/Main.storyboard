@@ -749,42 +749,52 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="o37-cs-RmL">
                                 <rect key="frame" x="16" y="10" width="343" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="JG6-GI-wi3">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="385.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo_1" translatesAutoresizingMaskIntoConstraints="NO" id="JG6-GI-wi3">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="397.5"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Qdq-hr-hc8" userLabel="Center Stack View">
-                                        <rect key="frame" x="0.0" y="394.5" width="343" height="214.5"/>
+                                        <rect key="frame" x="0.0" y="406.5" width="343" height="201"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-fM-ODp" userLabel="Type Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="214.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-fM-ODp" userLabel="TypeStackView">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="201"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpW-3Z-S7l">
-                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="43.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Have a great shoot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umC-ZY-nW2">
-                                                        <rect key="frame" x="0.0" y="74.5" width="167" height="65.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exit demo from title bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umC-ZY-nW2">
+                                                        <rect key="frame" x="0.0" y="52.5" width="167" height="43.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKF-oE-Wvo">
-                                                        <rect key="frame" x="0.0" y="149" width="167" height="65.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap i to return here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKF-oE-Wvo">
+                                                        <rect key="frame" x="0.0" y="105" width="167" height="43.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFL-r8-p0w">
+                                                        <rect key="frame" x="0.0" y="157.5" width="167" height="43.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <state key="normal" title="contribute ideas">
+                                                            <color key="titleColor" red="0.52154112486411108" green="0.65439286889780945" blue="0.97105586528778076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="linkToFbbAction:" destination="DSv-Hn-znq" eventType="touchUpInside" id="dJR-vJ-fop"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsUp" translatesAutoresizingMaskIntoConstraints="NO" id="jkB-co-6gr" userLabel="circle image">
-                                                <rect key="frame" x="176" y="0.0" width="167" height="214.5"/>
+                                                <rect key="frame" x="176" y="50.5" width="167" height="100"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="H0c-gP-D1E">
-                                        <rect key="frame" x="0.0" y="618" width="343" height="29"/>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="7" translatesAutoresizingMaskIntoConstraints="NO" id="H0c-gP-D1E">
+                                        <rect key="frame" x="0.0" y="616.5" width="343" height="30.5"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </pageControl>
@@ -814,8 +824,10 @@
                         <outlet property="bottomText" destination="hKF-oE-Wvo" id="mHi-u9-uAM"/>
                         <outlet property="middleText" destination="umC-ZY-nW2" id="PAM-Fw-FhY"/>
                         <outlet property="pageControl" destination="H0c-gP-D1E" id="vFc-8C-Urs"/>
+                        <outlet property="shareButton" destination="qFL-r8-p0w" id="Q4J-MB-k7Q"/>
                         <outlet property="topImage" destination="JG6-GI-wi3" id="r65-Ov-gS1"/>
                         <outlet property="topText" destination="cpW-3Z-S7l" id="3TL-nH-YJ1"/>
+                        <outlet property="typeStack" destination="Dgr-fM-ODp" id="mSf-eO-zbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daQ-en-jxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -980,9 +992,9 @@
     <resources>
         <image name="CamIcon" width="90" height="90"/>
         <image name="clear" width="26" height="26"/>
-        <image name="done" width="450" height="450"/>
+        <image name="demo_1" width="450" height="450"/>
         <image name="manIcon" width="16" height="16"/>
-        <image name="thumbsUp" width="250" height="250"/>
+        <image name="thumbsUp" width="100" height="100"/>
         <image name="weatherGrad" width="183" height="71"/>
     </resources>
     <inferredMetricsTieBreakers>
