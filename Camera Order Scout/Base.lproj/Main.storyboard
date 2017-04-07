@@ -778,7 +778,7 @@
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFL-r8-p0w">
                                                         <rect key="frame" x="0.0" y="157.5" width="167" height="43.5"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                         <state key="normal" title="contribute ideas">
                                                             <color key="titleColor" red="0.52154112486411108" green="0.65439286889780945" blue="0.97105586528778076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>

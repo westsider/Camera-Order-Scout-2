@@ -89,7 +89,7 @@ class DemoPhotoViewController: UIViewController {
         switch page {
         case 0:
             topImage.isHidden = true
-            bottomImage.image = UIImage(named: "thumbsUp")
+            bottomImage.image = UIImage(named: "infoDot")
             topText.text = "App Demo"
             middleText.text = "• swipe left to explore"
             bottomText.text = "• exit demo from title..."
@@ -137,7 +137,7 @@ class DemoPhotoViewController: UIViewController {
             bottomText.text = feature5["button"]
             shareButton.isHidden = true
         case 6:
-            topImage.isHidden = false
+            //topImage.isHidden = false
             letsDissolve(nextImage: "demo_6")
             //topImage.image = UIImage(named: "demo_6")
             bottomImage.image = UIImage(named: "6")
@@ -146,7 +146,7 @@ class DemoPhotoViewController: UIViewController {
             bottomText.text = feature6["button"]
             shareButton.isHidden = true
         case 7:
-            topImage.isHidden = true
+           // topImage.isHidden = true
             letsDissolve(nextImage: "demo_7")
             //topImage.image = UIImage(named: "done")
             bottomImage.image = UIImage(named: "thumbsUp")
