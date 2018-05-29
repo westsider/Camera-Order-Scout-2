@@ -20,10 +20,6 @@
 		0D6393671E46D84A003055DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6393651E46D84A003055DB /* LaunchScreen.storyboard */; };
 		0D63936F1E46D8FC003055DB /* Equipment Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63936E1E46D8FC003055DB /* Equipment Class.swift */; };
 		0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6393701E46D932003055DB /* Equipment Makers.swift */; };
-		0D6E9A5A1E93F23C00427436 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6E9A591E93F23C00427436 /* Realm.framework */; };
-		0D6E9A5B1E93F23C00427436 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6E9A591E93F23C00427436 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0D6E9A5E1E93F24700427436 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6E9A5D1E93F24700427436 /* RealmSwift.framework */; };
-		0D6E9A5F1E93F24700427436 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6E9A5D1E93F24700427436 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */; };
 		0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */; };
 		0DB0B11B1E745D7100582452 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */; };
@@ -44,22 +40,8 @@
 		0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */; };
 		0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF026A81E672FDB00C06196 /* Realm Convience.swift */; };
 		0DFC00D51E65F5C800A08D2B /* TableView Switches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */; };
+		6F7B9586569900A7128C579E /* Pods_Camera_Order_Scout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B85F02A03A0E538C4ABB97F /* Pods_Camera_Order_Scout.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0D6E9A5C1E93F23C00427436 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0D6E9A5F1E93F24700427436 /* RealmSwift.framework in Embed Frameworks */,
-				0D6E9A5B1E93F23C00427436 /* Realm.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D1AABB31E6283100097B64A /* Unique Kits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Unique Kits.swift"; sourceTree = "<group>"; };
@@ -77,8 +59,6 @@
 		0D6393681E46D84A003055DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D63936E1E46D8FC003055DB /* Equipment Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Equipment Class.swift"; sourceTree = "<group>"; };
 		0D6393701E46D932003055DB /* Equipment Makers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Equipment Makers.swift"; sourceTree = "<group>"; };
-		0D6E9A591E93F23C00427436 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		0D6E9A5D1E93F24700427436 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimeLensTableViewCell.swift; path = ../PrimeLensTableViewCell.swift; sourceTree = "<group>"; };
 		0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = firstRunProjects.swift; path = "Camera Order Scout/firstRunProjects.swift"; sourceTree = "<group>"; };
 		0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
@@ -99,6 +79,9 @@
 		0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewArrayRealm.swift; sourceTree = "<group>"; };
 		0DF026A81E672FDB00C06196 /* Realm Convience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm Convience.swift"; sourceTree = "<group>"; };
 		0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView Switches.swift"; sourceTree = "<group>"; };
+		2B85F02A03A0E538C4ABB97F /* Pods_Camera_Order_Scout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camera_Order_Scout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE0DC91B9FF006D7BB9C075 /* Pods-Camera Order Scout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera Order Scout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout.debug.xcconfig"; sourceTree = "<group>"; };
+		DC996033FA8C198ADFE885C2 /* Pods-Camera Order Scout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera Order Scout.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D6E9A5E1E93F24700427436 /* RealmSwift.framework in Frameworks */,
-				0D6E9A5A1E93F23C00427436 /* Realm.framework in Frameworks */,
+				6F7B9586569900A7128C579E /* Pods_Camera_Order_Scout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,10 +120,10 @@
 		0D6393501E46D84A003055DB = {
 			isa = PBXGroup;
 			children = (
-				0D6E9A5D1E93F24700427436 /* RealmSwift.framework */,
-				0D6E9A591E93F23C00427436 /* Realm.framework */,
 				0D63935B1E46D84A003055DB /* Camera Order Scout */,
 				0D63935A1E46D84A003055DB /* Products */,
+				4CD4A56ABC172F5BF6417E64 /* Pods */,
+				F427844985CEBFB608E4AAB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +212,23 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		4CD4A56ABC172F5BF6417E64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4AE0DC91B9FF006D7BB9C075 /* Pods-Camera Order Scout.debug.xcconfig */,
+				DC996033FA8C198ADFE885C2 /* Pods-Camera Order Scout.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F427844985CEBFB608E4AAB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B85F02A03A0E538C4ABB97F /* Pods_Camera_Order_Scout.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,11 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D63936B1E46D84A003055DB /* Build configuration list for PBXNativeTarget "Camera Order Scout" */;
 			buildPhases = (
+				99816F76D1ECCDC0702A4C24 /* [CP] Check Pods Manifest.lock */,
 				0D6393551E46D84A003055DB /* Sources */,
 				0D6393561E46D84A003055DB /* Frameworks */,
 				0D6393571E46D84A003055DB /* Resources */,
-				0D6E9A5C1E93F23C00427436 /* Embed Frameworks */,
-				0DC8957A1E4E35AE00FA7588 /* ShellScript */,
+				B02897CEBA008E57794787F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,7 +258,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Warren Hansen";
 				TargetAttributes = {
 					0D6393581E46D84A003055DB = {
@@ -303,18 +302,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DC8957A1E4E35AE00FA7588 /* ShellScript */ = {
+		99816F76D1ECCDC0702A4C24 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Camera Order Scout-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B02897CEBA008E57794787F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -385,15 +409,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -434,15 +466,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -469,6 +509,7 @@
 		};
 		0D63936C1E46D84A003055DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AE0DC91B9FF006D7BB9C075 /* Pods-Camera Order Scout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 22U4CL887R;
@@ -477,6 +518,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Camera Order Scout/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TradeStrat.Camera-Order-Scout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +529,7 @@
 		};
 		0D63936D1E46D84A003055DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC996033FA8C198ADFE885C2 /* Pods-Camera Order Scout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 22U4CL887R;
@@ -495,6 +538,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Camera Order Scout/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TradeStrat.Camera-Order-Scout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
