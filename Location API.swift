@@ -22,10 +22,9 @@ class CurrentLocation {
     
     var forcastURL = NSURL(string: "api.openweathermap.org/data/2.5/forecast/q={city name},{country code}&cnt={cnt}")
     func parseCurrentLocation(input: String)-> String {
-        //  let location = cityInput.text!
         let location = input
         let str = location
-        let split = str.characters.split(separator: " ")
+        let split = str.components(separatedBy: " ")
         let size = split.count
         var last = ""
         var first = ""

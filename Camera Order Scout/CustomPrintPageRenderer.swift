@@ -45,7 +45,7 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
         let textAttributes = [NSFontAttributeName: font!, NSForegroundColorAttributeName: UIColor(red: 243.0/255, green: 82.0/255.0, blue: 30.0/255.0, alpha: 1.0), NSKernAttributeName: 7.5] as [String : Any]
         
         // Calculate the text size.
-        let textSize = getTextSize(text: headerText as String, font: nil, textAttributes: textAttributes as [String : AnyObject]!)
+        let textSize = getTextSize(text: headerText as String, font: nil, textAttributes: textAttributes as [String : AnyObject])
         
         // Determine the offset to the right side.
         let offsetX: CGFloat = 20.0
