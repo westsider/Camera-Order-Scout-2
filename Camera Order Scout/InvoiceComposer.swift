@@ -108,20 +108,21 @@ class InvoiceComposer: NSObject {
         return nil
     }
     
+// commented out 5/29 because of swift 4 incompatability
     
-    func exportHTMLContentToPDF(HTMLContent: String) {
-        let printPageRenderer = CustomPrintPageRenderer()
-        
-        let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
-        printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
-        
-        let pdfData = drawPDFUsingPrintPageRenderer(printPageRenderer: printPageRenderer)
-        
-        pdfFilename = "\(AppDelegate.getAppDelegate().getDocDir())/Invoice\(invoiceNumber).pdf"
-        pdfData?.write(toFile: pdfFilename, atomically: true)
-        
-        print(pdfFilename)
-    }
+//    func exportHTMLContentToPDF(HTMLContent: String) {
+//        let printPageRenderer = CustomPrintPageRenderer()
+//
+//        let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+//        printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+//
+//        let pdfData = drawPDFUsingPrintPageRenderer(printPageRenderer: printPageRenderer)
+//
+//        pdfFilename = "\(AppDelegate.getAppDelegate().getDocDir())/Invoice\(invoiceNumber).pdf"
+//        pdfData?.write(toFile: pdfFilename, atomically: true)
+//
+//        print(pdfFilename)
+//    }
     
     
     func drawPDFUsingPrintPageRenderer(printPageRenderer: UIPrintPageRenderer) -> NSData! {

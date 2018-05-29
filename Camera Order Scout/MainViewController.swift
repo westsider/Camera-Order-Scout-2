@@ -53,7 +53,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         
         self.navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = coolGray
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ltGray]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ltGray]
         navigationController?.navigationBar.tintColor = UIColor.white
     }
     

@@ -12,14 +12,14 @@ import RealmSwift
 // class to hold each event, user and tableview list of equipment
 class EventUserRealm: Object {
     
-    dynamic var eventName = "Default"
-    dynamic var taskID = NSUUID().uuidString    
-    dynamic var userName = "Default"
-    dynamic var production = ""
-    dynamic var company = ""
-    dynamic var city = ""
-    dynamic var date = ""
-    dynamic var weather = ""
+    @objc dynamic var eventName = "Default"
+    @objc dynamic var taskID = NSUUID().uuidString    
+    @objc dynamic var userName = "Default"
+    @objc dynamic var production = ""
+    @objc dynamic var company = ""
+    @objc dynamic var city = ""
+    @objc dynamic var date = ""
+    @objc dynamic var weather = ""
     
     var tableViewArray = List<TableViewRow>()
 }

@@ -89,7 +89,7 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     /// modify a lens kit from swich positions in the tableView
-    func switchTriggered(sender: UISwitch) {
+    @objc func switchTriggered(sender: UISwitch) {
 
         let index = sender.tag
         tableViewSwitches.updateArray(index: index, switchPos: sender.isOn)

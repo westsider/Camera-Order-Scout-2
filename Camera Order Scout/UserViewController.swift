@@ -142,7 +142,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - format the selected Date and update vars used in weather forcast
-    func datePickerValueChanged(sender:UIDatePicker) {
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.medium
@@ -216,7 +216,7 @@ extension UIViewController {
                                                object: nil)
     }
     
-    func keyboardWillHideForResizing(notification: Notification) {
+    @objc func keyboardWillHideForResizing(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let viewHeight = self.view.frame.height
             self.view.frame = CGRect(x: self.view.frame.origin.x,
@@ -228,7 +228,7 @@ extension UIViewController {
         }
     }
     
-    func keyboardWillShowForResizing(notification: Notification) {
+    @objc func keyboardWillShowForResizing(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
             let window = self.view.window?.frame {
             // We're not just minusing the kb height from the view height because

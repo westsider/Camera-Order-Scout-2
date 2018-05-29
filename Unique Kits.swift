@@ -11,18 +11,18 @@ import RealmSwift
 import UIKit
 
 class AksItem: Object {
-    dynamic var detail = ""
-    dynamic var status = false
+    @objc dynamic var detail = ""
+    @objc dynamic var status = false
 }
 
 class FilterItem: Object {
-    dynamic var detail = ""
-    dynamic var status = false
+    @objc dynamic var detail = ""
+    @objc dynamic var status = false
 }
 
 class SupportItem: Object {
-    dynamic var detail = ""
-    dynamic var status = false
+    @objc dynamic var detail = ""
+    @objc dynamic var status = false
 }
 
 
@@ -132,8 +132,10 @@ class UniqueKits {
         // if list isnt empty remove last comma
         if returnedString != "" {
             let endIndex = returnedString.index(returnedString.endIndex, offsetBy: -2)
-            let truncated = returnedString.substring(to: endIndex)
-            returnedString = truncated
+            //  This line was changed for swift 4
+            //let truncated = returnedString.substring(to: endIndex)
+            let truncated = returnedString[..<endIndex]
+            returnedString = String(truncated)
         }
         
         return returnedString

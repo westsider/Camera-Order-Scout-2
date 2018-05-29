@@ -102,7 +102,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     /// logic to modify swich positions in realm
-    func switchTriggered(sender: UISwitch) {
+    @objc func switchTriggered(sender: UISwitch) {
         
         let index = sender.tag
         let content = sender.restorationIdentifier!

@@ -11,15 +11,15 @@ import RealmSwift
 
 // class to add tableview rows to each event
 class TableViewRow: Object {
-    dynamic var icon = ""
-    dynamic var title = ""
-    dynamic var detail =  ""
-    dynamic var catagory = 0
+    @objc dynamic var icon = ""
+    @objc dynamic var title = ""
+    @objc dynamic var detail =  ""
+    @objc dynamic var catagory = 0
     
     override var description: String { return "TableViewRow {\(icon), \(title), \(detail)}" }
 }
 
 //  class to track past events
 class EventTracking: Object {
-    dynamic var lastID = ""
+    @objc dynamic var lastID = ""
 }

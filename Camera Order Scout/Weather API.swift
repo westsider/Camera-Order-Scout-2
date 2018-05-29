@@ -93,7 +93,9 @@ extension ForecastDate {
         guard let forecast = json["forecast"] as? [String: Any] else { return nil }
         guard let simpleforecast = forecast["simpleforecast"] as? [String: Any] else { return nil }
         guard let forecastArray = simpleforecast["forecastday"] as? [[String: Any]] else { return nil }
-        let forecasts = forecastArray.flatMap{ ForecastDate(json: $0) }
+        // this line was changed when updating to swift 4
+        //let forecasts = forecastArray.flatMap{ ForecastDate(json: $0) }
+        let forecasts = forecastArray.compactMap { ForecastDate(json: $0) }
         return forecasts.count > 0 ? forecasts : nil    // if array has no elements return nil
     }
 }
@@ -128,7 +130,8 @@ extension ForecastDetail {
         guard let forecast = json["forecast"] as? [String: Any] else { return nil }
         guard let simpleforecast = forecast["simpleforecast"] as? [String: Any] else { return nil }
         guard let forecastArray = simpleforecast["forecastday"] as? [[String: Any]] else { return nil }
-        let forecasts = forecastArray.flatMap{ ForecastDetail(json: $0) }
+        //let forecasts = forecastArray.flatMap{ ForecastDetail(json: $0) }
+        let forecasts = forecastArray.compactMap { ForecastDetail(json: $0) }
         return forecasts.count > 0 ? forecasts : nil    // if array has no elements return nil
     }
 }
