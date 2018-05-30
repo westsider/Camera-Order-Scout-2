@@ -87,15 +87,15 @@ class Maker {
 func setCamModel(maker: MakerCamera) -> [String] {
     switch maker {
     case .arri:
-        return ["Mini", "Amira", "Alexa XT+","Alexa 4:3 +XR","Alexa ST XR","Alexa M","Alexa", "235", "535B", "435", "Arricam LT", "Arricam ST", "SR3","SR3 HS", "416", "416 HS"]
+        return ["Mini", "Amira", "Alexa XT+", "Alexa SXT","Alexa 4:3 +XR","Alexa ST XR","Alexa M","Alexa", "Alexa HS", "Alexa 4x3+ HS", "235", "535B", "435", "Arricam LT", "Arricam ST", "SR3","SR3 HS", "416", "416 HS"]
     case .red:
-        return ["Helium 8K", "Weapon 8K", "Weapon", "Epic","Epic Dragon", "One"]
+        return ["Helium 8K", "Weapon", "Weapon 8K", "Weapon 8K VV Ana", "Weapon CF Dragon", "Epic","Epic Dragon", "One", "Scarlet-X"]
     case .phantom:
         return ["Flex 4k", "Flex", "HD Gold"]
     case .panavision:
         return ["Genesis", "Millennium DX-L", "XL2", "Platinum", "Millennium", "Gold-G2", "Panaflex LW-2", "65mm"]
     case .sony:
-        return ["F-35", "F-55", "F-65", "Cine Alta F-55", "Cine Alta 4k","F-5","F-S5","F-S7"]
+        return ["A7R II Mirrorless", "A7S II Mirrorless", "F-35", "F-55", "F-65", "Cine Alta F-55", "Cine Alta 4k","F-5","F-S5","F-S7", "Venice CineAlta"]
     case .codex:
         return ["Action Cam"]
     case .panasonic:
