@@ -173,7 +173,7 @@ func setZoomModel(maker: MakerZoom)-> [String] {
     case .angenieux:
         return ["17-102", "16-42 Rouge", "30-80 Rouge", "45-120 Optimo", "28-76 Optimo", "15-40 Optimo","17-80 Optimo", "24-290 Optimo", "25-250 HR"]
     case .fujinon:
-        return ["24-180 Premier", "75-400 Premier", "18-85 Premier", "45-250 Alura", "18-80 Alura"]
+        return ["24-180 Premier", "75-400 Premier", "18-85 Premier", "45-250 Alura", "18-80 Alura", "Cabrio 19-90", "MK 50-135"]
     case .cooke:
         return ["25-250 Mk2", "20-60", "15-40 CXX", "18-100"]
     case .zeissVP:
