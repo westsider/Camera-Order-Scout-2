@@ -10,6 +10,7 @@
 		0D1AABB41E6283100097B64A /* Unique Kits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB31E6283100097B64A /* Unique Kits.swift */; };
 		0D1AABB61E6293D10097B64A /* AksKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB51E6293D10097B64A /* AksKitViewController.swift */; };
 		0D1AABB81E637E1F0097B64A /* AKSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */; };
+		0D1F528620C58FE100B27833 /* CamerasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F528520C58FE100B27833 /* CamerasViewController.swift */; };
 		0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36CDE11E67F31400D3015B /* StopPasteAction.swift */; };
 		0D4CD3F81E6B37CE002AAFE2 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4CD3F71E6B37CE002AAFE2 /* FeatureView.swift */; };
 		0D5AC2BE1E568008008CBC63 /* Event User Realm Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */; };
@@ -47,6 +48,7 @@
 		0D1AABB31E6283100097B64A /* Unique Kits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Unique Kits.swift"; sourceTree = "<group>"; };
 		0D1AABB51E6293D10097B64A /* AksKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AksKitViewController.swift; sourceTree = "<group>"; };
 		0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKSTableViewCell.swift; sourceTree = "<group>"; };
+		0D1F528520C58FE100B27833 /* CamerasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasViewController.swift; sourceTree = "<group>"; };
 		0D36CDE11E67F31400D3015B /* StopPasteAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPasteAction.swift; sourceTree = "<group>"; };
 		0D4CD3F71E6B37CE002AAFE2 /* FeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event User Realm Object.swift"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		0DE208D91E4799DF00619AEF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0D1F528520C58FE100B27833 /* CamerasViewController.swift */,
 				0D63935E1E46D84A003055DB /* MainViewController.swift */,
 				0DBCF7541E49660D00205017 /* UserViewController.swift */,
 				0DE208DE1E48097900619AEF /* LensesViewController.swift */,
@@ -361,6 +364,7 @@
 				0D63935F1E46D84A003055DB /* MainViewController.swift in Sources */,
 				0DE208DF1E48097900619AEF /* LensesViewController.swift in Sources */,
 				0DBCF7571E496B8A00205017 /* Weather API.swift in Sources */,
+				0D1F528620C58FE100B27833 /* CamerasViewController.swift in Sources */,
 				0D5AC2BE1E568008008CBC63 /* Event User Realm Object.swift in Sources */,
 				0DB0B11B1E745D7100582452 /* CustomPrintPageRenderer.swift in Sources */,
 				0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */,

@@ -18,9 +18,9 @@ enum Catagory {
 }
 
 enum MakerCamera {
-    case arri, red, phantom, panavision, sony, codex, panasonic, canon
+    case arri, red, phantom, panavision, sony, codex, panasonic, canon, custom
     
-    static let allValues = ["Arri", "Red", "Phantom", "Panavision", "Sony","Codex", "Panasonic", "Canon"]
+    static let allValues = ["Arri", "Red", "Phantom", "Panavision", "Sony","Codex", "Panasonic", "Canon", "Custom"]
 }
 
 enum MakerPrimes {
@@ -102,6 +102,8 @@ func setCamModel(maker: MakerCamera) -> [String] {
         return ["Varicam 35", "Varicam LT"]
     case .canon:
         return ["1D C","C100","C300","C500", "C700"]
+    case .custom:
+        return ["Add Your Own"]
     }
 }
 

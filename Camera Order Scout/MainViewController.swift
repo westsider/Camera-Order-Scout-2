@@ -5,9 +5,7 @@
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 
-//  task: update how to
-//  task: I think being able to generate an email and a PDF would be useful
-//  task: pana large format
+//  allow custom cameras: cycle to Custom
 
 import Foundation
 import UIKit
@@ -39,7 +37,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     override func viewWillAppear(_ animated: Bool) {
         fillDefaultTableView()
         myTableView.reloadData()
-       
     }
  
     override func viewDidLoad() {
@@ -59,6 +56,21 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     //MARK: - Add Action  5 is now special optics
     @IBAction func addAction(_ sender: Any) {
+        
+        //MARK: - Todo custome camera
+         if pickerEquipment.pickerState[1] == 0 &&  pickerEquipment.pickerState[2] == 8   {
+            print("Lets segue")  // camerasViewController
+            let myVc = storyboard?.instantiateViewController(withIdentifier: "camerasViewController") as! CamerasViewController
+            navigationController?.pushViewController(myVc, animated: true)
+        }
+        
+        // finished segue to cameras,
+       
+        // make lables work
+        // make realm object to save custom camera
+        // populate picker
+        // return custom camera to main view
+        
         
         //  camera, zoom or finder just add
         if pickerEquipment.pickerState[1] == 0 ||  pickerEquipment.pickerState[1] == 4 || pickerEquipment.pickerState[1] == 7  {
@@ -95,7 +107,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             RealmHelp().sortRealmEvent()
             myTableView.reloadData()
         }
-
+        
         // if a prime segue to primes using picker equipment objects
         if pickerEquipment.pickerState[1] > 0 && pickerEquipment.pickerState[1] <= 3  {
             tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState) // populate var for the next controller
