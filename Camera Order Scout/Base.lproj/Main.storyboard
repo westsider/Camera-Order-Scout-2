@@ -929,6 +929,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="ifc-2f-gMa"/>
                                                 </constraints>
                                                 <state key="normal" title="Add Custom Camera"/>
+                                                <connections>
+                                                    <action selector="addCustomCamAction:" destination="ide-pB-TGR" eventType="touchUpInside" id="BkE-cI-Aow"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -958,6 +961,10 @@
                             <constraint firstItem="4da-Oa-1hQ" firstAttribute="top" secondItem="Y3K-2a-3WU" secondAttribute="bottom" constant="10" id="hXH-Jf-sbY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="makerText" destination="WO2-td-h6t" id="hHv-au-oQO"/>
+                        <outlet property="typeText" destination="63N-wW-mMp" id="rp5-eZ-2mt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29m-NU-ry6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

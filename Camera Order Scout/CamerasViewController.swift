@@ -10,12 +10,24 @@ import UIKit
 
 class CamerasViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var makerText: UITextField!
+    
+    @IBOutlet weak var typeText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func addCustomCamAction(_ sender: Any) {
+        
+        if let newMaker = makerText.text {
+            print("Maker: \(newMaker)")
+        }
+        
+        if let newType = typeText.text {
+            print("Type: \(newType)")
+        }
+    }
+    
 
 }

@@ -66,10 +66,10 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         
         // finished segue to cameras,
        
-        // make lables work
-        // make realm object to save custom camera
-        // populate picker
-        // return custom camera to main view
+        // [ ] make lables work
+        // [ ] make realm object to save custom camera
+        // [ ] populate picker
+        // [ ] return custom camera to main view
         
         
         //  camera, zoom or finder just add
