@@ -61,6 +61,10 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
          if pickerEquipment.pickerState[1] == 0 &&  pickerEquipment.pickerState[2] == 8   {
             print("Lets segue")  // camerasViewController
             let myVc = storyboard?.instantiateViewController(withIdentifier: "camerasViewController") as! CamerasViewController
+//MARK - TODO stop "Custom add your own" from being added to tableview
+            myVc.icon = pickerEquipment.pickerSelection[1];
+            myVc.titles = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1];
+            myVc.catagory = pickerEquipment.pickerState[1]
             navigationController?.pushViewController(myVc, animated: true)
         }
         

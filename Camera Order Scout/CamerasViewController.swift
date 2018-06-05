@@ -24,6 +24,12 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     var tasks: Results<CustomCamera>!
     
+    var icon = ""
+    
+    var titles = ""
+    
+    var catagory = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Custom Cameras"
@@ -41,6 +47,10 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBAction func addCustomCamAction(_ sender: Any) {
         getNewCamera()
     }
+    
+    //MARK: - TODO - action for picker selection
+    
+    //MARK: - TODO = delete the item selected
     
     // set up picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -76,13 +86,30 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
         if newMaker.isEmpty {
             Alert.showBasic(title: "Missing Info", message: "Please add a Camera Maker.", vc: self)
         }
-        
-        // [X] make realm object to save custom camera
-        // [X] populate picker from array of realm objects
+
         CustomCamera().saveCameraToRealm(type: newType, maker: newMaker)
         // [ ] return custom camera to main view
         _ = navigationController?.popViewController(animated: true)
-        // pass the camera in
+        // pass the new camera in
+        createNewTableviewRow(maker: newMaker, type: newType)
     }
+    
+    func createNewTableviewRow(maker:String, type:String) {
+        let newRow = TableViewRow()
+        newRow.icon = icon
+        newRow.title = titles
+        newRow.detail = "\(maker ) \(type)"
+        newRow.catagory = catagory
+        
+        let currentEvent = RealmHelp().getLastEvent()   //
+        
+        try! realm.write {
+            currentEvent.tableViewArray.append(newRow)
+        }
+        RealmHelp().sortRealmEvent()
+    }
+   
+    
+    
 
 }
