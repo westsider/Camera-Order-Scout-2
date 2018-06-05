@@ -62,16 +62,12 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
     func getNewCamera() {
         
         guard let newMaker = makerText.text else {
-            print("Maker text missing")
             return
         }
-        print("Maker: \(newMaker)")
         
         guard let newType = typeText.text else {
-            print("Maker text missing")
             return
         }
-        print("Type: \(newType)")
         
         if newType.isEmpty {
             Alert.showBasic(title: "Missing Info", message: "Please add a Camera Type.", vc: self)
@@ -114,10 +110,8 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
         return "\(tasks[row].maker ) - \(tasks[row].type)"
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         rowSelected = row
-        print(tasks[rowSelected])
     }
 
 }
