@@ -33,4 +33,12 @@ class CustomCamera: Object {
         let sortDate = allEntries.sorted(byKeyPath: "maker", ascending: false)
         return sortDate
     }
+    
+    func deleteCamera(taskID:String) {
+        let realm = try! Realm()
+        let thisCamera = realm.objects(CustomCamera.self).filter("taskID == %@", taskID).first!
+        try! realm.write {
+            realm.delete(thisCamera)
+        }
+    }
 }

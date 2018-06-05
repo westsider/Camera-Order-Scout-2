@@ -45,10 +45,17 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
         createNewTableviewRow(maker: tasks[rowSelected].maker, type: tasks[rowSelected].type)
         _ = navigationController?.popViewController(animated: true)
     }
-    
-    //MARK: - TODO = delete the item selected
-    
-    
+
+    @IBAction func deleteCameraSelected(_ sender: Any) {
+        if tasks.count == 1 {
+            Alert.showBasic(title: "Warning", message: "Can't delete last custom camera.", vc: self)
+        } else {
+            let thisCam = tasks[rowSelected].taskID
+            CustomCamera().deleteCamera(taskID: thisCam)
+            rowSelected = rowSelected - 1
+            picker.reloadAllComponents()
+        }
+    }
     
     func getNewCamera() {
         
