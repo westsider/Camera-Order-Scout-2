@@ -52,7 +52,7 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return tasks[row].maker
+        return "\(tasks[row].maker ) - \(tasks[row].type)"
     }
     
     func getNewCamera() {
@@ -78,9 +78,11 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
         }
         
         // [X] make realm object to save custom camera
+        // [X] populate picker from array of realm objects
         CustomCamera().saveCameraToRealm(type: newType, maker: newMaker)
-        // [ ] populate picker from array of realm objects
         // [ ] return custom camera to main view
+        _ = navigationController?.popViewController(animated: true)
+        // pass the camera in
     }
 
 }
