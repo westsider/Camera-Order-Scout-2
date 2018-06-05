@@ -208,7 +208,6 @@
 		0DE208D91E4799DF00619AEF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0D1F528520C58FE100B27833 /* CamerasViewController.swift */,
 				0D63935E1E46D84A003055DB /* MainViewController.swift */,
 				0DBCF7541E49660D00205017 /* UserViewController.swift */,
 				0DE208DE1E48097900619AEF /* LensesViewController.swift */,
@@ -216,6 +215,7 @@
 				0DBCF7521E495DAA00205017 /* ProjectsViewController.swift */,
 				0DDBE5E01E6A1FC800F6F0D0 /* DemoPhotoViewController.swift */,
 				0DB0B1261E7475A300582452 /* PreviewViewController.swift */,
+				0D1F528520C58FE100B27833 /* CamerasViewController.swift */,
 				0DB0852420C60D44005463C8 /* Alert.swift */,
 			);
 			name = Controller;
@@ -337,11 +337,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);

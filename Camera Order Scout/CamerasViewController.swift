@@ -6,11 +6,9 @@
 //  Copyright © 2018 Warren Hansen. All rights reserved.
 //
 
-// fix ui
-
-
 import UIKit
 import RealmSwift
+import IQKeyboardManagerSwift
 
 class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -38,6 +36,7 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
         tasks = CustomCamera().sortCamerasForPicker()
         picker.delegate = self
         picker.dataSource = self
+        IQKeyboardManager.shared.enable = true
     }
 
     @IBAction func addCustomCamAction(_ sender: Any) {
