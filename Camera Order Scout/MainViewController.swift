@@ -64,14 +64,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             navigationController?.pushViewController(myVc, animated: true)
         }
         
-        // finished segue to cameras,
-       
-        // [ ] make lables work
-        // [ ] make realm object to save custom camera
-        // [ ] populate picker
-        // [ ] return custom camera to main view
-        
-        
         //  camera, zoom or finder just add
         if pickerEquipment.pickerState[1] == 0 ||  pickerEquipment.pickerState[1] == 4 || pickerEquipment.pickerState[1] == 7  {
             //  create tableview row realm objects

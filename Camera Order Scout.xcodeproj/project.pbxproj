@@ -24,6 +24,7 @@
 		0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */; };
 		0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */; };
 		0DB0852520C60D44005463C8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0852420C60D44005463C8 /* Alert.swift */; };
+		0DB0852720C611B0005463C8 /* CustomCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0852620C611B0005463C8 /* CustomCamera.swift */; };
 		0DB0B11B1E745D7100582452 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */; };
 		0DB0B11D1E745D7D00582452 /* InvoiceComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B11C1E745D7D00582452 /* InvoiceComposer.swift */; };
 		0DB0B1271E7475A300582452 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B1261E7475A300582452 /* PreviewViewController.swift */; };
@@ -65,6 +66,7 @@
 		0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimeLensTableViewCell.swift; path = ../PrimeLensTableViewCell.swift; sourceTree = "<group>"; };
 		0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = firstRunProjects.swift; path = "Camera Order Scout/firstRunProjects.swift"; sourceTree = "<group>"; };
 		0DB0852420C60D44005463C8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0DB0852620C611B0005463C8 /* CustomCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCamera.swift; sourceTree = "<group>"; };
 		0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		0DB0B11C1E745D7D00582452 /* InvoiceComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceComposer.swift; sourceTree = "<group>"; };
 		0DB0B1261E7475A300582452 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */,
+				0DB0852620C611B0005463C8 /* CustomCamera.swift */,
 				0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */,
 				0D1AABB31E6283100097B64A /* Unique Kits.swift */,
 				0DF026A81E672FDB00C06196 /* Realm Convience.swift */,
@@ -206,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				0D1F528520C58FE100B27833 /* CamerasViewController.swift */,
-				0DB0852420C60D44005463C8 /* Alert.swift */,
 				0D63935E1E46D84A003055DB /* MainViewController.swift */,
 				0DBCF7541E49660D00205017 /* UserViewController.swift */,
 				0DE208DE1E48097900619AEF /* LensesViewController.swift */,
@@ -214,6 +216,7 @@
 				0DBCF7521E495DAA00205017 /* ProjectsViewController.swift */,
 				0DDBE5E01E6A1FC800F6F0D0 /* DemoPhotoViewController.swift */,
 				0DB0B1261E7475A300582452 /* PreviewViewController.swift */,
+				0DB0852420C60D44005463C8 /* Alert.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				0D1F528620C58FE100B27833 /* CamerasViewController.swift in Sources */,
 				0D5AC2BE1E568008008CBC63 /* Event User Realm Object.swift in Sources */,
 				0DB0B11B1E745D7100582452 /* CustomPrintPageRenderer.swift in Sources */,
+				0DB0852720C611B0005463C8 /* CustomCamera.swift in Sources */,
 				0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */,
 				0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */,
 				0DB0852520C60D44005463C8 /* Alert.swift in Sources */,

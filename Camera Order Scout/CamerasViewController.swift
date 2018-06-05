@@ -5,11 +5,9 @@
 //  Created by Warren Hansen on 6/4/18.
 //  Copyright © 2018 Warren Hansen. All rights reserved.
 //
-// finished segue to cameras,
 
-// [X] make lables work
 
-// [ ] return custom camera to main view
+
 
 import UIKit
 
@@ -49,8 +47,10 @@ class CamerasViewController: UIViewController, UITextFieldDelegate {
             Alert.showBasic(title: "Missing Info", message: "Please add a Camera Maker.", vc: self)
         }
         
-        // [ ] make realm object to save custom camera
+        // [X] make realm object to save custom camera
+        CustomCamera().saveCameraToRealm(type: newType, maker: newMaker)
         // [ ] populate picker
+        // [ ] return custom camera to main view
     }
 
 }
