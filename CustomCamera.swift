@@ -26,4 +26,11 @@ class CustomCamera: Object {
             realm.add(customCamera)
         })
     }
+    
+    func sortCamerasForPicker()-> Results<CustomCamera> {
+        let realm = try! Realm()
+        let allEntries = realm.objects(CustomCamera.self)
+        let sortDate = allEntries.sorted(byKeyPath: "maker", ascending: false)
+        return sortDate
+    }
 }

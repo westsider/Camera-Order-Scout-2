@@ -963,6 +963,7 @@
                     </view>
                     <connections>
                         <outlet property="makerText" destination="WO2-td-h6t" id="hHv-au-oQO"/>
+                        <outlet property="picker" destination="Sy1-IG-Q9i" id="Qcs-xP-XO5"/>
                         <outlet property="typeText" destination="63N-wW-mMp" id="rp5-eZ-2mt"/>
                     </connections>
                 </viewController>
