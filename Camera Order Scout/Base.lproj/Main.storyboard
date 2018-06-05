@@ -896,6 +896,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esk-4H-F6A">
                                                 <rect key="frame" x="89.5" y="170" width="148" height="30"/>
                                                 <state key="normal" title="Add Previous Camera"/>
+                                                <connections>
+                                                    <action selector="addCamFromPicker:" destination="ide-pB-TGR" eventType="touchUpInside" id="ySM-cR-5QG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
