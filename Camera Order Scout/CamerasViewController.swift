@@ -5,6 +5,11 @@
 //  Created by Warren Hansen on 6/4/18.
 //  Copyright © 2018 Warren Hansen. All rights reserved.
 //
+// finished segue to cameras,
+
+// [X] make lables work
+
+// [ ] return custom camera to main view
 
 import UIKit
 
@@ -19,15 +24,33 @@ class CamerasViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func addCustomCamAction(_ sender: Any) {
-        
-        if let newMaker = makerText.text {
-            print("Maker: \(newMaker)")
-        }
-        
-        if let newType = typeText.text {
-            print("Type: \(newType)")
-        }
+        getNewCamera()
     }
     
+    func getNewCamera() {
+        
+        guard let newMaker = makerText.text else {
+            print("Maker text missing")
+            return
+        }
+        print("Maker: \(newMaker)")
+        
+        guard let newType = typeText.text else {
+            print("Maker text missing")
+            return
+        }
+        print("Type: \(newType)")
+        
+        if newType.isEmpty {
+            Alert.showBasic(title: "Missing Info", message: "Please add a Camera Type.", vc: self)
+        }
+        
+        if newMaker.isEmpty {
+            Alert.showBasic(title: "Missing Info", message: "Please add a Camera Maker.", vc: self)
+        }
+        
+        // [ ] make realm object to save custom camera
+        // [ ] populate picker
+    }
 
 }

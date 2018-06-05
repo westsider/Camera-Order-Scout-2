@@ -23,6 +23,7 @@
 		0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6393701E46D932003055DB /* Equipment Makers.swift */; };
 		0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */; };
 		0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */; };
+		0DB0852520C60D44005463C8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0852420C60D44005463C8 /* Alert.swift */; };
 		0DB0B11B1E745D7100582452 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */; };
 		0DB0B11D1E745D7D00582452 /* InvoiceComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B11C1E745D7D00582452 /* InvoiceComposer.swift */; };
 		0DB0B1271E7475A300582452 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0B1261E7475A300582452 /* PreviewViewController.swift */; };
@@ -63,6 +64,7 @@
 		0D6393701E46D932003055DB /* Equipment Makers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Equipment Makers.swift"; sourceTree = "<group>"; };
 		0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimeLensTableViewCell.swift; path = ../PrimeLensTableViewCell.swift; sourceTree = "<group>"; };
 		0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = firstRunProjects.swift; path = "Camera Order Scout/firstRunProjects.swift"; sourceTree = "<group>"; };
+		0DB0852420C60D44005463C8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		0DB0B11A1E745D7100582452 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		0DB0B11C1E745D7D00582452 /* InvoiceComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceComposer.swift; sourceTree = "<group>"; };
 		0DB0B1261E7475A300582452 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				0D1F528520C58FE100B27833 /* CamerasViewController.swift */,
+				0DB0852420C60D44005463C8 /* Alert.swift */,
 				0D63935E1E46D84A003055DB /* MainViewController.swift */,
 				0DBCF7541E49660D00205017 /* UserViewController.swift */,
 				0DE208DE1E48097900619AEF /* LensesViewController.swift */,
@@ -369,6 +372,7 @@
 				0DB0B11B1E745D7100582452 /* CustomPrintPageRenderer.swift in Sources */,
 				0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */,
 				0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */,
+				0DB0852520C60D44005463C8 /* Alert.swift in Sources */,
 				0DB0B14F1E74CAAF00582452 /* Images64.swift in Sources */,
 				0DDBE5E11E6A1FC800F6F0D0 /* DemoPhotoViewController.swift in Sources */,
 				0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */,
