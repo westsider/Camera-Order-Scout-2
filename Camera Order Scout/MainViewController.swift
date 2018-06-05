@@ -61,7 +61,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
          if pickerEquipment.pickerState[1] == 0 &&  pickerEquipment.pickerState[2] == 8   {
             print("Lets segue")  // camerasViewController
             let myVc = storyboard?.instantiateViewController(withIdentifier: "camerasViewController") as! CamerasViewController
-//MARK - TODO stop "Custom add your own" from being added to tableview
             myVc.icon = pickerEquipment.pickerSelection[1];
             myVc.titles = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1];
             myVc.catagory = pickerEquipment.pickerState[1]
@@ -69,7 +68,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
         
         //  camera, zoom or finder just add
-        if pickerEquipment.pickerState[1] == 0 ||  pickerEquipment.pickerState[1] == 4 || pickerEquipment.pickerState[1] == 7  {
+        if pickerEquipment.pickerState[1] == 0 &&  pickerEquipment.pickerState[2] < 8 ||  pickerEquipment.pickerState[1] == 4 || pickerEquipment.pickerState[1] == 7  {
             //  create tableview row realm objects
             let newRow = TableViewRow()
             newRow.icon = pickerEquipment.pickerSelection[1];
@@ -106,6 +105,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         
         // if a prime segue to primes using picker equipment objects
         if pickerEquipment.pickerState[1] > 0 && pickerEquipment.pickerState[1] <= 3  {
+            print("4 fired")
             tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState) // populate var for the next controller
             let myVc = storyboard?.instantiateViewController(withIdentifier: "lensViewController") as! LensesViewController
             myVc.thePrimes = tableViewArrays.thePrimes
@@ -116,6 +116,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         
         // segue to aks 6, filters 8 or support 9 using realm objects
         if pickerEquipment.pickerState[1] == 6 || pickerEquipment.pickerState[1] > 7 {
+            print("5 fired")
             tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState) // populate the next controller?
             let myVc = storyboard?.instantiateViewController(withIdentifier: "aksViewController") as! AksKitViewController
             myVc.pickerEquipment = pickerEquipment
