@@ -8,11 +8,12 @@
 
 import UIKit
 import MessageUI
+import WebKit
 
-class PreviewViewController: UIViewController {
+class PreviewViewController: UIViewController, WKNavigationDelegate {
     
-    @IBOutlet weak var webPreview: UIWebView!
-    
+    @IBOutlet weak var webPreview: WKWebView!
+
     var imageFiles = ImageFiles()
     
     let pathToInvoiceHTMLTemplate = Bundle.main.path(forResource: "EmailContent", ofType: "html")
@@ -23,6 +24,12 @@ class PreviewViewController: UIViewController {
     
     var subjectLine = ""
 
+    override func loadView() {
+        webPreview = WKWebView()
+        webPreview.navigationDelegate = self 
+        view = webPreview
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
