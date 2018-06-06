@@ -51,7 +51,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.production.delegate = self
         self.company.delegate = self
         //self.dateTextInput.delegate = self
-        title = "J O B  I N F O"
+        title = "Job  Info"
         weatherDisplay.text = "\n\nEnter a City and State or Country below to get a 10 day weather forecast."
         setUpDatePicker()
         IQKeyboardManager.shared.enable = true

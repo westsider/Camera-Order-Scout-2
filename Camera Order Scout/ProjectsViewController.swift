@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import QuartzCore
 
 class ProjectsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
@@ -28,6 +29,11 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         tasks = realm.objects(EventUserRealm.self)  // for tableview
+        //eventNameInput.layer.borderColor = UIColor.white.cgColor
+        //eventNameInput.layer.cornerRadius = 8.0
+        eventNameInput.layer.masksToBounds = true
+        eventNameInput.layer.borderColor = #colorLiteral(red: 0.6642242074, green: 0.6642400622, blue: 0.6642315388, alpha: 1)
+        eventNameInput.layer.borderWidth = 1.0
     }
     
     //MARK: - Save Event
