@@ -57,9 +57,9 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     //MARK: - Add Action  5 is now special optics
     @IBAction func addAction(_ sender: Any) {
         
-        //MARK: - Todo custome camera
+        // custom cameras vc
          if pickerEquipment.pickerState[1] == 0 &&  pickerEquipment.pickerState[2] == 8   {
-            print("Lets segue")  // camerasViewController
+            
             let myVc = storyboard?.instantiateViewController(withIdentifier: "camerasViewController") as! CamerasViewController
             myVc.icon = pickerEquipment.pickerSelection[1];
             myVc.titles = pickerEquipment.pickerSelection[0] + " " + pickerEquipment.pickerSelection[1];
@@ -259,12 +259,32 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
     }
     
-    //MARK: - Segue to User VC
+    //MARK: - Edit Tableview Rows
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             performSegue(withIdentifier: "mainToUser", sender: self)
+        } else {
+            
+            //            //MARK - Todo allow editing of each cell
+            //            let currentEvent = RealmHelp().getLastEvent()
+            //            print(indexPath.row)
+            //            print("catagory: \(currentEvent.tableViewArray[indexPath.row].description)")
+            //            print("detail: \(currentEvent.tableViewArray[indexPath.row].detail)")
+            //            print("icon: \(currentEvent.tableViewArray[indexPath.row].icon)")
+            //            print("title: \(currentEvent.tableViewArray[indexPath.row].title)")
+            //            // parse the icon, for compomnet 1
+            //            let icon = currentEvent.tableViewArray[indexPath.row].icon
+            //            print("Seeking icon as \(icon)")
+            //            let catagory = EditTableview.findCatagoryFrom(input: icon)
+            //            print("\(catagory)")
+            //            // slew the picker
+            //            myPicker.selectRow(catagory, inComponent: 1, animated: true)
+            //            // ask do you want to select a different camera? Y/N
+            //            // Y delete row, slew the catagory, N dismiss
         }
     }
+    
+
     
     //MARK: - populate the tableview
     func populateTableviewFromEvent(currentEvent: EventUserRealm ) {

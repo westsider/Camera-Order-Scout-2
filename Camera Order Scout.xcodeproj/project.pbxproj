@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0B1E3120C706C70040ADAE /* EditTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0B1E3020C706C70040ADAE /* EditTableview.swift */; };
 		0D1AABB41E6283100097B64A /* Unique Kits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB31E6283100097B64A /* Unique Kits.swift */; };
 		0D1AABB61E6293D10097B64A /* AksKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB51E6293D10097B64A /* AksKitViewController.swift */; };
 		0D1AABB81E637E1F0097B64A /* AKSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D0B1E3020C706C70040ADAE /* EditTableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableview.swift; sourceTree = "<group>"; };
 		0D1AABB31E6283100097B64A /* Unique Kits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Unique Kits.swift"; sourceTree = "<group>"; };
 		0D1AABB51E6293D10097B64A /* AksKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AksKitViewController.swift; sourceTree = "<group>"; };
 		0D1AABB71E637E1F0097B64A /* AKSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKSTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				0D5AC2BD1E568008008CBC63 /* Event User Realm Object.swift */,
+				0D0B1E3020C706C70040ADAE /* EditTableview.swift */,
 				0DB0852620C611B0005463C8 /* CustomCamera.swift */,
 				0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */,
 				0D1AABB31E6283100097B64A /* Unique Kits.swift */,
@@ -382,6 +385,7 @@
 				0DB0B14F1E74CAAF00582452 /* Images64.swift in Sources */,
 				0DDBE5E11E6A1FC800F6F0D0 /* DemoPhotoViewController.swift in Sources */,
 				0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */,
+				0D0B1E3120C706C70040ADAE /* EditTableview.swift in Sources */,
 				0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */,
 				0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */,
 				0D63936F1E46D8FC003055DB /* Equipment Class.swift in Sources */,
