@@ -113,5 +113,16 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         rowSelected = row
     }
+    //MARK: -  make picker text fill horizontal space allowed
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        //pickerView.backgroundColor = UIColor.darkGray
+        pickerLabel.textColor = UIColor.white
+        pickerLabel.text = "\(tasks[row].maker ) - \(tasks[row].type)"
+        pickerLabel.font = UIFont(name: "PingFang HK Regular", size: 20)
+        pickerLabel.textAlignment = NSTextAlignment.center
+        pickerLabel.adjustsFontSizeToFitWidth = true
+        return pickerLabel
+    }
 
 }

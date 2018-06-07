@@ -918,162 +918,171 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4da-Oa-1hQ" userLabel="All Stack View">
-                                <rect key="frame" x="16" y="28" width="343" height="554"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4da-Oa-1hQ" userLabel="All Stack View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gvL-C4-BF9" userLabel="Main Title Stack View">
-                                        <rect key="frame" x="21.5" y="0.0" width="300.5" height="100"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfS-3s-Leu" userLabel="Top View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CamIcon" translatesAutoresizingMaskIntoConstraints="NO" id="G07-RS-1iF">
-                                                <rect key="frame" x="0.0" y="5" width="90" height="90"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="G07-RS-1iF">
+                                                <rect key="frame" x="16" y="40" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="iF5-tW-NiO"/>
+                                                    <constraint firstAttribute="height" constant="70" id="koz-l2-RT6"/>
+                                                </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6xJ-KQ-gza" userLabel="Title Stack View">
-                                                <rect key="frame" x="98" y="26" width="202.5" height="48"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmP-4Z-2HZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="24"/>
-                                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a Custom Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqH-IF-AIj">
-                                                        <rect key="frame" x="0.0" y="24" width="202.5" height="24"/>
-                                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.396078431372549" green="0.42352941176470588" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="4tM-WM-RKz"/>
+                                            <constraint firstAttribute="height" constant="150" id="7Mz-Oc-YFu"/>
+                                            <constraint firstItem="G07-RS-1iF" firstAttribute="leading" secondItem="VfS-3s-Leu" secondAttribute="leading" constant="16" id="VOL-Do-6v7"/>
+                                            <constraint firstItem="G07-RS-1iF" firstAttribute="centerY" secondItem="VfS-3s-Leu" secondAttribute="centerY" id="uVw-S6-Z5G"/>
                                         </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1aS-Hb-SaP" userLabel="Picker Stack View">
-                                        <rect key="frame" x="11.5" y="130" width="320" height="250"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose an existing custom camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45s-W2-Sbe" userLabel="choose an existing custon camera">
+                                        <rect key="frame" x="0.0" y="150" width="375" height="40"/>
+                                        <color key="backgroundColor" red="0.31372549019607843" green="0.3411764705882353" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="snX-QR-uYb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Sy1-IG-Q9i">
+                                        <rect key="frame" x="0.0" y="190" width="375" height="170"/>
+                                        <color key="backgroundColor" red="0.40000000000000002" green="0.42352941176470588" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="Zuk-tk-6pK"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1Gc-2Z-hnv" userLabel="button Stack View">
+                                        <rect key="frame" x="0.0" y="360" width="375" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose An Existing Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45s-W2-Sbe">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
-                                                <color key="backgroundColor" red="0.38823529411764707" green="0.42352941176470588" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="0NQ-R3-mEc"/>
-                                                </constraints>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esk-4H-F6A">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
+                                                <color key="backgroundColor" red="0.29803921568627451" green="0.3411764705882353" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Sy1-IG-Q9i">
-                                                <rect key="frame" x="0.0" y="38" width="320" height="174"/>
-                                                <color key="backgroundColor" red="0.38039215686274508" green="0.42352941176470588" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </pickerView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Gc-2Z-hnv" userLabel="button Stack View">
-                                                <rect key="frame" x="0.0" y="220" width="320" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esk-4H-F6A">
-                                                        <rect key="frame" x="0.0" y="0.0" width="156" height="30"/>
-                                                        <color key="backgroundColor" red="0.29803921568627451" green="0.3411764705882353" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                                        <state key="normal" title="Add">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="addCamFromPicker:" destination="ide-pB-TGR" eventType="touchUpInside" id="ySM-cR-5QG"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diT-Z2-ccX">
-                                                        <rect key="frame" x="164" y="0.0" width="156" height="30"/>
-                                                        <color key="backgroundColor" red="0.29803921568627451" green="0.3411764705882353" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                                        <state key="normal" title="Delete">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="deleteCameraSelected:" destination="ide-pB-TGR" eventType="touchUpInside" id="Zbx-Hf-ZPy"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="31t-PT-aln"/>
-                                                </constraints>
-                                            </stackView>
+                                                <state key="normal" title="Add">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="addCamFromPicker:" destination="ide-pB-TGR" eventType="touchUpInside" id="ySM-cR-5QG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diT-Z2-ccX">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
+                                                <color key="backgroundColor" red="0.29803921568627451" green="0.3411764705882353" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                                                <state key="normal" title="Delete">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deleteCameraSelected:" destination="ide-pB-TGR" eventType="touchUpInside" id="Zbx-Hf-ZPy"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="45s-W2-Sbe" secondAttribute="trailing" id="Diz-zY-1dx"/>
-                                            <constraint firstAttribute="height" constant="250" id="EwC-QS-LZE"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Gc-2Z-hnv" secondAttribute="trailing" id="e9B-Vg-Px1"/>
-                                            <constraint firstItem="45s-W2-Sbe" firstAttribute="leading" secondItem="1aS-Hb-SaP" secondAttribute="leading" id="i02-d2-WsR"/>
-                                            <constraint firstItem="1Gc-2Z-hnv" firstAttribute="leading" secondItem="1aS-Hb-SaP" secondAttribute="leading" id="mee-06-RuN"/>
-                                            <constraint firstAttribute="bottom" secondItem="1Gc-2Z-hnv" secondAttribute="bottom" id="y08-lQ-kaD"/>
+                                            <constraint firstAttribute="height" constant="40" id="oFo-D7-5mt"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yGX-Iu-4XD" userLabel="New Cam Stack View">
-                                        <rect key="frame" x="0.0" y="410" width="343" height="144"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kpA-eq-g1f" userLabel="new cam Stack View">
+                                        <rect key="frame" x="0.0" y="400" width="375" height="247"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create A New Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKF-b8-g8C">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpI-av-8uh">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="FX2-j7-8x5"/>
+                                                    <constraint firstAttribute="height" priority="750" constant="30" id="3gh-TJ-KNr"/>
                                                 </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKF-b8-g8C">
+                                                <rect key="frame" x="0.0" y="75" width="375" height="24"/>
+                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new maker: Like Arri" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WO2-td-h6t">
-                                                <rect key="frame" x="0.0" y="38" width="343" height="30"/>
+                                                <rect key="frame" x="0.0" y="99" width="375" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="yLW-W4-nGo"/>
+                                                    <constraint firstAttribute="height" constant="30" id="y3r-q6-MEn"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new type: like Alexa" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63N-wW-mMp">
-                                                <rect key="frame" x="0.0" y="76" width="343" height="30"/>
+                                                <rect key="frame" x="0.0" y="129" width="375" height="30.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="gW6-Go-vra"/>
+                                                    <constraint firstAttribute="height" constant="30" id="f2S-Qi-VYG"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djK-2Z-WbQ">
-                                                <rect key="frame" x="0.0" y="114" width="343" height="30"/>
+                                                <rect key="frame" x="0.0" y="159.5" width="375" height="40"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="aec-vf-uby"/>
+                                                    <constraint firstAttribute="height" constant="40" id="nSo-fS-5Se"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                                <state key="normal" title="Add A New Camera"/>
+                                                <state key="normal" title="Add "/>
                                                 <connections>
                                                     <action selector="addCustomCamAction:" destination="ide-pB-TGR" eventType="touchUpInside" id="BkE-cI-Aow"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTd-hu-y8d">
+                                                <rect key="frame" x="0.0" y="199.5" width="375" height="47.5"/>
+                                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="750" constant="10" id="UxJ-uC-TPI"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="WO2-td-h6t" firstAttribute="leading" secondItem="yGX-Iu-4XD" secondAttribute="leading" id="ASv-kc-s4o"/>
-                                            <constraint firstItem="djK-2Z-WbQ" firstAttribute="leading" secondItem="yGX-Iu-4XD" secondAttribute="leading" id="J8j-1y-780"/>
-                                            <constraint firstItem="63N-wW-mMp" firstAttribute="leading" secondItem="yGX-Iu-4XD" secondAttribute="leading" id="RbX-zN-PMM"/>
-                                            <constraint firstAttribute="trailing" secondItem="63N-wW-mMp" secondAttribute="trailing" id="fdt-4c-Tdl"/>
-                                            <constraint firstAttribute="trailing" secondItem="xKF-b8-g8C" secondAttribute="trailing" id="lwU-V9-4rI"/>
-                                            <constraint firstItem="xKF-b8-g8C" firstAttribute="leading" secondItem="yGX-Iu-4XD" secondAttribute="leading" id="wb3-xM-EFy"/>
-                                            <constraint firstAttribute="trailing" secondItem="djK-2Z-WbQ" secondAttribute="trailing" id="wsa-me-8zm"/>
-                                            <constraint firstAttribute="trailing" secondItem="WO2-td-h6t" secondAttribute="trailing" id="z8g-aT-83I"/>
+                                            <constraint firstItem="ZTd-hu-y8d" firstAttribute="leading" secondItem="kpA-eq-g1f" secondAttribute="leading" id="0aX-CF-GMU"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZTd-hu-y8d" secondAttribute="trailing" id="HrN-TR-CcE"/>
+                                            <constraint firstItem="xKF-b8-g8C" firstAttribute="top" secondItem="wpI-av-8uh" secondAttribute="bottom" id="OC3-g6-3jX"/>
+                                            <constraint firstItem="wpI-av-8uh" firstAttribute="leading" secondItem="kpA-eq-g1f" secondAttribute="leading" id="Z8Q-T4-ZXm"/>
+                                            <constraint firstItem="wpI-av-8uh" firstAttribute="top" secondItem="kpA-eq-g1f" secondAttribute="top" id="prG-uR-ohG"/>
+                                            <constraint firstAttribute="trailing" secondItem="wpI-av-8uh" secondAttribute="trailing" id="xhQ-SY-SYE"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="yGX-Iu-4XD" secondAttribute="trailing" id="n5x-ad-8D7"/>
-                                    <constraint firstItem="yGX-Iu-4XD" firstAttribute="leading" secondItem="4da-Oa-1hQ" secondAttribute="leading" id="x4e-lr-01W"/>
+                                    <constraint firstAttribute="trailing" secondItem="45s-W2-Sbe" secondAttribute="trailing" id="0Ya-HL-eXx"/>
+                                    <constraint firstItem="Sy1-IG-Q9i" firstAttribute="leading" secondItem="4da-Oa-1hQ" secondAttribute="leading" id="36c-4S-5Xl"/>
+                                    <constraint firstAttribute="trailing" secondItem="kpA-eq-g1f" secondAttribute="trailing" id="AXb-0Q-y8T"/>
+                                    <constraint firstItem="kpA-eq-g1f" firstAttribute="leading" secondItem="4da-Oa-1hQ" secondAttribute="leading" id="G8L-99-chd"/>
+                                    <constraint firstItem="1Gc-2Z-hnv" firstAttribute="leading" secondItem="4da-Oa-1hQ" secondAttribute="leading" id="R6H-g3-obP"/>
+                                    <constraint firstItem="kpA-eq-g1f" firstAttribute="top" secondItem="1Gc-2Z-hnv" secondAttribute="bottom" id="aI1-SJ-stj"/>
+                                    <constraint firstAttribute="bottom" secondItem="kpA-eq-g1f" secondAttribute="bottom" id="bvx-Oe-SPZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sy1-IG-Q9i" secondAttribute="trailing" id="duj-kA-DSQ"/>
+                                    <constraint firstItem="45s-W2-Sbe" firstAttribute="leading" secondItem="4da-Oa-1hQ" secondAttribute="leading" id="iq0-0A-8ol"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Gc-2Z-hnv" secondAttribute="trailing" id="jh3-Jx-gKN"/>
+                                    <constraint firstAttribute="trailing" secondItem="VfS-3s-Leu" secondAttribute="trailing" id="k9T-jq-JGs"/>
+                                    <constraint firstItem="VfS-3s-Leu" firstAttribute="leading" secondItem="4da-Oa-1hQ" secondAttribute="leading" id="wyK-Fb-Jl8"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4da-Oa-1hQ" firstAttribute="leading" secondItem="SPy-at-kDc" secondAttribute="leadingMargin" id="6Dy-Q0-5mG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4da-Oa-1hQ" secondAttribute="trailing" id="6Rc-Bg-Kyi"/>
-                            <constraint firstItem="cEw-Ex-kbf" firstAttribute="top" secondItem="4da-Oa-1hQ" secondAttribute="bottom" priority="750" constant="200" id="PRK-t8-uOw"/>
-                            <constraint firstItem="4da-Oa-1hQ" firstAttribute="top" secondItem="Y3K-2a-3WU" secondAttribute="bottom" constant="8" id="foi-Rc-eIH"/>
+                            <constraint firstItem="4da-Oa-1hQ" firstAttribute="top" secondItem="Y3K-2a-3WU" secondAttribute="bottom" id="07y-3D-foT"/>
+                            <constraint firstItem="4da-Oa-1hQ" firstAttribute="leading" secondItem="SPy-at-kDc" secondAttribute="leading" id="DXh-rP-Ynt"/>
+                            <constraint firstItem="cEw-Ex-kbf" firstAttribute="top" secondItem="4da-Oa-1hQ" secondAttribute="bottom" id="dcG-Sj-I1n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4da-Oa-1hQ" secondAttribute="trailing" constant="-16" id="hjT-wA-mkY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1084,7 +1093,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29m-NU-ry6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-238" y="1444"/>
+            <point key="canvasLocation" x="-239.19999999999999" y="1443.3283358320841"/>
         </scene>
         <!--aksViewController-->
         <scene sceneID="qYU-Pk-aKq">
