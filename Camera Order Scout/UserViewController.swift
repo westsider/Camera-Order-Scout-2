@@ -87,7 +87,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 self.weatherDisplay.text = result
                 self.activityDial.stopAnimating()
                 self.returnMessage(message: result)
-                self.parseWeatherIcon(result: result)
+                //self.parseWeatherIcon(result: result)
                 self.updateRealm()
             }
             
@@ -146,31 +146,31 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
-    func parseWeatherIcon(result: String) {
-        
-        let fullArray = result.components(separatedBy: CharacterSet.newlines)
-        
-        let firstDay = fullArray[0]
-        
-        let eachItem = firstDay.components(separatedBy: CharacterSet.whitespaces)
-        
-        if eachItem.count >= 2 {
-            
-            let thisTemp = eachItem[1]
-            var thisCond = eachItem[2]
-            
-            if eachItem.count > 3 {
-                thisCond += " " + eachItem[3]
-            }
-            if eachItem.count > 4 {
-                thisCond += " " + eachItem[4]
-            }
-            
-            self.weatherIcon.image = setIcon(input: thisCond)
-            self.weatherTemp.text = thisTemp
-            self.weatherCond.text = thisCond
-        }
-    }
+//    func parseWeatherIcon(result: String) {
+//
+//        let fullArray = result.components(separatedBy: CharacterSet.newlines)
+//
+//        let firstDay = fullArray[0]
+//
+//        let eachItem = firstDay.components(separatedBy: CharacterSet.whitespaces)
+//
+//        if eachItem.count >= 2 {
+//
+////            let thisTemp = eachItem[1]
+////            var thisCond = eachItem[2]
+////
+////            if eachItem.count > 3 {
+////                thisCond += " " + eachItem[3]
+////            }
+////            if eachItem.count > 4 {
+////                thisCond += " " + eachItem[4]
+////            }
+//
+////            self.weatherIcon.image = setIcon(input: thisCond)
+////            self.weatherTemp.text = thisTemp
+////            self.weatherCond.text = thisCond
+//        }
+//    }
     
     func updateRealm() {
         let currentEvent = RealmHelp().getLastEvent()
