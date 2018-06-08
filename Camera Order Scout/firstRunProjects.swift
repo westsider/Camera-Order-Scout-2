@@ -23,7 +23,7 @@ class RealmStart {
         defaultEventUsers.city = "Palo Alto, CA"
         defaultEventUsers.production  = "Silicon Valley"
         defaultEventUsers.company  = "HBO"
-        defaultEventUsers.date = "3/30/2017"
+        defaultEventUsers.date = "10/30/2018"
         
         try! realm.write {
             realm.add(defaultEventUsers)
@@ -59,7 +59,7 @@ class RealmStart {
         defaultEventUsers.city = "Santa Clara, CA"
         defaultEventUsers.production  = "Silicon Valley"
         defaultEventUsers.company  = "HBO"
-        defaultEventUsers.date = "5/1/2017"
+        defaultEventUsers.date = "10/1/2018"
         
         try! realm.write {
             realm.add(defaultEventUsers)
@@ -95,7 +95,7 @@ class RealmStart {
         defaultEventUsers.city = "San Jose, CA"
         defaultEventUsers.production  = "Silicon Valley"
         defaultEventUsers.company  = "HBO"
-        defaultEventUsers.date = "11/15/2017"
+        defaultEventUsers.date = "10/15/2018"
         
         try! realm.write {
             realm.add(defaultEventUsers)

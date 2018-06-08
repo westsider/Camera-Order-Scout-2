@@ -26,19 +26,19 @@ class DemoPhotoViewController: UIViewController {
     
     var counter = 0
     
-    let feature1 = ["title":"Add Equipment","price":"move the picker at top","button":"press add","image":"1"]
+    let feature1 = ["title":"Add equipment","price":"move the picker at top","button":"press add","image":"1"]
     
-    let feature2 = ["title":"Swipe Left","price":"to delete an item","button":"     ","image":"2"]
+    let feature2 = ["title":"Swipe left","price":"to delete an item","button":"     ","image":"2"]
     
-    let feature3 = ["title":"Edit Job Details: Production, ect","price":"tap this row","button":"     ","image":"3"]
+    let feature3 = ["title":"Edit job details: production, ect","price":"tap this row","button":"     ","image":"3"]
     
     let feature4 = ["title":"Load a prior project","price":"tap projects","button":"","image":"4"]
     
-    let feature5 = ["title":"In Projects","price":"tap a row to load a prior project","button":"","image":"5"]
+    let feature5 = ["title":"In projects","price":"tap a row to load a prior project","button":"","image":"5"]
     
-    let feature6 = ["title":"Write In your custom equipment","price":"press add items","button":"","image":"6"]
+    let feature6 = ["title":"Write in your custom equipment","price":"press add items","button":"","image":"6"]
     
-    let feature7 = ["title":"Write In your custom camera","price":"press add","button":"","image":"6"]
+    let feature7 = ["title":"Write in your custom camera","price":"press add","button":"","image":"6"]
     
     let coolGray = UIColor(red: 97/255, green: 108/255, blue: 122/255, alpha: 1.0)
     
