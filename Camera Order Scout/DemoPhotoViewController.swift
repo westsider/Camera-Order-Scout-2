@@ -38,6 +38,8 @@ class DemoPhotoViewController: UIViewController {
     
     let feature6 = ["title":"Write In your custom equipment","price":"press add items","button":"","image":"6"]
     
+    let feature7 = ["title":"Write In your custom camera","price":"press add","button":"","image":"6"]
+    
     let coolGray = UIColor(red: 97/255, green: 108/255, blue: 122/255, alpha: 1.0)
     
     override func viewDidLoad() {
@@ -50,7 +52,7 @@ class DemoPhotoViewController: UIViewController {
     @IBAction func leftSwipe(_ sender: UISwipeGestureRecognizer) {
         counter += 1
         if counter < 0 { counter = 0 }
-        if counter > 7 {counter = 7}
+        if counter > 8 {counter = 8}
         pageControl.currentPage += 1
         pageLoad(page: counter)
     }
@@ -125,9 +127,14 @@ class DemoPhotoViewController: UIViewController {
             middleText.text = feature6["price"]
             bottomText.text = feature6["button"]
             shareButton.isHidden = true
-        
         case 7:
             letsDissolve(nextImage: "demo_7")
+            topText.text = feature7["title"]
+            middleText.text = feature7["price"]
+            bottomText.text = feature7["button"]
+            shareButton.isHidden = true
+        case 8:
+            letsDissolve(nextImage: "demo_8")
             topText.text = "All Done!"
             middleText.text = "• exit demo from title bar above"
             bottomText.text = "• tap 'i' to return here anytime"
