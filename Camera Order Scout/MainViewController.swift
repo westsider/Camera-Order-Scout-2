@@ -135,8 +135,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
     }
-
-
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         
@@ -227,7 +225,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     //MARK: - Set up Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return tableViewArrays.tableViewArray.count
         return tableviewEvent.tableViewArray.count
     }
     
