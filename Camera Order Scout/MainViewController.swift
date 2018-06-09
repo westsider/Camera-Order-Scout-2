@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var myPicker: UIPickerView!
     
@@ -147,7 +147,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         } else {
             return CGFloat(bigRow)
         }
-        
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -223,66 +222,6 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         pickerEquipment.pickerSelection[3] = pickerEquipment.pickerArray[3][pickerEquipment.pickerState[3]]
     }
     
-    //MARK: - Set up Table View
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableviewEvent.tableViewArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ListTableViewCell
-        let iconString = tableviewEvent.tableViewArray[indexPath.row].icon
-        cell.imageTableViewCell.image = tableViewArrays.setTableViewIcon(title: iconString)
-        cell.titleTableView?.text = tableviewEvent.tableViewArray[indexPath.row].title
-        cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
-        return cell
-    }
-    
-    //MARK: - delete tableview row
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete && indexPath.row != 0 {
-            let currentEvent = RealmHelp().getLastEvent()
-            
-            try! currentEvent.realm!.write {
-                let row = currentEvent.tableViewArray[indexPath.row]
-                row.realm!.delete(row)
-            }
-            tableviewEvent = currentEvent   // re - populate tableview
-            tableView.reloadData()
-        }
-    }
-    
-    //MARK: - Edit Tableview Rows
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            performSegue(withIdentifier: "mainToUser", sender: self)
-        } else {
-            
-            //            //MARK - Todo allow editing of each cell
-            //            let currentEvent = RealmHelp().getLastEvent()
-            //            print(indexPath.row)
-            //            print("catagory: \(currentEvent.tableViewArray[indexPath.row].description)")
-            //            print("detail: \(currentEvent.tableViewArray[indexPath.row].detail)")
-            //            print("icon: \(currentEvent.tableViewArray[indexPath.row].icon)")
-            //            print("title: \(currentEvent.tableViewArray[indexPath.row].title)")
-            //            // parse the icon, for compomnet 1
-            //            let icon = currentEvent.tableViewArray[indexPath.row].icon
-            //            print("Seeking icon as \(icon)")
-            //            let catagory = EditTableview.findCatagoryFrom(input: icon)
-            //            print("\(catagory)")
-            //            // slew the picker
-            //            myPicker.selectRow(catagory, inComponent: 1, animated: true)
-            //            // ask do you want to select a different camera? Y/N
-            //            // Y delete row, slew the catagory, N dismiss
-        }
-    }
-    
-
-    
     //MARK: - populate the tableview
     func populateTableviewFromEvent(currentEvent: EventUserRealm ) {
         
@@ -334,6 +273,70 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             let currentEvent = RealmHelp().getLastEvent()
             tableviewEvent = currentEvent   // populate tableview
             RealmHelp().sortRealmEvent() //sortRealmEvent()
+        }
+    }
+}
+
+
+//MARK: - Set up tableview
+extension MainTableViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableviewEvent.tableViewArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ListTableViewCell
+        let iconString = tableviewEvent.tableViewArray[indexPath.row].icon
+        cell.imageTableViewCell.image = tableViewArrays.setTableViewIcon(title: iconString)
+        cell.titleTableView?.text = tableviewEvent.tableViewArray[indexPath.row].title
+        cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
+        return cell
+    }
+}
+
+extension MainTableViewController: UITableViewDelegate {
+    //MARK: - Edit Tableview Rows
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "mainToUser", sender: self)
+        } else {
+            
+            //            //MARK - Todo allow editing of each cell
+            //            let currentEvent = RealmHelp().getLastEvent()
+            //            print(indexPath.row)
+            //            print("catagory: \(currentEvent.tableViewArray[indexPath.row].description)")
+            //            print("detail: \(currentEvent.tableViewArray[indexPath.row].detail)")
+            //            print("icon: \(currentEvent.tableViewArray[indexPath.row].icon)")
+            //            print("title: \(currentEvent.tableViewArray[indexPath.row].title)")
+            //            // parse the icon, for compomnet 1
+            //            let icon = currentEvent.tableViewArray[indexPath.row].icon
+            //            print("Seeking icon as \(icon)")
+            //            let catagory = EditTableview.findCatagoryFrom(input: icon)
+            //            print("\(catagory)")
+            //            // slew the picker
+            //            myPicker.selectRow(catagory, inComponent: 1, animated: true)
+            //            // ask do you want to select a different camera? Y/N
+            //            // Y delete row, slew the catagory, N dismiss
+        }
+    }
+    
+    //MARK: - delete tableview row
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete && indexPath.row != 0 {
+            let currentEvent = RealmHelp().getLastEvent()
+            
+            try! currentEvent.realm!.write {
+                let row = currentEvent.tableViewArray[indexPath.row]
+                row.realm!.delete(row)
+            }
+            tableviewEvent = currentEvent   // re - populate tableview
+            tableView.reloadData()
         }
     }
 }
