@@ -292,6 +292,13 @@ extension MainTableViewController: UITableViewDataSource {
         cell.imageTableViewCell.image = tableViewArrays.setTableViewIcon(title: iconString)
         cell.titleTableView?.text = tableviewEvent.tableViewArray[indexPath.row].title
         cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
+        
+        if indexPath.row == 0 {
+            cell.accessoryType = .disclosureIndicator
+        }
+//        else {
+//           cell.accessoryType = .detailButton
+//        }
         return cell
     }
 }
