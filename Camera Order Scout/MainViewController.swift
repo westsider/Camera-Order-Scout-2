@@ -44,6 +44,10 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         title = "C A M E R A  O R D E R"
         self.myPicker.dataSource = self
         self.myPicker.delegate = self
+        
+        myTableView.estimatedRowHeight = 300
+        myTableView.rowHeight = UITableViewAutomaticDimension
+        
         myTableView.reloadData()
         updatePickerSelection()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
@@ -293,9 +297,9 @@ extension MainTableViewController: UITableViewDataSource {
         cell.titleTableView?.text = tableviewEvent.tableViewArray[indexPath.row].title
         cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
         
-        if indexPath.row == 0 {
-            cell.accessoryType = .disclosureIndicator
-        }
+//        if indexPath.row == 0 {
+//            cell.accessoryType = .disclosureIndicator
+//        }
 //        else {
 //           cell.accessoryType = .detailButton
 //        }
