@@ -24,6 +24,7 @@
 		0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6393701E46D932003055DB /* Equipment Makers.swift */; };
 		0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */; };
 		0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */; };
+		0D94ED7220D17479000D32C4 /* MailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94ED7120D17479000D32C4 /* MailTableViewCell.swift */; };
 		0DAC08D420C87D7E0096F109 /* Button Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC08D320C87D7E0096F109 /* Button Edges.swift */; };
 		0DB0852520C60D44005463C8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0852420C60D44005463C8 /* Alert.swift */; };
 		0DB0852720C611B0005463C8 /* CustomCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0852620C611B0005463C8 /* CustomCamera.swift */; };
@@ -68,6 +69,7 @@
 		0D6393701E46D932003055DB /* Equipment Makers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Equipment Makers.swift"; sourceTree = "<group>"; };
 		0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimeLensTableViewCell.swift; path = ../PrimeLensTableViewCell.swift; sourceTree = "<group>"; };
 		0D88DB601E68C0F4005029A7 /* firstRunProjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = firstRunProjects.swift; path = "Camera Order Scout/firstRunProjects.swift"; sourceTree = "<group>"; };
+		0D94ED7120D17479000D32C4 /* MailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailTableViewCell.swift; sourceTree = "<group>"; };
 		0DAC08D320C87D7E0096F109 /* Button Edges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button Edges.swift"; sourceTree = "<group>"; };
 		0DB0852420C60D44005463C8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		0DB0852620C611B0005463C8 /* CustomCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCamera.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				0DE208D61E4797A400619AEF /* ListTableViewCell.swift */,
+				0D94ED7120D17479000D32C4 /* MailTableViewCell.swift */,
 				0D4CD3F71E6B37CE002AAFE2 /* FeatureView.swift */,
 				0D36CDE11E67F31400D3015B /* StopPasteAction.swift */,
 				0D81902A1E48140000237B11 /* PrimeLensTableViewCell.swift */,
@@ -385,6 +388,7 @@
 				0DB0852720C611B0005463C8 /* CustomCamera.swift in Sources */,
 				0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */,
 				0D6393711E46D932003055DB /* Equipment Makers.swift in Sources */,
+				0D94ED7220D17479000D32C4 /* MailTableViewCell.swift in Sources */,
 				0DB0852520C60D44005463C8 /* Alert.swift in Sources */,
 				0DB0B14F1E74CAAF00582452 /* Images64.swift in Sources */,
 				0DDBE5E11E6A1FC800F6F0D0 /* DemoPhotoViewController.swift in Sources */,

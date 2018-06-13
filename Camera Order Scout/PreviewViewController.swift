@@ -8,89 +8,37 @@
 
 import UIKit
 import MessageUI
-import WebKit
+import RealmSwift
 
-class PreviewViewController: UIViewController, WKNavigationDelegate {
+class PreviewViewController: UIViewController {
     
-    @IBOutlet weak var webPreview: WKWebView!
-
-    var imageFiles = ImageFiles()
-    
-    let pathToInvoiceHTMLTemplate = Bundle.main.path(forResource: "EmailContent", ofType: "html")
-    
-    let pathToSingleItemHTMLTemplate = Bundle.main.path(forResource: "SingleItem", ofType: "html")
-    
-    var HTMLContent = ""
+    @IBOutlet weak var myTableView: UITableView!
     
     var subjectLine = ""
-
-    override func loadView() {
-        webPreview = WKWebView()
-        webPreview.navigationDelegate = self 
-        view = webPreview
-    }
+    
+    let thisEvent = RealmHelp().getLastEvent()
+    
+    var tableviewEvent = EventUserRealm()
+    
+    var tableViewArrays = TableViewArrays()
+    
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Preview"
+        title = "Share "
         
-        let thisEvent = RealmHelp().getLastEvent()
+        myTableView.estimatedRowHeight = 300
+        myTableView.rowHeight = UITableViewAutomaticDimension
         
-        do {
-            HTMLContent = try String(contentsOfFile: pathToInvoiceHTMLTemplate!)
-            
-            HTMLContent = HTMLContent.replacingOccurrences(of: "#LOGO_IMAGE#", with: imageFiles.headerImage)
-            
-        } catch {
-            print("Error Parsing HTML")
-        }
+        let currentEvent = RealmHelp().getLastEvent()
+        tableviewEvent = currentEvent   // populate tableview
+        RealmHelp().sortRealmEvent() //sortRealmEvent()
         
-        var allItems = ""
-        
-        for ( index, rows) in thisEvent.tableViewArray.enumerated() {
-            
-            
-            var itemHTMLContent: String!
-            
-            do {
-                itemHTMLContent = try String(contentsOfFile: pathToSingleItemHTMLTemplate!)
-            } catch {
-                print("Error parsing rows")
-            }
-            
-            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_IMAGE#", with: ImageFiles().setHTMLIcon(title: rows.icon))
-            
-            itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_TITLE#", with: rows.title)
-          
-            if index == 0 {  // grab title for email
-                subjectLine = rows.detail + " " + thisEvent.company
-                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_ROW#", with: rows.detail + " " + thisEvent.company)
-            } else {
-                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_ROW#", with: rows.detail)
-            }
-            
-        
-            allItems += itemHTMLContent
-            
-        }
-        
-        HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEMS#", with: allItems)
-        
-        HTMLContent = HTMLContent.replacingOccurrences(of: "#CITY#", with: thisEvent.city)
-        
-        let display_txt = thisEvent.weather //(/\n/g, "<br />")
-        
-        let newString = display_txt.replacingOccurrences(of: "\n", with: "<br>")
-        
-        HTMLContent = HTMLContent.replacingOccurrences(of: "#Weather#", with: newString)
-        
-        webPreview.loadHTMLString(HTMLContent, baseURL: nil)
     }
     
-    //MARK: - Share Camera Order
-    @IBAction func shareText(_ sender: Any) {
-        
+    func shareSMS() {
         let thisEvent = RealmHelp().getLastEvent()
         
         var messageArray = [String]()
@@ -115,19 +63,55 @@ class PreviewViewController: UIViewController, WKNavigationDelegate {
         
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         activityVC.setValue(title, forKey: "Subject")
-        
-        
-        
         self.present(activityVC, animated: true, completion: nil)
     }
     
-    //MARK: - Share Camera Order with Images
-    @IBAction func shareImages(_ sender: Any) {
-        
-        let activityVC = UIActivityViewController(activityItems: [HTMLContent], applicationActivities: nil)
-        activityVC.setValue(subjectLine, forKey: "Subject")
-        // exclude sms from sharing with images
-        activityVC.excludedActivityTypes = [ UIActivityType.message ]
-        self.present(activityVC, animated: true, completion: nil)
-    } 
+    func shareEmail() {
+//        let activityVC = UIActivityViewController(activityItems: [HTMLContent], applicationActivities: nil)
+//        activityVC.setValue(subjectLine, forKey: "Subject")
+//        // exclude sms from sharing with images
+//        activityVC.excludedActivityTypes = [ UIActivityType.message ]
+//        self.present(activityVC, animated: true, completion: nil)
+    }
 }
+
+extension PreviewViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableviewEvent.tableViewArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MailTableViewCell
+        let iconString = tableviewEvent.tableViewArray[indexPath.row].icon
+        cell.detailTableView.numberOfLines = 0
+        cell.imageTableViewCell.image = tableViewArrays.setTableViewIcon(title: iconString)
+        cell.titleTableView?.text = tableviewEvent.tableViewArray[indexPath.row].title
+        cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
+//        cell.titleTableView.text = contacts[indexPath.row].title
+//        cell.detailTableView.text = contacts[indexPath.row].detail
+        return cell
+    }
+    
+//    func createPdfFromTableView(fileName:String)-> String {
+//        // need to un check "clip to bounds"
+//        let priorBounds: CGRect = self.tableView.bounds
+//        let fittedSize: CGSize = self.tableView.sizeThatFits(CGSize(width: priorBounds.size.width, height: self.tableView.contentSize.height))
+//        self.tableView.bounds = CGRect(x: 0, y: 0, width: fittedSize.width, height: fittedSize.height)
+//        self.tableView.reloadData()
+//        let pdfPageBounds: CGRect = CGRect(x: 0, y: 0, width: fittedSize.width, height: (fittedSize.height))
+//        let pdfData: NSMutableData = NSMutableData()
+//        UIGraphicsBeginPDFContextToData(pdfData, pdfPageBounds, nil)
+//        UIGraphicsBeginPDFPageWithInfo(pdfPageBounds, nil)
+//        self.tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
+//        UIGraphicsEndPDFContext()
+//
+//        let documentsFileName = NSTemporaryDirectory() + "\(fileName).pdf"
+//        pdfData.write(toFile: documentsFileName, atomically: true)
+//        print(documentsFileName)
+//        return documentsFileName
+//    }
+}
+
+
+
