@@ -16,6 +16,8 @@ class PreviewViewController: UIViewController {
     
     var subjectLine = ""
     
+    var documentoPath = ""
+    
     let thisEvent = RealmHelp().getLastEvent()
     
     var tableviewEvent = EventUserRealm()
@@ -28,19 +30,21 @@ class PreviewViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Share "
-        
         myTableView.estimatedRowHeight = 300
         myTableView.rowHeight = UITableViewAutomaticDimension
-        
         let currentEvent = RealmHelp().getLastEvent()
         tableviewEvent = currentEvent   // populate tableview
-        
-        print(currentEvent.weather)
+        subjectLine = "Camera Order for \(currentEvent.date)"
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        _ = createPdfFromTableView(fileName: "Cam")
+        documentoPath = createPdfFromTableView(fileName: "Cam")
     }
+    
+    @IBAction func shareButtonAction(_ sender: UIBarButtonItem) {
+        shareEmail()
+    }
+    
 
     func createPdfFromTableView(fileName:String)-> String {
         // need to un check "clip to bounds"
@@ -62,6 +66,7 @@ class PreviewViewController: UIViewController {
     }
     
     func shareSMS() {
+        
         let thisEvent = RealmHelp().getLastEvent()
         
         var messageArray = [String]()
@@ -90,11 +95,19 @@ class PreviewViewController: UIViewController {
     }
     
     func shareEmail() {
-//        let activityVC = UIActivityViewController(activityItems: [HTMLContent], applicationActivities: nil)
-//        activityVC.setValue(subjectLine, forKey: "Subject")
-//        // exclude sms from sharing with images
-//        activityVC.excludedActivityTypes = [ UIActivityType.message ]
-//        self.present(activityVC, animated: true, completion: nil)
+        
+       let fileManager = FileManager.default
+
+        if fileManager.fileExists(atPath: documentoPath){
+            let documento = NSData(contentsOfFile: documentoPath)
+            let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [documento!], applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView=self.view
+            activityViewController.setValue(subjectLine, forKey: "Subject")
+            present(activityViewController, animated: true, completion: nil)
+        }
+        else {
+            print("document was not found")
+        }
     }
 }
 
@@ -113,27 +126,6 @@ extension PreviewViewController: UITableViewDataSource {
         cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
         return cell
     }
-    
-    
-    
-//    func createPdfFromTableView(fileName:String)-> String {
-//        // need to un check "clip to bounds"
-//        let priorBounds: CGRect = self.tableView.bounds
-//        let fittedSize: CGSize = self.tableView.sizeThatFits(CGSize(width: priorBounds.size.width, height: self.tableView.contentSize.height))
-//        self.tableView.bounds = CGRect(x: 0, y: 0, width: fittedSize.width, height: fittedSize.height)
-//        self.tableView.reloadData()
-//        let pdfPageBounds: CGRect = CGRect(x: 0, y: 0, width: fittedSize.width, height: (fittedSize.height))
-//        let pdfData: NSMutableData = NSMutableData()
-//        UIGraphicsBeginPDFContextToData(pdfData, pdfPageBounds, nil)
-//        UIGraphicsBeginPDFPageWithInfo(pdfPageBounds, nil)
-//        self.tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
-//        UIGraphicsEndPDFContext()
-//
-//        let documentsFileName = NSTemporaryDirectory() + "\(fileName).pdf"
-//        pdfData.write(toFile: documentsFileName, atomically: true)
-//        print(documentsFileName)
-//        return documentsFileName
-//    }
 }
 
 
