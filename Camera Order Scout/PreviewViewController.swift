@@ -38,6 +38,29 @@ class PreviewViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        _ = createPdfFromTableView(fileName: "Cam")
+    }
+
+    func createPdfFromTableView(fileName:String)-> String {
+        // need to un check "clip to bounds"
+        let priorBounds: CGRect = self.myTableView.bounds
+        let fittedSize: CGSize = self.myTableView.sizeThatFits(CGSize(width: priorBounds.size.width, height: self.myTableView.contentSize.height))
+        self.myTableView.bounds = CGRect(x: 0, y: 0, width: fittedSize.width, height: fittedSize.height)
+        self.myTableView.reloadData()
+        let pdfPageBounds: CGRect = CGRect(x: 0, y: 0, width: fittedSize.width, height: (fittedSize.height))
+        let pdfData: NSMutableData = NSMutableData()
+        UIGraphicsBeginPDFContextToData(pdfData, pdfPageBounds, nil)
+        UIGraphicsBeginPDFPageWithInfo(pdfPageBounds, nil)
+        self.myTableView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        UIGraphicsEndPDFContext()
+        
+        let documentsFileName = NSTemporaryDirectory() + "\(fileName).pdf"
+        pdfData.write(toFile: documentsFileName, atomically: true)
+        print(documentsFileName)
+        return documentsFileName
+    }
+    
     func shareSMS() {
         let thisEvent = RealmHelp().getLastEvent()
         
