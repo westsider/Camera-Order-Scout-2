@@ -88,7 +88,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 self.activityDial.stopAnimating()
                 //self.returnMessage(message: result)
                 //self.parseWeatherIcon(result: result)
-                self.updateRealm()
+                //self.updateRealm()
             }
             
         }  else {
@@ -148,10 +148,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     func updateRealm() {
         let currentEvent = RealmHelp().getLastEvent()
-        
-// add weather
-        //MARK: - TODO WHy man icon in weather?
-        //MARK: - TODO - why 2 weathers added
         
         let newRow = TableViewRow()
         newRow.icon = "Weather"
