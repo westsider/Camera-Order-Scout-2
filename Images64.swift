@@ -67,6 +67,10 @@ class ImageFiles {
         if catagory.range(of:"Support") != nil {
             result = gearIcon
         }
+        
+        if catagory.range(of:"Weather") != nil {
+            result = gearIcon
+        }
         return result
     }
 }

@@ -34,8 +34,8 @@ class PreviewViewController: UIViewController {
         
         let currentEvent = RealmHelp().getLastEvent()
         tableviewEvent = currentEvent   // populate tableview
-        RealmHelp().sortRealmEvent() //sortRealmEvent()
         
+        print(currentEvent.weather)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -111,10 +111,10 @@ extension PreviewViewController: UITableViewDataSource {
         cell.imageTableViewCell.image = tableViewArrays.setTableViewIcon(title: iconString)
         cell.titleTableView?.text = tableviewEvent.tableViewArray[indexPath.row].title
         cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
-//        cell.titleTableView.text = contacts[indexPath.row].title
-//        cell.detailTableView.text = contacts[indexPath.row].detail
         return cell
     }
+    
+    
     
 //    func createPdfFromTableView(fileName:String)-> String {
 //        // need to un check "clip to bounds"

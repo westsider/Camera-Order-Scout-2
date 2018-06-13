@@ -149,6 +149,17 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     func updateRealm() {
         let currentEvent = RealmHelp().getLastEvent()
         
+        // add weather
+        
+        //MARK: - TODO WHy man icon in weather?
+        //MARK: - TODO - why 2 weathers added
+        
+        let newRow = TableViewRow()
+        newRow.icon = "Weather"
+        newRow.title = "Weather Report"
+        newRow.detail = currentEvent.weather
+        newRow.catagory = 10 // added for sort
+        
         try! realm.write {
             
             currentEvent.userName = userName.text!
@@ -156,9 +167,12 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             currentEvent.company = company.text!
             currentEvent.city = citySearch.text!
             currentEvent.date = dateTextInput.text!
-            currentEvent.weather = weatherDisplay.text
+            //currentEvent.weather = weatherDisplay.text
             currentEvent.tableViewArray[0].title = "\(userName.text!) Director of Photography"
             currentEvent.tableViewArray[0].detail = "Camera Order \(production.text!) \(dateTextInput.text!)"
+
+            currentEvent.tableViewArray.append(newRow)
+
         }
     }
 }
