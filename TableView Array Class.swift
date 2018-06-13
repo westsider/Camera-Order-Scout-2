@@ -65,7 +65,7 @@ class TableViewArrays {
         }
         
         if catagory.range(of:"Support") != nil {
-            return UIImage(named: "gearIcon")!
+            return UIImage(named: "support")!
         }
         if catagory.range(of:"Weather") != nil {
             return UIImage(named: "weather")!

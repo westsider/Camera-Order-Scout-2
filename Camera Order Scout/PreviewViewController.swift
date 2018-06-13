@@ -29,7 +29,7 @@ class PreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Share "
+        title = "Preview Message"
         myTableView.estimatedRowHeight = 300
         myTableView.rowHeight = UITableViewAutomaticDimension
         let currentEvent = RealmHelp().getLastEvent()
@@ -44,7 +44,6 @@ class PreviewViewController: UIViewController {
     @IBAction func shareButtonAction(_ sender: UIBarButtonItem) {
         shareEmail()
     }
-    
 
     func createPdfFromTableView(fileName:String)-> String {
         // need to un check "clip to bounds"
