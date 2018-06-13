@@ -149,8 +149,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     func updateRealm() {
         let currentEvent = RealmHelp().getLastEvent()
         
-        // add weather
-        
+// add weather
         //MARK: - TODO WHy man icon in weather?
         //MARK: - TODO - why 2 weathers added
         
