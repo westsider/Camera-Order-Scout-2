@@ -60,7 +60,6 @@ class PreviewViewController: UIViewController {
         
         let documentsFileName = NSTemporaryDirectory() + "\(fileName).pdf"
         pdfData.write(toFile: documentsFileName, atomically: true)
-        print(documentsFileName)
         return documentsFileName
     }
     
