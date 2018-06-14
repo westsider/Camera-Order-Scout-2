@@ -46,7 +46,7 @@
 		0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */; };
 		0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF026A81E672FDB00C06196 /* Realm Convience.swift */; };
 		0DFC00D51E65F5C800A08D2B /* TableView Switches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */; };
-		6F7B9586569900A7128C579E /* Pods_Camera_Order_Scout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B85F02A03A0E538C4ABB97F /* Pods_Camera_Order_Scout.framework */; };
+		1CBC2ED295CD3A0AC8B74ECE /* Pods_Camera_Order_Scout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBAD7D398AF912167EF45CE /* Pods_Camera_Order_Scout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,8 +91,8 @@
 		0DE968711E50189B009D52DF /* TableViewArrayRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewArrayRealm.swift; sourceTree = "<group>"; };
 		0DF026A81E672FDB00C06196 /* Realm Convience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm Convience.swift"; sourceTree = "<group>"; };
 		0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView Switches.swift"; sourceTree = "<group>"; };
-		2B85F02A03A0E538C4ABB97F /* Pods_Camera_Order_Scout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camera_Order_Scout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE0DC91B9FF006D7BB9C075 /* Pods-Camera Order Scout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera Order Scout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout.debug.xcconfig"; sourceTree = "<group>"; };
+		CDBAD7D398AF912167EF45CE /* Pods_Camera_Order_Scout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camera_Order_Scout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC996033FA8C198ADFE885C2 /* Pods-Camera Order Scout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera Order Scout.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F7B9586569900A7128C579E /* Pods_Camera_Order_Scout.framework in Frameworks */,
+				1CBC2ED295CD3A0AC8B74ECE /* Pods_Camera_Order_Scout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +242,7 @@
 		F427844985CEBFB608E4AAB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2B85F02A03A0E538C4ABB97F /* Pods_Camera_Order_Scout.framework */,
+				CDBAD7D398AF912167EF45CE /* Pods_Camera_Order_Scout.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -527,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -547,7 +547,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Camera Order Scout/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TradeStrat.Camera-Order-Scout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -568,7 +568,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Camera Order Scout/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TradeStrat.Camera-Order-Scout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
