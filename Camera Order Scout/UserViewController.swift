@@ -42,6 +42,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     var keyboardDismissTapGesture: UIGestureRecognizer?
     
+    var currentWeather = ""
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -74,10 +76,13 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Search Weather
     @IBAction func searchWeather(_ sender: Any) {
-        let thisCity = citySearch.text
+        guard let thisCity = citySearch.text else {
+            return
+        }
         weatherDisplay.text = "Launching Search..."
+        print("Getting wether for \(thisCity)")
         activityDial.startAnimating()
-        let searchResult  =  CurrentLocation.sharedInstance.parseCurrentLocation(input: citySearch.text!)
+        let searchResult  =  CurrentLocation.sharedInstance.parseCurrentLocation(input: thisCity)
         weatherDisplay.text = searchResult
         
         // if now parsing error call weather api in closure that returns a string for the UI
@@ -86,9 +91,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             GetWeather().getForecast { (result: String) in
                 self.weatherDisplay.text = result
                 self.activityDial.stopAnimating()
-                //self.returnMessage(message: result)
-                //self.parseWeatherIcon(result: result)
-                //self.updateRealm()
+                self.currentWeather = result
             }
             
         }  else {
@@ -147,12 +150,13 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateRealm() {
+        
         let currentEvent = RealmHelp().getLastEvent()
         
         let newRow = TableViewRow()
         newRow.icon = "Weather"
         newRow.title = "Weather Report"
-        newRow.detail = currentEvent.weather
+        newRow.detail = currentWeather
         newRow.catagory = 10 // added for sort
         
         try! realm.write {
