@@ -57,7 +57,7 @@ class TableViewArrays {
         }
         
         if catagory.range(of:"Finder") != nil {
-            return UIImage(named: "gearIcon")!
+            return UIImage(named: "finder")!
         }
         
         if catagory.range(of:"Filters") != nil {
