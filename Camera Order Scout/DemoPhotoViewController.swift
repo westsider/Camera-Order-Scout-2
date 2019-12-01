@@ -66,7 +66,7 @@ class DemoPhotoViewController: UIViewController {
     
    
     @IBAction func linkToFbbAction(_ sender: Any) {
-            if let url = NSURL(string: "https://www.facebook.com/iphoneCinematography/"){ UIApplication.shared.open(url as URL, options: [:], completionHandler: nil) }
+            if let url = NSURL(string: "https://www.facebook.com/iphoneCinematography/"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
     }
     
     func letsDissolve(nextImage: String) {
@@ -150,3 +150,8 @@ class DemoPhotoViewController: UIViewController {
     }
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}

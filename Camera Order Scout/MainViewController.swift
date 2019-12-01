@@ -5,6 +5,13 @@
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 
+//  [ ] 12/ 2019 fix weather api check that all errors are handled
+//  [ ] contact me page email
+//  [ ] push update or to beta testers
+//  [ ] add new cameras
+//  [ ] add new lenses
+//  [ ] try to make main screen editable
+
 import Foundation
 import UIKit
 import RealmSwift
@@ -44,16 +51,17 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         self.myPicker.delegate = self
         
         myTableView.estimatedRowHeight = 300
-        myTableView.rowHeight = UITableViewAutomaticDimension
+        myTableView.rowHeight = UITableView.automaticDimension
         
         myTableView.reloadData()
         updatePickerSelection()
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         
         self.navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = coolGray
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ltGray]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ltGray]
         navigationController?.navigationBar.tintColor = UIColor.white
+        
     }
     
     //MARK: - Add Action  5 is now special optics
@@ -336,7 +344,7 @@ extension MainTableViewController: UITableViewDelegate {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete && indexPath.row != 0 {
             let currentEvent = RealmHelp().getLastEvent()
             

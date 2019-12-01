@@ -31,7 +31,7 @@ class PreviewViewController: UIViewController {
         
         title = "Preview Message"
         myTableView.estimatedRowHeight = 300
-        myTableView.rowHeight = UITableViewAutomaticDimension
+        myTableView.rowHeight = UITableView.automaticDimension
         let currentEvent = RealmHelp().getLastEvent()
         tableviewEvent = currentEvent   // populate tableview
         subjectLine = "Camera Order for \(currentEvent.date)"

@@ -42,6 +42,8 @@
 		0DF026A91E672FDB00C06196 /* Realm Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF026A81E672FDB00C06196 /* Realm Convience.swift */; };
 		0DFC00D51E65F5C800A08D2B /* TableView Switches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */; };
 		1CBC2ED295CD3A0AC8B74ECE /* Pods_Camera_Order_Scout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBAD7D398AF912167EF45CE /* Pods_Camera_Order_Scout.framework */; };
+		98BC65022393213000726939 /* Dark Sky Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC65012393213000726939 /* Dark Sky Weather.swift */; };
+		98BC650423933D9E00726939 /* DarkSky Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC650323933D9E00726939 /* DarkSky Objects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		0DF026A81E672FDB00C06196 /* Realm Convience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm Convience.swift"; sourceTree = "<group>"; };
 		0DFC00D41E65F5C800A08D2B /* TableView Switches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView Switches.swift"; sourceTree = "<group>"; };
 		4AE0DC91B9FF006D7BB9C075 /* Pods-Camera Order Scout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera Order Scout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout.debug.xcconfig"; sourceTree = "<group>"; };
+		98BC65012393213000726939 /* Dark Sky Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dark Sky Weather.swift"; sourceTree = "<group>"; };
+		98BC650323933D9E00726939 /* DarkSky Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DarkSky Objects.swift"; sourceTree = "<group>"; };
 		CDBAD7D398AF912167EF45CE /* Pods_Camera_Order_Scout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camera_Order_Scout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC996033FA8C198ADFE885C2 /* Pods-Camera Order Scout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camera Order Scout.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +119,8 @@
 			children = (
 				0DBCF7581E496BAE00205017 /* Location API.swift */,
 				0DBCF7561E496B8A00205017 /* Weather API.swift */,
+				98BC65012393213000726939 /* Dark Sky Weather.swift */,
+				98BC650323933D9E00726939 /* DarkSky Objects.swift */,
 			);
 			name = "Weather Objects";
 			sourceTree = "<group>";
@@ -227,7 +233,7 @@
 				0D6393551E46D84A003055DB /* Sources */,
 				0D6393561E46D84A003055DB /* Frameworks */,
 				0D6393571E46D84A003055DB /* Resources */,
-				B02897CEBA008E57794787F6 /* [CP] Embed Pods Frameworks */,
+				05B825B9837F9BE38AF4413A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,20 +251,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Warren Hansen";
 				TargetAttributes = {
 					0D6393581E46D84A003055DB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 22U4CL887R;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 0D6393541E46D84A003055DB /* Build configuration list for PBXProject "Camera Order Scout" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -288,6 +294,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05B825B9837F9BE38AF4413A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99816F76D1ECCDC0702A4C24 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,28 +332,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B02897CEBA008E57794787F6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Camera Order Scout/Pods-Camera Order Scout-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -356,11 +362,13 @@
 				0D94ED7220D17479000D32C4 /* MailTableViewCell.swift in Sources */,
 				0DB0852520C60D44005463C8 /* Alert.swift in Sources */,
 				0DDBE5E11E6A1FC800F6F0D0 /* DemoPhotoViewController.swift in Sources */,
+				98BC650423933D9E00726939 /* DarkSky Objects.swift in Sources */,
 				0DE968721E50189B009D52DF /* TableViewArrayRealm.swift in Sources */,
 				0D0B1E3120C706C70040ADAE /* EditTableview.swift in Sources */,
 				0D36CDE21E67F31400D3015B /* StopPasteAction.swift in Sources */,
 				0D88DB611E68C0F4005029A7 /* firstRunProjects.swift in Sources */,
 				0D63936F1E46D8FC003055DB /* Equipment Class.swift in Sources */,
+				98BC65022393213000726939 /* Dark Sky Weather.swift in Sources */,
 				0DBCF7531E495DAA00205017 /* ProjectsViewController.swift in Sources */,
 				0DE208DB1E47E13A00619AEF /* TableView Array Class.swift in Sources */,
 				0D81902B1E48140000237B11 /* PrimeLensTableViewCell.swift in Sources */,
@@ -395,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -439,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -453,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -491,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -511,12 +521,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Camera Order Scout/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TradeStrat.Camera-Order-Scout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -532,12 +542,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Camera Order Scout/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TradeStrat.Camera-Order-Scout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

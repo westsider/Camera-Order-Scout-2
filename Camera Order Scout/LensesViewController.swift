@@ -82,7 +82,7 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.lensLabel?.text =   displayLensArray[indexPath.row]
         cell.lensSwitch.tag = indexPath.row
         cell.lensSwitch.restorationIdentifier = displayLensArray[indexPath.row]
-        cell.lensSwitch.addTarget(self, action: #selector(switchTriggered(sender:)), for: UIControlEvents.valueChanged)
+        cell.lensSwitch.addTarget(self, action: #selector(switchTriggered(sender:)), for: UIControl.Event.valueChanged)
         cell.lensLabel.adjustsFontSizeToFitWidth = true
         cell.lensSwitch.isOn = switchPos[indexPath.row] //   remember swich position durring scroll
         return cell

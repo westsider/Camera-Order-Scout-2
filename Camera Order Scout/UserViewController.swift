@@ -80,25 +80,50 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             return
         }
         weatherDisplay.text = "Launching Search..."
-        print("Getting wether for \(thisCity)")
+        print("Getting weather for \(thisCity)")
         activityDial.startAnimating()
         let searchResult  =  CurrentLocation.sharedInstance.parseCurrentLocation(input: thisCity)
         weatherDisplay.text = searchResult
+        print("got this back as location \(searchResult)")
         
-        // if now parsing error call weather api in closure that returns a string for the UI
-        if searchResult != errorOne && searchResult !=  errorTwo {
+        CityCoverter().getLocation(forPlaceCalled: thisCity) { (result) in
             
-            GetWeather().getForecast { (result: String) in
-                self.weatherDisplay.text = result
+            guard let loc = result else {
+                let message = "Could not find \(thisCity)"
+                Alert.showBasic(title: "Alert", message: message)
+                self.weatherDisplay.text = message
                 self.activityDial.stopAnimating()
-                self.currentWeather = result
+                return
             }
-            
-        }  else {
-            self.weatherDisplay.text = searchResult
-            self.activityDial.stopAnimating()
-            self.returnMessage(message: searchResult)
+
+            DarkSky.callWeather(location: loc) { (url) in
+                DarkSky.getForecast(url: url) { (result) in
+                    self.weatherDisplay.text = result
+                    self.activityDial.stopAnimating()
+                    self.currentWeather = result
+                    print("got this back from getForecast \(result)")
+                }
+            }
         }
+        
+        
+//        if searchResult != errorOne && searchResult !=  errorTwo {
+//
+//            GetWeather().getForecast { (result: String) in
+//                self.weatherDisplay.text = result
+//                self.activityDial.stopAnimating()
+//                self.currentWeather = result
+//                print("got this back from getForecast \(result)")
+//            }
+//
+//
+//
+//        }  else {
+//            print("got this back as error1 or error 2 \(searchResult)")
+//            self.weatherDisplay.text = searchResult
+//            self.activityDial.stopAnimating()
+//            self.returnMessage(message: searchResult)
+//        }
         
         citySearch.isSelected = false
         citySearch.text = thisCity
@@ -123,11 +148,11 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     func setUpDatePicker() {
         let datePicker = UIDatePicker()
-        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.minimumDate = Date()
         dateTextInput.tag = 1
         dateTextInput.inputView = datePicker
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
     }
     
     //MARK: - format the selected Date and update vars used in weather forcast

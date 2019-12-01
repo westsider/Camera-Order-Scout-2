@@ -96,7 +96,7 @@ class AksKitViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Send switch state and indexpath ro to this func?
         cell.aksSwitch.tag = indexPath.row
         cell.aksSwitch.restorationIdentifier = UniqueKits().getAksLabelText(state: pickerRow, row: indexPath.row).detail
-        cell.aksSwitch.addTarget(self, action: #selector(switchTriggered(sender:)), for: UIControlEvents.valueChanged)
+        cell.aksSwitch.addTarget(self, action: #selector(switchTriggered(sender:)), for: UIControl.Event.valueChanged)
         cell.aksLabel.adjustsFontSizeToFitWidth = true
         return cell
     }

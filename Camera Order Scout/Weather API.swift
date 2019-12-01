@@ -140,6 +140,7 @@ class GetWeather {
     // MARK: - Forecast
     func getForecast(completion: @escaping (_ result: String) -> Void) {
         
+        print("inside getForecast() with url \(CurrentLocation.sharedInstance.forcastURL! )\n")
         var theWeather: String = ""
         
         let configuration = URLSessionConfiguration.default

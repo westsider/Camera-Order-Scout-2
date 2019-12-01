@@ -56,7 +56,7 @@ class TableViewSwitches {
     func finalizeLensArray() {   
         var hasHash = true
         while hasHash {
-            if let index = edited.index(of: "#") {
+            if let index = edited.firstIndex(of: "#") {
                 hasHash = true
                 edited.remove(at: index)
             } else {

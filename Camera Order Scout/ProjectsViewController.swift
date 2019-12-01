@@ -89,7 +89,7 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let task =  "\(tasks[indexPath.row].eventName)"
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
         
         cell.textLabel?.text =  task
         
@@ -102,7 +102,7 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
             // only delete projects if we have more that 1

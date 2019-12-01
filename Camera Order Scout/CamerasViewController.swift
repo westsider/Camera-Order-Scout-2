@@ -50,7 +50,7 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
 
     @IBAction func deleteCameraSelected(_ sender: Any) {
         if tasks.count == 1 {
-            Alert.showBasic(title: "Warning", message: "Can't delete last custom camera.", vc: self)
+            Alert.showBasic(title: "Warning", message: "Can't delete last custom camera.")
         } else {
             let thisCam = tasks[rowSelected].taskID
             CustomCamera().deleteCamera(taskID: thisCam)
@@ -70,11 +70,11 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
         }
         
         if newType.isEmpty {
-            Alert.showBasic(title: "Missing Info", message: "Please add a Camera Type.", vc: self)
+            Alert.showBasic(title: "Missing Info", message: "Please add a Camera Type.")
         }
         
         if newMaker.isEmpty {
-            Alert.showBasic(title: "Missing Info", message: "Please add a Camera Maker.", vc: self)
+            Alert.showBasic(title: "Missing Info", message: "Please add a Camera Maker.")
         }
 
         CustomCamera().saveCameraToRealm(type: newType, maker: newMaker)
