@@ -52,7 +52,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.userName.delegate = self
         self.production.delegate = self
         self.company.delegate = self
-        //self.dateTextInput.delegate = self
         title = "Job  Info"
         weatherDisplay.text = "\n\nEnter a City and State or Country below to get a 10 day weather forecast."
         setUpDatePicker()
@@ -76,16 +75,13 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Search Weather
     @IBAction func searchWeather(_ sender: Any) {
+        weatherDisplay.text = "Launching Search..."
         guard let thisCity = citySearch.text else {
             return
         }
-        weatherDisplay.text = "Launching Search..."
-        print("Getting weather for \(thisCity)")
+        let searchResult  = "Getting weather for \(thisCity)"
         activityDial.startAnimating()
-        let searchResult  =  CurrentLocation.sharedInstance.parseCurrentLocation(input: thisCity)
         weatherDisplay.text = searchResult
-        print("got this back as location \(searchResult)")
-        
         CityCoverter().getLocation(forPlaceCalled: thisCity) { (result) in
             
             guard let loc = result else {
@@ -105,26 +101,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-        
-        
-//        if searchResult != errorOne && searchResult !=  errorTwo {
-//
-//            GetWeather().getForecast { (result: String) in
-//                self.weatherDisplay.text = result
-//                self.activityDial.stopAnimating()
-//                self.currentWeather = result
-//                print("got this back from getForecast \(result)")
-//            }
-//
-//
-//
-//        }  else {
-//            print("got this back as error1 or error 2 \(searchResult)")
-//            self.weatherDisplay.text = searchResult
-//            self.activityDial.stopAnimating()
-//            self.returnMessage(message: searchResult)
-//        }
-        
         citySearch.isSelected = false
         citySearch.text = thisCity
     }
@@ -191,10 +167,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             currentEvent.company = company.text!
             currentEvent.city = citySearch.text!
             currentEvent.date = dateTextInput.text!
-            //currentEvent.weather = weatherDisplay.text
             currentEvent.tableViewArray[0].title = "\(userName.text!) Director of Photography"
             currentEvent.tableViewArray[0].detail = "Camera Order \(production.text!) \(dateTextInput.text!)"
-
             currentEvent.tableViewArray.append(newRow)
 
         }
