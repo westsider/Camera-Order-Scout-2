@@ -113,5 +113,31 @@ extension Weather {
 //        }
     }
     
+    static func convertCondition(cond:String)-> String {
+        switch cond {
+        case "clearNight":
+            return "clear night"
+        case "rain":
+            return "rain"
+        case "snow":
+            return "snow"
+        case "sleet":
+            return "sleet"
+        case "wind":
+            return "wind"
+        case "fog":
+            return "fog"
+        case "cloudy":
+           return "cloudy"
+       case "partyCloudyDay":
+           return "party cloudy day"
+       case "partyCloudyNight":
+           return "party cloudy night"
+            
+        default:
+            return "clear"
+        }
+    }
+    
 }
 

@@ -87,15 +87,20 @@ class DarkSky {
                 let weatherObject = try decoder.decode(Weather.self, from: data)
                 
                 DispatchQueue.main.async {
-                    var theWeather: String = ""
-                    print("Decoded Weather\n")
+                    var theWeather:String = ""
                     for day in weatherObject.week.list {
                         let date = DatePickerUtility().convertShortDate(date: day.time)
-                        
-                        let newElement = ("\(date)  \(day.minTemperature) - \(day.maxTemperature)  \(day.icon)\n")
-                        theWeather = theWeather + newElement
+                        let min:String = String("\(day.minTemperature)".dropLast(3))
+                        let max:String = String("\(day.maxTemperature)".dropLast(3))
+                       
+                        var dayTemp = ("\(date)\t\(min)°-\(max)°")
+                        print(dayTemp.count)
+                        if dayTemp.count <= 14 {
+                            dayTemp += "  "
+                        }
+                        let condition = Weather.convertCondition(cond: "\(day.icon)")
+                        theWeather = theWeather + dayTemp + "\t" + condition + "\n"
                     }
-                    print(theWeather)
                     completion(theWeather)
                 }
             } catch {

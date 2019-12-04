@@ -5,12 +5,15 @@
 //  Created by Warren Hansen on 11/30/16.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 
-//  [ ] 12/ 2019 fix weather api check that all errors are handled
-//  [ ] contact me page email
+//  [X] 12/ 2019 fix weather api check that all errors are handled
+//  [X] trim decimals, add degrees, add spaces
+//  [X] fix names of conditions
+//  [ ] contact me page email ticktrade10 with custom subject to alert special mailbox
 //  [ ] push update or to beta testers
 //  [ ] add new cameras
 //  [ ] add new lenses
 //  [ ] try to make main screen editable
+//  [ ] make lenses custom
 
 import Foundation
 import UIKit
