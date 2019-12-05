@@ -37,6 +37,7 @@ class CamerasViewController: UIViewController, UITextFieldDelegate, UIPickerView
         picker.delegate = self
         picker.dataSource = self
         IQKeyboardManager.shared.enable = true
+        overrideUserInterfaceStyle = .light
     }
 
     @IBAction func addCustomCamAction(_ sender: Any) {

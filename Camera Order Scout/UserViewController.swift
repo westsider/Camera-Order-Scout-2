@@ -56,6 +56,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         weatherDisplay.text = "\n\nEnter a City and State or Country below to get a 10 day weather forecast."
         setUpDatePicker()
         IQKeyboardManager.shared.enable = true
+        overrideUserInterfaceStyle = .light
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,8 +97,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 DarkSky.getForecast(url: url) { (result) in
                     self.weatherDisplay.text = result
                     self.activityDial.stopAnimating()
-                    self.currentWeather = result
-                    print("got this back from getForecast \(result)")
+                    self.currentWeather = result 
                 }
             }
         }

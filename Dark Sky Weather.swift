@@ -77,9 +77,7 @@ class DarkSky {
         
         let task = session.dataTask(with: url as URL) {(data, response, error) in
             
-            guard let data = data else {
-                return
-            }
+            guard let data = data else { return }
             
             do {
                 let decoder = JSONDecoder()
@@ -91,10 +89,8 @@ class DarkSky {
                     for day in weatherObject.week.list {
                         let date = DatePickerUtility().convertShortDate(date: day.time)
                         let min:String = String("\(day.minTemperature)".dropLast(3))
-                        let max:String = String("\(day.maxTemperature)".dropLast(3))
-                       
+                        let max:String = String("\(day.maxTemperature)".dropLast(3)) 
                         var dayTemp = ("\(date)\t\(min)°-\(max)°")
-                        print(dayTemp.count)
                         if dayTemp.count <= 14 {
                             dayTemp += "  "
                         }
@@ -106,14 +102,10 @@ class DarkSky {
             } catch {
                 print(error.localizedDescription)
                 DispatchQueue.main.async(execute: {
-                    // create text block for error
-                    let errorString = "\n⚠️\n\nYour city was not found on \nDarkSky Weather"
-                    
+                    let errorString = "\n⚠️\n\nYour city was not found on \nDarkSky Weather" 
                     completion(errorString)
                 })
             }
-
-            
         }
         task.resume()
     }

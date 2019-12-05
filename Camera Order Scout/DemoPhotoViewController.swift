@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class DemoPhotoViewController: UIViewController {
+class DemoPhotoViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet var pageControl: UIPageControl!
     
@@ -46,6 +47,7 @@ class DemoPhotoViewController: UIViewController {
         super.viewDidLoad()
         title = "I N F O"
         pageLoad(page: counter)
+        shareButton.setTitle("• send me feedback", for: .normal)
     }
     
 
@@ -66,7 +68,30 @@ class DemoPhotoViewController: UIViewController {
     
    
     @IBAction func linkToFbbAction(_ sender: Any) {
-            if let url = NSURL(string: "https://www.facebook.com/iphoneCinematography/"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
+            sendEmail()
+    }
+    
+//    func sendToFB() {
+//        if let url = NSURL(string: "https://www.facebook.com/iphoneCinematography/"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+//        }
+//    }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["ticktrade10@gmail.com"])
+            mail.setSubject("CAMERA ORDER -- message from user")
+            mail.setMessageBody("<p>Hello, I have some feedback or ideas for your Camera Order app.</p>", isHTML: true)
+
+            present(mail, animated: true)
+        } else {
+            Alert.showBasic(title: "Alert", message: "Cannot   sent mail")
+        }
+    }
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
     
     func letsDissolve(nextImage: String) {
@@ -151,7 +176,7 @@ class DemoPhotoViewController: UIViewController {
 }
 
 
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
-}
+//// Helper function inserted by Swift 4.2 migrator.
+//fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+//	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+//}

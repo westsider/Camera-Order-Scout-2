@@ -8,8 +8,9 @@
 //  [X] 12/ 2019 fix weather api check that all errors are handled
 //  [X] trim decimals, add degrees, add spaces
 //  [X] fix names of conditions
-//  [ ] contact me page email ticktrade10 with custom subject to alert special mailbox
-//  [ ] push update or to beta testers
+//  [X] contact me page email ticktrade10 with custom subject to alert special mailbox
+//  [ ] use swift sense
+//  [ ] push update
 //  [ ] add new cameras
 //  [ ] add new lenses
 //  [ ] try to make main screen editable
@@ -64,7 +65,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         navigationController?.navigationBar.barTintColor = coolGray
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ltGray]
         navigationController?.navigationBar.tintColor = UIColor.white
-        
+        overrideUserInterfaceStyle = .light
     }
     
     //MARK: - Add Action  5 is now special optics
