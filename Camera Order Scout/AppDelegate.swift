@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // will automatically perform the migration
         // let realm = try! Realm()
         
+        FirebaseApp.configure()
+        Fabric.sharedSDK().debug = true
         return true
     }
 

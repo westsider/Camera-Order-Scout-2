@@ -33,14 +33,38 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let realm = try! Realm()
     
+    var eventUserRealm = EventUserRealm()
+    
+    var editingLenses = false
+    
+    var rowPassedIn = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        originalArray = thePrimes
-        setUpUI()
-        tableViewSwitches.populateArrays(array: originalArray, reversed: switchOn)
+//        if editingLenses {
+//            print("We are editing a lens package")
+//            // find which lenns was selected
+//            print("here is picker selection \(pickerEquipment.pickerSelection) ")
+//            originalArray = thePrimes
+//            // populate array and switches
+//        } else {
+            print("we are adding new lenses")
+            originalArray = thePrimes
+            print("Here is a list of primes passes in")
+            debugPrint(originalArray)
+            setUpUI()
+            tableViewSwitches.populateArrays(array: originalArray, reversed: switchOn)
+//            print("here is picker state \(pickerEquipment.pickerState)")
+//            pickerEquipment.setPickerArray(component: pickerEquipment.pickerState[1],
+//                                           row: pickerEquipment.pickerState[2],
+//                                           lastCatagory: pickerEquipment.pickerState[3])
+//            print("here is picker array \(pickerEquipment.pickerArray) ")
+            
+        //}
+        
     }
     
     //MARK: - add items not in list
@@ -84,7 +108,7 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.lensSwitch.restorationIdentifier = displayLensArray[indexPath.row]
         cell.lensSwitch.addTarget(self, action: #selector(switchTriggered(sender:)), for: UIControl.Event.valueChanged)
         cell.lensLabel.adjustsFontSizeToFitWidth = true
-        cell.lensSwitch.isOn = switchPos[indexPath.row] //   remember swich position durring scroll
+//cell.lensSwitch.isOn = switchPos[indexPath.row] //   remember swich position durring scroll
         return cell
     }
     
@@ -101,15 +125,40 @@ class LensesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if pickerEquipment.pickerState[1] <= 3 {
             title = "Select Lenses"
             titleDescription.text = "Switch off lenses not needed"
-
         }
         
-        // array to persiste switch positions durring deque of cells
-        let i = displayLensArray.count
-        var c = 0
-        while c < i {
-            switchPos.append(switchOn) // set switch pos from prior vc - off for aks
-            c += 1
+        if editingLenses {
+            // find which lenns was selected
+            print("here is picker selection \(pickerEquipment.pickerSelection) ")
+            //get switch positions from realm
+            print("here is event")
+            debugPrint(eventUserRealm)
+            
+            print("here is the row \(rowPassedIn)")
+            // match tableview row to tableViewArray[row] to get lenses!!!
+            let lenses = eventUserRealm.tableViewArray[rowPassedIn]
+            print("Cat: \(lenses.catagory) desc: \(lenses.description) detail: \(lenses.detail) icon: \(lenses.icon) title: \(lenses.title)")
+            displayLensArray = DecoupleString().fudgesicle(thisString: lenses.detail)
+            debugPrint(displayLensArray)
+            
+            // get orig prime set
+//TableViewArrays().setPrimesKit(compState: <#T##[Int]#>)
+            // compare to find off switches
+            
+        } else {
+            // array to persiste switch positions durring deque of cells
+            let i = displayLensArray.count
+            var c = 0
+            while c < i {
+                switchPos.append(switchOn) // set switch pos from prior vc - off for aks
+                c += 1
+            }
         }
+    }
+}
+
+class DecoupleString {
+    func fudgesicle(thisString:String)-> [String] {
+        return thisString.components(separatedBy: ",")
     }
 }

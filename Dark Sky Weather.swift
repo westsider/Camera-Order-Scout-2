@@ -39,9 +39,6 @@ class CityCoverter {
                 completion(nil)
                 return
             }
-
-            print("\n\ngot this latitude \(location.coordinate.latitude) got this longitude \(location.coordinate.longitude)")
-            debugPrint()
             completion(location)
         }
     }
@@ -67,8 +64,7 @@ class DarkSky {
     }
     
     class func getForecast(url:URL, completion: @escaping (_ result: String) -> Void) {
-        
-        print("inside getForecast() with url \n")
+    
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 15 // seconds
         configuration.timeoutIntervalForResource = 15

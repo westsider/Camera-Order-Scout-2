@@ -3,22 +3,19 @@
 //  Camera Order Scout
 //
 //  Created by Warren Hansen on 11/30/16.
+//  12/1/19 1.7 ios 13, dark sky weather
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 
-//  [X] 12/ 2019 fix weather api check that all errors are handled
-//  [X] trim decimals, add degrees, add spaces
-//  [X] fix names of conditions
-//  [X] contact me page email ticktrade10 with custom subject to alert special mailbox
-//  [ ] use swift sense
-//  [ ] push update
+//  [X] crashalitics
 //  [ ] add new cameras
 //  [ ] add new lenses
-//  [ ] try to make main screen editable
+//  [ ] main screen editable
 //  [ ] make lenses custom
 
 import Foundation
 import UIKit
 import RealmSwift
+import Crashlytics
 
 class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -36,7 +33,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     let realm = try! Realm()
     
-    var tableviewEvent = EventUserRealm()
+    var eventUserRealm = EventUserRealm()
     
     let coolGray = UIColor(red: 97/255, green: 108/255, blue: 122/255, alpha: 1.0)
     
@@ -46,6 +43,12 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     override func viewWillAppear(_ animated: Bool) {
         fillDefaultTableView()
         myTableView.reloadData()
+        print("here is the tableviewEvent")
+        debugPrint(eventUserRealm)
+        print("here is the tableViewArray")
+        for each in eventUserRealm.tableViewArray {
+            debugPrint(each)
+        }
     }
  
     override func viewDidLoad() {
@@ -66,6 +69,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ltGray]
         navigationController?.navigationBar.tintColor = UIColor.white
         overrideUserInterfaceStyle = .light
+    
     }
     
     //MARK: - Add Action  5 is now special optics
@@ -97,6 +101,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             }
             RealmHelp().sortRealmEvent()
             myTableView.reloadData()
+//MARK: - Todo - annimate adding row
         }
         
         // if specialty
@@ -116,17 +121,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             RealmHelp().sortRealmEvent()
             myTableView.reloadData()
         }
-        
-        // if a prime segue to primes using picker equipment objects
-        if pickerEquipment.pickerState[1] > 0 && pickerEquipment.pickerState[1] <= 3  {
-            print("4 fired")
-            tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState) // populate var for the next controller
-            let myVc = storyboard?.instantiateViewController(withIdentifier: "lensViewController") as! LensesViewController
-            myVc.thePrimes = tableViewArrays.thePrimes
-            myVc.displayLensArray = tableViewArrays.displayLensArray
-            myVc.pickerEquipment = pickerEquipment
-            navigationController?.pushViewController(myVc, animated: true)
-        }
+        segueToPrimes(forEditing: false, row: 0)
         
         // segue to aks 6, filters 8 or support 9 using realm objects
         if pickerEquipment.pickerState[1] == 6 || pickerEquipment.pickerState[1] > 7 {
@@ -140,7 +135,7 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     //MARK: - Share Camera Order
     @IBAction func shareAction(_ sender: Any) {
-    
+        //Crashlytics.sharedInstance().crash()
         let myVc = storyboard?.instantiateViewController(withIdentifier: "previewViewController") as! PreviewViewController
         navigationController?.pushViewController(myVc, animated: true)
     }
@@ -276,17 +271,30 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             RealmStart().DemoEventsOne()
             RealmStart().DemoEventsTwo()
             RealmStart().DemoEventsThree()
-
-            tableviewEvent = defaultEventUsers
-            
+            eventUserRealm = defaultEventUsers
             performSegue(withIdentifier: "mainToInfo", sender: self)
             
         } else {
           
             //Mark: - we have a past user and will get last id used
             let currentEvent = RealmHelp().getLastEvent()
-            tableviewEvent = currentEvent   // populate tableview
+            eventUserRealm = currentEvent   // populate tableview
             RealmHelp().sortRealmEvent() //sortRealmEvent()
+        }
+    }
+    
+    func segueToPrimes(forEditing: Bool, row: Int) {
+        if pickerEquipment.pickerState[1] > 0 && pickerEquipment.pickerState[1] <= 3  {
+            
+            tableViewArrays.setPrimesKit(compState: pickerEquipment.pickerState) // populate var for the next controller
+            let lensVC = storyboard?.instantiateViewController(withIdentifier: "lensViewController") as! LensesViewController
+            lensVC.eventUserRealm = eventUserRealm
+            lensVC.editingLenses = forEditing
+            lensVC.thePrimes = tableViewArrays.thePrimes
+            lensVC.displayLensArray = tableViewArrays.displayLensArray
+            lensVC.pickerEquipment = pickerEquipment
+            lensVC.rowPassedIn = row
+            navigationController?.pushViewController(lensVC, animated: true)
         }
     }
 }
@@ -296,23 +304,16 @@ class MainTableViewController: UIViewController,  UIPickerViewDelegate, UIPicker
 extension MainTableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableviewEvent.tableViewArray.count
+        return eventUserRealm.tableViewArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ListTableViewCell
-        let iconString = tableviewEvent.tableViewArray[indexPath.row].icon
+        let iconString = eventUserRealm.tableViewArray[indexPath.row].icon
         cell.imageTableViewCell.image = tableViewArrays.setTableViewIcon(title: iconString)
-        cell.titleTableView?.text = tableviewEvent.tableViewArray[indexPath.row].title
-        cell.detailTableView?.text = tableviewEvent.tableViewArray[indexPath.row].detail
-        
-//        if indexPath.row == 0 {
-//            cell.accessoryType = .disclosureIndicator
-//        }
-//        else {
-//           cell.accessoryType = .detailButton
-//        }
+        cell.titleTableView?.text = eventUserRealm.tableViewArray[indexPath.row].title
+        cell.detailTableView?.text = eventUserRealm.tableViewArray[indexPath.row].detail
         return cell
     }
 }
@@ -324,40 +325,50 @@ extension MainTableViewController: UITableViewDelegate {
             performSegue(withIdentifier: "mainToUser", sender: self)
         } else {
             
-            //            //MARK - Todo allow editing of each cell
-            //            let currentEvent = RealmHelp().getLastEvent()
-            //            print(indexPath.row)
-            //            print("catagory: \(currentEvent.tableViewArray[indexPath.row].description)")
-            //            print("detail: \(currentEvent.tableViewArray[indexPath.row].detail)")
-            //            print("icon: \(currentEvent.tableViewArray[indexPath.row].icon)")
-            //            print("title: \(currentEvent.tableViewArray[indexPath.row].title)")
-            //            // parse the icon, for compomnet 1
-            //            let icon = currentEvent.tableViewArray[indexPath.row].icon
-            //            print("Seeking icon as \(icon)")
-            //            let catagory = EditTableview.findCatagoryFrom(input: icon)
-            //            print("\(catagory)")
-            //            // slew the picker
-            //            myPicker.selectRow(catagory, inComponent: 1, animated: true)
-            //            // ask do you want to select a different camera? Y/N
-            //            // Y delete row, slew the catagory, N dismiss
+            //MARK - Todo allow editing of each cell
+            let currentEvent = RealmHelp().getLastEvent()
+//            print(indexPath.row)
+//            print("catagory: \(currentEvent.tableViewArray[indexPath.row].description)")
+//            print("detail: \(currentEvent.tableViewArray[indexPath.row].detail)")
+//            print("icon: \(currentEvent.tableViewArray[indexPath.row].icon)")
+//            print("title: \(currentEvent.tableViewArray[indexPath.row].title)")
+            // parse the icon, for compomnet 1
+            let icon = currentEvent.tableViewArray[indexPath.row].icon
+            //print("Seeking icon as \(icon)")
+            let catagory = EditTableview.findCatagoryFrom(input: icon)
+            //print("\(catagory)")
+            // slew the picker
+            myPicker.selectRow(catagory, inComponent: 1, animated: true)
         }
     }
     
-    //MARK: - delete tableview row
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete && indexPath.row != 0 {
-            let currentEvent = RealmHelp().getLastEvent()
-            
+    //MARK: - delete / edit tableview row
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+     
+        let currentEvent = RealmHelp().getLastEvent()
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            print("index path of delete: \(indexPath)")
             try! currentEvent.realm!.write {
                 let row = currentEvent.tableViewArray[indexPath.row]
                 row.realm!.delete(row)
             }
-            tableviewEvent = currentEvent   // re - populate tableview
-            tableView.reloadData()
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            completionHandler(true)
         }
+
+        let rename = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in
+            // get row num for primes then segue to pick primes
+
+            
+        
+             // if a prime segue to primes using picker equipment objects
+            self.segueToPrimes(forEditing: true, row: indexPath.row)
+            
+            completionHandler(true)
+        }
+        rename.backgroundColor = .blue
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [rename, delete])
+        swipeActionConfig.performsFirstActionWithFullSwipe = false
+        return swipeActionConfig
     }
 }
